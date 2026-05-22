@@ -600,7 +600,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
         <li><a onclick="navigate('about')">About DIFL</a></li>
         <li><a onclick="navigate('testimonials')">Testimonials</a></li>
         <li><a onclick="navigate('scholarships')">DIFL Scholarships</a></li>
-        <li><a onclick="navigate('faq')">FAQs</a></li>
+        <li><a onclick="navigateToFaq()">FAQs</a></li>
       </ul>
     </li>
     <li class="dd"><span>Languages ▾</span>
@@ -1266,49 +1266,89 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 
 <!-- ===================== BLOG PAGE ===================== -->
 <div id="page-blog" class="page">
-  <section style="padding-top:140px;background:var(--ink)">
+  <section style="padding-top:140px;background:var(--ink);min-height:80vh">
     <div class="sc">
       <div class="eyebrow">Language Insights · DIFL Knowledge Hub</div>
       <h1>DIFL <em>Blog</em></h1>
-      <p class="lead" style="max-width:680px;margin-bottom:50px">Expert guides on language exams with verified India centers, study plans, culture, food habits, visa processes, MEXT TITP Erasmus scholarships, and career scope — from DIFL, 55 years of language excellence.</p>
-      
-      <!-- Blog categories quick nav -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px">
-        <a href="blog.html" target="_blank" rel="noopener" class="btn-o" style="font-size:12px;padding:8px 16px">📜 Exam Guides</a>
-        <a href="blog.html#culture" target="_blank" rel="noopener" class="btn-o" style="font-size:12px;padding:8px 16px">🌏 Culture</a>
-        <a href="blog.html#study-plans" target="_blank" rel="noopener" class="btn-o" style="font-size:12px;padding:8px 16px">📚 Study Plans</a>
-        <a href="blog.html#visa-guides" target="_blank" rel="noopener" class="btn-o" style="font-size:12px;padding:8px 16px">✈️ Visa & Abroad</a>
-        <a href="blog.html" target="_blank" rel="noopener" class="btn-g" style="font-size:12px;padding:8px 16px">All 45 Articles →</a>
+      <p class="lead" style="max-width:680px;margin-bottom:36px">Expert guides on language exams with verified India centers, study plans, culture, food habits, visa processes, MEXT TITP Erasmus scholarships — from DIFL, 55 years of language excellence.</p>
+
+      <!-- Smart Blog Loader: works on web server AND as local file -->
+      <div id="blogLoader" style="margin-bottom:40px">
+        <div id="blogLoading" style="text-align:center;padding:60px 20px;display:none">
+          <div style="font-size:40px;margin-bottom:16px;animation:bob 1.5s ease infinite">📖</div>
+          <p style="color:var(--gm);font-size:15px">Loading blog articles...</p>
+        </div>
+        <div id="blogError" style="display:none;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:32px;text-align:center">
+          <div style="font-size:48px;margin-bottom:16px">📚</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);margin-bottom:12px">45 Expert Language Articles</h3>
+          <p style="color:var(--gm);font-size:14px;line-height:1.75;max-width:500px;margin:0 auto 24px">The blog is a separate file (<strong style="color:var(--cream)">blog.html</strong>) that must be opened directly. Click the button below to open it — or visit the live website at GitHub Pages.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:14px;padding:13px 28px;text-decoration:none">📖 Open Blog (blog.html) ↗</a>
+            <a href="https://mydifl.github.io/mydifl.com-Claude-website/blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:14px;padding:13px 28px;text-decoration:none">🌐 Open on Website ↗</a>
+          </div>
+        </div>
+        <!-- Blog content renders here when fetched successfully -->
+        <div id="blogInline" style="display:none"></div>
       </div>
 
-      <div class="blog-grid">
-        <div class="blog-card reveal" onclick="window.open('blog.html?p=jlpt','_blank')" style="cursor:pointer">
-          <div class="bc-top">📜</div><div class="bc-body"><div class="bc-cat">Exam Guide · Japanese 🇯🇵</div><h3>JLPT 2025 Complete Guide — Levels, Verified India Centers & Prep Tips</h3><p>All 8 verified India exam centers with addresses, 2025 registration dates, fees and DIFL preparation strategy for N5 to N1.</p></div>
+      <!-- Always-visible category quick links -->
+      <div style="margin-top:20px">
+        <div class="eyebrow" style="margin-bottom:16px">Jump to a Category</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px">
+          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">📜 Exam Guides</a>
+          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">🌏 Culture</a>
+          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">📚 Study Plans</a>
+          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">✈️ Visa & Abroad</a>
+          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:12px;padding:8px 16px;text-decoration:none">All 45 Articles ↗</a>
         </div>
-        <div class="blog-card reveal" style="transition-delay:.08s;cursor:pointer" onclick="window.open('blog.html?p=delf','_blank')">
-          <div class="bc-top">🥐</div><div class="bc-body"><div class="bc-cat">Exam Guide · French 🇫🇷</div><h3>DELF & DALF 2025 — All India Alliance Française Centers & Dates</h3><p>DELF A1–B2 and DALF C1–C2 — lifelong French certifications. All 10 Alliance Française centers with verified addresses, TEF Canada guide.</p></div>
+
+        <!-- Featured article cards — always visible, open blog.html directly -->
+        <div class="blog-grid">
+          <div class="blog-card reveal" style="cursor:pointer" onclick="openBlogPost('jlpt')">
+            <div class="bc-top">📜</div>
+            <div class="bc-body"><div class="bc-cat">Exam Guide · Japanese 🇯🇵</div>
+            <h3>JLPT 2025 Complete Guide — Verified India Centers & Prep Tips</h3>
+            <p>All 8 verified India exam centers, 2025 dates, and DIFL preparation strategy for N5 to N1.</p></div>
+          </div>
+          <div class="blog-card reveal" style="cursor:pointer;transition-delay:.08s" onclick="openBlogPost('delf')">
+            <div class="bc-top">🥐</div>
+            <div class="bc-body"><div class="bc-cat">Exam Guide · French 🇫🇷</div>
+            <h3>DELF & DALF 2025 — All India Alliance Française Centers</h3>
+            <p>DELF A1–B2 and DALF C1–C2 — lifelong certifications. 10 verified centers with addresses, TEF Canada guide.</p></div>
+          </div>
+          <div class="blog-card reveal" style="cursor:pointer;transition-delay:.12s" onclick="openBlogPost('goethe')">
+            <div class="bc-top">🏰</div>
+            <div class="bc-body"><div class="bc-cat">Exam Guide · German 🇩🇪</div>
+            <h3>Goethe-Institut Exams 2025 — India Centers, Fees & Critical New Rule</h3>
+            <p>A1–C2, all Max Mueller Bhavan centers, official 2025 fees, and the mandatory passport rule from Sep 2025.</p></div>
+          </div>
+          <div class="blog-card reveal" style="cursor:pointer;transition-delay:.16s" onclick="openBlogPost('scope-foreign-languages')">
+            <div class="bc-top">💼</div>
+            <div class="bc-body"><div class="bc-cat">Career · Scope</div>
+            <h3>Scope of Foreign Languages in India 2025 — Salary Guide</h3>
+            <p>Career paths, salary data by language and role, and top MNC employers hiring language professionals.</p></div>
+          </div>
+          <div class="blog-card reveal" style="cursor:pointer;transition-delay:.2s" onclick="openBlogPost('mext-titp-erasmus-programs')">
+            <div class="bc-top">✈️</div>
+            <div class="bc-body"><div class="bc-cat">Study Abroad · Scholarships</div>
+            <h3>MEXT, TITP, Erasmus+ & Global Programs — 2025 Guide for Indians</h3>
+            <p>MEXT Japan, TITP/SSW, Erasmus+, DAAD Germany, GKS Korea — language requirements and DIFL prep timeline.</p></div>
+          </div>
+          <div class="blog-card reveal" style="cursor:pointer;transition-delay:.24s" onclick="openBlogPost('work-travel-visa-guide')">
+            <div class="bc-top">🛂</div>
+            <div class="bc-body"><div class="bc-cat">Visa Guide</div>
+            <h3>Work & Travel Visa Guide 2025 — Japan, Germany, France, Korea, Canada</h3>
+            <p>SSW Japan, Germany Blue Card & Opportunity Card, France Talent Passport, Canada Express Entry French points.</p></div>
+          </div>
         </div>
-        <div class="blog-card reveal" style="transition-delay:.12s;cursor:pointer" onclick="window.open('blog.html?p=goethe','_blank')">
-          <div class="bc-top">🏰</div><div class="bc-body"><div class="bc-cat">Exam Guide · German 🇩🇪</div><h3>Goethe-Institut Exams 2025 — India Centers, Fees & Critical Sep 2025 Rule</h3><p>A1–C2, all Max Mueller Bhavan centers, official 2025 fees, and the mandatory passport rule effective Sep 2025.</p></div>
+
+        <div style="text-align:center;margin-top:32px;padding-bottom:20px">
+          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:15px;padding:16px 36px;text-decoration:none">📚 Open Full Blog — All 45 Articles ↗</a>
         </div>
-        <div class="blog-card reveal" style="transition-delay:.16s;cursor:pointer" onclick="window.open('blog.html?p=scope-foreign-languages','_blank')">
-          <div class="bc-top">💼</div><div class="bc-body"><div class="bc-cat">Career · Scope</div><h3>Scope of Foreign Languages in India 2025 — Salary Guide & Top Employers</h3><p>Complete career paths, salary data by language and role, and top MNC employers hiring — Japanese, German, French, Korean, Arabic.</p></div>
-        </div>
-        <div class="blog-card reveal" style="transition-delay:.2s;cursor:pointer" onclick="window.open('blog.html?p=mext-titp-erasmus-programs','_blank')">
-          <div class="bc-top">✈️</div><div class="bc-body"><div class="bc-cat">Study Abroad · Scholarships</div><h3>MEXT, TITP, Erasmus+ & Global Programs — 2025 Guide for Indians</h3><p>Everything about MEXT Japan, TITP/SSW, Erasmus+, DAAD Germany, GKS Korea, Campus France — language requirements and DIFL prep timeline.</p></div>
-        </div>
-        <div class="blog-card reveal" style="transition-delay:.24s;cursor:pointer" onclick="window.open('blog.html','_blank')">
-          <div class="bc-top">📖</div><div class="bc-body"><div class="bc-cat">45 Expert Articles · All Languages</div><h3>View All 45 Blog Articles →</h3><p>Exam guides, culture blogs, food habits, study plans, interesting words, visa guides and scholarships — all 10 languages covered.</p></div>
-        </div>
-      </div>
-      
-      <div style="text-align:center;margin-top:20px;padding-bottom:40px">
-        <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:15px;padding:16px 36px;text-decoration:none">📚 Visit DIFL Language Blog — All 45 Articles ↗</a>
       </div>
     </div>
   </section>
 </div>
-
 <!-- ===================== CONTACT PAGE ===================== -->
 <div id="page-contact" class="page">
   <section style="padding-top:140px;background:linear-gradient(135deg,rgba(10,92,110,.1),rgba(201,168,76,.05)),var(--cream);color:var(--ink)">
@@ -1389,7 +1429,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 </div>
     </div>
     <div class="fc"><h5>Languages</h5><a onclick="navigate('french')">Learn French</a><a onclick="navigate('japanese')">Learn Japanese</a><a onclick="navigate('german')">Learn German</a><a onclick="navigate('spanish')">Learn Spanish</a><a onclick="navigate('chinese')">Learn Chinese</a><a onclick="navigate('korean')">Learn Korean</a><a onclick="navigate('arabic')">Learn Arabic</a><a onclick="navigate('italian')">Learn Italian</a><a onclick="navigate('russian')">Learn Russian</a><a onclick="navigate('english')">Learn English</a><a onclick="navigate('thai')">Learn Thai</a><a onclick="navigate('hindi')">Hindi for Foreigners</a></div>
-    <div class="fc"><h5>Institute</h5><a onclick="navigate('about')">About DIFL</a><a onclick="navigate('testimonials')">Testimonials</a><a onclick="navigate('scholarships')">Scholarships</a><a onclick="navigate('faq')">FAQs</a><a onclick="navigate('blog')">Blog</a><a onclick="navigate('programs')">Study Abroad</a><a onclick="navigate('handwriting')">Handwriting</a><a onclick="navigate('contact')">Contact Us</a></div>
+    <div class="fc"><h5>Institute</h5><a onclick="navigate('about')">About DIFL</a><a onclick="navigate('testimonials')">Testimonials</a><a onclick="navigate('scholarships')">Scholarships</a><a onclick="navigateToFaq()">FAQs</a><a onclick="navigate('blog')">Blog</a><a onclick="navigate('programs')">Study Abroad</a><a onclick="navigate('handwriting')">Handwriting</a><a onclick="navigate('contact')">Contact Us</a></div>
     <div class="fc"><h5>Programs</h5><a onclick="navigate('programs')">Ausbildung Germany</a><a onclick="navigate('programs')">MEXT Japan</a><a onclick="navigate('programs')">Campus France</a><a onclick="navigate('programs')">GKS Korea</a><a onclick="navigate('programs')">Canada TEF/TCF</a><a onclick="navigate('handwriting')">Calligraphy</a><a onclick="navigate('all-courses')">All Courses</a></div>
   </div>
   <div class="f-bottom"><div>© 2025 DIFL — Dante Institute of Foreign Languages. All rights reserved.</div><div>Maintained by Priyanshu Sharma · priyanshushar@gmail.com</div></div>
@@ -1672,6 +1712,93 @@ function buildLangPage(lang){
 
 // ===== NAVIGATION =====
 let currentPage = 'home';
+
+// ── FAQ scroll helper ──────────────────────────────────────────────
+
+// ── Smart blog opener ──────────────────────────────────────────────
+function openBlogPost(postId){
+  var url = 'blog.html' + (postId ? '?p=' + postId : '');
+  // Try window.open — works on web servers, blocked on file://
+  var w = window.open(url, '_blank');
+  if(!w || w.closed || typeof w.closed === 'undefined'){
+    // Popup blocked or file:// — show the fallback UI
+    showBlogFallback();
+  }
+}
+
+function showBlogFallback(){
+  var err = document.getElementById('blogError');
+  if(err){
+    err.style.display = 'block';
+    err.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+// Try to fetch and embed blog inline when page-blog is shown
+// (works on web servers with same origin)
+function tryLoadBlogInline(){
+  var loader = document.getElementById('blogLoading');
+  var inline  = document.getElementById('blogInline');
+  var error   = document.getElementById('blogError');
+  if(!loader || !inline || !error) return;
+  
+  // Only try on http/https (not file://)
+  if(location.protocol === 'file:'){
+    error.style.display = 'block';
+    return;
+  }
+  
+  loader.style.display = 'block';
+  
+  fetch('blog.html')
+    .then(function(r){ return r.ok ? r.text() : Promise.reject(r.status); })
+    .then(function(html){
+      loader.style.display = 'none';
+      // Extract just the body content from blog.html
+      var parser = new DOMParser();
+      var doc    = parser.parseFromString(html, 'text/html');
+      var blogPgList = doc.getElementById('pg-list');
+      if(blogPgList){
+        inline.innerHTML = blogPgList.innerHTML;
+        inline.style.display = 'block';
+        // Inject blog CSS
+        var blogStyles = doc.querySelectorAll('style');
+        blogStyles.forEach(function(s){
+          if(s.textContent.includes('pg-list') || s.textContent.includes('.bc{')){
+            var ns = document.createElement('style');
+            ns.textContent = s.textContent;
+            document.head.appendChild(ns);
+          }
+        });
+        // Inject blog JS
+        var blogScripts = doc.querySelectorAll('script:not([src])');
+        blogScripts.forEach(function(s){
+          if(s.textContent.includes('const POSTS')){
+            var ns = document.createElement('script');
+            ns.textContent = s.textContent;
+            document.head.appendChild(ns);
+          }
+        });
+      } else {
+        error.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      loader.style.display = 'none';
+      error.style.display  = 'block';
+    });
+}
+// ──────────────────────────────────────────────────────────────────
+
+function navigateToFaq(){
+  navigate('home');
+  setTimeout(function(){
+    var el = document.getElementById('homeFaq');
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 350);
+}
+// ──────────────────────────────────────────────────────────────────
+
 function navigate(page){
   // Scroll to top
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1694,7 +1821,7 @@ function navigate(page){
   }
   if(page==='calligraphy') page='handwriting';
   const el = document.getElementById('page-'+page);
-  if(el){ el.classList.add('active'); currentPage=page; }
+  if(el){ el.classList.add('active'); currentPage=page; if(page==='blog') setTimeout(tryLoadBlogInline, 200); }
   else { document.getElementById('page-home').classList.add('active'); }
   initReveal();
   // Insert ticker on every page
