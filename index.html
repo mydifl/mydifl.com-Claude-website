@@ -963,7 +963,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 <div style="background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(10,92,110,.06));border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);padding:28px 8%;text-align:center">
   <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);color:var(--cream);letter-spacing:-.3px;margin:0;line-height:1.5">
     <em style="color:var(--gold)">"Your Passport Is a Document. Language Is the Real Visa."</em>
-    <span style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--gm);margin-top:8px;letter-spacing:1px;font-style:normal;font-weight:400">Learn Japanese · French · German · Spanish · Italian · Korean · Chinese · Arabic · Russian · English · Thai · Hindi</span>
+    
   </p>
 </div>
 <!-- ═══════════════════ -->
@@ -1467,7 +1467,8 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 // ===== DATA =====
 const LANGS = [
   {id:'french',flag:'🇫🇷',name:'French',native:'Français',cert:'DELF · DALF · TEF · TCF Canada',bg:'linear-gradient(135deg,rgba(0,85,164,.08),rgba(239,65,53,.05))',color:'rgba(0,85,164,.15)',
-    desc:'DIFL teaches French for real-world communication from Day 1 — not level by level. Our advanced conversation-first approach means you build genuine fluency alongside certification readiness. You can target any certification level directly — higher certification covers lower levels in most exams.',
+    desc:'DIFL teaches French for real-world communication from Day 1 — not merely level by level. Our advanced conversation-first approach builds genuine fluency alongside certification readiness. Unlike most institutes in India that follow only DELF-style teaching, which may not be sufficient for TEF and TCF Canada, DIFL\'s pedagogy targets the entire French language system in a practical and comprehensive way. This helps students prepare effectively for DELF, DALF, TEF Canada and TCF Canada. At DIFL, you can target any certification level directly, as higher certification preparation naturally covers the lower levels in most exams.',
+    cert_note:'The full French program at DIFL covers A1, A2, B1 and B2 in their entirety, with practically essential elements from C1 and C2, plus extensive conversational language and real-world French that DELF-only courses routinely omit — including vocabulary, idiomatic usage and cultural fluency that exams do not test but real communication demands. DIFL students emerge genuinely fluent, not merely exam-certified.',
     features:['Communication-first approach: speak from Day 1, not after months of grammar','Target any DELF/DALF level directly — lower levels not mandatory if higher level cleared','DELF A1–B2 and DALF C1–C2 certification preparation','TEF Canada and TCF Canada for Canadian PR immigration — 50 extra CRS points','Online, offline, and hybrid classes — worldwide and from Jaipur','Unique TTP methodology — leverages your mother tongue as a bridge'],
     exams:['DELF A1','DELF A2','DELF B1','DELF B2','DALF C1','DALF C2','TEF Canada','TCF Canada'],
     career:['Translator / Interpreter','French Language Teacher','Diplomatic Services','International Business','Canada / France Immigration','Alliance Française Programs'],
@@ -1490,6 +1491,7 @@ const LANGS = [
 
   {id:'german',flag:'🇩🇪',name:'German',native:'Deutsch',cert:'Goethe A1–C2 · TELC · TestDaF',bg:'linear-gradient(135deg,rgba(220,0,0,.06),rgba(255,204,0,.04))',color:'rgba(0,0,0,.06)',
     desc:'DIFL\'s German program takes you to real professional communication — not slow level-by-level progression. Critical advantage: Goethe B2 automatically means you have passed A1/A2/B1. Target the level you need directly — Ausbildung, Blue Card, or Opportunity Card.',
+    cert_note:'The full German program at DIFL covers A1, A2, B1 and B2 completely, with practically required elements from C1 and C2, plus a substantial body of conversational German — idioms, professional language and real-world usage — that Goethe exam preparation alone typically skips. You become genuinely proficient in German, not just examination-ready.',
     features:['Advanced-first approach: Goethe B2 covers all lower levels — no need to retake each','Ausbildung Germany preparation: German A2/B1/B2 for vocational programs','Germany Opportunity Card: German B1 adds bonus points to the points system','EU Blue Card language preparation (German B2 for most roles)','Modular exam advantage: B1–C2 Goethe exams allow retaking individual failed sections only','Online, offline, and hybrid classes from Jaipur'],
     exams:['Goethe A1','Goethe A2','Goethe B1','Goethe B2','Goethe C1','Goethe C2','TELC','TestDaF'],
     career:['Ausbildung Germany Trainee','EU Blue Card Holder','German MNC Professional','German Language Teacher','Automotive Industry Expert','DAAD Scholar'],
@@ -1501,6 +1503,7 @@ const LANGS = [
 
   {id:'spanish',flag:'🇪🇸',name:'Spanish',native:'Español',cert:'DELE A1–C2 · SIELE',bg:'linear-gradient(135deg,rgba(170,21,27,.06),rgba(241,191,0,.04))',color:'rgba(170,21,27,.08)',
     desc:'Spanish is the fastest major world language to fluency for Indian learners. DIFL teaches it communication-first — and like all DIFL programs, higher DELE levels cover lower levels. Target DELE B2 directly without mandatory A1/A2 first.',
+    cert_note:'The full Spanish program at DIFL covers A1, A2, B1 and B2 comprehensively, with key practical elements from C1 and C2, alongside rich conversational Spanish — idioms, natural expressions and real-world usage — that DELE-focused courses usually omit. DIFL graduates speak Spanish naturally and confidently — not just at exam level.',
     features:['Fastest major language to B2 fluency for Indian learners (12 months)','DELE skip-level strategy: B2 certification covers all lower DELE levels','Communication-first: hold real conversations from Week 1','Opens access to 21 countries and 500+ million native speakers','Sanskrit-Spanish vocabulary connections accelerate learning for Hindi speakers','Flexible duration — customised to your specific goal'],
     exams:['DELE A1','DELE A2','DELE B1','DELE B2','DELE C1','DELE C2','SIELE'],
     career:['Spanish Interpreter','Latin American Business','BPO Voice Process','Tourism & Hospitality Spain','Spanish Language Teacher','EU Diplomatic Services'],
@@ -1544,6 +1547,7 @@ const LANGS = [
 
   {id:'italian',flag:'🇮🇹',name:'Italian',native:'Italiano',cert:'CILS · CELI · PLIDA',bg:'linear-gradient(135deg,rgba(0,140,69,.06),rgba(206,43,55,.04))',color:'rgba(0,140,69,.08)',
     desc:'Italian was a founding language at DIFL — established by Late Dr. V K Sharma himself, a renowned Italian teacher. This 55-year Italian legacy gives DIFL depth in Italian pedagogy that very few institutes in India possess. Advanced conversation from Day 1, CILS/CELI/PLIDA certification on demand.',
+    cert_note:'The full Italian program at DIFL covers A1, A2, B1 and B2 completely, with practically necessary elements from C1 and C2, plus rich conversational content — idioms, cultural language and real-world Italian — well beyond what CILS or CELI exam preparation covers. This is DIFL\'s 55-year Italian tradition — language, not just certification.',
     features:['DIFL\'s founding language — 55 years of Italian teaching legacy','Advanced conversation from Day 1 — the most phonetically regular Romance language','CILS, CELI, and PLIDA certification (higher level covers lower — target directly)','Erasmus+ Italy preparation — CILS B2 pathway','Italian luxury industry and fashion career connections','Sanskrit-Latin-Italian vocabulary connections for rapid acquisition'],
     exams:['CILS A1–C2','CELI A2–C2','PLIDA A1–C2'],
     career:['Erasmus+ Italy Exchange','Italian Fashion & Luxury Industry','Italian Language Teacher','Cultural Programs','Tourism & Hospitality Italy','EU Academic Programs'],
@@ -1565,11 +1569,12 @@ const LANGS = [
 
   {id:'english',flag:'🇬🇧',name:'English',native:'English',cert:'IELTS · TOEFL · OET',bg:'linear-gradient(135deg,rgba(0,36,125,.07),rgba(207,20,43,.04))',color:'rgba(0,36,125,.08)',
     desc:'DIFL\'s English program targets confident real-world communication — not just exam scores. Advanced conversation, business English, and certification preparation (IELTS, TOEFL, OET) are integrated from Day 1. Customised duration based on your specific needs.',
+    approach:'DIFL\'s English course is suited for everyone — from someone with practically no knowledge to advanced-level learners. We build strong foundations in speaking, writing, listening, grammar and real-life communication. Our innovative TTP – Thought Translation Process helps students learn through their own mother tongue. Courses include Spoken English, Corporate Communication, Interview Skills, IELTS, TOEFL, PTE, OET, GRE, GMAT and SAT. At DIFL, English becomes not just a subject, but a powerful life skill.',
     features:['Confident communication from Day 1 — not grammar drills first','IELTS, TOEFL, and OET preparation alongside advanced conversation','Business English, presentation skills, and professional communication','Customisable duration — designed around your specific goal','Small batch advantage: maximum 6 students for individual attention','Flexible timing — batch, small group, or 1-on-1 with teacher'],
     exams:['IELTS','TOEFL','OET (Medical English)','Cambridge B2/C1/C2'],
     career:['International Employment','UK/USA/Australia Immigration','Medical Professional OET','Academic Programs Abroad','Corporate Communication','English Language Teacher'],
     levels:[
-      {name:'Small Batch (max 6 students)',dur:'6 months · includes IELTS/TOEFL/OET prep + advanced conversation'},
+      {name:'Small Batch (max 6 students)',dur:'6 months'},
       {name:'Large Batch (max 10 students)',dur:'7–8 months'},
       {name:'Individual (1-on-1 with teacher)',dur:'4–5 months · fully customisable to your needs and timeline'}
     ]},
@@ -1684,9 +1689,9 @@ function buildLangPage(lang){
           <div class="course-box">
             <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:14px 18px;margin-bottom:18px">
               <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px">🎯 DIFL's Unique Approach</div>
-              <p style="font-size:13px;color:rgba(250,248,243,.8);line-height:1.7;margin:0">Communication is built from Day 1 — not after months of theory. <strong>Higher certification levels cover lower levels</strong> in most exams (JLPT, DELF, Goethe, TOPIK, DELE) — you don't need to take each level in sequence. Target the level you need, directly.</p>
+              <p style="font-size:13px;color:rgba(250,248,243,.8);line-height:1.7;margin:0">${lang.approach || 'Communication is built from Day 1 — not after months of theory. <strong>Higher certification levels cover lower levels<\/strong> in most exams (JLPT, DELF, Goethe, TOPIK, DELE) — you don\'t need to take each level in sequence. Target the level you need, directly.'}</p>
             </div>
-            <h3>Batch Options &amp; Duration</h3>
+            ${lang.cert_note ? `<div style="font-size:13px;color:rgba(250,248,243,.8);line-height:1.75;margin-bottom:16px;padding:12px 16px;background:rgba(201,168,76,.05);border-left:3px solid rgba(201,168,76,.4);border-radius:0 8px 8px 0"><strong style="color:var(--gold);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:7px">📋 What the Full Program Covers</strong>${lang.cert_note}</div>` : ""}<h3>Batch Options &amp; Duration</h3>
             <table style="width:100%;border-collapse:collapse;margin-bottom:4px">
               <thead>
                 <tr>
@@ -1701,9 +1706,9 @@ function buildLangPage(lang){
                 </tr>`).join('')}
               </tbody>
             </table>
-            <div style="margin-top:14px;padding:12px 0;font-size:12.5px;color:var(--gm);display:flex;align-items:flex-start;gap:8px;border-top:1px solid rgba(255,255,255,.05)">
-              <span style="font-size:16px;flex-shrink:0">📞</span>
-              <span>Duration is customisable to your goals and availability. <a href="tel:+919929515151" style="color:var(--gold);font-weight:600">Call 9929-51 51 51</a> for a personalised plan. <a onclick="navigate(\'contact\')" style="color:var(--gold);cursor:pointer;text-decoration:underline">Enquire directly</a> — no pressure, no fees discussed here.</span>
+            <div style="margin-top:14px;padding:12px 14px;font-size:12.5px;border-top:1px solid rgba(255,255,255,.05);background:rgba(201,168,76,.06);border-radius:0 0 10px 10px;display:flex;align-items:flex-start;gap:8px">
+              <span style="font-size:16px;flex-shrink:0">⏳</span>
+              <span style="color:rgba(250,248,243,.75);line-height:1.75"><strong style="color:var(--gold)">Waiting Period:</strong> Due to the strict upper limit on batch sizes, at least 2–3 batches ahead are always full at any given time. A waiting period of <strong style="color:var(--cream)">at least 4–5 weeks</strong> after registration is typical before the next available batch commences. <strong>Early registration is strongly recommended.</strong><br><span style="font-size:12px;color:var(--gm);margin-top:4px;display:block">Duration customisable · <a href="tel:+919929515151" style="color:var(--gold);font-weight:600">Call 9929-51 51 51</a> · <a onclick="navigate(\\'contact\\')" style="color:var(--gold);cursor:pointer;text-decoration:underline">Enquire directly</a></span></span>
             </div>
           </div>
           <div class="course-box" style="margin-top:18px"><h3>Career Opportunities</h3>${lang.career.map(c=>`<div class="course-row"><span style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>${c}</span></div>`).join('')}</div>
@@ -1837,13 +1842,7 @@ function navigate(page){
     const lang = LANGS.find(l=>l.id===page);
     document.getElementById('langPageContent').innerHTML = buildLangPage(lang);
     document.getElementById('page-lang').classList.add('active');
-    // Add ticker to lang page
-    setTimeout(function(){
-      var lp = document.getElementById('langPageContent');
-      if(lp && !lp.querySelector('.ticker-wrap')){
-        lp.insertAdjacentHTML('afterbegin', TICKER_HTML);
-      }
-    }, 60);
+
     initReveal();
     return;
   }
