@@ -295,11 +295,17 @@ footer a{color:var(--gold);text-decoration:none}
     <path fill="#fff" d="M19.06 15.5c-.37-.83-.76-.85-1.11-.86l-.94-.01c-.33 0-.86.12-1.31.6-.45.47-1.72 1.68-1.72 4.1s1.76 4.76 2.01 5.09c.24.33 3.39 5.43 8.36 7.4 4.13 1.63 4.97 1.3 5.87 1.22.9-.08 2.9-1.19 3.31-2.33.41-1.15.41-2.13.29-2.33-.12-.2-.45-.33-.95-.57-.49-.24-2.9-1.43-3.35-1.59-.45-.16-.77-.24-1.1.24-.33.49-1.27 1.59-1.56 1.92-.29.33-.57.37-1.06.12-.49-.24-2.08-.77-3.96-2.44-1.46-1.3-2.45-2.91-2.74-3.4-.29-.49-.03-.75.22-1 .22-.22.49-.57.74-.86.24-.29.33-.49.49-.82.17-.33.08-.62-.04-.86-.12-.24-1.07-2.67-1.5-3.62z"/>
   </svg>
 </a>
-<nav role="navigation" aria-label="DIFL Blog Navigation">
-  <div class="nl" onclick="showList()" style="cursor:pointer;background:none;border:none"><div class="nm" style="background:transparent;border:none;box-shadow:none;padding:0;width:auto;min-width:0;flex-shrink:0"><img src="" class="difl-logo-img" loading="lazy" alt="DIFL" style="height:44px;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1)"></div><div class="nt"><b>DIFL</b><small>Dante Institute of Foreign Languages</small></div></div>
-  <div style="display:flex;align-items:center;gap:8px">
-    <a href="index.html" class="nb" style="font-size:12px;padding:6px 13px;text-decoration:none;display:inline-flex;align-items:center;gap:5px">🏠 Main Site</a>
-    <button class="nb" onclick="showList()" style="font-size:12px;padding:6px 13px;cursor:pointer">← Blog Home</button>
+<nav role="navigation" aria-label="DIFL Blog Navigation" id="blogNav">
+  <div class="nl" onclick="showList()" style="cursor:pointer">
+    <div class="nm" style="background:transparent;border:none;box-shadow:none;padding:0;width:auto;min-width:0;flex-shrink:0">
+      <img src="" class="difl-logo-img" loading="lazy" alt="DIFL" style="height:44px;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1)">
+    </div>
+    <div class="nt"><b>DIFL Blog</b><small>Dante Institute of Foreign Languages · Jaipur</small></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <a href="index.html" class="nb" style="font-size:12px;padding:7px 14px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(201,168,76,.3);color:var(--gold);border-radius:8px;background:rgba(201,168,76,.06)">🏠 Main Site</a>
+    <a href="index.html#contact" onclick="return true;" class="nb" style="font-size:12px;padding:7px 14px;text-decoration:none;display:inline-flex;align-items:center;gap:5px">📞 Enquire</a>
+    <button class="nb" onclick="showList()" style="font-size:12px;padding:7px 14px;cursor:pointer">← Blog Home</button>
   </div>
 </nav>
 
@@ -376,7 +382,7 @@ title:"JLPT 2025-26 Complete Guide — Levels, Verified India Centers, Exam Date
 desc:"Everything about the Japanese Language Proficiency Test — N5 to N1, all 8 verified India exam centers with addresses, 2025-26 registration dates, fees & expert prep strategy.",
 tags:["JLPT","Japanese exam India","N5 to N1","JLPT centers","JLPT 2025"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · Japanese 🇯🇵</div>
@@ -451,7 +457,7 @@ title:"DELF & DALF 2025-26 Complete Guide — Levels, All Alliance Française Ce
 desc:"DELF A1–B2 and DALF C1–C2 — official French Ministry certifications valid for life. All India Alliance Française exam centers with verified addresses, 2025 session dates, fees and preparation tips.",
 tags:["DELF DALF","French exam India","Alliance Française","TEF Canada","DELF B2 preparation"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · French 🇫🇷</div>
@@ -519,7 +525,7 @@ title:"HSK 2025 Complete Guide — Levels, India Exam Centers, Registration & Pr
 desc:"Complete HSK (Hanyu Shuiping Kaoshi) guide — 6+3 levels, 12+ India centers with verified addresses, registration at chinesetest.cn, fees by level and expert preparation strategy.",
 tags:["HSK exam","Chinese exam India","Mandarin test","HSK centers India","HSK preparation"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · Chinese Mandarin 🇨🇳</div>
@@ -589,7 +595,7 @@ title:"TOPIK 2025 Complete Guide — TOPIK I & II, Verified India Centers, Regis
 desc:"Complete TOPIK (Test of Proficiency in Korean) guide — TOPIK I (Levels 1-2) and TOPIK II (Levels 3-6), verified 2025 exam centers in Delhi, Bengaluru, Pune with seats and fees, plus preparation strategy.",
 tags:["TOPIK exam India","Korean exam","TOPIK I II","TOPIK centers 2025","Korean proficiency test"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · Korean 🇰🇷</div>
@@ -644,7 +650,7 @@ title:"Goethe-Institut German Exams 2025 — Levels A1–C2, Verified India Cent
 desc:"Complete Goethe-Institut exam guide for India — A1 to C2 levels, 4 main Max Mueller Bhavan centers + 15+ Goethe Zentrum partners with verified fees, 2025 important rules and preparation strategy.",
 tags:["Goethe exam India","German exam","Max Mueller Bhavan","Goethe fees India","TELC Germany"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · German 🇩🇪</div>
@@ -707,7 +713,7 @@ title:"Japanese Culture — 25 Fascinating Customs, Traditions & Surprising Fact
 desc:"From bowing etiquette and no-tipping culture to Cherry Blossom season, Onsen rituals and vending machine obsession — the most fascinating and unique facts about Japan's extraordinary civilization.",
 tags:["Japanese culture","Japan traditions","Japan facts","Japanese customs","learn Japanese India"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Japan 🇯🇵</div>
@@ -756,7 +762,7 @@ title:"French Culture — L'Art de Vivre: 20 Surprising Facts, Customs & the Fre
 desc:"From café culture and the 35-hour work week to La Bise greetings and the French Paradox — what makes French culture one of the world's most admired and studied civilizations.",
 tags:["French culture","France lifestyle","L'art de vivre","French customs","France facts"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · France 🇫🇷</div>
@@ -793,7 +799,7 @@ title:"German Culture — Punctuality, Engineering Pride, Christmas Markets & 20
 desc:"Far more than Oktoberfest and bratwurst — discover Germany's sacred Sunday law, Autobahn philosophy, Christmas market tradition, engineering identity, and the unique German social customs that matter for Ausbildung.",
 tags:["German culture","Germany facts","German customs","German engineering","Oktoberfest facts"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Germany 🇩🇪</div>
@@ -832,7 +838,7 @@ title:"Korean Culture — K-Pop, Confucianism, Age System & 20 Fascinating Facts
 desc:"Beyond K-pop and K-drama — discover Korea's unique age system, Confucian hierarchy, ppali ppali work culture, jeong (bond), traditional festivals, and why Korea is a global cultural superpower.",
 tags:["Korean culture","Korea facts","K-culture India","Korean customs","Korean etiquette"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Korea 🇰🇷</div>
@@ -874,7 +880,7 @@ title:"Japanese Food Culture — Ramen, Sushi, Wagyu & the Philosophy of Eating 
 desc:"Discover Japan's UNESCO food heritage — the four ramen styles, real sushi etiquette, Wagyu grading, Bento box art, essential food vocabulary and the surprising India-Japan curry connection.",
 tags:["Japanese food","Ramen Japan","Sushi etiquette","Japanese cuisine","Japanese food habits"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · Japan 🇯🇵</div>
@@ -917,7 +923,7 @@ title:"French Food Culture — 1,200 Cheeses, 300 Wine Regions & the UNESCO Gast
 desc:"Why French cuisine is UNESCO heritage — the sacred meal structure, 1,200 cheese varieties, France's wine culture, baguette law, and the food habits that define the French way of life.",
 tags:["French food","French cuisine","French cheese","French wine culture","French gastronomy"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · France 🇫🇷</div>
@@ -951,7 +957,7 @@ title:"German Food Culture — 3,200 Bread Types, Wurst Varieties & the Art of G
 desc:"Discover Germany's extraordinary bread culture (3,200 varieties), the 1,500 beer types, Oktoberfest traditions, the philosophy of Gemütlichkeit and essential German food vocabulary.",
 tags:["German food","German cuisine","German bread culture","Oktoberfest food","German cooking"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · Germany 🇩🇪</div>
@@ -983,7 +989,7 @@ title:"Korean Food Culture — Kimchi, Korean BBQ, Banchan & the Art of Communal
 desc:"Discover Korea's fermentation philosophy, the science of Kimchi, Korean BBQ etiquette, the Banchan culture of shared side dishes, and essential Korean food vocabulary for language learners.",
 tags:["Korean food","Korean cuisine","Kimchi culture","Korean BBQ","Korean eating habits"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · Korea 🇰🇷</div>
@@ -1021,7 +1027,7 @@ title:"Japanese Study Plan — Zero to JLPT N2 in 18 Months (Designed for Indian
 desc:"A structured month-by-month Japanese study plan with daily schedules — covering Hiragana, Katakana, Kanji, JLPT N5 through N2 certification, with the unique Hindi-Japanese connection that gives Indian learners an advantage.",
 tags:["Japanese study plan","learn Japanese India","JLPT preparation","Japanese for beginners","study Japanese Hindi"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · Japanese 🇯🇵</div>
@@ -1084,7 +1090,7 @@ title:"French Study Plan — A1 to DELF B2 in 14 Months (For Indian Learners)",
 desc:"A structured, level-by-level French study plan from pronunciation basics to DELF B2 certification — with weekly schedules, best resources, and DIFL preparation tips specifically for Indian learners.",
 tags:["French study plan","learn French India","DELF B2 preparation","French A1 to B2","French for beginners"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · French 🇫🇷</div>
@@ -1142,7 +1148,7 @@ title:"German Study Plan — A1 to Goethe B2 in 14 Months (For Ausbildung & Blue
 desc:"A structured German language study plan from beginner A1 to Goethe B2 certification — designed for Indian learners targeting Ausbildung Germany, Germany Opportunity Card, and Blue Card.",
 tags:["German study plan","learn German India","Ausbildung preparation","Goethe B2","German A1 to B2 India"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · German 🇩🇪</div>
@@ -1197,7 +1203,7 @@ title:"DELE & SIELE 2025 Guide — Spanish Exam Levels, India Centers, Dates & P
 desc:"DELE (A1–C2) and SIELE — official Spanish Ministry certifications valid for life. Verified India exam centers in Delhi, Mumbai, Jaipur with addresses, 2025 session dates, fees, student discount info and preparation tips.",
 tags:["DELE exam India","Instituto Cervantes","SIELE exam","Spanish certification India","Spanish exam 2025"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · Spanish 🇪🇸</div>
@@ -1259,7 +1265,7 @@ title:"Arabic Language Proficiency Tests 2025 — Hamza, ACTFL, Gulf Job Require
 desc:"Complete guide to Arabic language certifications — the new free Hamza Test, ACTFL Arabic OPI, options for Indian learners targeting Gulf employment, diplomatic services and Arabic university studies.",
 tags:["Arabic exam India","Hamza Arabic test","ACTFL Arabic","Gulf job Arabic India","Arabic proficiency 2025"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Exam Guide · Arabic 🇸🇦</div>
@@ -1304,7 +1310,7 @@ title:"Spanish Culture — Siesta, Flamenco, La Tomatina & 20 Surprising Facts A
 desc:"From the siesta philosophy and late-night dining to Flamenco passion and La Tomatina — the most fascinating customs that define Spanish civilization and that every Spanish learner should know.",
 tags:["Spanish culture","Spain facts","Flamenco culture","Spanish customs","Spain lifestyle"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Spain 🇪🇸</div>
@@ -1341,7 +1347,7 @@ title:"Spanish Food Culture — Tapas, Paella, Rioja Wine & the Mediterranean Ar
 desc:"Spain's UNESCO Mediterranean food heritage — tapas philosophy, paella origins (not seafood!), Rioja wine culture, late mealtimes, and the Sanskrit-origin food words Spanish shares with Hindi.",
 tags:["Spanish food","tapas Spain","paella culture","Spanish wine","Spanish food habits"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · Spain 🇪🇸</div>
@@ -1375,7 +1381,7 @@ title:"Spanish Study Plan — A1 to DELE B2 in 12 Months (Fastest Track for Indi
 desc:"A structured Spanish study plan — A1 to DELE B2 certification in 12 months — with the Sanskrit-Hindi-Spanish connections and daily schedules that make Spanish the fastest major language to learn for Indians.",
 tags:["Spanish study plan","DELE B2 India","learn Spanish 12 months","Spanish Hindi","Spanish for Indians"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · Spanish 🇪🇸</div>
@@ -1426,7 +1432,7 @@ title:"Arabic Culture — Legendary Hospitality, Majlis Tradition & 20 Fascinati
 desc:"From the sacred obligation of Arab hospitality and the Majlis social institution to the UNESCO-heritage coffee ceremony and the Islamic Golden Age — essential cultural knowledge for Indian professionals in Gulf markets.",
 tags:["Arabic culture","Arab hospitality","Majlis culture","Arab world facts","India Arabia connection"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Arab World 🇸🇦</div>
@@ -1462,7 +1468,7 @@ title:"Arabic Food Culture — Kabsa, Mandi, Mezze & the Sacred Generosity of Ar
 desc:"Arab food is an act of community — Kabsa rice ceremony, Mandi underground feast, Mezze sharing tradition, date culture in Islam, and the Indian food words that Arabic carries within it.",
 tags:["Arabic food","Kabsa rice","Mandi feast","Mezze culture","Arabic food etiquette"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · Arab World 🇸🇦</div>
@@ -1499,7 +1505,7 @@ title:"Arabic Study Plan — Beginner to B2 in 18 Months for Gulf Jobs & Diploma
 desc:"A structured Arabic language study plan — script mastery, MSA grammar, Gulf dialect basics — specifically designed for Indian learners targeting Gulf employment and Hamza Test certification.",
 tags:["Arabic study plan","learn Arabic India","Arabic Gulf jobs","Arabic MSA B2","Arabic for Indians"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · Arabic 🇸🇦</div>
@@ -1549,7 +1555,7 @@ title:"Chinese Culture — Mianzi (Face), Guanxi, Lunar New Year & 20 Fascinatin
 desc:"From the concept of Face (Mianzi) and the Guanxi relationship network to Lunar New Year traditions and why gifting clocks is taboo — essential Chinese cultural knowledge for India-China business.",
 tags:["Chinese culture","Mianzi face","Guanxi China","Lunar New Year","China India business culture"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · China 🇨🇳</div>
@@ -1587,7 +1593,7 @@ title:"Chinese Food Culture — Dim Sum, Noodles, Tea Ceremony & the Communal Ar
 desc:"China's extraordinary food culture — regional cuisine diversity, Dim Sum philosophy, the 5,000-year tea tradition, chopstick etiquette rules, and the surprising Indian food words that trace to China.",
 tags:["Chinese food","Dim sum","Chinese tea culture","Chinese food habits","Chinese cuisine India"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · China 🇨🇳</div>
@@ -1623,7 +1629,7 @@ title:"Mandarin Chinese Study Plan — Beginner to HSK 4 in 18 Months for Indian
 desc:"A structured Mandarin Chinese study plan — tones, Pinyin, characters, grammar and HSK 1 through HSK 4 certification — with Hindi-speaker advantages and daily schedules for Indian learners.",
 tags:["Mandarin study plan","learn Chinese India","HSK 4 plan","Chinese for Indians","Mandarin HSK India"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · Mandarin Chinese 🇨🇳</div>
@@ -1675,7 +1681,7 @@ title:"Korean Study Plan — Hangul to TOPIK Level 4 in 15 Months (For Indian K-
 desc:"A structured Korean language study plan — Hangul mastery in 2 weeks, TOPIK I and II preparation — with the passion-powered approach unique to Korean for India's K-drama and K-pop enthusiasts.",
 tags:["Korean study plan","Hangul learning","TOPIK I II India","Korean for K-fans","learn Korean India"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · Korean 🇰🇷</div>
@@ -1725,7 +1731,7 @@ title:"Italian Culture — La Dolce Vita, Opera, Fashion & 20 Fascinating Facts 
 desc:"From La Dolce Vita and café espresso culture to the world's highest concentration of UNESCO sites and Italian fashion philosophy — the culture facts every Italian language learner should know.",
 tags:["Italian culture","Italy facts","La Dolce Vita","Italian customs","Italian lifestyle"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Italy 🇮🇹</div>
@@ -1762,7 +1768,7 @@ title:"Italian Food Culture — Pasta, Pizza, Espresso & the Sacred Art of Itali
 desc:"Italy's extraordinary food culture — the 350 pasta shapes, the real history of pizza, the espresso laws, the Sunday lunch ritual, and food vocabulary that links Italian to Hindi through shared Latin and Sanskrit roots.",
 tags:["Italian food","Italian cuisine","Italian pasta","Italian coffee","Italian food habits"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Food & Culture · Italy 🇮🇹</div>
@@ -1798,7 +1804,7 @@ title:"Italian Study Plan — A1 to CILS B2 in 12 Months (The Romance Language F
 desc:"A structured Italian language study plan from A1 to CILS B2 in 12 months — for Indian learners targeting Erasmus+ Italy, Italian university, or luxury industry careers, leveraging French/Spanish shortcuts.",
 tags:["Italian study plan","CILS B2 India","learn Italian India","Erasmus Italy","Italian for Indians"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Study Plan · Italian 🇮🇹</div>
@@ -1846,7 +1852,7 @@ title:"Russian Culture — White Nights, Literature, Ballet & 20 Surprising Fact
 desc:"From White Nights and the Bolshoi Ballet to Russian hospitality rules and the deep Soviet-era India-Russia friendship — what every Russian language learner should know about Russian civilization.",
 tags:["Russian culture","Russia facts","Russian literature","Russian ballet","Russia India connection"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Russia 🇷🇺</div>
@@ -1883,7 +1889,7 @@ title:"Thai Culture — Buddhism, Royal Reverence, Wai Greeting & 15 Surprising 
 desc:"From the Wai greeting and deep Buddhist traditions to the sacred monarchy and Thai food culture — what every Thai language learner should know about Thailand's extraordinary civilization.",
 tags:["Thai culture","Thailand facts","Thai Buddhist culture","Wai greeting","Thailand India connection"],
 body:`<div class="art-nav-bar">
-  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← All Articles</button>
+  <button onclick="showList()" class="bk" style="border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:8px;background:rgba(255,255,255,.03)">← Blog Home</button>
   <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:12.5px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);text-decoration:none">🏠 DIFL Main Site</a>
 </div>
 <div class="a-cat">Culture · Thailand 🇹🇭</div>
@@ -1911,13 +1917,416 @@ body:`<div class="art-nav-bar">
 <li>The Thai greeting "Sawadee" (สวัสดี) has Sanskrit roots — from สวัส (suvasti — wellbeing), same as Sanskrit स्वस्ति (svasti — may you be well), the root of the swastika symbol (an ancient Indian auspicious symbol)</li></ul>
 <div class="ibox"><div class="it">🇮🇳 India-Thailand: A Buddhist Bridge</div><p>Buddhism traveled from India to Thailand over 2,000 years ago — and Theravada Buddhism, the form practiced in Thailand, traces directly to Sri Lankan and Ashoka-era Indian missions. Thai royal titles use Sanskrit: the king's title "Vajiralongkorn" is pure Sanskrit (Vajra = thunderbolt/diamond). Thai temples are called "wat" — from Sanskrit "vaataka" (enclosure). The Thai script has visual similarities to South Indian scripts, both descending from ancient Brahmi. India and Thailand share a living cultural and spiritual inheritance that makes Thai culturally familiar to Indian learners in profound ways. DIFL's Thai program highlights this Buddhist connection throughout.</p></div>
 </div>${CTA}`}
+,
+{id:'japanese-beautiful-words',title:'20 Most Beautiful Words in Japanese — With Hindi & English Meanings',cat:'✨ Beautiful Words · Japanese 🇯🇵',kw:'beautiful Japanese words, Japanese vocabulary Hindi meaning, Japanese greetings, nihongo beautiful words',body:`
+<h2>20 Most Beautiful Words in Japanese</h2>
+<p>Japanese has some of the world's most poetic vocabulary — words that capture emotions, moments, and feelings that no single word in other languages can express. Here are 20 of the most beautiful, with their Hindi and English meanings.</p>
 
+<div style="overflow-x:auto;margin:30px 0">
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)">
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Japanese</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Romaji</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">English Meaning</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Hindi Meaning</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">木漏れ日</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Komorebi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sunlight filtering through leaves</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पत्तियों से छनकर आती धूप</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">物の哀れ</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Mono no Aware</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The bittersweet awareness of impermanence</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">क्षणभंगुरता की मीठी उदासी</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">わびさび</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Wabi-Sabi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Beauty in imperfection and transience</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अपूर्णता में सौंदर्य</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">木枯らし</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Kogarashi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Cold wintry wind that signals the end of autumn</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पतझड़ की ठंडी हवा</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">余韻</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Yoin</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The lingering resonance after a sound fades</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">किसी ध्वनि के बाद की गूंज</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">縁側</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Engawa</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The narrow wooden veranda — a threshold between inside and nature</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">घर और प्रकृति के बीच का बरामदा</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">花見</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hanami</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The tradition of appreciating cherry blossoms</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">चेरी फूलों को निहारने की परंपरा</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">侘寂</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Shibui</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Subtle, unobtrusive beauty</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सरल, सूक्ष्म सौंदर्य</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">積ん読</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Tsundoku</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Buying books but letting them pile up unread</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">किताबें खरीदकर बिना पढ़े छोड़ देना</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">初雪</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hatsuyuki</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The first snow of the season</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मौसम की पहली बर्फ</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">懐かしい</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Natsukashii</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nostalgic longing for the past</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पुरानी यादों की मीठी तड़प</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">間</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Ma</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The pause — meaningful negative space</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सार्थक मौन या रिक्तता</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">生き甲斐</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Ikigai</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Your reason for being — purpose that makes life worth living</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">जीवन का उद्देश्य</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">木霊</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Kodama</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The spirit of the trees — echo in the forest</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">वन की प्रतिध्वनि, वृक्ष-आत्मा</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">しょうがない</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Shouganai</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">It cannot be helped — graceful acceptance</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">जो है सो है — शांत स्वीकृति</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">刹那</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Setsuna</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A moment so brief it's barely real</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">क्षण — पल भर</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">縁</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">En</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Fate that connects people — a destined relationship</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नियति से जुड़ा रिश्ता</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">旅</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Tabi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Journey — especially one that transforms you</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आत्मपरिवर्तनकारी यात्रा</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">山川</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Yamazakura</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Wild cherry blossoms on a mountain</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पहाड़ी जंगली चेरी फूल</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">言霊</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Kotodama</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The mystical power that words carry</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">शब्दों की आत्मिक शक्ति</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Essential Japanese Greetings & Salutations</h2>
+<div style="overflow-x:auto;margin:20px 0">
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)">
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Japanese</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Romaji</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1)">When to Use</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Hindi / English</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">おはようございます</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Ohayou Gozaimasu</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good morning (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सुप्रभात / Good Morning</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">こんにちは</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Konnichiwa</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hello / Good afternoon</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नमस्ते / Hello</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">こんばんは</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Konbanwa</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good evening</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">शुभ संध्या / Good Evening</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">ありがとうございます</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Arigatou Gozaimasu</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Thank you (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बहुत धन्यवाद / Thank you</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">すみません</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sumimasen</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Excuse me / Sorry / Pardon</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">माफ़ कीजिए / Excuse me</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">よろしくお願いします</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Yoroshiku Onegaishimasu</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Please take care of me / Nice to meet you</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आपसे मिलकर खुशी हुई</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">いただきます</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Itadakimasu</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Said before eating (I humbly receive)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">भोजन से पहले कृतज्ञता</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">お疲れ様でした</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Otsukaresama Deshita</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">You worked hard / Good work today</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आपने बहुत मेहनत की</td></tr>
+</tbody>
+</table>
+</div>
+<div class="cta"><h3>Learn Japanese at DIFL — Communication from Day 1</h3><p>JLPT N5 to N1 preparation · TITP/SSW Japan language support · 16 months full program · Jaipur & Online</p><a href="index.html" class="cb">Visit DIFL Website ↗</a></div>
+`},
+{id:'french-beautiful-words',title:'20 Most Beautiful Words in French — With Hindi & English Meanings',cat:'✨ Beautiful Words · French 🇫🇷',kw:'beautiful French words, French vocabulary Hindi meaning, French greetings, mots français magnifiques',body:`
+<h2>20 Most Beautiful Words in French</h2>
+<p>French is called the language of love for good reason — its vocabulary is filled with words of extraordinary beauty, romance, and philosophical depth. Here are 20 of the most beautiful.</p>
+<div style="overflow-x:auto;margin:30px 0">
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)">
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">French Word</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">English Meaning</th>
+<th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Hindi Meaning</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Dépaysement</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The disorienting feeling of being in a foreign place</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">परदेस में खोया-खोया अहसास</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Flâner</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">To stroll aimlessly through the city with pleasure</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बिना मंज़िल के आनंद से घूमना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Toujours</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Always / forever</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">हमेशा / सदा</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Retrouvailles</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The joy of reuniting with someone after a long absence</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बिछड़े से मिलने की खुशी</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sérendipité</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Serendipity — a fortunate happy accident</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सुखद संयोग</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Épanouissement</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Blossoming — full personal development</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पूर्ण विकास, खिलना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Lumière</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Light — also used for enlightenment</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">प्रकाश / रोशनी</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nostalgie</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nostalgic longing for the past</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पुरानी यादों की तड़प</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Murmure</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A murmur — soft whispering sound</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">कानाफूसी / मंद ध्वनि</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Papillon</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Butterfly</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">तितली</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Douce</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sweet / gentle / soft</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मीठी / कोमल</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Effleurer</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">To graze or touch lightly, barely</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">हल्के से छूना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Insouciance</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Carefree indifference — a lightness of being</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बेफ़िक्री, लापरवाही का सुख</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Fleur</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Flower</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">फूल</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Rêverie</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Pleasant daydreaming</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दिवास्वप्न / मधुर कल्पना</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bouleversement</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Complete upheaval — emotional overwhelm</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">भावनात्मक उथल-पुथल</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Espoir</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hope</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आशा / उम्मीद</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Éblouissant</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Dazzling / breathtakingly beautiful</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">चकाचौंध करने वाला सुंदर</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hirondelle</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Swallow (the bird) — symbol of return and hope</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अबाबील — वापसी और आशा का प्रतीक</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Chuchoter</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">To whisper</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">फुसफुसाना</td></tr>
+</tbody></table></div>
+<h2>Essential French Greetings</h2>
+<div style="overflow-x:auto;margin:20px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">French</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">When to Use</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Hindi / English</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bonjour</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good day / Hello (standard greeting)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नमस्ते / Good Day</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bonsoir</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good evening</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">शुभ संध्या</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Merci beaucoup</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Thank you very much</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बहुत-बहुत धन्यवाद</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Enchanté(e)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Delighted to meet you</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आपसे मिलकर प्रसन्नता हुई</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Comment allez-vous?</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">How are you? (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आप कैसे हैं?</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Au revoir</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Goodbye (until we see again)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">फिर मिलेंगे / अलविदा</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bienvenue</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Welcome</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">स्वागत है / Welcome</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Excusez-moi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Excuse me / I beg your pardon</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">माफ़ कीजिए / क्षमा करें</td></tr>
+</tbody></table></div>
+<div class="cta"><h3>Learn French at DIFL — DELF, DALF, TEF Canada Preparation</h3><p>16 months full program · TEF Canada for Canadian PR · Alliance Française exam guidance · Jaipur & Online</p><a href="index.html" class="cb">Visit DIFL Website ↗</a></div>
+`},
+{id:'german-beautiful-words',title:'20 Most Beautiful Words in German — With Hindi & English Meanings',cat:'✨ Beautiful Words · German 🇩🇪',kw:'beautiful German words, German vocabulary Hindi, Schadenfreude meaning Hindi, German greetings',body:`
+<h2>20 Most Beautiful Words in German</h2>
+<p>German is famous for its compound words that capture complex emotions precisely. These are some of the most beautiful and profound words in the German language.</p>
+<div style="overflow-x:auto;margin:30px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">German Word</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">English Meaning</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Hindi Meaning</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Fernweh</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Longing for far-away places — wanderlust</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दूर देशों की तड़प / घुमक्कड़ी की चाह</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Weltschmerz</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Pain caused by the state of the world</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दुनिया की दशा से उत्पन्न दर्द</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Torschlusspanik</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Fear that time is running out before a door closes</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मौका जाने की घबराहट</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Waldeinsamkeit</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The peaceful solitude found in a forest</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">जंगल में मिलती शांत एकांत</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Zweisamkeit</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The feeling of togetherness between two people</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दो लोगों के साथ होने का एहसास</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sehnsucht</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A deep yearning for something undefined</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अनजान चीज़ के लिए गहरी तड़प</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Augenblick</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A fleeting moment (literally: blink of an eye)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पलक झपकते ही बीत जाने वाला क्षण</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Gemütlichkeit</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Warmth, cosiness, belonging</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">घरेलू गर्माहट / अपनापन</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Schadenfreude</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Pleasure derived from another's misfortune</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दूसरे की मुसीबत में आनंद</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Lebensfreude</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Joy of life — exuberant love for living</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">जीवन का आनंद</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Weltanschauung</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A comprehensive worldview or philosophy of life</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">जीवन-दर्शन / विश्व-दृष्टिकोण</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Drachenfutter</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A peace offering (literally: dragon food)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मनाने के लिए दिया गया तोहफ़ा</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Frühlingsgefühle</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Spring feelings — romantic joy of the season</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बसंत की रोमांटिक खुशी</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Verschlimmbessern</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Making something worse while trying to improve it</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सुधारने की कोशिश में बिगाड़ देना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Fingerspitzengefühl</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Intuitive sensitivity / tact (literally: fingertip feeling)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सहज संवेदनशीलता</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Herzblut</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Heart's blood — passion, deep devotion</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दिल का खून / गहरा जुनून</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Querdenker</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A lateral thinker — one who thinks outside the box</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अलग तरह से सोचने वाला</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Weltbürger</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Citizen of the world — a cosmopolitan person</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">विश्व-नागरिक</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Kummerspeck</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Weight gained from emotional overeating (grief bacon)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">दुख में ज़्यादा खाने से बढ़ा वज़न</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Zwischenzug</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">An unexpected move that changes everything (chess term)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अप्रत्याशित कदम जो सब बदल दे</td></tr>
+</tbody></table></div>
+<h2>Essential German Greetings</h2>
+<div style="overflow-x:auto;margin:20px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">German</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">When to Use</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Hindi / English</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Guten Morgen</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good morning</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सुप्रभात</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Guten Tag</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good day / Hello (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नमस्कार / शुभ दिन</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Auf Wiedersehen</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Goodbye (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अलविदा</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bitte</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Please / You're welcome</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">कृपया / कोई बात नहीं</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Danke schön</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Thank you very much</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बहुत धन्यवाद</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Herzlich Willkommen</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Warm welcome</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">हार्दिक स्वागत</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Wie geht es Ihnen?</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">How are you? (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आप कैसे हैं?</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Entschuldigung</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Excuse me / Sorry</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">माफ़ कीजिए</td></tr>
+</tbody></table></div>
+<div class="cta"><h3>Learn German at DIFL — Goethe A1 to C2 Preparation</h3><p>Ausbildung Germany · EU Blue Card language prep · Germany Opportunity Card · 16 months full program</p><a href="index.html" class="cb">Visit DIFL Website ↗</a></div>
+`},
+{id:'korean-beautiful-words',title:'20 Most Beautiful Words in Korean — With Hindi & English Meanings',cat:'✨ Beautiful Words · Korean 🇰🇷',kw:'beautiful Korean words, Korean vocabulary Hindi meaning, Korean greetings, hangul beautiful words',body:`
+<h2>20 Most Beautiful Words in Korean</h2>
+<p>Korean has words that paint pictures with sound. Here are 20 of the most beautiful and expressive Korean words — with Hindi and English meanings.</p>
+<div style="overflow-x:auto;margin:30px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Korean</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Romanisation</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">English Meaning</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Hindi Meaning</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">눈부시다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nunbushida</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Dazzlingly beautiful / blinding with brilliance</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आंखें चुंधिया देने वाला सुंदर</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">그리움</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Geurieum</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The yearning for someone or something missed</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">किसी की याद में तड़प</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">아련하다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Aryeonhada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Faintly nostalgic — a bittersweet haziness</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">धुंधली-सी मीठी याद</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">반짝이다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Banjjagida</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">To twinkle / to sparkle</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">टिमटिमाना / चमकना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">포근하다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Pogeunhada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Soft, warm, and cosy</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">कोमल, गर्म और आरामदेह</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">설레다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Seolleda</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Heart fluttering with excitement or anticipation</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">उत्साह से दिल का धड़कना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">정</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Jeong</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Deep emotional bond formed over time — attachment</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">समय के साथ बना गहरा अपनापन</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">한</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Han</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Collective grief — sorrow mixed with hope</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सामूहिक दुख जिसमें आशा भी हो</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">눈꽃</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nunkkot</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Snow flower — frost crystals on branches</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बर्फ के फूल / पाले की कलाकारी</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">봄비</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bombi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Spring rain — gentle and life-giving</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बसंत की कोमल बारिश</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">행복</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Haengbok</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Happiness / bliss</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">खुशी / आनंद</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">인연</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Inyeon</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Fate connecting people — a destined relationship</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नियति से बना रिश्ता</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">새벽</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Saebyek</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The hours just before dawn — the quiet between night and day</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">भोर से पहले की शांत रात</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">나비</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nabi</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Butterfly</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">तितली</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">아름답다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Areumdapda</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Beautiful — to be beautiful</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सुंदर होना</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">여운</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Yeoun</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The lingering feeling after an experience ends</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">किसी अनुभव के बाद का गहरा असर</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">고요하다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Goyohada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Serenely quiet — perfectly still</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">गहरी शांति</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">빛나다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bitnada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">To shine / to glow</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">चमकना / दमकना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">마음</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Maeum</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Heart / mind / inner being</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मन / दिल / अंतर्मन</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">소풍</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sopung</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">An outing / picnic — joyful excursion</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सैर / पिकनिक</td></tr>
+</tbody></table></div>
+<h2>Essential Korean Greetings</h2>
+<div style="overflow-x:auto;margin:20px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Korean</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Romanisation</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">When to Use</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Hindi / English</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">안녕하세요</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Annyeonghaseyo</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hello (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नमस्ते</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">감사합니다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Gamsahamnida</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Thank you (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">धन्यवाद</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">처음 뵙겠습니다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Cheoeum boepgesseumnida</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nice to meet you (first meeting)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">पहली बार मिलकर प्रसन्नता हुई</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">잘 부탁드립니다</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Jal butakdeurimnida</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Please take care of me / I look forward to working with you</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आपके साथ काम करने की आशा है</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">괜찮아요</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Gwaenchanayo</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">It's okay / Are you alright?</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">ठीक है / कोई बात नहीं</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">안녕히 가세요</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Annyeonghi gaseyo</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Goodbye (to one who is leaving)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">अलविदा / शुभ यात्रा</td></tr>
+</tbody></table></div>
+<div class="cta"><h3>Learn Korean at DIFL — TOPIK I & II Preparation</h3><p>GKS Korea Scholarship prep · TOPIK 4 as target · K-culture immersive learning · 16 months full program</p><a href="index.html" class="cb">Visit DIFL Website ↗</a></div>
+`},
+{id:'spanish-beautiful-words',title:'20 Most Beautiful Words in Spanish — With Hindi & English Meanings',cat:'✨ Beautiful Words · Spanish 🇪🇸',kw:'beautiful Spanish words, Spanish vocabulary Hindi meaning, Spanish greetings, palabras hermosas español',body:`
+<h2>20 Most Beautiful Words in Spanish</h2>
+<p>Spanish flows like music — warm, rhythmic, and deeply expressive. Here are 20 of its most beautiful words.</p>
+<div style="overflow-x:auto;margin:30px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Spanish Word</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">English Meaning</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1);text-align:left">Hindi Meaning</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Madrugada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The dark hours between midnight and dawn</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">रात और सुबह के बीच का अँधेरा समय</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Añoranza</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Longing / nostalgia</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">तड़प / पुरानी यादों की चाह</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Duende</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The mysterious power of art that moves you deeply</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">कला की रहस्यमय आत्मिक शक्ति</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sobremesa</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Time spent talking after a meal is finished</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">खाने के बाद की बातचीत का समय</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Querencia</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A place where you feel at home — your safe haven</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">वह जगह जो घर जैसी लगे</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Estrenar</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">To use something for the very first time</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">किसी चीज़ को पहली बार इस्तेमाल करने का उत्साह</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Vereda</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">A narrow path through the countryside</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">देहात की संकरी पगडंडी</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Mariposa</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Butterfly</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">तितली</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Alborada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">The first light of dawn</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">भोर की पहली किरण</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Descanso</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Rest / peace / repose</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आराम / विश्राम</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Caramelo</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Caramel — used as a term of endearment too</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मिठाई / प्यारा नाम</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Esplendor</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Splendour / brilliance / magnificence</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">वैभव / चमक-दमक</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Tranquilidad</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Tranquility / peace of mind</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">मन की शांति</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Azul</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Blue (from Arabic 'lazuward' — lapis lazuli)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">नीला / आसमानी</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Libertad</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Freedom / liberty</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आज़ादी / स्वतंत्रता</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Amanecer</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Sunrise — the act of dawn beginning</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सूर्योदय / सुबह का होना</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Esperanza</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hope</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">उम्मीद / आशा</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Serenidad</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Serenity / calmness</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">शांति / सुकून</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Primavera</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Spring — the season of new life</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बसंत ऋतु</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Crepúsculo</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Twilight / dusk</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">गोधूलि / सांझ</td></tr>
+</tbody></table></div>
+<h2>Essential Spanish Greetings</h2>
+<div style="overflow-x:auto;margin:20px 0"><table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:rgba(201,168,76,.15)"><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Spanish</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">When to Use</th><th style="padding:12px;border:1px solid rgba(255,255,255,.1)">Hindi / English</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Buenos días</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Good morning</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">सुप्रभात</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">¿Cómo está usted?</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">How are you? (formal)</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आप कैसे हैं?</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Mucho gusto</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Nice to meet you</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">आपसे मिलकर खुशी हुई</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Muchas gracias</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Thank you very much</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">बहुत धन्यवाद</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">De nada</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">You're welcome</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">कोई बात नहीं</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Hasta luego</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">See you later / Goodbye</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">फिर मिलेंगे</td></tr>
+<tr><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Bienvenido/a</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Welcome</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">स्वागत है</td></tr>
+<tr style="background:rgba(255,255,255,.02)"><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Perdón / Disculpe</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">Pardon / Excuse me</td><td style="padding:10px 12px;border:1px solid rgba(255,255,255,.07)">माफ़ कीजिए</td></tr>
+</tbody></table></div>
+<div class="cta"><h3>Learn Spanish at DIFL — DELE Preparation & Beyond</h3><p>Fastest B2 fluency for Indian learners · 21 countries · 500M+ speakers · 16 months full program</p><a href="index.html" class="cb">Visit DIFL Website ↗</a></div>
+`},
+{id:'japan-travel-business',title:'Japan Travel Guide — Top 10 Places, Things to Buy & Business Etiquette for Indians',cat:'✈️ Travel & Business · Japan 🇯🇵',kw:'Japan travel guide Indians, Tokyo visit, Japan things to buy, Japanese business etiquette, Japan facts',body:`
+<h2>Top 10 Places to Visit in Japan</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Tokyo</strong> — The world's largest metropolis. Shibuya crossing, Akihabara electronics district, Senso-ji temple, teamLab digital art museums, and Tsukiji outer market. Population: 14 million in city proper.</li>
+<li><strong style="color:var(--cream)">Kyoto</strong> — Japan's cultural heart. 1,600 Buddhist temples, 400 Shinto shrines, 17 UNESCO sites. Arashiyama bamboo grove, Fushimi Inari's 10,000 torii gates, Kinkaku-ji (Golden Pavilion).</li>
+<li><strong style="color:var(--cream)">Osaka</strong> — Japan's food capital. Dotonbori neon district, Osaka Castle, Universal Studios Japan, Namba street food paradise. Famous for takoyaki and okonomiyaki.</li>
+<li><strong style="color:var(--cream)">Hiroshima & Miyajima</strong> — Peace Memorial Museum, the iconic floating torii gate of Itsukushima Shrine. Moving and essential for every visitor.</li>
+<li><strong style="color:var(--cream)">Nara</strong> — Ancient capital with freely roaming deer. Todai-ji temple houses the world's largest bronze Buddha. The deer are considered divine messengers.</li>
+<li><strong style="color:var(--cream)">Hakone</strong> — Best views of Mt. Fuji, open-air sculpture museum, hot spring ryokan stays, Lake Ashi. 2 hours from Tokyo.</li>
+<li><strong style="color:var(--cream)">Hokkaido (Sapporo)</strong> — Japan's northernmost island. Famous for powder snow skiing, Sapporo beer, lavender fields of Furano, and fresh seafood.</li>
+<li><strong style="color:var(--cream)">Nikko</strong> — Ornate mausoleum of Tokugawa Ieyasu, surrounded by cedar forests. UNESCO World Heritage. The saying goes: "Never say magnificent until you've seen Nikko."</li>
+<li><strong style="color:var(--cream)">Kanazawa</strong> — The "little Kyoto." Kenroku-en (one of Japan's top 3 gardens), samurai districts, geisha quarter, and exceptional seafood market.</li>
+<li><strong style="color:var(--cream)">Okinawa</strong> — Japan's tropical islands. Coral reefs, WWII history, unique Ryukyu culture, and the world's highest concentration of centenarians.</li>
+</ol>
+
+<h2>Top 10 Things to Buy from Japan</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Japanese Whisky</strong> — Suntory Toki, Hibiki, Nikka — world-class quality at better prices than outside Japan</li>
+<li><strong style="color:var(--cream)">Matcha Products</strong> — High-grade matcha powder, matcha KitKat, matcha chocolates from Kyoto</li>
+<li><strong style="color:var(--cream)">Wagashi (Traditional Sweets)</strong> — Beautiful seasonal confections from Kyoto; perfect as gifts</li>
+<li><strong style="color:var(--cream)">Electronics & Gadgets</strong> — Akihabara Tokyo for cameras, headphones, anime merchandise at duty-free prices</li>
+<li><strong style="color:var(--cream)">Sake</strong> — Regional sake from local breweries; ask for junmai daiginjo for premium quality</li>
+<li><strong style="color:var(--cream)">Ceramics & Pottery</strong> — Arita porcelain, Kyoto kiyomizu-yaki; artisan quality at reasonable prices</li>
+<li><strong style="color:var(--cream)">Japanese Knives (Hocho)</strong> — Osaka and Kyoto for hand-forged kitchen knives; lifetime investment</li>
+<li><strong style="color:var(--cream)">Furoshiki & Tenugui</strong> — Traditional wrapping cloth and hand towels; beautiful and practical</li>
+<li><strong style="color:var(--cream)">Capsule Toys (Gashapon)</strong> — Unique collectibles from vending machines; great gifts for all ages</li>
+<li><strong style="color:var(--cream)">Japanese Stationery</strong> — Hobonichi notebooks, Pilot pens, Midori goods — stationery at its finest</li>
+</ol>
+
+<h2>10 Japanese Business Etiquette Rules Every Indian Must Know</h2>
+<ol style="line-height:2.2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">The Bow is Everything</strong> — Bow when greeting, thanking, and parting. Deeper bows = greater respect. Match the depth of the person senior to you.</li>
+<li><strong style="color:var(--cream)">Business Cards (Meishi) Are Sacred</strong> — Present and receive with both hands. Read it carefully. Never write on it, fold it, or put it in your back pocket. Place it on the table during the meeting.</li>
+<li><strong style="color:var(--cream)">Punctuality Is Non-Negotiable</strong> — Being late is deeply disrespectful in Japan. Arrive 5–10 minutes early. If delayed, call ahead immediately.</li>
+<li><strong style="color:var(--cream)">Hierarchy Is Observed Strictly</strong> — The most senior person enters the room first, sits furthest from the door, and is addressed first. Always know who is most senior.</li>
+<li><strong style="color:var(--cream)">Silence Is Positive, Not Awkward</strong> — Silence during negotiations means they are thinking seriously. Do not rush to fill silence — it is a sign of respect.</li>
+<li><strong style="color:var(--cream)">Nemawashi (Consensus Building)</strong> — Decisions are made by group consensus, not by one person. Expect decisions to take time. Never pressure for an immediate answer.</li>
+<li><strong style="color:var(--cream)">Gifts Are Appreciated</strong> — Bring high-quality wrapped gifts (Indian sweets, Darjeeling tea). Do not give gifts in sets of 4 (unlucky in Japan). Present with both hands.</li>
+<li><strong style="color:var(--cream)">Indirect Communication</strong> — "That would be difficult" means No. Japanese professionals rarely say No directly. Listen for polite deflections.</li>
+<li><strong style="color:var(--cream)">Dining Protocol</strong> — Wait to be seated. Say "Itadakimasu" before eating. Pour drinks for others before yourself. Tipping is considered rude in Japan.</li>
+<li><strong style="color:var(--cream)">Remove Shoes When Asked</strong> — At traditional restaurants (and some offices), shoes are removed at the entrance. Ensure your socks are clean and presentable.</li>
+</ol>
+<div class="cta"><h3>Heading to Japan? Learn Japanese First at DIFL</h3><p>JLPT N5 to N1 · TITP/SSW Japan visa preparation · Communication-first approach · 16 months full program</p><a href="index.html" class="cb">Enquire at DIFL ↗</a></div>
+`},
+{id:'france-travel-business',title:'France Travel Guide — Top 10 Places, Things to Buy & Business Etiquette for Indians',cat:'✈️ Travel & Business · France 🇫🇷',kw:'France travel guide Indians, Paris visit, France things to buy, French business etiquette, France facts',body:`
+<h2>Top 10 Places to Visit in France</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Paris</strong> — The City of Light. Eiffel Tower (1889, 330m), the Louvre (world's largest museum, 35,000 artworks on display), Notre-Dame Cathedral, Montmartre, Seine river cruises, and the best patisseries in the world.</li>
+<li><strong style="color:var(--cream)">Provence</strong> — Lavender fields in July, the Roman Pont du Gard aqueduct, hill-top villages of Gordes and Les Baux. The light here inspired Van Gogh and Cézanne.</li>
+<li><strong style="color:var(--cream)">The French Riviera (Côte d'Azur)</strong> — Nice, Cannes, Monaco. Azure Mediterranean waters, Film Festival, Formula 1 Grand Prix circuit through the streets of Monaco.</li>
+<li><strong style="color:var(--cream)">Loire Valley</strong> — UNESCO listed. Over 300 châteaux including Chambord (440 rooms) and Chenonceau (built over a river). The garden of France.</li>
+<li><strong style="color:var(--cream)">Mont Saint-Michel</strong> — A medieval monastery island in Normandy, surrounded by tidal waters. The tide rises faster than a horse can gallop.</li>
+<li><strong style="color:var(--cream)">Bordeaux</strong> — World capital of wine. 7,000 châteaux wineries in the region. The old city is UNESCO listed. The wine museum (La Cité du Vin) is extraordinary.</li>
+<li><strong style="color:var(--cream)">Strasbourg</strong> — Where France meets Germany. Cathedral with a 142m spire, picturesque Petite France district with half-timbered houses on canals.</li>
+<li><strong style="color:var(--cream)">The French Alps (Chamonix)</strong> — Western Europe's highest peak Mont Blanc (4,808m). World-class skiing, mountaineering, and the Mer de Glace glacier.</li>
+<li><strong style="color:var(--cream)">Dordogne</strong> — Prehistoric cave paintings at Lascaux (17,000 years old), medieval villages, foie gras, and walnut orchards along the river.</li>
+<li><strong style="color:var(--cream)">Versailles</strong> — Palace of the Sun King. 700 rooms, 2,000 acres of gardens, Hall of Mirrors with 357 mirrors. Symbol of absolute royal power.</li>
+</ol>
+
+<h2>Top 10 Things to Buy from France</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">French Wine</strong> — Bordeaux, Burgundy, Champagne, Rhône. Buy direct from châteaux for the best prices</li>
+<li><strong style="color:var(--cream)">French Perfume</strong> — Grasse is the perfume capital of the world. Chanel No. 5, Dior Sauvage, Guerlain at duty-free prices</li>
+<li><strong style="color:var(--cream)">Macarons from Ladurée or Pierre Hermé</strong> — The original Parisian macaron; perfect as gifts</li>
+<li><strong style="color:var(--cream)">Luxury Scarves (Hermès)</strong> — Paris flagship store for the iconic silk carré scarf; a lifetime investment</li>
+<li><strong style="color:var(--cream)">Cheese</strong> — Comté, Camembert, Roquefort — buy from a fromagerie and carry in insulated packaging</li>
+<li><strong style="color:var(--cream)">Dijon Mustard</strong> — Real Dijon mustard from its hometown; far superior to exports</li>
+<li><strong style="color:var(--cream)">Lavender Products from Provence</strong> — Essential oils, soaps, sachets from the lavender fields</li>
+<li><strong style="color:var(--cream)">Bordeaux Wine Accessories</strong> — Sommelier tools, decanters, wine books from Bordeaux merchants</li>
+<li><strong style="color:var(--cream)">Limoges Porcelain</strong> — Hand-painted fine china from Limoges, the porcelain capital of France</li>
+<li><strong style="color:var(--cream)">French Cookbooks</strong> — In French, from Parisian bookshops; beautiful even as art objects</li>
+</ol>
+
+<h2>10 French Business Etiquette Rules Every Indian Must Know</h2>
+<ol style="line-height:2.2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">The Handshake, Not the Bow</strong> — Firm handshake for business. Cheek kissing (la bise) is for friends, not first meetings. Wait for the French person to initiate.</li>
+<li><strong style="color:var(--cream)">Punctuality Is Expected, but Flex Exists</strong> — Arrive on time for business (within 5 minutes). For social dinners, 15 minutes late is acceptable — arriving exactly on time can embarrass the host.</li>
+<li><strong style="color:var(--cream)">Intellectual Discussion Is Welcome</strong> — The French appreciate intellectual debate and directness of argument. Do not shy away from sharing your perspective thoughtfully.</li>
+<li><strong style="color:var(--cream)">Use Formal Titles</strong> — Address as Monsieur or Madame until invited to use first names. This may take several meetings.</li>
+<li><strong style="color:var(--cream)">Lunch Is Sacred</strong> — Business lunches are long (2+ hours) and important. Do not rush. Discuss business only after the main course. Alcohol at lunch is acceptable in France.</li>
+<li><strong style="color:var(--cream)">Speak Some French</strong> — Even a few words of French — "Bonjour," "Merci," "Excusez-moi" — earns enormous goodwill. The French deeply appreciate effort with their language.</li>
+<li><strong style="color:var(--cream)">Gifts Are Modest and Thoughtful</strong> — Quality books, Indian handicrafts, or Darjeeling tea. Avoid wine (too personal), cash, or obviously expensive gifts.</li>
+<li><strong style="color:var(--cream)">Hierarchy Exists but Is Not Rigid</strong> — Decisions are often centralised at the top. French managers are highly educated (Grandes Écoles) and proud of it.</li>
+<li><strong style="color:var(--cream)">Dress Formally and Well</strong> — French professionals dress elegantly. Conservative, quality clothing. Appearance matters significantly in French business culture.</li>
+<li><strong style="color:var(--cream)">August Is Largely Off</strong> — Most French businesses slow significantly in August when the country goes on holiday. Plan important meetings in September–November or February–June.</li>
+</ol>
+<div class="cta"><h3>Heading to France? Learn French First at DIFL</h3><p>DELF A1–B2 · DALF C1–C2 · TEF Canada · Alliance Française preparation · 16 months full program</p><a href="index.html" class="cb">Enquire at DIFL ↗</a></div>
+`},
+{id:'germany-travel-business',title:'Germany Travel Guide — Top 10 Places, Things to Buy & Business Etiquette for Indians',cat:'✈️ Travel & Business · Germany 🇩🇪',kw:'Germany travel guide Indians, Berlin Munich visit, Germany things to buy, German business etiquette',body:`
+<h2>Top 10 Places to Visit in Germany</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Berlin</strong> — Germany's reunified capital. Brandenburg Gate, Berlin Wall remnants (East Side Gallery), Museum Island (UNESCO), Checkpoint Charlie, vibrant nightlife. History at every corner.</li>
+<li><strong style="color:var(--cream)">Munich (München)</strong> — Bavaria's capital. Marienplatz with Glockenspiel, English Garden (larger than NYC Central Park), BMW Welt museum, Nymphenburg Palace, and the world-famous Oktoberfest.</li>
+<li><strong style="color:var(--cream)">Neuschwanstein Castle</strong> — The fairy-tale castle that inspired Disney's Sleeping Beauty. Built by mad King Ludwig II high in the Bavarian Alps. One of the most photographed places on Earth.</li>
+<li><strong style="color:var(--cream)">Heidelberg</strong> — Germany's oldest university city (1386). Romantic castle ruins above the Neckar river, old bridge, and the atmosphere of old German academia.</li>
+<li><strong style="color:var(--cream)">The Rhine Valley</strong> — UNESCO listed. Medieval castles perched above vineyards along the river. Lorelei rock, wine villages, and river cruises.</li>
+<li><strong style="color:var(--cream)">Cologne (Köln)</strong> — The Gothic Cologne Cathedral (construction took 632 years, 1248–1880). Roman history, excellent chocolate museum, and the Rhine riverfront.</li>
+<li><strong style="color:var(--cream)">Hamburg</strong> — Germany's gateway to the world. The spectacular Elbphilharmonie concert hall, historic Speicherstadt warehouse district (UNESCO), and the famous Reeperbahn.</li>
+<li><strong style="color:var(--cream)">The Black Forest (Schwarzwald)</strong> — Dense forests, cuckoo clocks, hot springs at Baden-Baden, and the Black Forest cake (Schwarzwälder Kirschtorte).</li>
+<li><strong style="color:var(--cream)">Dresden</strong> — The Florence of the Elbe. Zwinger Palace, the rebuilt Frauenkirche, Dresden State Art Collections. Devastated in WWII and magnificently restored.</li>
+<li><strong style="color:var(--cream)">The Romantic Road (Romantische Straße)</strong> — 460km scenic route through medieval walled towns, Würzburg, Rothenburg ob der Tauber, and Augsburg.</li>
+</ol>
+<h2>Top 10 Things to Buy from Germany</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">German Beer</strong> — Regional craft beers; buy directly from brewery stores in Munich or Cologne</li>
+<li><strong style="color:var(--cream)">Cuckoo Clocks</strong> — Authentic handmade cuckoo clocks from the Black Forest (look for VDS certification)</li>
+<li><strong style="color:var(--cream)">Solingen Knives & Scissors</strong> — World's finest cutlery from Solingen, Germany's "City of Blades"</li>
+<li><strong style="color:var(--cream)">Leica Cameras</strong> — German engineering excellence; the camera of photojournalists and connoisseurs</li>
+<li><strong style="color:var(--cream)">Riesling Wine</strong> — Moselle and Rhine Rieslings; the world's finest white wines at source prices</li>
+<li><strong style="color:var(--cream)">Christmas Ornaments (from Nuremberg)</strong> — Hand-blown glass ornaments from the Christkindlesmarkt; best in the world</li>
+<li><strong style="color:var(--cream)">Haribo Gummies</strong> — The original, from Germany; far superior flavour to exports</li>
+<li><strong style="color:var(--cream)">Meissen Porcelain</strong> — Europe's first porcelain (1710); each piece hand-painted and marked with crossed swords</li>
+<li><strong style="color:var(--cream)">Montblanc Pens (Hamburg)</strong> — Buy from the Hamburg flagship store near Montblanc's birthplace</li>
+<li><strong style="color:var(--cream)">German Board Games</strong> — Catan, Carcassonne, Ticket to Ride — all invented in Germany; buy the German editions</li>
+</ol>
+<h2>10 German Business Etiquette Rules Every Indian Must Know</h2>
+<ol style="line-height:2.2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Punctuality Is a Core Value</strong> — Being late is not just rude — it signals unreliability. Arrive 5 minutes early. If you will be late, call. Germans take this extremely seriously.</li>
+<li><strong style="color:var(--cream)">Titles Matter</strong> — Always use formal titles: Herr (Mr.) or Frau (Ms.) + surname, or Dr./Professor if applicable. Do not use first names until explicitly invited.</li>
+<li><strong style="color:var(--cream)">Directness Is Respect</strong> — Germans communicate directly and expect the same. "That won't work" is a complete sentence. Do not interpret directness as rudeness.</li>
+<li><strong style="color:var(--cream)">Thorough Preparation Is Expected</strong> — Come with detailed data, clear facts, and a structured agenda. Improvisation in meetings is not appreciated. Germans respect homework done well.</li>
+<li><strong style="color:var(--cream)">Decisions Are Final</strong> — Once a German partner has agreed, they keep to it and expect the same from you. Commitments are taken very seriously.</li>
+<li><strong style="color:var(--cream)">Separating Personal and Professional</strong> — German colleagues rarely mix personal life with professional. Do not ask personal questions until a genuine friendship develops over time.</li>
+<li><strong style="color:var(--cream)">Formal Dress Code</strong> — Conservative, quality business attire. Dark suits for men, formal attire for women. Germans judge professionalism partly by appearance.</li>
+<li><strong style="color:var(--cream)">No Small Talk About Money</strong> — Discussing personal income, prices paid, or wealth is considered very poor taste in Germany. Avoid this entirely.</li>
+<li><strong style="color:var(--cream)">Gifts Are Not Expected</strong> — Unlike Japanese or Indian culture, business gifts are not a standard practice. Quality chocolates or wine for social occasions is acceptable.</li>
+<li><strong style="color:var(--cream)">Legal Agreements Are Sacred</strong> — German business culture is built on detailed contracts. Everything agreed must be documented precisely. Verbal agreements alone are insufficient.</li>
+</ol>
+<div class="cta"><h3>Heading to Germany? Learn German First at DIFL</h3><p>Goethe A1–C2 · Ausbildung Germany prep · EU Blue Card language preparation · 16 months full program</p><a href="index.html" class="cb">Enquire at DIFL ↗</a></div>
+`},
+{id:'korea-travel-business',title:'South Korea Travel Guide — Top 10 Places, Things to Buy & Business Etiquette for Indians',cat:'✈️ Travel & Business · South Korea 🇰🇷',kw:'Korea travel guide Indians, Seoul visit, Korea things to buy, Korean business etiquette, Korea facts',body:`
+<h2>Top 10 Places to Visit in South Korea</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Seoul</strong> — Dynamic capital. Gyeongbokgung Palace (1395), Bukchon Hanok Village (600 traditional houses), Myeongdong shopping, Gangnam district, N Seoul Tower, and Dongdaemun night markets.</li>
+<li><strong style="color:var(--cream)">Jeju Island</strong> — South Korea's volcanic paradise. UNESCO triple crown (Biosphere Reserve, World Heritage, Geopark). Hallasan mountain, lava tube caves, haenyeo women divers, and Jeongbang waterfall.</li>
+<li><strong style="color:var(--cream)">Busan</strong> — Coastal megacity. Haeundae Beach, Gamcheon Culture Village (Korea's Santorini), Jagalchi Fish Market, Haedong Yonggungsa temple on the sea cliffs.</li>
+<li><strong style="color:var(--cream)">Gyeongju</strong> — "Museum without walls" — ancient Silla Kingdom capital. Royal tombs, Bulguksa Temple, Seokguram Grotto (both UNESCO), the Cheomseongdae observatory (oldest in Asia).</li>
+<li><strong style="color:var(--cream)">Jeonju</strong> — Hanok village capital. 800 traditional Korean houses, bibimbap birthplace, Korean paper crafts, traditional makgeolli wine bars.</li>
+<li><strong style="color:var(--cream)">Seoraksan National Park</strong> — Stunning granite peaks, autumn foliage in October, Buddhist temples carved into cliff faces, cable car to peak viewpoints.</li>
+<li><strong style="color:var(--cream)">Incheon</strong> — Chinatown, Wolmido island, Open Port area with Japanese colonial architecture, and excellent fresh seafood markets.</li>
+<li><strong style="color:var(--cream)">The DMZ (Demilitarized Zone)</strong> — One of the most compelling historical experiences in Asia. Panmunjom Joint Security Area, 3rd Infiltration Tunnel, and the divided peninsula's story.</li>
+<li><strong style="color:var(--cream)">Andong</strong> — Hahoe Folk Village (UNESCO) — a living village of 600-year-old Joseon dynasty architecture, mask dance festival, and traditional clan houses still inhabited.</li>
+<li><strong style="color:var(--cream)">Nami Island</strong> — Tree-lined fairy-tale island. Famous from the K-drama "Winter Sonata." Metasequoia lane (stunning in autumn), cycling paths, and art installations.</li>
+</ol>
+<h2>Top 10 Things to Buy from South Korea</h2>
+<ol style="line-height:2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">K-beauty Products</strong> — Sheet masks, BB cream, sunscreen, serums — the original K-beauty from Myeongdong at half the price of Indian imports</li>
+<li><strong style="color:var(--cream)">Korean Ginseng (Insam)</strong> — Red ginseng products from Geumsan, the ginseng capital; tea, capsules, candy</li>
+<li><strong style="color:var(--cream)">Hanbok (Traditional Dress)</strong> — Colour-coded silk traditional Korean dress; Jeonju has the best quality at best prices</li>
+<li><strong style="color:var(--cream)">Korean Snacks</strong> — Honey butter chips, Pepero, choco pies, roasted seaweed — hugely popular as gifts</li>
+<li><strong style="color:var(--cream)">Samsung / LG Electronics</strong> — Buy the Korean market versions — sometimes specs not available elsewhere, at lower prices</li>
+<li><strong style="color:var(--cream)">Hanji (Korean Paper)</strong> — Mulberry paper crafts and notebooks; one of the world's most durable natural papers</li>
+<li><strong style="color:var(--cream)">Makgeolli (Rice Wine)</strong> — Traditional milky rice wine from Jeonju; beautiful ceramic bottle sets make excellent gifts</li>
+<li><strong style="color:var(--cream)">Celadon Pottery</strong> — Goryeo celadon ceramics (green jade colour) — one of Korea's greatest artistic traditions</li>
+<li><strong style="color:var(--cream)">K-pop Merchandise</strong> — Official albums, photocards, and branded goods from SM, HYBE, or YG stores in Seoul</li>
+<li><strong style="color:var(--cream)">Jeju Tangerine Products</strong> — Tangerine-flavoured chocolate, tea, cosmetics, and hand cream — unique to Jeju Island</li>
+</ol>
+<h2>10 Korean Business Etiquette Rules Every Indian Must Know</h2>
+<ol style="line-height:2.2;font-size:14px;color:var(--gm)">
+<li><strong style="color:var(--cream)">Confucian Hierarchy Is Paramount</strong> — Age and seniority determine seating, speaking order, and deference. Always greet the most senior person first.</li>
+<li><strong style="color:var(--cream)">Business Cards (Myeongham)</strong> — Exchange with both hands, slight bow. Study the card. Never write on it or leave it on the table carelessly. Bring plenty — Koreans exchange cards for every meeting.</li>
+<li><strong style="color:var(--cream)">Bow as the Primary Greeting</strong> — A 15–30 degree bow is standard. Handshakes are common with international partners but combine with a slight bow. Junior bows deeper.</li>
+<li><strong style="color:var(--cream)">Jeong — Relationship Building</strong> — Korean business is deeply relationship-driven. Dinners, norebang (karaoke), and socialising are essential investments in the business relationship.</li>
+<li><strong style="color:var(--cream)">Drinking Culture</strong> — Koreans often conclude business discussions over dinner with soju. Pour for others, never yourself. Receiving with both hands is respectful. Refusing all drinks can be awkward.</li>
+<li><strong style="color:var(--cream)">Ppalli-Ppalli (Speed Culture)</strong> — Koreans work fast and expect fast responses. Reply to emails and messages quickly. Slow responses signal disinterest.</li>
+<li><strong style="color:var(--cream)">Gift Giving Is Expected</strong> — Bring quality gifts (Indian handicrafts, Darjeeling tea, dry fruits). Present with both hands. Quality packaging matters. Gifts are often not opened immediately.</li>
+<li><strong style="color:var(--cream)">Group Over Individual</strong> — Korean business culture emphasises the team and company. Avoid singling out individuals for praise or blame in group settings.</li>
+<li><strong style="color:var(--cream)">Indirect Refusal</strong> — Direct refusal is rare. "I'll think about it" or "That may be difficult" often means No. Learn to read between the lines.</li>
+<li><strong style="color:var(--cream)">Age Questions Are Normal</strong> — Koreans ask your age early (to calibrate honorific language). This is not rude — it is a practical cultural need.</li>
+</ol>
+<div class="cta"><h3>Heading to Korea? Learn Korean First at DIFL</h3><p>TOPIK I & II · GKS Scholarship preparation · EPS-TOPIK · K-culture immersive approach · 16 months</p><a href="index.html" class="cb">Enquire at DIFL ↗</a></div>
+`}
 ];// end POSTS
 
 // ======================================================================
 // CATEGORIES
 // ======================================================================
-const CATS=["All","Exam Guide","Culture","Food & Culture","Study Plan","Language Fun","Career","Study Abroad","Visa Guide"];
+const CATS=["All","Exam Guide","Culture","Food & Culture","Study Plan","✨ Beautiful Words","✈️ Travel & Business","Career","Study Abroad","Visa Guide"];
 let activeCat="All";
 
 function renderCats(){
@@ -1927,9 +2336,9 @@ function filterCat(cat){
   activeCat=cat;
   renderCats();
   const items=document.querySelectorAll(".bc[data-cat]");
-  items.forEach(el=>{el.style.display=(cat==="All"||el.dataset.cat===cat)?"block":"none"});
+  items.forEach(el=>{el.style.display=(cat==="All"||el.dataset.cat===cat||el.dataset.cat.includes(cat))?"block":"none"});
   const fitems=document.querySelectorAll(".fc[data-cat]");
-  fitems.forEach(el=>{el.style.display=(cat==="All"||el.dataset.cat===cat)?"block":"none"});
+  fitems.forEach(el=>{el.style.display=(cat==="All"||el.dataset.cat===cat||el.dataset.cat.includes(cat))?"block":"none"});
 }
 function renderFeat(){
   const fp=POSTS.filter(p=>p.feat).slice(0,4);
@@ -1939,11 +2348,11 @@ function renderFeat(){
     <div class="fb-foot"><span>⏱ ${p.rd}</span><span class="fb-cta">Read Article →</span></div></div></div>`).join("");
 }
 function renderGrid(){
-  document.getElementById("postGrid").innerHTML=POSTS.map(p=>`<div class="bc" data-cat="${p.cat}" onclick="openPost('${p.id}')">
-    <div class="bt">${p.em}<div class="bl">${p.lang}</div><div class="br">⏱ ${p.rd}</div></div>
-    <div class="bb"><div class="bc-cat">${p.cat}</div><h3>${p.title}</h3><p>${p.desc}</p>
-    <div class="btags">${p.tags.map(t=>`<span class="btag">${t}</span>`).join("")}</div></div>
-    <div class="bm"><span style="font-size:10px">${p.lang}</span><span class="bm-cta">Read Article →</span></div></div>`).join("");
+  document.getElementById("postGrid").innerHTML=POSTS.map(p=>`<div class="bc" data-cat="${p.cat||''}" onclick="openPost('${p.id}')">
+    <div class="bt">${p.em||'📖'}<div class="bl">${p.lang||'DIFL'}</div><div class="br">⏱ ${p.rd||'8 min'}</div></div>
+    <div class="bb"><div class="bc-cat">${p.cat||''}</div><h3>${p.title}</h3><p>${p.desc||p.kw||''}</p>
+    <div class="btags">${(p.tags||[p.cat]).map(t=>`<span class="btag">${t}</span>`).join("")}</div></div>
+    <div class="bm"><span style="font-size:10px">${p.lang||'DIFL'}</span><span class="bm-cta">Read Article →</span></div></div>`).join("");
 }
 function openPost(id){
   const post=POSTS.find(p=>p.id===id);
@@ -2055,16 +2464,7 @@ var TAWK_PROPERTY_ID = '58d67a59f7bbaa72709c262e';
 var TAWK_WIDGET_ID   = 'default';
 if(TAWK_PROPERTY_ID !== '58d67a59f7bbaa72709c262e'){
   (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/'+TAWK_PROPERTY_ID+'/'+TAWK_WIDGET_ID;
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-  })();
-}
-</script>
-<!-- ══════════════════════════ -->
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0
 
 <script id="png-loader">
 (function(){
