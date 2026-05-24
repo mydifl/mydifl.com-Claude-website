@@ -1,13 +1,9 @@
 User-agent: *
 Allow: /
 
-# Priority crawl paths
-Allow: /index.html
-Allow: /blog.html
-Allow: /sitemap.xml
+# Sitemaps
+Sitemap: https://www.mydifl.com/sitemap.xml
 
-# Disallow nothing for DIFL — full indexing desired
-Disallow:
-
-Sitemap: https://mydifl.com/sitemap.xml
-Sitemap: https://mydifl.github.io/mydifl.com-Claude-website/sitemap.xml
+# Block admin/private paths
+Disallow: /wp-admin/
+Disallow: /wp-login.php

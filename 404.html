@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DIFL — Redirecting...</title>
+  <meta name="robots" content="noindex">
+  <script>
+    // ══════════════════════════════════════════════════════════════
+    // GitHub Pages SPA 404 Redirect
+    // When GitHub Pages gets a request for /learn-japanese/, it
+    // serves this 404.html. We capture the path and redirect to
+    // index.html with the path encoded as a query param.
+    // index.html then reads it and navigates to the right page.
+    // This is the standard GitHub Pages SPA solution.
+    // ══════════════════════════════════════════════════════════════
+    var l = window.location;
+    var path = l.pathname;
+    var search = l.search;
+    var hash = l.hash;
+
+    // Encode the path and redirect to root
+    var redirectUrl = l.origin + l.pathname.split('/').slice(0, 1).join('/') +
+      '/?p=' + encodeURIComponent(path + (search ? search : '') + (hash ? hash : ''));
+
+    // Redirect immediately
+    l.replace(redirectUrl);
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/">
+  </noscript>
+</head>
+<body>
+  <p style="font-family:sans-serif;color:#666;text-align:center;margin-top:80px">
+    Redirecting to DIFL website...
+  </p>
+</body>
+</html>
