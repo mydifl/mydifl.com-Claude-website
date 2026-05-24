@@ -2112,80 +2112,13 @@ document.head.appendChild(ld);
       // Wait for DOM then navigate
       var doNav = function(){ navigate(dest); };
       if(document.readyState === 'loading')
-        document.addEventListener('DOMContentLoaded', doNav);
-      else
+          else
         setTimeout(doNav, 50);
     }
   }
 })();
 // ══════════════════════════════════════════════════════════════
 
-
-// ══════════════════════════════════════════════════════════════
-// GitHub Pages SPA — 404 redirect handler
-// 404.html redirects here with ?p=<encoded-original-path>
-// We decode, strip any repo prefix, and navigate to correct page
-// ══════════════════════════════════════════════════════════════
-(function(){
-  var search = window.location.search;
-  if(!search || search.indexOf('?p=') !== 0) return;
-
-  var encoded = search.slice(3);
-  var rawPath  = decodeURIComponent(encoded);
-
-  // Strip GitHub Pages repo prefix if present
-  // e.g. /mydifl.com-Claude-website/learn-japanese/ → /learn-japanese/
-  var repoPrefix = '/mydifl.com-Claude-website';
-  if(rawPath.indexOf(repoPrefix) === 0) {
-    rawPath = rawPath.slice(repoPrefix.length) || '/';
-  }
-
-  // Restore clean URL in browser bar
-  try { window.history.replaceState(null, '', rawPath); } catch(e){}
-
-  // Page map — old mydifl.com paths → SPA page ids
-  var PM = {
-    '/learn-french/':'french',
-    '/learn-japanese/':'japanese',
-    '/learn-german/':'german',
-    '/learn-spanish/':'spanish',
-    '/learn-mandarin-chinese/':'chinese',
-    '/learn-arabic/':'arabic',
-    '/learn-korean-language/':'korean',
-    '/learn-italian-language/':'italian',
-    '/learn-russian-language/':'russian',
-    '/learn-english/':'english',
-    '/learn-thai-language/':'thai',
-    '/learn-hindi-language/':'hindi',
-    '/about-us/':'about',
-    '/learn-foreign-languages/':'all-courses',
-    '/handwriting-improvement/':'handwriting',
-    '/learn-calligraphy/':'calligraphy',
-    '/about-us/reviews-of-difl/':'testimonials',
-    '/about-us/foreign-language-scholarships/':'scholarships',
-    '/blog-on-foreign-languages/':'blog',
-    '/contact/':'contact',
-    '/foreign-language-faqs/':'faq',
-    '/study-abroad-programs/':'programs'
-  };
-
-  // Normalise: strip query/hash from path for lookup
-  var lookupPath = rawPath.split('?')[0].split('#')[0];
-  var dest = PM[lookupPath];
-  if(!dest) return; // unknown path — stay on home
-
-  // navigate() is already defined above; call after paint
-  // Use DOMContentLoaded if needed, else direct call
-  function doNav(){
-    if(typeof navigate === 'function') navigate(dest);
-  }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', doNav);
-  } else {
-    doNav();
-  }
-})();
-// ══════════════════════════════════════════════════════════════
 
 // ═══════════════════════════════════════════════════
 // MOBILE HAMBURGER NAVIGATION
@@ -2296,9 +2229,10 @@ window.addEventListener('popstate', function(e){
   }
 });
 
-// ── On page load: check if URL matches a known path & navigate ────
-// (Note: 404 redirect case handled above — this handles History navigation)
-(function(){
+// ── On page load: route URL to correct SPA page ─────────────────
+// Handles both direct URL access (via 404→redirect) and history nav
+// MUST run after DOMContentLoaded so page divs exist for navigate()
+function routeFromUrl(){
   var pathMap = {
     '/learn-french/':'french', '/learn-japanese/':'japanese',
     '/learn-german/':'german', '/learn-spanish/':'spanish',
@@ -2313,10 +2247,34 @@ window.addEventListener('popstate', function(e){
     '/blog-on-foreign-languages/':'blog', '/contact/':'contact',
     '/foreign-language-faqs/':'faq', '/study-abroad-programs/':'programs'
   };
-  var path = window.location.pathname;
-  var dest = pathMap[path];
+  // Check ?p= param first (from 404 redirect)
+  var search = window.location.search;
+  var dest = null;
+  if(search && search.indexOf('?p=') === 0){
+    var rawPath = decodeURIComponent(search.slice(3));
+    // Strip repo prefix if on GitHub Pages subdomain
+    if(rawPath.indexOf('/mydifl.com-Claude-website') === 0)
+      rawPath = rawPath.slice('/mydifl.com-Claude-website'.length) || '/';
+    // Restore clean URL
+    try{ window.history.replaceState(null,'',rawPath); }catch(e){}
+    dest = pathMap[rawPath.split('?')[0].split('#')[0]];
+  }
+  // Fall back to checking pathname directly (typed URL or history)
+  if(!dest){
+    var path = window.location.pathname;
+    // Strip repo prefix
+    if(path.indexOf('/mydifl.com-Claude-website') === 0)
+      path = path.slice('/mydifl.com-Claude-website'.length) || '/';
+    dest = pathMap[path];
+  }
   if(dest) navigate(dest);
-})();
+}
+// Run after DOM ready so navigate() can find page elements
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', routeFromUrl);
+} else {
+  routeFromUrl();
+}
 // ─────────────────────────────────────────────────────────────────
 
 </script>
