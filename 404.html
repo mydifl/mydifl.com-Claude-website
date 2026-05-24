@@ -16,16 +16,18 @@
         'study-abroad-programs'];
       var segments = path.split('/').filter(Boolean);
       var sitePath = path;
-      // Strip repo prefix (GitHub Pages subdomain)
+      // Strip GitHub Pages repo prefix if present
       if(segments.length >= 2 && known.indexOf(segments[0]) === -1){
         sitePath = '/' + segments.slice(1).join('/');
-        if(!sitePath.endsWith('/')) sitePath += '/';
+        if(sitePath !== '/' && !sitePath.endsWith('/')) sitePath += '/';
       }
-      // Store in sessionStorage and redirect to root
+      // Store in sessionStorage so index.html can read it after redirect
       try{ sessionStorage.setItem('difl_redirect', sitePath); }catch(e){}
-      window.location.replace(window.location.origin +
-        (path.indexOf('/mydifl.com-Claude-website') === 0 ?
-          '/mydifl.com-Claude-website/' : '/'));
+      // Redirect to site root (handles both custom domain and GH Pages)
+      var root = window.location.origin +
+        (path.indexOf('/mydifl.com-Claude-website') === 0
+          ? '/mydifl.com-Claude-website/' : '/');
+      window.location.replace(root);
     })();
   </script>
 </head>
