@@ -1,0 +1,13 @@
+{
+  "name": "mydifl-website",
+  "version": "1.0.0",
+  "description": "DIFL Jaipur - Foreign Language Institute Website",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Static HTML site - open index.html in browser'",
+    "build": "echo 'No build needed for static site'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
