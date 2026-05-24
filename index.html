@@ -914,7 +914,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px">
         <div id="homeContactForm" class="reveal"></div>
         <div class="reveal" style="transition-delay:.15s">
-          <div class="ci-card"><div class="ci-icon">📞</div><div><div class="ci-lbl">Call / WhatsApp</div><div class="ci-val"><strong>Priyanshu Sharma</strong> · +91-9929-51 51 51</div><div class="ci-val" style="margin-top:6px"><strong>Roopshikha Sharma</strong> · +91-9314-50 28 14</div><div class="ci-sub">Mon–Sat · 9 AM–7 PM IST</div><div class="ci-sub" style="margin-top:6px">📲 Roopshikha Sharma: <a href="tel:+919314052814" style="color:var(--gold);font-weight:600">+91-9314-50 28 14</a></div></div></div>
+          <div class="ci-card"><div class="ci-icon">📞</div><div><div class="ci-lbl">Call / WhatsApp</div><div class="ci-val"><strong>Priyanshu Sharma</strong> · +91-9929-51 51 51</div><div class="ci-val" style="margin-top:6px"><strong>Roopshikha Sharma</strong> · +91-9314-50 28 14</div><div class="ci-sub">Mon–Sat · 9 AM–7 PM IST</div></div></div>
           <div class="ci-card"><div class="ci-icon">📧</div><div><div class="ci-lbl">Email</div><div class="ci-val">priyanshushar@gmail.com</div></div></div>
           <div class="ci-card"><div class="ci-icon">📍</div><div><div class="ci-lbl">Address</div><div class="ci-val">DIFL House, Jawahar Nagar</div><div class="ci-sub">2/11, Near Mama ka Hotel, In front of Jawahar Enclave, Jaipur, Rajasthan</div></div></div>
           <div class="ci-card"><div class="ci-icon" style="font-size:16px;display:flex;align-items:center;justify-content:center"><i class="fas fa-share-nodes" style="color:var(--gold)"></i></div><div><div class="ci-lbl">Follow DIFL</div><div class="ci-val" style="margin-bottom:8px">@mydifl</div><div class="social-row"><a href="https://www.facebook.com/danteinstitute" class="soc fb soc-lg" target="_blank" rel="noopener noreferrer" aria-label="DIFL Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg> Facebook</a>
@@ -2220,31 +2220,35 @@ window.addEventListener('popstate', function(e){
 <svg id="difl-wing-svg" style="display:none" aria-hidden="true"></svg>
 
 
-<!-- URL Routing: reads 404.html redirect ?p= param, fires after window.load -->
+
+
+
+<!-- DIFL URL Routing: reads sessionStorage set by 404.html -->
 <script>
-window.addEventListener('load', function(){
-  var search = window.location.search;
-  if(!search || search.indexOf('?p=') !== 0) return;
-  var rawPath = decodeURIComponent(search.slice(3));
-  if(rawPath.indexOf('/mydifl.com-Claude-website') === 0)
-    rawPath = rawPath.slice('/mydifl.com-Claude-website'.length) || '/';
-  try{ window.history.replaceState(null, '', rawPath); }catch(e){}
-  var PM = {
-    '/learn-french/':'french','/learn-japanese/':'japanese',
-    '/learn-german/':'german','/learn-spanish/':'spanish',
-    '/learn-mandarin-chinese/':'chinese','/learn-arabic/':'arabic',
-    '/learn-korean-language/':'korean','/learn-italian-language/':'italian',
-    '/learn-russian-language/':'russian','/learn-english/':'english',
-    '/learn-thai-language/':'thai','/learn-hindi-language/':'hindi',
-    '/about-us/':'about','/learn-foreign-languages/':'all-courses',
-    '/handwriting-improvement/':'handwriting','/learn-calligraphy/':'calligraphy',
-    '/about-us/reviews-of-difl/':'testimonials',
-    '/about-us/foreign-language-scholarships/':'scholarships',
-    '/blog-on-foreign-languages/':'blog','/contact/':'contact',
-    '/foreign-language-faqs/':'faq','/study-abroad-programs/':'programs'
-  };
-  var dest = PM[rawPath.split('?')[0].split('#')[0]];
-  if(dest && typeof navigate === 'function') navigate(dest);
+document.addEventListener('DOMContentLoaded', function(){
+  try{
+    var dest_path = sessionStorage.getItem('difl_redirect');
+    if(!dest_path) return;
+    sessionStorage.removeItem('difl_redirect'); // clear it
+    try{ window.history.replaceState(null,'',dest_path); }catch(e){}
+    var PM = {
+      '/learn-french/':'french','/learn-japanese/':'japanese',
+      '/learn-german/':'german','/learn-spanish/':'spanish',
+      '/learn-mandarin-chinese/':'chinese','/learn-arabic/':'arabic',
+      '/learn-korean-language/':'korean','/learn-italian-language/':'italian',
+      '/learn-russian-language/':'russian','/learn-english/':'english',
+      '/learn-thai-language/':'thai','/learn-hindi-language/':'hindi',
+      '/about-us/':'about','/learn-foreign-languages/':'all-courses',
+      '/handwriting-improvement/':'handwriting','/learn-calligraphy/':'calligraphy',
+      '/about-us/reviews-of-difl/':'testimonials',
+      '/about-us/foreign-language-scholarships/':'scholarships',
+      '/blog-on-foreign-languages/':'blog','/contact/':'contact',
+      '/foreign-language-faqs/':'faq','/study-abroad-programs/':'programs'
+    };
+    var key = dest_path.split('?')[0].split('#')[0];
+    var page = PM[key];
+    if(page && typeof navigate === 'function') navigate(page);
+  }catch(e){}
 });
 </script>
 
