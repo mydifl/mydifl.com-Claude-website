@@ -2085,10 +2085,6 @@ document.head.appendChild(ld);
 
 
 
-// ══════════════════════════════════════════════════════════════
-// GitHub Pages SPA: read redirect from 404.html
-// 404.html sends /?p=%2Flearn-japanese%2F → we decode and navigate
-// ══════════════════════════════════════════════════════════════
 (function(){
   var qs = window.location.search;
   if(qs && qs.indexOf('?p=') === 0) {
@@ -2120,6 +2116,73 @@ document.head.appendChild(ld);
       else
         setTimeout(doNav, 50);
     }
+  }
+})();
+// ══════════════════════════════════════════════════════════════
+
+
+// ══════════════════════════════════════════════════════════════
+// GitHub Pages SPA — 404 redirect handler
+// 404.html redirects here with ?p=<encoded-original-path>
+// We decode, strip any repo prefix, and navigate to correct page
+// ══════════════════════════════════════════════════════════════
+(function(){
+  var search = window.location.search;
+  if(!search || search.indexOf('?p=') !== 0) return;
+
+  var encoded = search.slice(3);
+  var rawPath  = decodeURIComponent(encoded);
+
+  // Strip GitHub Pages repo prefix if present
+  // e.g. /mydifl.com-Claude-website/learn-japanese/ → /learn-japanese/
+  var repoPrefix = '/mydifl.com-Claude-website';
+  if(rawPath.indexOf(repoPrefix) === 0) {
+    rawPath = rawPath.slice(repoPrefix.length) || '/';
+  }
+
+  // Restore clean URL in browser bar
+  try { window.history.replaceState(null, '', rawPath); } catch(e){}
+
+  // Page map — old mydifl.com paths → SPA page ids
+  var PM = {
+    '/learn-french/':'french',
+    '/learn-japanese/':'japanese',
+    '/learn-german/':'german',
+    '/learn-spanish/':'spanish',
+    '/learn-mandarin-chinese/':'chinese',
+    '/learn-arabic/':'arabic',
+    '/learn-korean-language/':'korean',
+    '/learn-italian-language/':'italian',
+    '/learn-russian-language/':'russian',
+    '/learn-english/':'english',
+    '/learn-thai-language/':'thai',
+    '/learn-hindi-language/':'hindi',
+    '/about-us/':'about',
+    '/learn-foreign-languages/':'all-courses',
+    '/handwriting-improvement/':'handwriting',
+    '/learn-calligraphy/':'calligraphy',
+    '/about-us/reviews-of-difl/':'testimonials',
+    '/about-us/foreign-language-scholarships/':'scholarships',
+    '/blog-on-foreign-languages/':'blog',
+    '/contact/':'contact',
+    '/foreign-language-faqs/':'faq',
+    '/study-abroad-programs/':'programs'
+  };
+
+  // Normalise: strip query/hash from path for lookup
+  var lookupPath = rawPath.split('?')[0].split('#')[0];
+  var dest = PM[lookupPath];
+  if(!dest) return; // unknown path — stay on home
+
+  // navigate() is already defined above; call after paint
+  // Use DOMContentLoaded if needed, else direct call
+  function doNav(){
+    if(typeof navigate === 'function') navigate(dest);
+  }
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', doNav);
+  } else {
+    doNav();
   }
 })();
 // ══════════════════════════════════════════════════════════════
