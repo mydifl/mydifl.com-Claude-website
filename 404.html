@@ -24,10 +24,7 @@
       // Store in sessionStorage so index.html can read it after redirect
       try{ sessionStorage.setItem('difl_redirect', sitePath); }catch(e){}
       // Redirect to site root (handles both custom domain and GH Pages)
-      var root = window.location.origin +
-        (path.indexOf('/mydifl.com-Claude-website') === 0
-          ? '/mydifl.com-Claude-website/' : '/');
-      window.location.replace(root);
+      window.location.replace('https://mydifl.com/');
     })();
   </script>
 </head>
