@@ -2146,6 +2146,29 @@ window.addEventListener('DOMContentLoaded',()=>{
   initOrb();
   initReveal();
   initCounter();
+
+  // Check sessionStorage redirect from static landing pages
+  var PM={
+    '/learn-french/':'french','/learn-japanese/':'japanese',
+    '/learn-german/':'german','/learn-spanish/':'spanish',
+    '/learn-mandarin-chinese/':'chinese','/learn-arabic/':'arabic',
+    '/learn-korean-language/':'korean','/learn-italian-language/':'italian',
+    '/learn-russian-language/':'russian','/learn-english/':'english',
+    '/learn-thai-language/':'thai','/learn-hindi-language/':'hindi',
+    '/about-us/':'about','/learn-foreign-languages/':'all-courses',
+    '/handwriting-improvement/':'handwriting','/learn-calligraphy/':'calligraphy',
+    '/about-us/reviews-of-difl/':'testimonials',
+    '/about-us/foreign-language-scholarships/':'scholarships',
+    '/blog-on-foreign-languages/':'blog','/contact/':'contact',
+    '/foreign-language-faqs/':'faq','/study-abroad-programs/':'programs'
+  };
+  var redirectPath = null;
+  try{ redirectPath = sessionStorage.getItem('difl_redirect'); }catch(e){}
+  if(redirectPath){
+    try{ sessionStorage.removeItem('difl_redirect'); }catch(e){}
+    var dest = PM[redirectPath.split('?')[0].split('#')[0]];
+    if(dest){ navigate(dest); return; }
+  }
   navigate('home');
 });
 
@@ -2345,33 +2368,7 @@ window.addEventListener('popstate', function(e){
 <svg id="difl-wing-svg" style="display:none" aria-hidden="true"></svg>
 
 
-<!-- DIFL: URL routing via sessionStorage from 404.html -->
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  try{
-    var p = sessionStorage.getItem('difl_redirect');
-    if(!p) return;
-    sessionStorage.removeItem('difl_redirect');
-    try{ history.replaceState(null,'',p); }catch(e){}
-    var PM={
-      '/learn-french/':'french','/learn-japanese/':'japanese',
-      '/learn-german/':'german','/learn-spanish/':'spanish',
-      '/learn-mandarin-chinese/':'chinese','/learn-arabic/':'arabic',
-      '/learn-korean-language/':'korean','/learn-italian-language/':'italian',
-      '/learn-russian-language/':'russian','/learn-english/':'english',
-      '/learn-thai-language/':'thai','/learn-hindi-language/':'hindi',
-      '/about-us/':'about','/learn-foreign-languages/':'all-courses',
-      '/handwriting-improvement/':'handwriting','/learn-calligraphy/':'calligraphy',
-      '/about-us/reviews-of-difl/':'testimonials',
-      '/about-us/foreign-language-scholarships/':'scholarships',
-      '/blog-on-foreign-languages/':'blog','/contact/':'contact',
-      '/foreign-language-faqs/':'faq','/study-abroad-programs/':'programs'
-    };
-    var dest=PM[p.split('?')[0].split('#')[0]];
-    if(dest && typeof navigate==='function') navigate(dest);
-  }catch(e){}
-});
-</script>
+<!-- sessionStorage routing moved to init block -->
 
 
 <script defer>
