@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap">
   <noscript></noscript>
   <!-- Non-render-blocking fonts -->
   <noscript></noscript>
@@ -649,6 +649,11 @@ a[href^="tel"]{word-break:break-all;overflow-wrap:break-word}
   .btn-g,.btn-o{white-space:normal;text-align:center;line-height:1.4;padding:11px 14px}
   a[href^="tel"].btn-g,a[href^="tel"].btn-o{font-size:12px}
 }
+
+/* Below-fold content: paint when needed */
+.team-section,.blog-section,.schol-section{content-visibility:auto;contain-intrinsic-size:0 400px}
+/* Smooth font rendering */
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeSpeed}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"Foreign Language Courses — DIFL Jaipur","itemListElement":[
@@ -985,7 +990,7 @@ a[href^="tel"]{word-break:break-all;overflow-wrap:break-word}
       <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,56px)">
         <div id="homeContactForm" class="reveal"></div>
         <div class="reveal" style="transition-delay:.15s">
-          <div class="ci-card"><div class="ci-icon">📞</div><div><div class="ci-lbl">Call / WhatsApp</div><div class="ci-val" style="word-break:break-word;line-height:1.5"><strong>Priyanshu Sharma</strong><br><span style="font-size:13px">+91-9929-51 51 51</span></div><div class="ci-val" style="margin-top:6px"><strong>Roopshikha Sharma</strong> · +91-9314-50 28 14</div></div></div>
+          <div class="ci-card"><div class="ci-icon">📞</div><div><div class="ci-lbl">Call / WhatsApp</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:4px"><div style="line-height:1.5"><div style="font-size:13px;font-weight:700;color:var(--ink)">Priyanshu Sharma</div><a href="tel:+919929515151" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none">+91-9929-51 51 51</a></div><div style="line-height:1.5"><div style="font-size:13px;font-weight:700;color:var(--ink)">Roopshikha Sharma</div><a href="tel:+919314502814" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none">+91-9314-50 28 14</a></div></div></div></div>
           <div class="ci-card"><div class="ci-icon">📧</div><div><div class="ci-lbl">Email</div><div class="ci-val">priyanshushar@gmail.com</div></div></div>
           <div class="ci-card"><div class="ci-icon">📍</div><div><div class="ci-lbl">Address</div><div class="ci-val">DIFL House, Jawahar Nagar</div><div class="ci-sub">2/11, Near Mama ka Hotel, In front of Jawahar Enclave, Jaipur, Rajasthan</div></div></div>
           <div class="ci-card"><div class="ci-icon" style="font-size:16px;display:flex;align-items:center;justify-content:center"><i class="fas fa-share-nodes" style="color:var(--gold)"></i></div><div><div class="ci-lbl">Follow DIFL</div><div class="ci-val" style="margin-bottom:8px">@mydifl</div><div class="social-row"><a href="https://www.facebook.com/danteinstitute" class="soc fb soc-lg" target="_blank" rel="noopener noreferrer" aria-label="DIFL Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg> Facebook</a>
@@ -1213,7 +1218,7 @@ a[href^="tel"]{word-break:break-all;overflow-wrap:break-word}
           <div style="font-size:15px;font-weight:600;color:var(--cream)">Visible transformation in just <span style="color:var(--gold);font-size:18px;font-weight:800">10 days</span> — most students can't believe their own progress!</div>
         </div>
       </div>
-      <p class="lead" style="max-width:700px;margin-bottom:60px">DIFL is one of very few institutes in India offering certified handwriting improvement — taught by expert Mrs. Roopshikha Sharma (Cambridge CELTA, 23 years experience). Results that most people don't believe are possible in such a short time — until they see them with their own eyes.</p>
+      <p class="lead" style="max-width:700px;margin-bottom:60px">DIFL is one of very few institutes in India offering certified handwriting improvement — taught by expert Mrs. Roopshikha Sharma (Cambridge CELTA, 28 years experience). Results that most people don't believe are possible in such a short time — until they see them with their own eyes.</p>
       <div class="hw-grid">
         <div class="hwc reveal">
           <div class="hwc-top" style="background:linear-gradient(135deg,rgba(10,92,110,.15),rgba(201,168,76,.08))">✍️</div>
@@ -1253,7 +1258,7 @@ a[href^="tel"]{word-break:break-all;overflow-wrap:break-word}
       </div>
       <div class="fcard reveal" style="margin-top:30px">
         <div class="ficon">👩‍🏫</div>
-        <div><h4>Taught by Roopshikha Sharma — Cambridge CELTA Trained</h4><p>Roopshikha Sharma brings 23 years of expertise across English, Handwriting, and Calligraphy. Her Cambridge CELTA (Belgium) training ensures a systematic, research-backed approach to every class. 5,000+ students have transformed their writing under her guidance.</p></div>
+        <div><h4>Taught by Roopshikha Sharma — Cambridge CELTA Trained</h4><p>Roopshikha Sharma brings 28 years of expertise across English, Handwriting, and Calligraphy. Her Cambridge CELTA (Belgium) training ensures a systematic, research-backed approach to every class. 5,000+ students have transformed their writing under her guidance.</p></div>
       </div>
     </div>
   </section>
@@ -1482,7 +1487,7 @@ a[href^="tel"]{word-break:break-all;overflow-wrap:break-word}
       <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,56px)">
         <div id="contactPageForm" class="reveal"></div>
         <div class="reveal" style="transition-delay:.15s">
-          <div class="ci-card"><div class="ci-icon">📞</div><div><div class="ci-lbl">Call / WhatsApp</div><div class="ci-val" style="word-break:break-word;line-height:1.5"><strong>Priyanshu Sharma</strong><br><span style="font-size:13px">+91-9929-51 51 51</span></div><div class="ci-val" style="margin-top:6px"><strong>Roopshikha Sharma</strong> · +91-9314-50 28 14</div><div class="ci-sub">Mon–Sat, 9AM–7PM IST · Free counselling available</div></div></div>
+          <div class="ci-card"><div class="ci-icon">📞</div><div><div class="ci-lbl">Call / WhatsApp</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:4px"><div style="line-height:1.5"><div style="font-size:13px;font-weight:700;color:var(--ink)">Priyanshu Sharma</div><a href="tel:+919929515151" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none">+91-9929-51 51 51</a></div><div style="line-height:1.5"><div style="font-size:13px;font-weight:700;color:var(--ink)">Roopshikha Sharma</div><a href="tel:+919314502814" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none">+91-9314-50 28 14</a></div></div><div class="ci-sub">Mon–Sat, 9AM–7PM IST · Free counselling available</div></div></div>
           <div class="ci-card"><div class="ci-icon">📧</div><div><div class="ci-lbl">Email</div><div class="ci-val">priyanshushar@gmail.com</div></div></div>
           <div class="ci-card"><div class="ci-icon">📍</div><div><div class="ci-lbl">Visit Us</div><div class="ci-val">DIFL House, Jawahar Nagar, Jaipur</div><div class="ci-sub">2/11, Near Mama ka Hotel, In front of Jawahar Enclave, Jawahar Nagar, Jaipur, Rajasthan — 302004</div></div></div>
           <div class="ci-card"><div class="ci-icon">🕐</div><div><div class="ci-lbl">Class Schedule</div><div class="ci-val">Monday to Friday</div><div class="ci-sub">Multiple batch timings — morning, afternoon, and evening available. Online classes: flexible worldwide.</div></div></div>
@@ -1733,7 +1738,75 @@ const FAQS = [
 function contactFormHTML(id) {
   return `<div class="contact-form"><h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:26px">Book Free Counselling</h3><div class="frow"><div class="fg"><label>First Name</label><input type="text" placeholder="Your first name"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Your last name"></div></div><div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div><div class="fg"><label>Language Interested In</label><select><option value="">Select a language...</option><option>French</option><option>Japanese</option><option>German</option><option>Spanish</option><option>Chinese (Mandarin)</option><option>Arabic</option><option>Korean</option><option>Italian</option><option>Russian</option><option>English (IELTS/TOEFL)</option><option>Thai</option><option>Hindi for Foreigners</option><option>Handwriting Improvement</option><option>Calligraphy</option><option>Ausbildung Germany</option><option>Not Sure — Need Guidance</option></select></div><div class="fg"><label>Course Type</label><select><option>Online</option><option>Offline (Jaipur)</option><option>Hybrid</option></select></div><div class="fg"><label>Message (Optional)</label><textarea placeholder="Tell us your goals or questions..."></textarea></div><button class="btn-submit" id="${id}" onclick="submitForm('${id}')">Send Enquiry →</button></div>`;
 }
-function submitForm(id){const b=document.getElementById(id);b.textContent='✓ Submitted! We\'ll call you soon.';b.style.background='#22c55e'}
+function submitForm(id){
+  var btn = document.getElementById(id);
+  var form = btn.closest('.contact-form') || btn.parentElement;
+  var inputs = form.querySelectorAll('input,select,textarea');
+  var data = {};
+  var labels = ['First Name','Last Name','Phone','Language','Course Type','Message'];
+  inputs.forEach(function(el,i){ data[labels[i]||('field'+i)] = el.value; });
+
+  // Validate
+  if(!data['First Name']||!data['Phone']){
+    btn.textContent='Please fill Name & Phone';
+    btn.style.background='#ef4444';
+    setTimeout(function(){
+      btn.textContent='Send Enquiry →';
+      btn.style.background='';
+    },2500);
+    return;
+  }
+
+  btn.textContent='Sending...';
+  btn.disabled=true;
+
+  // Submit via Formspree
+  fetch('https://formspree.io/f/mgvkvrlj',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      name: data['First Name']+' '+data['Last Name'],
+      phone: data['Phone'],
+      language: data['Language'],
+      courseType: data['Course Type'],
+      message: data['Message'],
+      _replyto: 'priyanshushar@gmail.com',
+      _subject: 'New DIFL Enquiry — '+data['First Name']+' '+data['Last Name']
+    })
+  })
+  .then(function(r){
+    if(r.ok){
+      btn.textContent='✓ Sent! We will call you soon.';
+      btn.style.background='#22c55e';
+      btn.style.color='#fff';
+      inputs.forEach(function(el){el.value='';});
+    } else {
+      throw new Error('Server error');
+    }
+  })
+  .catch(function(){
+    // Fallback: open mailto
+    var subject = encodeURIComponent('DIFL Enquiry — '+data['First Name']);
+    var body = encodeURIComponent(
+      'Name: '+data['First Name']+' '+data['Last Name']+
+      '\nPhone: '+data['Phone']+
+      '\nLanguage: '+data['Language']+
+      '\nCourse: '+data['Course Type']+
+      '\nMessage: '+data['Message']
+    );
+    window.open('mailto:priyanshushar@gmail.com?subject='+subject+'&body='+body);
+    btn.textContent='✓ Opening email...';
+    btn.style.background='#22c55e';
+  })
+  .finally(function(){
+    btn.disabled=false;
+    setTimeout(function(){
+      btn.textContent='Send Enquiry →';
+      btn.style.background='';
+      btn.style.color='';
+    },4000);
+  });
+}
 
 // ===== RENDER HELPERS =====
 function renderLangsGrid(el, clickable=true){
@@ -1950,8 +2023,10 @@ function navigate(page){
   var ham=document.getElementById('hamburger');
   if(navLinks){navLinks.classList.remove('mobile-open');}
   if(ham){ham.classList.remove('active');ham.setAttribute('aria-expanded','false');}
-  // Scroll to top
-  window.scrollTo({top:0,behavior:'smooth'});
+  // Instant scroll to top FIRST before rendering new page
+  window.scrollTo(0,0);
+  document.documentElement.scrollTop=0;
+  document.body.scrollTop=0;
   // Hide all
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   // Handle lang pages
