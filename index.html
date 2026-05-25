@@ -1781,22 +1781,15 @@ function submitForm(id){
       btn.style.color='#fff';
       inputs.forEach(function(el){el.value='';});
     } else {
-      throw new Error('Server error');
+      throw new Error('Formspree error: '+r.status+' - check email confirmation');
     }
   })
   .catch(function(){
-    // Fallback: open mailto
-    var subject = encodeURIComponent('DIFL Enquiry — '+data['First Name']);
-    var body = encodeURIComponent(
-      'Name: '+data['First Name']+' '+data['Last Name']+
-      '\nPhone: '+data['Phone']+
-      '\nLanguage: '+data['Language']+
-      '\nCourse: '+data['Course Type']+
-      '\nMessage: '+data['Message']
-    );
-    window.open('mailto:priyanshushar@gmail.com?subject='+subject+'&body='+body);
-    btn.textContent='✓ Opening email...';
-    btn.style.background='#22c55e';
+    // Show error — don't open email app
+    btn.textContent='✗ Error — Please call +91-9929-51 51 51';
+    btn.style.background='#ef4444';
+    btn.style.color='#fff';
+    btn.style.fontSize='12px';
   })
   .finally(function(){
     btn.disabled=false;
