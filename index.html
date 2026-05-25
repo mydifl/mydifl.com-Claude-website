@@ -654,6 +654,12 @@ a[href^="tel"]{word-break:break-all;overflow-wrap:break-word}
 .team-section,.blog-section,.schol-section{content-visibility:auto;contain-intrinsic-size:0 400px}
 /* Smooth font rendering */
 body{-webkit-font-smoothing:antialiased;text-rendering:optimizeSpeed}
+
+/* Formspree success/error display */
+[data-fs-success]{display:none}
+[data-fs-error]{display:none}
+form[data-fs-state="success"] ~ *,
+.fs-success-shown [data-fs-success]{display:block !important}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"Foreign Language Courses — DIFL Jaipur","itemListElement":[
@@ -1736,70 +1742,9 @@ const FAQS = [
 
 // ===== FORM HTML =====
 function contactFormHTML(id) {
-  return `<div class="contact-form"><h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:26px">Book Free Counselling</h3><div class="frow"><div class="fg"><label>First Name</label><input type="text" placeholder="Your first name"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Your last name"></div></div><div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div><div class="fg"><label>Language Interested In</label><select><option value="">Select a language...</option><option>French</option><option>Japanese</option><option>German</option><option>Spanish</option><option>Chinese (Mandarin)</option><option>Arabic</option><option>Korean</option><option>Italian</option><option>Russian</option><option>English (IELTS/TOEFL)</option><option>Thai</option><option>Hindi for Foreigners</option><option>Handwriting Improvement</option><option>Calligraphy</option><option>Ausbildung Germany</option><option>Not Sure — Need Guidance</option></select></div><div class="fg"><label>Course Type</label><select><option>Online</option><option>Offline (Jaipur)</option><option>Hybrid</option></select></div><div class="fg"><label>Message (Optional)</label><textarea placeholder="Tell us your goals or questions..."></textarea></div><button class="btn-submit" id="${id}" onclick="submitForm('${id}')">Send Enquiry →</button></div>`;
+  return `<div class="contact-form"><div data-fs-success style="display:none;padding:18px 20px;background:#d1fae5;border-radius:10px;color:#065f46;font-weight:600;font-size:15px;margin-bottom:16px;text-align:center">✓ Enquiry sent! Priyanshu Sharma will call you shortly.</div><div data-fs-error style="display:none;padding:14px 16px;background:#fee2e2;border-radius:10px;color:#991b1b;font-size:13px;margin-bottom:16px"></div><h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:26px">Book Free Counselling</h3><form id="difl-contact-form-${id}" action="https://formspree.io/f/xvzybddz" method="POST"><div class="frow"><div class="fg"><label>First Name *</label><input type="text" name="first_name" placeholder="Your first name" required data-fs-field><span data-fs-error="first_name" style="color:#dc2626;font-size:11px"></span></div><div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name" data-fs-field></div></div><div class="fg"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required data-fs-field><span data-fs-error="phone" style="color:#dc2626;font-size:11px"></span></div><div class="fg"><label>Language Interested In</label><select name="language" data-fs-field><option value="">Select a language...</option><option>French</option><option>Japanese</option><option>German</option><option>Spanish</option><option>Chinese (Mandarin)</option><option>Arabic</option><option>Korean</option><option>Italian</option><option>Russian</option><option>English (IELTS/TOEFL)</option><option>Thai</option><option>Hindi for Foreigners</option><option>Handwriting Improvement</option><option>Calligraphy</option><option>Ausbildung Germany</option><option>Not Sure — Need Guidance</option></select></div><div class="fg"><label>Course Type</label><select name="course_type" data-fs-field><option>Online</option><option>Offline (Jaipur)</option><option>Hybrid</option></select></div><div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Tell us your goals or questions..." data-fs-field></textarea></div><input type="hidden" name="_subject" value="New DIFL Enquiry from Website"><button type="submit" class="btn-submit" data-fs-submit-btn>Send Enquiry →</button></form></div>`;
 }
-function submitForm(id){
-  var btn = document.getElementById(id);
-  var form = btn.closest('.contact-form') || btn.parentElement;
-  var inputs = form.querySelectorAll('input,select,textarea');
-  var data = {};
-  var labels = ['First Name','Last Name','Phone','Language','Course Type','Message'];
-  inputs.forEach(function(el,i){ data[labels[i]||('field'+i)] = el.value; });
-
-  // Validate
-  if(!data['First Name']||!data['Phone']){
-    btn.textContent='Please fill Name & Phone';
-    btn.style.background='#ef4444';
-    setTimeout(function(){
-      btn.textContent='Send Enquiry →';
-      btn.style.background='';
-    },2500);
-    return;
-  }
-
-  btn.textContent='Sending...';
-  btn.disabled=true;
-
-  // Submit via Formspree
-  fetch('https://formspree.io/f/xvzybddz',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      name: data['First Name']+' '+data['Last Name'],
-      phone: data['Phone'],
-      language: data['Language'],
-      courseType: data['Course Type'],
-      message: data['Message'],
-      _replyto: 'priyanshushar@gmail.com',
-      _subject: 'New DIFL Enquiry — '+data['First Name']+' '+data['Last Name']
-    })
-  })
-  .then(function(r){
-    if(r.ok){
-      btn.textContent='✓ Sent! We will call you soon.';
-      btn.style.background='#22c55e';
-      btn.style.color='#fff';
-      inputs.forEach(function(el){el.value='';});
-    } else {
-      throw new Error('Formspree error: '+r.status+' - check email confirmation');
-    }
-  })
-  .catch(function(){
-    // Show error — don't open email app
-    btn.textContent='✗ Error — Please call +91-9929-51 51 51';
-    btn.style.background='#ef4444';
-    btn.style.color='#fff';
-    btn.style.fontSize='12px';
-  })
-  .finally(function(){
-    btn.disabled=false;
-    setTimeout(function(){
-      btn.textContent='Send Enquiry →';
-      btn.style.background='';
-      btn.style.color='';
-    },4000);
-  });
-}
+// Form handled by @formspree/ajax library
 
 // ===== RENDER HELPERS =====
 function renderLangsGrid(el, clickable=true){
@@ -2010,6 +1955,23 @@ function navigateToFaq(){
 }
 // ──────────────────────────────────────────────────────────────────
 
+
+// Init Formspree after contact form renders
+function initFormspree(){
+  var forms = document.querySelectorAll('form[id^="difl-contact-form-"]');
+  forms.forEach(function(form){
+    if(!form.dataset.fsInit){
+      form.dataset.fsInit = '1';
+      if(window.formspree){
+        window.formspree('initForm',{
+          formElement: form,
+          formId: 'xvzybddz'
+        });
+      }
+    }
+  });
+}
+
 function navigate(page){
   // Close mobile menu if open
   var navLinks=document.querySelector('.nav-links');
@@ -2036,6 +1998,8 @@ function navigate(page){
   if(el){ el.classList.add('active'); currentPage=page; if(page==='blog') setTimeout(tryLoadBlogInline, 200); }
   else { document.getElementById('page-home').classList.add('active'); }
   initReveal();
+  // Init Formspree on contact page
+  setTimeout(initFormspree, 100);
   // ── SEO URL routing: update URL to match old mydifl.com paths ──
   (function(){
     var urlMap = {
