@@ -49,5 +49,23 @@ Disallow: /*?ff=*
 Disallow: /*?dd=*
 Disallow: /*?cc=*
 
+
+# ── Block all spam query parameter patterns ────────────────────────
+Disallow: /*?mall=*
+Disallow: /*?shop=*
+Disallow: /*?store=*
+Disallow: /*?online=*
+Disallow: /*?ff=*
+Disallow: /*?dd=*
+Disallow: /*?cc=*
+Disallow: /*?my=*
+Disallow: /*?m=*
+Disallow: /*?y=*
+Disallow: /*?id=*
+Disallow: /*?ref=*
+Disallow: /*?utm_*
+Disallow: /*?gclid=*
+Disallow: /*?fbclid=*
+
 # Sitemap
 Sitemap: https://mydifl.com/sitemap.xml
