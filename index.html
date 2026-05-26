@@ -1417,7 +1417,7 @@ form[data-fs-state="success"] ~ *,
           <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);margin-bottom:12px">45 Expert Language Articles</h3>
           <p style="color:var(--gm);font-size:14px;line-height:1.75;max-width:500px;margin:0 auto 24px">The blog is a separate file (<strong style="color:var(--cream)">blog.html</strong>) that must be opened directly. Click the button below to open it — or visit the live website at GitHub Pages.</p>
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-            <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:14px;padding:13px 28px;text-decoration:none">📖 Open Blog (blog.html) ↗</a>
+            <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:14px;padding:13px 28px;text-decoration:none">📖 Open Blog (blog.html) ↗</a>
             <a href="https://mydifl.github.io/mydifl.com-Claude-website/blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:14px;padding:13px 28px;text-decoration:none">🌐 Open on Website ↗</a>
           </div>
         </div>
@@ -1429,11 +1429,11 @@ form[data-fs-state="success"] ~ *,
       <div style="margin-top:20px">
         <div class="eyebrow" style="margin-bottom:16px">Jump to a Category</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px">
-          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">📜 Exam Guides</a>
-          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">🌏 Culture</a>
-          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">📚 Study Plans</a>
-          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">✈️ Visa & Abroad</a>
-          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:12px;padding:8px 16px;text-decoration:none">All 45 Articles ↗</a>
+          <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">📜 Exam Guides</a>
+          <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">🌏 Culture</a>
+          <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">📚 Study Plans</a>
+          <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-o" style="font-size:12px;padding:8px 16px;text-decoration:none">✈️ Visa & Abroad</a>
+          <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:12px;padding:8px 16px;text-decoration:none">All 45 Articles ↗</a>
         </div>
 
         <!-- Featured article cards — always visible, open blog.html directly -->
@@ -1477,7 +1477,7 @@ form[data-fs-state="success"] ~ *,
         </div>
 
         <div style="text-align:center;margin-top:32px;padding-bottom:20px">
-          <a href="blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:15px;padding:16px 36px;text-decoration:none">📚 Open Full Blog — All 45 Articles ↗</a>
+          <a href="/blog.html" target="_blank" rel="noopener noreferrer" class="btn-g" style="font-size:15px;padding:16px 36px;text-decoration:none">📚 Open Full Blog — All 45 Articles ↗</a>
         </div>
       </div>
     </div>
@@ -1873,13 +1873,8 @@ let currentPage = 'home';
 
 // ── Smart blog opener ──────────────────────────────────────────────
 function openBlogPost(postId){
-  var url = 'blog.html' + (postId ? '?p=' + postId : '');
-  // Try window.open — works on web servers, blocked on file://
-  var w = window.open(url, '_blank');
-  if(!w || w.closed || typeof w.closed === 'undefined'){
-    // Popup blocked or file:// — show the fallback UI
-    showBlogFallback();
-  }
+  var url = '/blog.html' + (postId ? '?p=' + postId : '');
+  window.location.href = url;
 }
 
 function showBlogFallback(){
