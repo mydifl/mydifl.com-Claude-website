@@ -3,228 +3,254 @@
     {
       "source": "/learn-mandarin-chinese",
       "destination": "/?page=chinese",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-mandarin-chinese/",
       "destination": "/?page=chinese",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-french",
       "destination": "/?page=french",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-french/",
       "destination": "/?page=french",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-japanese",
       "destination": "/?page=japanese",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-japanese/",
       "destination": "/?page=japanese",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-german",
       "destination": "/?page=german",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-german/",
       "destination": "/?page=german",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-spanish",
       "destination": "/?page=spanish",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-spanish/",
       "destination": "/?page=spanish",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-arabic",
       "destination": "/?page=arabic",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-arabic/",
       "destination": "/?page=arabic",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-korean-language",
       "destination": "/?page=korean",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-korean-language/",
       "destination": "/?page=korean",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-italian-language",
       "destination": "/?page=italian",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-italian-language/",
       "destination": "/?page=italian",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-russian-language",
       "destination": "/?page=russian",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-russian-language/",
       "destination": "/?page=russian",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-english",
       "destination": "/?page=english",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-english/",
       "destination": "/?page=english",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-thai-language",
       "destination": "/?page=thai",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-thai-language/",
       "destination": "/?page=thai",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-hindi-language",
       "destination": "/?page=hindi",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-hindi-language/",
       "destination": "/?page=hindi",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/about-us",
       "destination": "/?page=about",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/about-us/",
       "destination": "/?page=about",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-foreign-languages",
       "destination": "/?page=all-courses",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-foreign-languages/",
       "destination": "/?page=all-courses",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/handwriting-improvement",
       "destination": "/?page=handwriting",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/handwriting-improvement/",
       "destination": "/?page=handwriting",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-calligraphy",
       "destination": "/?page=calligraphy",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/learn-calligraphy/",
       "destination": "/?page=calligraphy",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/about-us/reviews-of-difl",
       "destination": "/?page=testimonials",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/about-us/reviews-of-difl/",
       "destination": "/?page=testimonials",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/about-us/foreign-language-scholarships",
       "destination": "/?page=scholarships",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/about-us/foreign-language-scholarships/",
       "destination": "/?page=scholarships",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog-on-foreign-languages",
       "destination": "/?page=blog",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog-on-foreign-languages/",
       "destination": "/?page=blog",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/contact",
       "destination": "/?page=contact",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/contact/",
       "destination": "/?page=contact",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/foreign-language-faqs",
       "destination": "/?page=faq",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/foreign-language-faqs/",
       "destination": "/?page=faq",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/study-abroad-programs",
       "destination": "/?page=programs",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/study-abroad-programs/",
       "destination": "/?page=programs",
-      "permanent": false
+      "permanent": true
     }
   ],
-  "rewrites": [
+  "cleanUrls": true,
+  "routes": [
     {
-      "source": "/blog.html",
-      "destination": "/blog.html"
+      "src": "/blog.html",
+      "dest": "/blog.html"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/CNAME",
+      "dest": "/CNAME"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/\\?page=.*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/404-custom.html",
+      "status": 404
     }
   ]
 }
