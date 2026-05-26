@@ -222,35 +222,14 @@
     }
   ],
   "cleanUrls": true,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/blog.html",
-      "dest": "/blog.html"
+      "source": "/blog.html",
+      "destination": "/blog.html"
     },
     {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
-    },
-    {
-      "src": "/CNAME",
-      "dest": "/CNAME"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/\\?page=.*",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/404-custom.html",
-      "status": 404
+      "source": "/((?!learn-french|learn-japanese|learn-german|learn-spanish|learn-mandarin-chinese|learn-arabic|learn-korean-language|learn-italian-language|learn-russian-language|learn-english|learn-thai-language|learn-hindi-language|about-us|learn-foreign-languages|handwriting-improvement|learn-calligraphy|blog-on-foreign-languages|contact|foreign-language-faqs|study-abroad-programs|blog\\.html|robots\\.txt|sitemap\\.xml|404-custom\\.html|index\\.html).*)",
+      "destination": "/404-custom.html"
     }
   ]
 }
