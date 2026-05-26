@@ -306,18 +306,59 @@ footer a{color:var(--gold);text-decoration:none}
     <path fill="#fff" d="M19.06 15.5c-.37-.83-.76-.85-1.11-.86l-.94-.01c-.33 0-.86.12-1.31.6-.45.47-1.72 1.68-1.72 4.1s1.76 4.76 2.01 5.09c.24.33 3.39 5.43 8.36 7.4 4.13 1.63 4.97 1.3 5.87 1.22.9-.08 2.9-1.19 3.31-2.33.41-1.15.41-2.13.29-2.33-.12-.2-.45-.33-.95-.57-.49-.24-2.9-1.43-3.35-1.59-.45-.16-.77-.24-1.1.24-.33.49-1.27 1.59-1.56 1.92-.29.33-.57.37-1.06.12-.49-.24-2.08-.77-3.96-2.44-1.46-1.3-2.45-2.91-2.74-3.4-.29-.49-.03-.75.22-1 .22-.22.49-.57.74-.86.24-.29.33-.49.49-.82.17-.33.08-.62-.04-.86-.12-.24-1.07-2.67-1.5-3.62z"/>
   </svg>
 </a>
-<nav role="navigation" aria-label="DIFL Blog Navigation" id="blogNav">
-  <div class="nl" onclick="showList()" style="cursor:pointer">
-    <div class="nm" style="background:transparent;border:none;box-shadow:none;padding:0;width:auto;min-width:0;flex-shrink:0">
-      <img src="" class="difl-logo-img" loading="lazy" alt="DIFL" style="height:44px;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1);visibility:hidden">
+<nav id="navbar">
+  <div class="nav-logo" onclick="window.location.href='/'" style="gap:14px;cursor:pointer">
+    <img src="" class="difl-logo-img" alt="DIFL" id="nav-logo-img" width="180" height="48" style="height:48px;width:auto;object-fit:contain;display:block;flex-shrink:0;filter:brightness(0) invert(1);visibility:hidden">
+    <div style="display:flex;flex-direction:column;justify-content:center;padding-left:8px;line-height:1.15">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:2px;text-shadow:0 1px 6px rgba(0,0,0,.6);line-height:1">DIFL</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:400;color:rgba(250,248,243,.6);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Dante Institute of Foreign Languages</span>
     </div>
-    <div class="nt"><b>DIFL Blog</b><small>Dante Institute of Foreign Languages · Jaipur</small></div>
   </div>
-  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-    <a href="index.html" class="nb" style="font-size:12px;padding:7px 14px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(201,168,76,.3);color:var(--gold);border-radius:8px;background:rgba(201,168,76,.06)">🏠 Main Site</a>
-    <a href="index.html#contact" onclick="return true;" class="nb" style="font-size:12px;padding:7px 14px;text-decoration:none;display:inline-flex;align-items:center;gap:5px">📞 Enquire</a>
-    <button class="nb" onclick="showList()" style="font-size:12px;padding:7px 14px;cursor:pointer">← Blog Home</button>
-  </div>
+  <ul class="nav-links" id="navLinks">
+    <li class="dd"><span>About ▾</span>
+      <ul class="ddm">
+        <li><a href="/?page=about">About DIFL</a></li>
+        <li><a href="/?page=testimonials">Testimonials</a></li>
+        <li><a href="/?page=scholarships">DIFL Scholarships</a></li>
+        <li><a href="/?page=faq">FAQs</a></li>
+      </ul>
+    </li>
+    <li class="dd"><span>Languages ▾</span>
+      <ul class="ddm">
+        <li><a href="/?page=all-courses">All Courses</a></li>
+        <li><a href="/?page=french">🇫🇷 French</a></li>
+        <li><a href="/?page=japanese">🇯🇵 Japanese</a></li>
+        <li><a href="/?page=english">🇬🇧 English</a></li>
+        <li><a href="/?page=chinese">🇨🇳 Chinese</a></li>
+        <li><a href="/?page=arabic">🇸🇦 Arabic</a></li>
+        <li><a href="/?page=korean">🇰🇷 Korean</a></li>
+        <li><a href="/?page=italian">🇮🇹 Italian</a></li>
+        <li><a href="/?page=spanish">🇪🇸 Spanish</a></li>
+        <li><a href="/?page=german">🇩🇪 German</a></li>
+        <li><a href="/?page=russian">🇷🇺 Russian</a></li>
+        <li><a href="/?page=thai">🇹🇭 Thai</a></li>
+        <li><a href="/?page=hindi">🇮🇳 Hindi for Foreigners</a></li>
+      </ul>
+    </li>
+    <li class="dd"><span>Programs ▾</span>
+      <ul class="ddm">
+        <li><a href="/?page=programs">All Programs</a></li>
+        <li><a href="/?page=programs">🇩🇪 Ausbildung Germany</a></li>
+        <li><a href="/?page=programs">🇯🇵 MEXT Japan</a></li>
+        <li><a href="/?page=programs">🇫🇷 Campus France</a></li>
+        <li><a href="/?page=programs">🇰🇷 GKS Korea</a></li>
+      </ul>
+    </li>
+    <li class="dd"><span>Handwriting ▾</span>
+      <ul class="ddm">
+        <li><a href="/?page=handwriting">Handwriting Improvement</a></li>
+        <li><a href="/?page=calligraphy">Learn Calligraphy</a></li>
+      </ul>
+    </li>
+    <li><a onclick="showList();return false;" href="#" style="cursor:pointer">Blog</a></li>
+    <li><a href="/?page=contact" class="nav-cta">Enroll Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- LIST PAGE -->
@@ -347,9 +388,48 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="ap" id="artBody"></div>
 </div>
 
-<footer>
-  <p><img src="" class="difl-logo-img" loading="lazy" alt="DIFL" style="height:46px;width:auto;object-fit:contain;vertical-align:middle;margin-right:10px;filter:brightness(0) invert(1);visibility:hidden"> © 2025 <a href="https://mydifl.com" target="_blank" rel="noopener noreferrer">DIFL — Dante Institute of Foreign Languages</a>, Jaipur &nbsp;·&nbsp; <a href="tel:+919929515151">+91 9929-51 51 51</a> &nbsp;·&nbsp; <a href="mailto:priyanshushar@gmail.com">priyanshushar@gmail.com</a></p>
-  <p style="font-size:10.5px;color:rgba(255,255,255,.2)">2/11 DIFL House, In front of Jawahar Enclave, Near Mama ka Hotel, Jawahar Nagar, Jaipur – 302 004, Rajasthan, India · Learn French · Japanese · German · Spanish · Chinese · Arabic · Korean · Italian · Russian · English · Thai · Hindi</p>
+<footer id="siteFooter">
+  <div class="fg-grid">
+    <div class="fb-brand">
+      <div style="margin-bottom:12px;cursor:pointer" onclick="window.location.href='/'">
+        <img src="" class="difl-logo-img" alt="DIFL" id="footer-logo-img" width="200" height="60" style="height:60px;width:auto;object-fit:contain;display:block;margin-bottom:12px;filter:brightness(0) invert(1);visibility:hidden">
+      </div>
+      <p>55 years of language excellence. 25,000+ students. 12 languages. Based in Jaipur, teaching the world to speak, connect, and grow.</p>
+      <div style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:10px">
+        📍 2/11, DIFL House, In front of Jawahar Enclave,<br>Near Mama ka Hotel, Jawahar Nagar, Jaipur – 302 004, India<br>
+        📞 <strong>Priyanshu Sharma:</strong> <a href="tel:+919929515151" style="color:var(--gold);text-decoration:none">+91-9929-51 51 51</a> &nbsp;|&nbsp; <strong>Roopshikha Sharma:</strong> <a href="tel:+919314502814" style="color:var(--gold);text-decoration:none">+91-9314-50 28 14</a><br>
+        ✉️ <a href="mailto:priyanshushar@gmail.com" style="color:var(--gold);text-decoration:none">priyanshushar@gmail.com</a>
+      </div>
+      <div style="margin-bottom:8px">
+        <a href="https://mydifl.in" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(10,92,110,.12));border:1px solid rgba(201,168,76,.35);color:var(--gold);padding:9px 16px;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none">
+          🎓 Smart Learning Portal: mydifl.in ↗
+        </a>
+      </div>
+    </div>
+    <div class="fc-group">
+      <div class="fc"><h5>Languages</h5>
+        <a href="/?page=french">Learn French</a><a href="/?page=japanese">Learn Japanese</a>
+        <a href="/?page=german">Learn German</a><a href="/?page=spanish">Learn Spanish</a>
+        <a href="/?page=chinese">Learn Chinese</a><a href="/?page=korean">Learn Korean</a>
+        <a href="/?page=arabic">Learn Arabic</a><a href="/?page=italian">Learn Italian</a>
+        <a href="/?page=russian">Learn Russian</a><a href="/?page=english">Learn English</a>
+        <a href="/?page=thai">Learn Thai</a><a href="/?page=hindi">Hindi for Foreigners</a>
+      </div>
+      <div class="fc"><h5>Institute</h5>
+        <a href="/?page=about">About DIFL</a><a href="/?page=testimonials">Testimonials</a>
+        <a href="/?page=scholarships">Scholarships</a><a href="/?page=faq">FAQs</a>
+        <a href="/blog.html">Blog</a><a href="/?page=programs">Study Abroad</a>
+        <a href="/?page=handwriting">Handwriting</a><a href="/?page=contact">Contact Us</a>
+      </div>
+      <div class="fc"><h5>Programs</h5>
+        <a href="/?page=programs">Ausbildung Germany</a><a href="/?page=programs">MEXT Japan</a>
+        <a href="/?page=programs">Campus France</a><a href="/?page=programs">GKS Korea</a>
+        <a href="/?page=programs">Canada TEF/TCF</a><a href="/?page=calligraphy">Calligraphy</a>
+        <a href="/?page=all-courses">All Courses</a>
+      </div>
+    </div>
+  </div>
+  <div class="f-bottom"><div>© 2025 DIFL — Dante Institute of Foreign Languages. All rights reserved.</div></div>
 </footer>
 
 <script>
@@ -2512,6 +2592,19 @@ if(TAWK_PROPERTY_ID !== '58d67a59f7bbaa72709c262e'){
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load);
   else load();
+})();
+</script>
+<script>
+// ── Hamburger menu for blog nav ──
+(function(){
+  var ham = document.getElementById('hamburger');
+  var nav = document.getElementById('navLinks');
+  if(!ham||!nav) return;
+  ham.addEventListener('click', function(){
+    var open = nav.classList.toggle('mobile-open');
+    ham.classList.toggle('active', open);
+    ham.setAttribute('aria-expanded', open);
+  });
 })();
 </script>
 </body>
