@@ -219,6 +219,17 @@ footer p{font-size:12.5px;color:var(--gm);margin-bottom:7px}
 footer a{color:var(--gold);text-decoration:none}
 @media(max-width:900px){.feat{grid-template-columns:1fr}.bg,.bh,.ap{padding-left:5%;padding-right:5%}.ap{padding-top:95px}}
 @media(max-width:560px){.bg{grid-template-columns:1fr}}
+
+/* ── Related Articles ── */
+.related-section{margin:48px 0 16px;padding:32px 0 0;border-top:1px solid rgba(201,168,76,.15)}
+.related-title{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,24px);color:var(--cream);margin:0 0 20px;font-weight:600}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.related-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:18px 20px;cursor:pointer;transition:all .3s}
+.related-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-3px);background:rgba(201,168,76,.05)}
+.related-cat{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.related-post-title{font-size:14px;font-weight:600;color:var(--cream);line-height:1.45;margin-bottom:8px}
+.related-meta{font-size:12px;color:var(--gm);line-height:1.5}
+@media(max-width:600px){.related-grid{grid-template-columns:1fr}}
 </style>
 
 <script id="blog-extra-schemas">
@@ -2354,13 +2365,32 @@ function renderGrid(){
     <div class="btags">${(p.tags||[p.cat]).map(t=>`<span class="btag">${t}</span>`).join("")}</div></div>
     <div class="bm"><span style="font-size:10px">${p.lang||'DIFL'}</span><span class="bm-cta">Read Article →</span></div></div>`).join("");
 }
+function buildRelated(currentPost){
+  // Find related posts: same lang first, then same cat, exclude current
+  const byLang = POSTS.filter(p=>p.id!==currentPost.id && p.lang===currentPost.lang);
+  const byCat  = POSTS.filter(p=>p.id!==currentPost.id && p.cat===currentPost.cat && p.lang!==currentPost.lang);
+  const related = [...byLang, ...byCat].slice(0,3);
+  if(!related.length) return '';
+  const langName = currentPost.lang ? ` on ${currentPost.lang}` : '';
+  return `<div class="related-section">
+  <h3 class="related-title">📚 More Articles${langName}</h3>
+  <div class="related-grid">
+    ${related.map(p=>`<div class="related-card" onclick="openPost('${p.id}')">
+      <div class="related-cat">${p.lang||p.em||''} ${p.cat}</div>
+      <div class="related-post-title">${p.title}</div>
+      <div class="related-meta">⏱ ${p.rd} &nbsp;·&nbsp; ${p.desc.slice(0,80)}…</div>
+    </div>`).join('')}
+  </div>
+</div>`;
+}
+
 function openPost(id){
   const post=POSTS.find(p=>p.id===id);
   if(!post)return;
   window.scrollTo({top:0,behavior:"smooth"});
   document.getElementById("artBody").innerHTML=
     `<h1 style="display:none" aria-hidden="true">${post.title}</h1><div class="kw">${post.kw.split(",").map(k=>`<span>${k.trim()}</span>`).join("")}</div>`+
-    post.body;
+    post.body + buildRelated(post);
   document.getElementById("pg-list").classList.remove("on");
   document.getElementById("pg-art").classList.add("on");
   // Update URL without reload for direct linking
