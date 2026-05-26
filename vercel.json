@@ -228,7 +228,7 @@
       "destination": "/blog.html"
     },
     {
-      "source": "/((?!learn-french|learn-japanese|learn-german|learn-spanish|learn-mandarin-chinese|learn-arabic|learn-korean-language|learn-italian-language|learn-russian-language|learn-english|learn-thai-language|learn-hindi-language|about-us|learn-foreign-languages|handwriting-improvement|learn-calligraphy|blog-on-foreign-languages|contact|foreign-language-faqs|study-abroad-programs|blog\\.html|robots\\.txt|sitemap\\.xml|404-custom\\.html|index\\.html).*)",
+      "source": "/(.*)",
       "destination": "/404-custom.html"
     }
   ]
