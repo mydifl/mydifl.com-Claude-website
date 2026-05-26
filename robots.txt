@@ -1,9 +1,53 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://www.mydifl.com/sitemap.xml
+# ── Valid DIFL pages only ──────────────────────────────────────────
+Allow: /learn-mandarin-chinese/
+Allow: /learn-french/
+Allow: /learn-japanese/
+Allow: /learn-german/
+Allow: /learn-spanish/
+Allow: /learn-arabic/
+Allow: /learn-korean-language/
+Allow: /learn-italian-language/
+Allow: /learn-russian-language/
+Allow: /learn-english/
+Allow: /learn-thai-language/
+Allow: /learn-hindi-language/
+Allow: /about-us/
+Allow: /learn-foreign-languages/
+Allow: /handwriting-improvement/
+Allow: /learn-calligraphy/
+Allow: /about-us/reviews-of-difl/
+Allow: /about-us/foreign-language-scholarships/
+Allow: /blog-on-foreign-languages/
+Allow: /contact/
+Allow: /foreign-language-faqs/
+Allow: /study-abroad-programs/
+Allow: /blog.html
 
-# Block admin/private paths
+# ── Block all spam/injected WordPress paths ────────────────────────
+Disallow: /products/
+Disallow: /shop/
+Disallow: /tag/
+Disallow: /items/
 Disallow: /wp-admin/
 Disallow: /wp-login.php
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /order/
+Disallow: /feed/
+Disallow: /author/
+Disallow: /category/
+Disallow: /page/
+Disallow: /home/
+Disallow: /*?my=*
+Disallow: /*?ff=*
+Disallow: /*?dd=*
+Disallow: /*?cc=*
+
+# Sitemap
+Sitemap: https://mydifl.com/sitemap.xml
