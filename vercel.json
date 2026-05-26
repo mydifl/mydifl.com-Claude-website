@@ -220,5 +220,15 @@
       "destination": "/?page=programs",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog.html",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    }
   ]
 }
