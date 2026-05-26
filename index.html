@@ -2147,27 +2147,17 @@ window.addEventListener('DOMContentLoaded',()=>{
   initReveal();
   initCounter();
 
-  // Check sessionStorage redirect from static landing pages
-  var PM={
-    '/learn-french/':'french','/learn-japanese/':'japanese',
-    '/learn-german/':'german','/learn-spanish/':'spanish',
-    '/learn-mandarin-chinese/':'chinese','/learn-arabic/':'arabic',
-    '/learn-korean-language/':'korean','/learn-italian-language/':'italian',
-    '/learn-russian-language/':'russian','/learn-english/':'english',
-    '/learn-thai-language/':'thai','/learn-hindi-language/':'hindi',
-    '/about-us/':'about','/learn-foreign-languages/':'all-courses',
-    '/handwriting-improvement/':'handwriting','/learn-calligraphy/':'calligraphy',
-    '/about-us/reviews-of-difl/':'testimonials',
-    '/about-us/foreign-language-scholarships/':'scholarships',
-    '/blog-on-foreign-languages/':'blog','/contact/':'contact',
-    '/foreign-language-faqs/':'faq','/study-abroad-programs/':'programs'
-  };
-  var redirectPath = null;
-  try{ redirectPath = sessionStorage.getItem('difl_redirect'); }catch(e){}
-  if(redirectPath){
-    try{ sessionStorage.removeItem('difl_redirect'); }catch(e){}
-    var dest = PM[redirectPath.split('?')[0].split('#')[0]];
-    if(dest){ navigate(dest); return; }
+  // Read ?page= query param set by static landing pages
+  var VALID_PAGES = ['french','japanese','german','spanish','chinese','arabic',
+    'korean','italian','russian','english','thai','hindi','about','all-courses',
+    'handwriting','calligraphy','testimonials','scholarships','blog','contact',
+    'faq','programs'];
+  var urlPage = new URLSearchParams(window.location.search).get('page');
+  if(urlPage && VALID_PAGES.indexOf(urlPage) !== -1){
+    // Clean the ?page= from the URL bar without reload
+    try{ history.replaceState({page:urlPage}, '', window.location.pathname); }catch(e){}
+    navigate(urlPage);
+    return;
   }
   navigate('home');
 });
