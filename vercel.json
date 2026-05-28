@@ -57,5 +57,237 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/language-for-professionals",
+      "destination": "/?page=professionals",
+      "permanent": true
+    },
+    {
+      "source": "/language-for-professionals/",
+      "destination": "/?page=professionals",
+      "permanent": true
+    },
+    {
+      "source": "/learn-mandarin-chinese",
+      "destination": "/?page=chinese",
+      "permanent": true
+    },
+    {
+      "source": "/learn-mandarin-chinese/",
+      "destination": "/?page=chinese",
+      "permanent": true
+    },
+    {
+      "source": "/learn-french",
+      "destination": "/?page=french",
+      "permanent": true
+    },
+    {
+      "source": "/learn-french/",
+      "destination": "/?page=french",
+      "permanent": true
+    },
+    {
+      "source": "/learn-japanese",
+      "destination": "/?page=japanese",
+      "permanent": true
+    },
+    {
+      "source": "/learn-japanese/",
+      "destination": "/?page=japanese",
+      "permanent": true
+    },
+    {
+      "source": "/learn-german",
+      "destination": "/?page=german",
+      "permanent": true
+    },
+    {
+      "source": "/learn-german/",
+      "destination": "/?page=german",
+      "permanent": true
+    },
+    {
+      "source": "/learn-spanish",
+      "destination": "/?page=spanish",
+      "permanent": true
+    },
+    {
+      "source": "/learn-spanish/",
+      "destination": "/?page=spanish",
+      "permanent": true
+    },
+    {
+      "source": "/learn-arabic",
+      "destination": "/?page=arabic",
+      "permanent": true
+    },
+    {
+      "source": "/learn-arabic/",
+      "destination": "/?page=arabic",
+      "permanent": true
+    },
+    {
+      "source": "/learn-korean-language",
+      "destination": "/?page=korean",
+      "permanent": true
+    },
+    {
+      "source": "/learn-korean-language/",
+      "destination": "/?page=korean",
+      "permanent": true
+    },
+    {
+      "source": "/learn-italian-language",
+      "destination": "/?page=italian",
+      "permanent": true
+    },
+    {
+      "source": "/learn-italian-language/",
+      "destination": "/?page=italian",
+      "permanent": true
+    },
+    {
+      "source": "/learn-russian-language",
+      "destination": "/?page=russian",
+      "permanent": true
+    },
+    {
+      "source": "/learn-russian-language/",
+      "destination": "/?page=russian",
+      "permanent": true
+    },
+    {
+      "source": "/learn-english",
+      "destination": "/?page=english",
+      "permanent": true
+    },
+    {
+      "source": "/learn-english/",
+      "destination": "/?page=english",
+      "permanent": true
+    },
+    {
+      "source": "/learn-thai-language",
+      "destination": "/?page=thai",
+      "permanent": true
+    },
+    {
+      "source": "/learn-thai-language/",
+      "destination": "/?page=thai",
+      "permanent": true
+    },
+    {
+      "source": "/learn-hindi-language",
+      "destination": "/?page=hindi",
+      "permanent": true
+    },
+    {
+      "source": "/learn-hindi-language/",
+      "destination": "/?page=hindi",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/?page=about",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/?page=about",
+      "permanent": true
+    },
+    {
+      "source": "/learn-foreign-languages",
+      "destination": "/?page=all-courses",
+      "permanent": true
+    },
+    {
+      "source": "/learn-foreign-languages/",
+      "destination": "/?page=all-courses",
+      "permanent": true
+    },
+    {
+      "source": "/handwriting-improvement",
+      "destination": "/?page=handwriting",
+      "permanent": true
+    },
+    {
+      "source": "/handwriting-improvement/",
+      "destination": "/?page=handwriting",
+      "permanent": true
+    },
+    {
+      "source": "/learn-calligraphy",
+      "destination": "/?page=calligraphy",
+      "permanent": true
+    },
+    {
+      "source": "/learn-calligraphy/",
+      "destination": "/?page=calligraphy",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/reviews-of-difl",
+      "destination": "/?page=testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/reviews-of-difl/",
+      "destination": "/?page=testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/foreign-language-scholarships",
+      "destination": "/?page=scholarships",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/foreign-language-scholarships/",
+      "destination": "/?page=scholarships",
+      "permanent": true
+    },
+    {
+      "source": "/blog-on-foreign-languages",
+      "destination": "/?page=blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-on-foreign-languages/",
+      "destination": "/?page=blog",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/?page=contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/?page=contact",
+      "permanent": true
+    },
+    {
+      "source": "/foreign-language-faqs",
+      "destination": "/?page=faq",
+      "permanent": true
+    },
+    {
+      "source": "/foreign-language-faqs/",
+      "destination": "/?page=faq",
+      "permanent": true
+    },
+    {
+      "source": "/study-abroad-programs",
+      "destination": "/?page=programs",
+      "permanent": true
+    },
+    {
+      "source": "/study-abroad-programs/",
+      "destination": "/?page=programs",
+      "permanent": true
+    }
   ]
 }

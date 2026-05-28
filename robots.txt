@@ -25,6 +25,7 @@ Allow: /contact/
 Allow: /foreign-language-faqs/
 Allow: /study-abroad-programs/
 Allow: /blog.html
+Allow: /language-for-professionals/
 
 # ── Block all spam/injected WordPress paths ────────────────────────
 Disallow: /products/

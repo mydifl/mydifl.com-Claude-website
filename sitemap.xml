@@ -37,4 +37,9 @@
   <url><loc>https://mydifl.com/foreign-language-faqs/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://mydifl.com/study-abroad-programs/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
+  <url>
+    <loc>https://mydifl.com/language-for-professionals/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
