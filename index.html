@@ -662,6 +662,44 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeSpeed}
 [data-fs-error]{display:none}
 form[data-fs-state="success"] ~ *,
 .fs-success-shown [data-fs-success]{display:block !important}
+
+/* ── Industry Section ── */
+.industry-section{padding:clamp(40px,6vw,70px) 0}
+.industry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:8px}
+.industry-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px 18px;transition:all .3s;cursor:default}
+.industry-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-4px);background:rgba(201,168,76,.05)}
+.industry-icon{font-size:28px;margin-bottom:10px}
+.industry-title{font-size:13.5px;font-weight:700;color:var(--cream);margin-bottom:7px;line-height:1.35}
+.industry-desc{font-size:12.5px;color:var(--gm);line-height:1.65}
+@media(max-width:600px){.industry-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.industry-grid{grid-template-columns:1fr}}
+
+
+/* ── Professionals Page ── */
+.lang-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.ltab{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:rgba(250,248,243,.6);padding:9px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;transition:all .25s;font-family:inherit}
+.ltab.active,.ltab:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.4);color:var(--gold)}
+.ptab{display:none}
+.ptab.active{display:block}
+.prof-matrix{border:1px solid rgba(201,168,76,.15);border-radius:16px;overflow:hidden}
+.prof-row{display:grid;grid-template-columns:2fr 1.2fr 2fr;gap:0;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13.5px;align-items:center}
+.prof-row:last-child{border-bottom:none}
+.prof-row.header-row{background:rgba(201,168,76,.08);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);padding:12px 20px}
+.prof-row:not(.header-row):nth-child(even){background:rgba(255,255,255,.02)}
+.lang-tag{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:var(--gold);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.vocab-item{display:flex;flex-direction:column;padding:8px 10px;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+.vocab-native{font-size:15px;font-weight:700;color:var(--cream);line-height:1.2}
+.vocab-roman{font-size:10.5px;color:var(--gold);font-style:italic;margin:2px 0}
+.vocab-en{font-size:11px;color:var(--gm)}
+@media(max-width:768px){
+  .prof-row{grid-template-columns:1fr;gap:4px;padding:12px 16px}
+  .prof-row.header-row{display:none}
+  .vocab-grid{grid-template-columns:1fr}
+  .lang-tabs{gap:6px}
+  .ltab{font-size:12px;padding:8px 12px}
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"Foreign Language Courses — DIFL Jaipur","itemListElement":[
@@ -724,6 +762,7 @@ form[data-fs-state="success"] ~ *,
     <li class="dd"><span>Languages ▾</span>
       <ul class="ddm">
         <li><a onclick="navigate('all-courses')">All Courses</a></li>
+        <li><a onclick="navigate('professionals')" style="color:var(--gold);font-weight:600">🏭 For Professionals &amp; Industry</a></li>
         <li><a onclick="navigate('french')">🇫🇷 French</a></li>
         <li><a onclick="navigate('japanese')">🇯🇵 Japanese</a></li>
         <li><a onclick="navigate('english')">🇬🇧 English</a></li>
@@ -1486,6 +1525,312 @@ form[data-fs-state="success"] ~ *,
   </section>
 </div>
 <!-- ===================== CONTACT PAGE ===================== -->
+<div id="page-professionals" class="page">
+<title>Professional Language Courses Jaipur — Japanese French Chinese Italian Korean | DIFL</title>
+
+<!-- HERO -->
+<div style="min-height:60vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(201,168,76,.07),transparent)"></div>
+  <div class="sc" style="position:relative;z-index:1;text-align:center;max-width:860px;margin:0 auto">
+    <div class="eyebrow center reveal">Industry-Targeted Language Coaching · Jaipur</div>
+    <h1 class="reveal" style="font-size:clamp(32px,5vw,58px);line-height:1.15;margin-bottom:20px">Your Industry Speaks a Language.<br><em>Do You?</em></h1>
+    <p class="lead reveal" style="max-width:700px;margin:0 auto 32px">Jaipur's gemstone traders are closing deals in Japanese. Garment exporters are writing contracts in French. Marble exporters are negotiating in Italian. DIFL has been preparing Jaipur's professionals for 55 years — now with India's most specialised industry language coaching.</p>
+    <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/919929515151" target="_blank" rel="noopener noreferrer" class="btn-g">💬 Book Free Industry Counselling →</a>
+      <a href="tel:+919929515151" class="btn-o">📞 9929-51 51 51</a>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: Why DIFL -->
+<section style="background:rgba(255,255,255,.015)">
+  <div class="sc">
+    <div style="text-align:center;max-width:640px;margin:0 auto 44px" class="reveal">
+      <div class="eyebrow center">The DIFL Edge</div>
+      <h2>Why Professionals Learn at <em>DIFL</em></h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card reveal"><div class="ic-icon">🎯</div><h4>Industry Vocabulary Focus</h4><p>Not just grammar — we teach the words your trade actually uses. Gem terminology in Japanese. Fashion vocabulary in French. Import-export terms in Mandarin.</p></div>
+      <div class="info-card reveal" style="transition-delay:.1s"><div class="ic-icon">⏱️</div><h4>Skip-Level Strategy</h4><p>DIFL's patented TTP method identifies your optimal entry point — saving months of unnecessary study and getting you to business fluency faster.</p></div>
+      <div class="info-card reveal" style="transition-delay:.2s"><div class="ic-icon">🕐</div><h4>Flexible Professional Batches</h4><p>Morning 7–9am, evening 4–7pm. Weekend batches available. Designed around business schedules — not college timetables.</p></div>
+      <div class="info-card reveal" style="transition-delay:.3s"><div class="ic-icon">🏆</div><h4>55 Years · 25,000+ Alumni</h4><p>Jaipur's oldest and most trusted language institute. Many of our alumni are now DIFL's biggest referrers — because results speak.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Industry Matrix -->
+<section style="background:var(--ink)">
+  <div class="sc">
+    <div style="text-align:center;max-width:680px;margin:0 auto 44px" class="reveal">
+      <div class="eyebrow center">Industry × Language</div>
+      <h2>Which Language Does Your <em>Industry Need?</em></h2>
+      <p style="color:var(--gm);margin-top:12px;font-size:15px">Jaipur's economy connects to the world through specific languages. Find yours.</p>
+    </div>
+    <div class="prof-matrix reveal">
+      <div class="prof-row header-row">
+        <span>Your Industry</span><span>Learn This</span><span>Because</span>
+      </div>
+      <div class="prof-row"><span>💎 Jewellery &amp; Gemstone Exporters</span><span class="lang-tag">Japanese + Chinese</span><span>Japan &amp; China are Jaipur's top gem buyers</span></div>
+      <div class="prof-row"><span>👗 Garment &amp; Textile Exporters</span><span class="lang-tag">French + Italian</span><span>French fashion houses, Italian luxury brands source from Jaipur</span></div>
+      <div class="prof-row"><span>🪨 Marble, Stone &amp; Handicraft Exporters</span><span class="lang-tag">Italian + Chinese</span><span>Italy = world design capital; China = largest volume buyer</span></div>
+      <div class="prof-row"><span>💻 IT &amp; Software Professionals</span><span class="lang-tag">Japanese + Korean</span><span>Japan and Korea tech clients; active hiring for bilingual roles</span></div>
+      <div class="prof-row"><span>🏨 Tour Guides &amp; Hospitality</span><span class="lang-tag">Japanese + French</span><span>Top two tourist nationalities in Jaipur</span></div>
+      <div class="prof-row"><span>📦 Import-Export Businesses</span><span class="lang-tag">Chinese (Mandarin)</span><span>China is India's #1 import source — cut out the agent</span></div>
+      <div class="prof-row"><span>🍁 Canada Immigration Aspirants</span><span class="lang-tag">French</span><span>TEF/TCF Canada adds 50+ CRS points to Express Entry profile</span></div>
+      <div class="prof-row"><span>🇮🇹 Italy Work Visa (Flussi Decree)</span><span class="lang-tag">Italian</span><span>A2-B1 Italian is the minimum language requirement</span></div>
+      <div class="prof-row"><span>🇰🇷 Korea Work Programme (EPS)</span><span class="lang-tag">Korean</span><span>EPS-TOPIK certification is mandatory for Employment Permit System</span></div>
+      <div class="prof-row"><span>🎓 Korea Scholarship (GKS)</span><span class="lang-tag">Korean</span><span>TOPIK 3+ required for Government of Korea Scholarship</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: Language Breakdown Tabs -->
+<section style="background:rgba(255,255,255,.015)">
+  <div class="sc">
+    <div style="text-align:center;max-width:680px;margin:0 auto 44px" class="reveal">
+      <div class="eyebrow center">Language Deep-Dive</div>
+      <h2>Industry Breakdown by <em>Language</em></h2>
+    </div>
+    <!-- Tab buttons -->
+    <div class="lang-tabs reveal" id="profTabs">
+      <button class="ltab active" onclick="showProfTab('japanese')">🇯🇵 Japanese</button>
+      <button class="ltab" onclick="showProfTab('french')">🇫🇷 French</button>
+      <button class="ltab" onclick="showProfTab('chinese')">🇨🇳 Mandarin</button>
+      <button class="ltab" onclick="showProfTab('italian')">🇮🇹 Italian</button>
+      <button class="ltab" onclick="showProfTab('korean')">🇰🇷 Korean</button>
+    </div>
+
+    <!-- Japanese Tab -->
+    <div class="ptab active" id="ptab-japanese">
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,50px);margin-top:32px">
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:6px">🇯🇵 Japanese for Jaipur's Professionals</h3>
+          <p style="color:var(--gm);font-size:14px;margin-bottom:20px">Japan and Jaipur have a relationship built on gemstones, technology, and tourism. Japanese is Jaipur's most commercially valuable foreign language after English.</p>
+          <div style="display:grid;gap:10px">
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">💎</div><div style="font-size:13px;color:var(--cream)"><strong>Jewellery &amp; Gemstone Trade</strong> — Japan imports coloured gems heavily. Traders with Japanese build direct buyer relationships at Tokyo International Jewellery Fair.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🏨</div><div style="font-size:13px;color:var(--cream)"><strong>Tour Guides &amp; Hotels</strong> — Japanese-speaking guides earn 3–5x more and are preferred by Japanese tour operators.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">💻</div><div style="font-size:13px;color:var(--cream)"><strong>IT Professionals</strong> — TCS Japan, Infosys Japan, Wipro Japan actively recruit JLPT N3+ professionals.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">👗</div><div style="font-size:13px;color:var(--cream)"><strong>Textile &amp; Garment Exporters</strong> — Japanese fashion brands source fabric from Jaipur's textile belt.</div></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-g" onclick="navigate('japanese')" style="font-size:13px;padding:11px 22px">Start Japanese →</button>
+            <span style="font-size:12px;color:var(--gm);align-self:center">Certification: JLPT N5–N1 · NAT Exam</span>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+            <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
+            <div class="vocab-grid">
+              <div class="vocab-item"><span class="vocab-native">宝石</span><span class="vocab-roman">houseki</span><span class="vocab-en">gemstone</span></div>
+              <div class="vocab-item"><span class="vocab-native">真珠</span><span class="vocab-roman">shinju</span><span class="vocab-en">pearl</span></div>
+              <div class="vocab-item"><span class="vocab-native">取引先</span><span class="vocab-roman">torihikisaki</span><span class="vocab-en">business client</span></div>
+              <div class="vocab-item"><span class="vocab-native">輸出</span><span class="vocab-roman">yushutsu</span><span class="vocab-en">export</span></div>
+              <div class="vocab-item"><span class="vocab-native">価格交渉</span><span class="vocab-roman">kakaku kōshō</span><span class="vocab-en">price negotiation</span></div>
+              <div class="vocab-item"><span class="vocab-native">品質</span><span class="vocab-roman">hinshitsu</span><span class="vocab-en">quality</span></div>
+              <div class="vocab-item"><span class="vocab-native">納期</span><span class="vocab-roman">nōki</span><span class="vocab-en">delivery deadline</span></div>
+              <div class="vocab-item"><span class="vocab-native">発注</span><span class="vocab-roman">hatchū</span><span class="vocab-en">purchase order</span></div>
+              <div class="vocab-item"><span class="vocab-native">おもてなし</span><span class="vocab-roman">omotenashi</span><span class="vocab-en">hospitality</span></div>
+              <div class="vocab-item"><span class="vocab-native">生地</span><span class="vocab-roman">kiji</span><span class="vocab-en">fabric / material</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- French Tab -->
+    <div class="ptab" id="ptab-french">
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,50px);margin-top:32px">
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:6px">🇫🇷 French for Canada, Commerce &amp; Culture</h3>
+          <p style="color:var(--gm);font-size:14px;margin-bottom:20px">French is simultaneously a Canada immigration tool, a luxury trade language, and an Africa business gateway — making it Jaipur's most strategically versatile second language.</p>
+          <div style="display:grid;gap:10px">
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🍁</div><div style="font-size:13px;color:var(--cream)"><strong>Canada PR &amp; Immigration</strong> — TEF Canada and TCF Canada scores directly boost Express Entry CRS scores. B2 French can add 50+ points.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">👗</div><div style="font-size:13px;color:var(--cream)"><strong>Garment &amp; Textile Exporters</strong> — French fashion houses (LVMH suppliers, Hermès artisans) source heavily from Jaipur.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🌍</div><div style="font-size:13px;color:var(--cream)"><strong>Africa Trade</strong> — French is spoken across 29 African countries. Jaipur exporters targeting Francophone Africa need French.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🏨</div><div style="font-size:13px;color:var(--cream)"><strong>Hospitality &amp; Tourism</strong> — French tourists are among Jaipur's highest-spending visitors.</div></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-g" onclick="navigate('french')" style="font-size:13px;padding:11px 22px">Start French →</button>
+            <span style="font-size:12px;color:var(--gm);align-self:center">Certification: DELF · TEF Canada · TCF Canada</span>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+            <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
+            <div class="vocab-grid">
+              <div class="vocab-item"><span class="vocab-native">négociation</span><span class="vocab-roman">—</span><span class="vocab-en">negotiation</span></div>
+              <div class="vocab-item"><span class="vocab-native">fournisseur</span><span class="vocab-roman">—</span><span class="vocab-en">supplier</span></div>
+              <div class="vocab-item"><span class="vocab-native">contrat</span><span class="vocab-roman">—</span><span class="vocab-en">contract</span></div>
+              <div class="vocab-item"><span class="vocab-native">délai de livraison</span><span class="vocab-roman">—</span><span class="vocab-en">delivery deadline</span></div>
+              <div class="vocab-item"><span class="vocab-native">qualité</span><span class="vocab-roman">—</span><span class="vocab-en">quality</span></div>
+              <div class="vocab-item"><span class="vocab-native">échantillon</span><span class="vocab-roman">—</span><span class="vocab-en">sample</span></div>
+              <div class="vocab-item"><span class="vocab-native">commande</span><span class="vocab-roman">—</span><span class="vocab-en">order</span></div>
+              <div class="vocab-item"><span class="vocab-native">tissu</span><span class="vocab-roman">—</span><span class="vocab-en">fabric</span></div>
+              <div class="vocab-item"><span class="vocab-native">broderie</span><span class="vocab-roman">—</span><span class="vocab-en">embroidery</span></div>
+              <div class="vocab-item"><span class="vocab-native">visa de travail</span><span class="vocab-roman">—</span><span class="vocab-en">work visa</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chinese Tab -->
+    <div class="ptab" id="ptab-chinese">
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,50px);margin-top:32px">
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:6px">🇨🇳 Mandarin — Jaipur's Trade Language</h3>
+          <p style="color:var(--gm);font-size:14px;margin-bottom:20px">China is Jaipur's single largest trading partner. Every shipment, every negotiation, every dispute that goes through an agent costs money. Mandarin pays for itself.</p>
+          <div style="display:grid;gap:10px">
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">💎</div><div style="font-size:13px;color:var(--cream)"><strong>Gemstone &amp; Jewellery Traders</strong> — Traders at Canton Fair and Hong Kong Jewellery Show who speak Mandarin negotiate directly.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">📦</div><div style="font-size:13px;color:var(--cream)"><strong>Import-Export Businesses</strong> — Cut 10–20% agent fees on Chinese imports by communicating directly in Mandarin.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">💻</div><div style="font-size:13px;color:var(--cream)"><strong>IT Professionals</strong> — Chinese tech companies (Huawei, Xiaomi, ByteDance, Alibaba) actively recruit Mandarin speakers.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🪨</div><div style="font-size:13px;color:var(--cream)"><strong>Handicraft Exporters</strong> — Chinese interior design and home décor market imports Rajasthani handicrafts at scale.</div></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-g" onclick="navigate('chinese')" style="font-size:13px;padding:11px 22px">Start Mandarin →</button>
+            <span style="font-size:12px;color:var(--gm);align-self:center">Certification: HSK 1–6 · HSKK</span>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+            <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
+            <div class="vocab-grid">
+              <div class="vocab-item"><span class="vocab-native">宝石</span><span class="vocab-roman">bǎoshí</span><span class="vocab-en">gemstone</span></div>
+              <div class="vocab-item"><span class="vocab-native">珠宝</span><span class="vocab-roman">zhūbǎo</span><span class="vocab-en">jewellery</span></div>
+              <div class="vocab-item"><span class="vocab-native">贸易</span><span class="vocab-roman">màoyì</span><span class="vocab-en">trade</span></div>
+              <div class="vocab-item"><span class="vocab-native">谈判</span><span class="vocab-roman">tánpàn</span><span class="vocab-en">negotiation</span></div>
+              <div class="vocab-item"><span class="vocab-native">供应商</span><span class="vocab-roman">gōngyìngshāng</span><span class="vocab-en">supplier</span></div>
+              <div class="vocab-item"><span class="vocab-native">价格</span><span class="vocab-roman">jiàgé</span><span class="vocab-en">price</span></div>
+              <div class="vocab-item"><span class="vocab-native">质量</span><span class="vocab-roman">zhìliàng</span><span class="vocab-en">quality</span></div>
+              <div class="vocab-item"><span class="vocab-native">合同</span><span class="vocab-roman">hétong</span><span class="vocab-en">contract</span></div>
+              <div class="vocab-item"><span class="vocab-native">出口</span><span class="vocab-roman">chūkǒu</span><span class="vocab-en">export</span></div>
+              <div class="vocab-item"><span class="vocab-native">合作</span><span class="vocab-roman">hézuò</span><span class="vocab-en">partnership</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Italian Tab -->
+    <div class="ptab" id="ptab-italian">
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,50px);margin-top:32px">
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:6px">🇮🇹 Italian — Rajasthan's Quiet Advantage</h3>
+          <p style="color:var(--gm);font-size:14px;margin-bottom:20px">The Shekhawati belt has one of India's highest Italy visa application rates. Marble exporters, luxury suppliers, and seasonal workers all need Italian — and DIFL is Rajasthan's only CILS-coaching institute.</p>
+          <div style="display:grid;gap:10px">
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🪨</div><div style="font-size:13px;color:var(--cream)"><strong>Marble, Stone &amp; Tile Exporters</strong> — Italian buyers from Carrara to Milan import extensively from Rajasthan. Direct Italian improves margins by 20–30%.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🇮🇹</div><div style="font-size:13px;color:var(--cream)"><strong>Italy Work Visa (Flussi Decree)</strong> — Seasonal work visa for agriculture, tourism, construction. Italian A2–B1 is the language requirement.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">💎</div><div style="font-size:13px;color:var(--cream)"><strong>Gems &amp; Jewellery Exporters</strong> — Italian luxury jewellery houses and Vicenza trade fair buyers source from Jaipur.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">👗</div><div style="font-size:13px;color:var(--cream)"><strong>Fashion &amp; Textile Exporters</strong> — Italian fashion brands source Rajasthani embroidery and block prints for luxury collections.</div></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-g" onclick="navigate('italian')" style="font-size:13px;padding:11px 22px">Start Italian →</button>
+            <span style="font-size:12px;color:var(--gm);align-self:center">Certification: CILS · PLIDA A1–C2</span>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+            <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
+            <div class="vocab-grid">
+              <div class="vocab-item"><span class="vocab-native">marmo</span><span class="vocab-roman">—</span><span class="vocab-en">marble</span></div>
+              <div class="vocab-item"><span class="vocab-native">pietra</span><span class="vocab-roman">—</span><span class="vocab-en">stone</span></div>
+              <div class="vocab-item"><span class="vocab-native">gioielleria</span><span class="vocab-roman">—</span><span class="vocab-en">jewellery</span></div>
+              <div class="vocab-item"><span class="vocab-native">lusso</span><span class="vocab-roman">—</span><span class="vocab-en">luxury</span></div>
+              <div class="vocab-item"><span class="vocab-native">fornitore</span><span class="vocab-roman">—</span><span class="vocab-en">supplier</span></div>
+              <div class="vocab-item"><span class="vocab-native">trattativa</span><span class="vocab-roman">—</span><span class="vocab-en">negotiation</span></div>
+              <div class="vocab-item"><span class="vocab-native">contratto</span><span class="vocab-roman">—</span><span class="vocab-en">contract</span></div>
+              <div class="vocab-item"><span class="vocab-native">decreto flussi</span><span class="vocab-roman">—</span><span class="vocab-en">seasonal visa</span></div>
+              <div class="vocab-item"><span class="vocab-native">visto di lavoro</span><span class="vocab-roman">—</span><span class="vocab-en">work visa</span></div>
+              <div class="vocab-item"><span class="vocab-native">ricamo</span><span class="vocab-roman">—</span><span class="vocab-en">embroidery</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Korean Tab -->
+    <div class="ptab" id="ptab-korean">
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,50px);margin-top:32px">
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:6px">🇰🇷 Korean — From Jaipur to Seoul</h3>
+          <p style="color:var(--gm);font-size:14px;margin-bottom:20px">Korean language skills are creating life-changing opportunities for Rajasthan's youth — from EPS-TOPIK factory jobs to fully-funded GKS scholarships at Seoul National University and KAIST.</p>
+          <div style="display:grid;gap:10px">
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🏭</div><div style="font-size:13px;color:var(--cream)"><strong>EPS-TOPIK Work Programme</strong> — Employment Permit System sends Indian workers to Korea. EPS-TOPIK is the only entry requirement — DIFL's coaching has the highest pass rates in Rajasthan.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🎓</div><div style="font-size:13px;color:var(--cream)"><strong>GKS Scholarship</strong> — Fully funded: tuition + accommodation + living allowance + airfare. TOPIK 3+ required. DIFL has sent students to Seoul National University, KAIST, Yonsei, Korea University.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🏢</div><div style="font-size:13px;color:var(--cream)"><strong>Korean Companies in India</strong> — Samsung, LG, Hyundai, Kia, POSCO — all have large India operations. Korean-speaking staff earn premium salaries.</div></div>
+            <div class="fcard" style="padding:14px 18px"><div class="ficon" style="font-size:18px;width:28px;height:28px">🎵</div><div style="font-size:13px;color:var(--cream)"><strong>K-Pop &amp; Korean Culture</strong> — A genuine and growing learner segment driven by Korean entertainment and content.</div></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-g" onclick="navigate('korean')" style="font-size:13px;padding:11px 22px">Start Korean →</button>
+            <span style="font-size:12px;color:var(--gm);align-self:center">Certification: TOPIK I &amp; II · EPS-TOPIK</span>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+            <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
+            <div class="vocab-grid">
+              <div class="vocab-item"><span class="vocab-native">제조업</span><span class="vocab-roman">jejoeo-eop</span><span class="vocab-en">manufacturing</span></div>
+              <div class="vocab-item"><span class="vocab-native">취업</span><span class="vocab-roman">chwi-eop</span><span class="vocab-en">employment</span></div>
+              <div class="vocab-item"><span class="vocab-native">비자</span><span class="vocab-roman">bija</span><span class="vocab-en">visa</span></div>
+              <div class="vocab-item"><span class="vocab-native">계약</span><span class="vocab-roman">gyeyak</span><span class="vocab-en">contract</span></div>
+              <div class="vocab-item"><span class="vocab-native">품질</span><span class="vocab-roman">pumjil</span><span class="vocab-en">quality</span></div>
+              <div class="vocab-item"><span class="vocab-native">수출</span><span class="vocab-roman">suchul</span><span class="vocab-en">export</span></div>
+              <div class="vocab-item"><span class="vocab-native">장학금</span><span class="vocab-roman">janghak-geum</span><span class="vocab-en">scholarship</span></div>
+              <div class="vocab-item"><span class="vocab-native">대학교</span><span class="vocab-roman">daehak-gyo</span><span class="vocab-en">university</span></div>
+              <div class="vocab-item"><span class="vocab-native">한류</span><span class="vocab-roman">hallyu</span><span class="vocab-en">Korean Wave</span></div>
+              <div class="vocab-item"><span class="vocab-native">보고서</span><span class="vocab-roman">bogoseo</span><span class="vocab-en">report</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: Testimonials -->
+<section style="background:var(--ink)">
+  <div class="sc">
+    <div style="text-align:center;max-width:640px;margin:0 auto 44px" class="reveal">
+      <div class="eyebrow center">Social Proof</div>
+      <h2>What Jaipur's Professionals <em>Say</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
+      <div class="info-card reveal">
+        <div style="font-size:32px;margin-bottom:12px">⭐⭐⭐⭐⭐</div>
+        <p style="font-style:italic;color:var(--cream);font-size:14px;line-height:1.75;margin-bottom:16px">"After completing N3 Japanese at DIFL, I attend the Tokyo International Jewellery Fair without an interpreter. My margins improved immediately."</p>
+        <div style="font-size:12px;color:var(--gold);font-weight:600">Gem Exporter, Johari Bazaar</div>
+      </div>
+      <div class="info-card reveal" style="transition-delay:.1s">
+        <div style="font-size:32px;margin-bottom:12px">⭐⭐⭐⭐⭐</div>
+        <p style="font-style:italic;color:var(--cream);font-size:14px;line-height:1.75;margin-bottom:16px">"TEF Canada coaching at DIFL added 48 points to my CRS score. I got my PR in the next draw."</p>
+        <div style="font-size:12px;color:var(--gold);font-weight:600">French Student, Ganganagar</div>
+      </div>
+      <div class="info-card reveal" style="transition-delay:.2s">
+        <div style="font-size:32px;margin-bottom:12px">⭐⭐⭐⭐⭐</div>
+        <p style="font-style:italic;color:var(--cream);font-size:14px;line-height:1.75;margin-bottom:16px">"EPS-TOPIK cleared in first attempt at DIFL. I am now working in Korea."</p>
+        <div style="font-size:12px;color:var(--gold);font-weight:600">Korean Student, Sikar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: Final CTA -->
+<section style="background:rgba(255,255,255,.015)">
+  <div class="sc" style="text-align:center;max-width:680px;margin:0 auto">
+    <div class="reveal">
+      <div style="font-size:48px;margin-bottom:16px">🎯</div>
+      <h2>Not Sure Which Language Your <em>Industry Needs?</em></h2>
+      <p style="color:var(--gm);font-size:15px;margin:16px 0 32px;line-height:1.8">Book a free 15-minute industry counselling call. Our advisors will tell you exactly which language, which level, and which certification your career or business needs.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/919929515151" target="_blank" rel="noopener noreferrer" class="btn-g">💬 WhatsApp for Free Counselling →</a>
+        <a href="tel:+919929515151" class="btn-o">📞 9929-51 51 51</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
 <div id="page-contact" class="page">
   <section style="padding-top:clamp(80px,15vw,140px);background:linear-gradient(135deg,rgba(10,92,110,.1),rgba(201,168,76,.05)),var(--cream);color:var(--ink)">
     <div class="sc">
@@ -1841,6 +2186,69 @@ function buildLangPage(lang){
       </div>
     </div>
   </section>
+
+  ${(function(){
+    var industryData = {
+      japanese: {
+        heading: "Who Learns Japanese at DIFL?",
+        sub: "Japanese is Jaipur's most commercially valuable foreign language — across trade, technology, and tourism.",
+        cards: [
+          {icon:"💎",title:"Jewellery & Gem Exporters",desc:"Deal directly with Japanese buyers at Tokyo Jewellery Fair. No interpreter. Better margins."},
+          {icon:"🏨",title:"Tour Guides & Hotels",desc:"Japanese tourists are among Jaipur's biggest spenders. Guides with Japanese earn 3–5x more."},
+          {icon:"💻",title:"IT Professionals",desc:"JLPT N3 opens roles at TCS Japan, Infosys Japan, and Japanese tech subsidiaries in India."},
+          {icon:"👗",title:"Textile & Garment Exporters",desc:"Japanese fashion brands source fabric and garments directly from Jaipur suppliers."},
+          {icon:"🪨",title:"Handicraft & Marble Exporters",desc:"Japanese interior brands import Rajasthani stone and craft. Talk to them directly."}
+        ]
+      },
+      french: {
+        heading: "Who Learns French at DIFL?",
+        sub: "French opens three doors at once — Canada immigration, luxury export markets, and African trade.",
+        cards: [
+          {icon:"🍁",title:"Canada PR Aspirants",desc:"TEF Canada and TCF Canada add 50+ CRS points. Jaipur's most in-demand French course."},
+          {icon:"👗",title:"Garment & Embroidery Exporters",desc:"French luxury brands source Rajasthani embroidery and block prints for global collections."},
+          {icon:"🌍",title:"Africa Business & Trade",desc:"29 African countries speak French. Jaipur exporters expanding to Francophone Africa need French."},
+          {icon:"✈️",title:"Study in France",desc:"Campus France + DELF certification for engineering, business, and arts programmes in France."},
+          {icon:"🏨",title:"Hospitality & Tourism",desc:"French tourists are Jaipur's highest spenders. Hotels and guides with French earn more."}
+        ]
+      },
+      chinese: {
+        heading: "Who Learns Mandarin at DIFL?",
+        sub: "China is Jaipur's largest trading partner. Every transaction through an agent costs money that Mandarin saves.",
+        cards: [
+          {icon:"💎",title:"Gem & Jewellery Traders",desc:"China buys Jaipur's gems at scale. Mandarin traders at Canton Fair negotiate directly without agents."},
+          {icon:"📦",title:"Import-Export Businesses",desc:"Cut 10–20% agent fees on Chinese imports by communicating in Mandarin."},
+          {icon:"🏭",title:"Manufacturers & OEM Buyers",desc:"Source machinery, raw materials, and finished goods directly from Chinese factories."},
+          {icon:"💻",title:"IT & Tech Professionals",desc:"Huawei, Xiaomi, ByteDance, Alibaba India — all actively recruit Mandarin speakers."},
+          {icon:"🪨",title:"Handicraft Exporters",desc:"Chinese home décor market imports Rajasthani crafts at scale. Direct language means direct deals."}
+        ]
+      },
+      italian: {
+        heading: "Who Learns Italian at DIFL?",
+        sub: "From Italy's seasonal work visa to marble export negotiations — Italian is Rajasthan's fastest-rising professional language.",
+        cards: [
+          {icon:"🪨",title:"Marble & Stone Exporters",desc:"Italy's architects import Rajasthani stone. Direct Italian means better prices and repeat orders."},
+          {icon:"🇮🇹",title:"Italy Work Visa (Flussi Decree)",desc:"Seasonal work in Italy requires A2–B1 Italian. DIFL's CILS coaching is Rajasthan's only specialised preparation."},
+          {icon:"💎",title:"Gem & Jewellery Exporters",desc:"Vicenza trade fair and Italian luxury brands source from Jaipur. CILS Italian opens direct access."},
+          {icon:"👗",title:"Fashion & Textile Exporters",desc:"Italian fashion houses source Rajasthani embroidery and handloom for luxury collections."},
+          {icon:"🎓",title:"Study in Italy",desc:"CILS and PLIDA certifications accepted for Italian university admission and visa applications."}
+        ]
+      },
+      korean: {
+        heading: "Who Learns Korean at DIFL?",
+        sub: "Korean is opening three doors for Rajasthan's youth — Korea jobs, government scholarships, and careers with Korean companies.",
+        cards: [
+          {icon:"🏭",title:"EPS-TOPIK Work Programme",desc:"Legal work permit for Korea manufacturing, construction, and agriculture. Pass EPS-TOPIK, go to Korea."},
+          {icon:"🎓",title:"GKS Scholarship",desc:"Fully funded Korean government scholarship to Seoul National University, KAIST, Yonsei. TOPIK 3+ required."},
+          {icon:"🏢",title:"Korean Companies in India",desc:"Samsung, LG, Hyundai, Kia, POSCO — premium salaries for Korean-speaking Indian professionals."},
+          {icon:"🎵",title:"K-Pop & Korean Culture",desc:"Genuine language learners driven by Korean entertainment and content."},
+          {icon:"🇰🇷",title:"Study in Korea",desc:"TOPIK 3–4 for undergraduate; TOPIK 5–6 for postgraduate admission."}
+        ]
+      }
+    };
+    var d = industryData[lang.id];
+    if(!d) return '';
+    return '<section class="industry-section" style="background:rgba(201,168,76,.03);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)"><div class="sc"><div style="text-align:center;max-width:680px;margin:0 auto 36px" class="reveal"><div class="eyebrow center">Professional Use</div><h2><em>'+d.heading+'</em></h2><p style="font-size:15px;color:var(--gm);margin-top:12px">'+d.sub+'</p></div><div class="industry-grid">'+d.cards.map(function(c,i){return '<div class="industry-card reveal" style="transition-delay:'+(i*0.08).toFixed(2)+'s"><div class="industry-icon">'+c.icon+'</div><div class="industry-title">'+c.title+'</div><div class="industry-desc">'+c.desc+'</div></div>';}).join('')+'</div><div style="text-align:center;margin-top:32px" class="reveal"><a onclick="navigate(\'professionals\')" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;cursor:pointer;border:1px solid rgba(201,168,76,.3);padding:10px 22px;border-radius:8px;text-decoration:none;transition:all .25s" onmouseover="this.style.background=\'rgba(201,168,76,.08)\'" onmouseout="this.style.background=\'transparent\'">See all industries we serve →</a></div></div></section>';
+  })()}
   <section style="background:var(--ink)">
     <div class="sc">
       <div style="text-align:center;max-width:640px;margin:0 auto 40px" class="reveal">
@@ -1943,6 +2351,16 @@ function tryLoadBlogInline(){
 }
 // ──────────────────────────────────────────────────────────────────
 
+function showProfTab(lang){
+  document.querySelectorAll('.ptab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.ltab').forEach(function(b){b.classList.remove('active');});
+  var tab = document.getElementById('ptab-'+lang);
+  if(tab) tab.classList.add('active');
+  var btns = document.querySelectorAll('#profTabs .ltab');
+  var order = ['japanese','french','chinese','italian','korean'];
+  var idx = order.indexOf(lang);
+  if(btns[idx]) btns[idx].classList.add('active');
+}
 function navigateToFaq(){
   navigate('home');
   setTimeout(function(){
@@ -2022,7 +2440,8 @@ function navigate(page){
     'blog':         '/blog-on-foreign-languages/',
     'contact':      '/contact/',
     'faq':          '/foreign-language-faqs/',
-    'programs':     '/study-abroad-programs/'
+    'programs':     '/study-abroad-programs/',
+    'professionals': '/language-for-professionals/'
   };
     var path = urlMap[page] || urlMap[currentPage] || '/';
     // For lang pages, look up by lang id
@@ -2148,7 +2567,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   var VALID_PAGES = ['french','japanese','german','spanish','chinese','arabic',
     'korean','italian','russian','english','thai','hindi','about','all-courses',
     'handwriting','calligraphy','testimonials','scholarships','blog','contact',
-    'faq','programs'];
+    'faq','programs','professionals'];
   var urlPage = new URLSearchParams(window.location.search).get('page');
   if(urlPage && VALID_PAGES.indexOf(urlPage) !== -1){
     // Clean the ?page= from the URL bar without reload
