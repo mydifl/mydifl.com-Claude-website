@@ -60,16 +60,6 @@
   ],
   "redirects": [
     {
-      "source": "/language-for-professionals",
-      "destination": "/?page=professionals",
-      "permanent": true
-    },
-    {
-      "source": "/language-for-professionals/",
-      "destination": "/?page=professionals",
-      "permanent": true
-    },
-    {
       "source": "/learn-mandarin-chinese",
       "destination": "/?page=chinese",
       "permanent": true
