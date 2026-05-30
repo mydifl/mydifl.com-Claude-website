@@ -1,7 +1,8 @@
 User-agent: *
-Allow: /
 
-# ── Valid DIFL pages only ──────────────────────────────────────────
+# ── Explicitly allow all valid DIFL pages ──────────────────────────
+Allow: /$
+Allow: /*?page=*
 Allow: /learn-mandarin-chinese/
 Allow: /learn-french/
 Allow: /learn-japanese/
@@ -24,10 +25,10 @@ Allow: /blog-on-foreign-languages/
 Allow: /contact/
 Allow: /foreign-language-faqs/
 Allow: /study-abroad-programs/
-Allow: /blog.html
 Allow: /language-for-professionals/
+Allow: /blog.html
 
-# ── Block all spam/injected WordPress paths ────────────────────────
+# ── Block spam WordPress paths ─────────────────────────────────────
 Disallow: /products/
 Disallow: /shop/
 Disallow: /tag/
@@ -43,30 +44,20 @@ Disallow: /order/
 Disallow: /feed/
 Disallow: /author/
 Disallow: /category/
-Disallow: /page/
 Disallow: /home/
-Disallow: /*?my=*
-Disallow: /*?ff=*
-Disallow: /*?dd=*
-Disallow: /*?cc=*
 
-
-# ── Block all spam query parameter patterns ────────────────────────
-Disallow: /*?mall=*
-Disallow: /*?shop=*
-Disallow: /*?store=*
-Disallow: /*?online=*
-Disallow: /*?ff=*
-Disallow: /*?dd=*
-Disallow: /*?cc=*
-Disallow: /*?my=*
-Disallow: /*?m=*
-Disallow: /*?y=*
-Disallow: /*?id=*
-Disallow: /*?ref=*
-Disallow: /*?utm_*
-Disallow: /*?gclid=*
-Disallow: /*?fbclid=*
+# ── Block spam query parameters (specific ones only) ───────────────
+Disallow: /*?mall=
+Disallow: /*?shop=
+Disallow: /*?store=
+Disallow: /*?online=
+Disallow: /*?ff=
+Disallow: /*?dd=
+Disallow: /*?cc=
+Disallow: /*?my=
+Disallow: /*?y=
+Disallow: /*?gclid=
+Disallow: /*?fbclid=
 
 # Sitemap
 Sitemap: https://mydifl.com/sitemap.xml
