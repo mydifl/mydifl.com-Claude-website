@@ -1470,7 +1470,7 @@ form[data-fs-state="success"] ~ *,
 
       <!-- Smart Blog Loader: works on web server AND as local file -->
       <div id="blogLoader" style="margin-bottom:40px">
-        <div id="blogLoading" style="text-align:center;padding:60px 20px;display:none">
+        <div id="blogLoading" style="display:none">
           <div style="font-size:40px;margin-bottom:16px;animation:bob 1.5s ease infinite">📖</div>
           <p style="color:var(--gm);font-size:15px">Loading blog articles...</p>
         </div>
@@ -2319,56 +2319,8 @@ function showBlogFallback(){
 // Try to fetch and embed blog inline when page-blog is shown
 // (works on web servers with same origin)
 function tryLoadBlogInline(){
-  var loader = document.getElementById('blogLoading');
-  var inline  = document.getElementById('blogInline');
-  var error   = document.getElementById('blogError');
-  if(!loader || !inline || !error) return;
-  
-  // Only try on http/https (not file://)
-  if(location.protocol === 'file:'){
-    error.style.display = 'block';
-    return;
-  }
-  
-  loader.style.display = 'block';
-  
-  fetch('blog.html')
-    .then(function(r){ return r.ok ? r.text() : Promise.reject(r.status); })
-    .then(function(html){
-      loader.style.display = 'none';
-      // Extract just the body content from blog.html
-      var parser = new DOMParser();
-      var doc    = parser.parseFromString(html, 'text/html');
-      var blogPgList = doc.getElementById('pg-list');
-      if(blogPgList){
-        inline.innerHTML = blogPgList.innerHTML;
-        inline.style.display = 'block';
-        // Inject blog CSS
-        var blogStyles = doc.querySelectorAll('style');
-        blogStyles.forEach(function(s){
-          if(s.textContent.includes('pg-list') || s.textContent.includes('.bc{')){
-            var ns = document.createElement('style');
-            ns.textContent = s.textContent;
-            document.head.appendChild(ns);
-          }
-        });
-        // Inject blog JS
-        var blogScripts = doc.querySelectorAll('script:not([src])');
-        blogScripts.forEach(function(s){
-          if(s.textContent.includes('const POSTS')){
-            var ns = document.createElement('script');
-            ns.textContent = s.textContent;
-            document.head.appendChild(ns);
-          }
-        });
-      } else {
-        error.style.display = 'block';
-      }
-    })
-    .catch(function(){
-      loader.style.display = 'none';
-      error.style.display  = 'block';
-    });
+  // Blog cards are shown statically below — no fetch needed
+  // Full blog available at /blog.html
 }
 // ──────────────────────────────────────────────────────────────────
 
