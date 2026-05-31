@@ -2684,10 +2684,10 @@ function renderCats(){
 function filterCat(cat){
   activeCat=cat;
   renderCats();
-  const items=document.querySelectorAll(".bc[data-cat]");
-  items.forEach(el=>{el.style.display=(cat==="All"||el.dataset.cat===cat||el.dataset.cat.includes(cat))?"block":"none"});
-  const fitems=document.querySelectorAll(".fc[data-cat]");
-  fitems.forEach(el=>{el.style.display=(cat==="All"||el.dataset.cat===cat||el.dataset.cat.includes(cat))?"block":"none"});
+  document.querySelectorAll(".bc[data-cat],.fc[data-cat]").forEach(function(el){
+    var c=el.dataset.cat||"";
+    el.style.display=(cat==="All"||c===cat||c.indexOf(cat)>-1)?"block":"none";
+  });
 }
 function renderFeat(){
   const fp=POSTS.filter(p=>p.feat).slice(0,4);
