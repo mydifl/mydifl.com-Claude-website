@@ -2680,7 +2680,7 @@ function buildRelated(currentPost){
     ${related.map(p=>`<div class="related-card" onclick="openPost('${p.id}')">
       <div class="related-cat">${p.lang||p.em||''} ${p.cat}</div>
       <div class="related-post-title">${p.title}</div>
-      <div class="related-meta">⏱ ${p.rd} &nbsp;·&nbsp; ${p.desc.slice(0,80)}…</div>
+      <div class="related-meta">⏱ ${p.rd} &nbsp;·&nbsp; ${(p.desc||p.kw||'').slice(0,80)}…</div>
     </div>`).join('')}
   </div>
 </div>`;
@@ -2690,9 +2690,10 @@ function openPost(id){
   const post=POSTS.find(p=>p.id===id);
   if(!post)return;
   window.scrollTo({top:0,behavior:"smooth"});
+  const kwHtml = post.kw ? post.kw.split(",").map(k=>`<span>${k.trim()}</span>`).join("") : '';
   document.getElementById("artBody").innerHTML=
-    `<h1 style="display:none" aria-hidden="true">${post.title}</h1><div class="kw">${post.kw.split(",").map(k=>`<span>${k.trim()}</span>`).join("")}</div>`+
-    post.body + buildRelated(post);
+    `<h1 style="display:none" aria-hidden="true">${post.title}</h1>${kwHtml?'<div class="kw">'+kwHtml+'</div>':''}`+
+    (post.body||'<p>Content coming soon.</p>') + buildRelated(post);
   document.getElementById("pg-list").classList.remove("on");
   document.getElementById("pg-art").classList.add("on");
   // Update URL without reload for direct linking
