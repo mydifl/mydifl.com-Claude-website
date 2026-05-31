@@ -499,7 +499,7 @@ function sanitizeURL(url) {
 // Prevent open redirect via URL hash
 (function() {
   const hash = location.hash;
-  if (hash && /[<>"'`]/.test(hash)) { location.hash = ''; }
+  if (hash && /[<>"'\x60]/.test(hash)) { location.hash = ''; }
 })();
 // ────────────────────────────────────────────────────────────────────
 
