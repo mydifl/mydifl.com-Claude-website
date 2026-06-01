@@ -2723,18 +2723,22 @@ function buildRelated(currentPost){
 }
 
 function openPost(id){
-  const post=POSTS.find(p=>p.id===id);
-  if(!post)return;
-  window.scrollTo({top:0,behavior:"smooth"});
-  const kwHtml=post.kw?post.kw.split(",").map(k=>`<span>${k.trim()}</span>`).join(""):''; document.getElementById("artBody").innerHTML=
-    `<h1 style="display:none" aria-hidden="true">${post.title}</h1>${kwHtml?'<div class="kw">'+kwHtml+'</div>':''}` +
-    post.body + buildRelated(post);
-  document.getElementById("pg-list").classList.remove("on");
-  document.getElementById("pg-art").classList.add("on");
-  // Update URL without reload for direct linking
-  try{ history.pushState({postId:id},'',`?p=${id}`); }catch(e){}
-  document.title = post.title + ' | DIFL Blog';
-  initRev();
+  try{
+    const post=POSTS.find(p=>p.id===id);
+    if(!post){ console.error("Post not found:",id); return; }
+    window.scrollTo({top:0,behavior:"smooth"});
+    const kwHtml=post.kw?post.kw.split(",").map(k=>`<span>${k.trim()}</span>`).join(""):"";
+    const body = post.body||"<p>Content loading...</p>";
+    let related="";
+    try{ related=buildRelated(post); }catch(e){ console.error("buildRelated error:",e); }
+    document.getElementById("artBody").innerHTML=
+      (kwHtml?"<div class=\"kw\">"+kwHtml+"</div>":"")+body+related;
+    document.getElementById("pg-list").classList.remove("on");
+    document.getElementById("pg-art").classList.add("on");
+    try{ history.pushState({postId:id},"",`?p=${id}`); }catch(e){}
+    document.title = post.title+" | DIFL Blog";
+    initRev();
+  }catch(e){ console.error("openPost error:",e,id); }
 }
 // Handle back button
 window.addEventListener('popstate', function(e){
