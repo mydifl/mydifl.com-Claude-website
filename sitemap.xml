@@ -5,46 +5,40 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <!-- Home -->
-  <url><loc>https://mydifl.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mydifl.com/</loc><lastmod>2026-06-04</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
 
   <!-- Language course pages -->
-  <url><loc>https://mydifl.com/learn-french/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-japanese/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-german/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-spanish/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-mandarin-chinese/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-arabic/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-korean-language/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-italian-language/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-russian-language/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-english/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-thai-language/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-hindi-language/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-foreign-languages/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-japanese/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-french/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-mandarin-chinese/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-italian-language/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-english/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-german/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-korean-language/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-spanish/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-arabic/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-russian-language/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-thai-language/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-hindi-language/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-foreign-languages/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Professional & industry page -->
+  <url><loc>https://mydifl.com/language-for-professionals/</loc><lastmod>2026-06-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
 
   <!-- Special courses -->
-  <url><loc>https://mydifl.com/handwriting-improvement/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/learn-calligraphy/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/handwriting-improvement/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/learn-calligraphy/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
   <!-- About & institutional -->
-  <url><loc>https://mydifl.com/about-us/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/about-us/reviews-of-difl/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/about-us/foreign-language-scholarships/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/about-us/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/about-us/reviews-of-difl/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/about-us/foreign-language-scholarships/</loc><lastmod>2026-06-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
   <!-- Content & utility -->
-  <url><loc>https://mydifl.com/blog-on-foreign-languages/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://mydifl.com/contact/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/foreign-language-faqs/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://mydifl.com/study-abroad-programs/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/blog.html</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mydifl.com/blog-on-foreign-languages/</loc><lastmod>2026-06-04</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mydifl.com/contact/</loc><lastmod>2026-06-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/foreign-language-faqs/</loc><lastmod>2026-06-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mydifl.com/study-abroad-programs/</loc><lastmod>2026-06-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
-  <url>
-    <loc>https://mydifl.com/language-for-professionals/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mydifl.com/blog.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>
