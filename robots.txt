@@ -27,6 +27,7 @@ Allow: /foreign-language-faqs/
 Allow: /study-abroad-programs/
 Allow: /language-for-professionals/
 Allow: /blog.html
+Allow: /whatsapp/
 
 # ── Block spam WordPress paths ─────────────────────────────────────
 Disallow: /products/
@@ -46,7 +47,10 @@ Disallow: /author/
 Disallow: /category/
 Disallow: /home/
 
-# ── Block spam query parameters (specific ones only) ───────────────
+# ── Block spam and junk query parameters ───────────────────────────
+Disallow: /*?m=
+Disallow: /*?eudc/
+Disallow: /*?products/
 Disallow: /*?mall=
 Disallow: /*?shop=
 Disallow: /*?store=
@@ -58,6 +62,9 @@ Disallow: /*?my=
 Disallow: /*?y=
 Disallow: /*?gclid=
 Disallow: /*?fbclid=
+
+# ── Block double-slash and malformed URLs ──────────────────────────
+Disallow: /*//
 
 # Sitemap
 Sitemap: https://mydifl.com/sitemap.xml
