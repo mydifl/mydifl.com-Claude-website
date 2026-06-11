@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tawk Test — DIFL</title>
+<meta name="robots" content="noindex">
+</head>
+<body style="background:#0d0d0d;color:#fff;font-family:sans-serif;padding:40px">
+<h1>Tawk.to Test Page</h1>
+<p>If the green chat bubble appears bottom-right, Tawk works and the issue is in our main pages.</p>
+<p>If NO bubble appears here, the issue is in the Tawk account/property configuration.</p>
+<p id="status">Loading Tawk...</p>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.onLoad = function(){ document.getElementById('status').textContent = '✅ Tawk LOADED successfully'; document.getElementById('status').style.color='#0f0'; };
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a158407e37d1e1c33dfbc7e/1jpi0ng61';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s1.onerror=function(){ document.getElementById('status').textContent='❌ Tawk script FAILED to load — property/widget ID issue or network block'; document.getElementById('status').style.color='#f55'; };
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
