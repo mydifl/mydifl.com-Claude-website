@@ -136,7 +136,8 @@ nav.scrolled{height:58px;background:rgba(13,13,13,.97);border-bottom-color:rgba(
 .nav-links a,.nav-links span{color:rgba(250,248,243,.75);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border-radius:6px;transition:all .25s;letter-spacing:.3px;cursor:pointer;display:block}
 .nav-links a:hover,.nav-links span:hover{color:var(--gold)}
 .nav-links .dd{position:relative}
-.nav-links .ddm{position:absolute;top:100%;left:0;background:rgba(18,16,12,.97);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.2);border-radius:12px;min-width:210px;padding:8px;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity .2s ease,transform .2s ease;list-style:none;margin-top:8px}.nav-links .ddm::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent}
+.nav-links .ddm{position:absolute;top:100%;left:0;background:rgba(18,16,12,.97);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.2);border-radius:12px;min-width:210px;padding:8px;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity .2s ease,transform .2s ease;list-style:none;margin-top:8px}
+.nav-links .ddm-wide{min-width:520px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.nav-links .ddm-wide .dd-head{grid-column:1/-1;padding:6px 10px 2px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,.6)}.nav-links .ddm::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent}
 .nav-links .dd:hover .ddm{opacity:1;pointer-events:all;transform:translateY(0)}
 .nav-links .ddm a{display:block;padding:10px 14px;border-radius:8px;font-size:12.5px;color:rgba(250,248,243,.8)}
 .nav-links .ddm a:hover{background:rgba(201,168,76,.1);color:var(--gold)}
@@ -779,22 +780,25 @@ form[data-fs-state="success"] ~ *,
       </ul>
     </li>
     <li class="dd"><span>Languages ▾</span>
-      <ul class="ddm">
-        <li><a onclick="navigate('all-courses')">All Courses</a></li>
-        <li><a onclick="navigate('professionals')" style="color:var(--gold);font-weight:600">🏭 For Professionals &amp; Industry</a>
-<a href="/language-quiz/">🧠 Language Quiz</a></li>
+      <ul class="ddm ddm-wide">
+        <li class="dd-head">European</li>
         <li><a onclick="navigate('french')">🇫🇷 French</a></li>
-        <li><a onclick="navigate('japanese')">🇯🇵 Japanese</a></li>
-        <li><a onclick="navigate('english')">🇬🇧 English</a></li>
-        <li><a onclick="navigate('chinese')">🇨🇳 Chinese</a></li>
-        <li><a onclick="navigate('arabic')">🇸🇦 Arabic</a></li>
-        <li><a onclick="navigate('korean')">🇰🇷 Korean</a></li>
-        <li><a onclick="navigate('italian')">🇮🇹 Italian</a></li>
-        <li><a onclick="navigate('spanish')">🇪🇸 Spanish</a></li>
         <li><a onclick="navigate('german')">🇩🇪 German</a></li>
+        <li><a onclick="navigate('spanish')">🇪🇸 Spanish</a></li>
+        <li><a onclick="navigate('italian')">🇮🇹 Italian</a></li>
         <li><a onclick="navigate('russian')">🇷🇺 Russian</a></li>
+        <li><a onclick="navigate('english')">🇬🇧 English</a></li>
+        <li class="dd-head">Asian</li>
+        <li><a onclick="navigate('japanese')">🇯🇵 Japanese</a></li>
+        <li><a onclick="navigate('chinese')">🇨🇳 Mandarin</a></li>
+        <li><a onclick="navigate('korean')">🇰🇷 Korean</a></li>
+        <li><a onclick="navigate('arabic')">🇦🇪 Arabic</a></li>
         <li><a onclick="navigate('thai')">🇹🇭 Thai</a></li>
-        <li><a onclick="navigate('hindi')">🇮🇳 Hindi for Foreigners</a></li>
+        <li><a onclick="navigate('hindi')">🇮🇳 Hindi</a></li>
+        <li class="dd-head" style="grid-column:1/-1;border-top:1px solid rgba(201,168,76,.1);margin-top:4px;padding-top:8px">Explore</li>
+        <li><a onclick="navigate('all-courses')">📚 All Courses</a></li>
+        <li><a onclick="navigate('professionals')" style="color:var(--gold)">🏭 For Professionals</a></li>
+        <li><a href="/language-quiz/">🧠 Language Quiz</a></li>
       </ul>
     </li>
     <li class="dd"><span>Programs ▾</span>
@@ -1356,7 +1360,24 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== SCHOLARSHIPS PAGE ===================== -->
 <div id="page-scholarships" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  
+<!-- ── Language Quiz CTA ── -->
+<section style="padding:80px 5%;text-align:center;background:linear-gradient(135deg,rgba(201,168,76,.06) 0%,rgba(10,92,110,.06) 100%);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)">
+  <div style="max-width:700px;margin:0 auto">
+    <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Free Proficiency Test</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:16px;line-height:1.2">Think You Know a Foreign Language?<br><em style="font-style:italic;color:var(--gold)">Put It to the DIFL Test.</em></h2>
+    <p style="font-size:15px;color:var(--gm);line-height:1.7;max-width:520px;margin:0 auto 32px">10 questions. Instant result. Know your exact level in Japanese, French, German, Korean, Spanish, Arabic, Italian, Chinese or Russian — and what to learn next.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center">
+      <a href="/language-quiz/" style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);padding:16px 40px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;letter-spacing:.3px;transition:all .25s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Take the Quiz — Free →</a>
+      <div style="display:flex;gap:20px;font-size:13px;color:var(--gm)">
+        <span>🇯🇵 🇫🇷 🇩🇪 🇰🇷 🇪🇸</span>
+        <span>🇨🇳 🇮🇹 🇦🇪 🇷🇺</span>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:12px;color:rgba(255,255,255,.3)">No signup required · Works on mobile · Results in 2 minutes</p>
+  </div>
+</section>
+<section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
     <div class="sc">
       <div class="eyebrow">Financial Support · By Application Only</div>
       <h2>V K Sharma Memorial <em>Scholarship</em></h2>
