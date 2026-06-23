@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Language Proficiency Quiz — Test Your Level | DIFL Jaipur</title>
+<meta name="description" content="Free online language quiz — Japanese, French, German, Korean, Spanish, Chinese, Italian, Arabic, Russian. Test Basic, Intermediate or Advanced level. Instant result with coaching recommendation from DIFL Jaipur.">
+<link rel="canonical" href="https://mydifl.com/language-quiz/">
+<link rel="icon" href="/assets/difl-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0d0d;--cream:#faf8f3;--gold:#c9a84c;--gold-d:#a8862e;--gm:rgba(250,248,243,.6);--glass:rgba(255,255,255,.04);--border:rgba(201,168,76,.18);--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(13,13,13,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer}
+.nav-logo img{height:40px;width:auto}
+.nav-logo span{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--gold)}
+.nav-back{display:inline-flex;align-items:center;gap:6px;color:var(--gm);font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,.1);padding:7px 16px;border-radius:8px;transition:all .2s}
+.nav-back:hover{color:var(--gold);border-color:var(--border)}
+.hero{padding:120px 5% 60px;text-align:center;max-width:760px;margin:0 auto}
+.hero-ey{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,58px);font-weight:700;line-height:1.1;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:15px;color:var(--gm);line-height:1.7;max-width:560px;margin:0 auto 32px}
+#setup{animation:fadeIn .4s}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;max-width:860px;margin:0 auto 40px}
+.lang-btn{background:var(--glass);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 12px;cursor:pointer;transition:all .25s;text-align:center;color:var(--cream);font-family:'DM Sans',sans-serif}
+.lang-btn:hover,.lang-btn.on{background:rgba(201,168,76,.1);border-color:var(--gold);transform:translateY(-2px)}
+.lang-btn.on{box-shadow:0 0 0 2px var(--gold)}
+.lf{font-size:28px;margin-bottom:8px}
+.ln{font-size:13px;font-weight:600;letter-spacing:.3px}
+.lvl-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.lvl-btn{padding:12px 28px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:var(--glass);color:var(--cream);cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.5px;transition:all .25s;font-family:'DM Sans',sans-serif}
+.lvl-btn:hover,.lvl-btn.on{background:rgba(201,168,76,.12);border-color:var(--gold);color:var(--gold)}
+.lvl-btn.on{box-shadow:0 0 0 2px var(--gold)}
+.sl{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center}
+.go-btn{display:block;margin:0 auto;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);border:none;padding:16px 48px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s}
+.go-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,76,.35)}
+.go-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+#quiz{display:none;max-width:680px;margin:0 auto;padding:0 5% 80px;animation:fadeIn .4s}
+.qm{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;font-size:12px;color:var(--gm)}
+.qb{background:rgba(201,168,76,.1);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--gold)}
+.pb-wrap{width:100%;height:5px;background:rgba(255,255,255,.08);border-radius:3px;margin-bottom:32px;overflow:hidden}
+.pb{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-d));border-radius:3px;transition:width .4s ease}
+.qn{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.qt{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3.5vw,26px);font-weight:600;line-height:1.4;margin-bottom:28px}
+.opts{display:grid;gap:10px;margin-bottom:32px}
+.opt{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--glass);border:1px solid rgba(255,255,255,.08);border-radius:12px;cursor:pointer;transition:all .22s;text-align:left;color:var(--cream);font-size:14px;font-family:'DM Sans',sans-serif;line-height:1.4}
+.opt:hover{background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.3)}
+.opt.sel{background:rgba(201,168,76,.12);border-color:var(--gold)}
+.opt.ok{background:rgba(34,197,94,.1);border-color:#22c55e;color:#86efac}
+.opt.no{background:rgba(239,68,68,.08);border-color:#ef4444;color:#fca5a5}
+.ol{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;transition:all .2s}
+.opt.sel .ol{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.opt.ok .ol{background:#22c55e;border-color:#22c55e;color:#fff}
+.opt.no .ol{background:#ef4444;border-color:#ef4444;color:#fff}
+.fb{border-radius:12px;padding:14px 18px;margin-bottom:24px;font-size:13px;line-height:1.6;display:none}
+.fb.show{display:block}
+.fb.fbok{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:#86efac}
+.fb.fbno{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#fca5a5}
+.nxt{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);border:none;padding:13px 36px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .22s;display:none}
+.nxt.show{display:inline-block}
+.nxt:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
+#result{display:none;max-width:680px;margin:0 auto;padding:0 5% 80px;animation:fadeIn .5s;text-align:center}
+.sr{width:140px;height:140px;border-radius:50%;background:conic-gradient(var(--gold) 0deg,rgba(201,168,76,.15) 0deg);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;transition:all 1s}
+.si{width:110px;height:110px;border-radius:50%;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sp{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--gold);line-height:1}
+.rg{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;margin-bottom:8px}
+.rs{font-size:14px;color:var(--gm);margin-bottom:32px;line-height:1.6}
+.rc{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:left;margin-bottom:16px}
+.rc h3{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.rc p{font-size:13px;color:var(--gm);line-height:1.7}
+.rb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.bgold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);border:none;padding:13px 28px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;transition:all .22s}
+.bgold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,168,76,.35)}
+.bgh{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,.15);padding:13px 28px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .22s}
+.bgh:hover{border-color:var(--gold);color:var(--gold)}
+.wr{margin-top:28px;text-align:left}
+.wi{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.wi .wq{font-size:13px;color:var(--cream);margin-bottom:6px;font-weight:500}
+.wi .wa{font-size:12px;color:#86efac}
+.wi .wu{font-size:12px;color:#fca5a5}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.lang-grid{grid-template-columns:repeat(3,1fr);gap:8px}.lang-btn{padding:12px 8px}.lf{font-size:22px}.ln{font-size:11px}.lvl-row{gap:8px}.lvl-btn{padding:10px 18px;font-size:12px}}
+.qf{background:rgba(201,168,76,.06);border-top:1px solid var(--border);padding:40px 5%;text-align:center;margin-top:60px}
+.qf h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:8px}
+.qf p{font-size:13px;color:var(--gm);margin-bottom:20px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/difl-logo.png" alt="DIFL"><span>DIFL</span></a>
+  <a href="/" class="nav-back">← Back to DIFL</a>
+</nav>
+<div class="hero">
+  <div class="hero-ey">Free Proficiency Test</div>
+  <h1>How Good Is Your<br><em>Language?</em></h1>
+  <p>10 questions. Instant result. Know your exact level and what to work on next. Every attempt shows different questions.</p>
+</div>
+<div id="setup" style="padding:0 5% 80px;max-width:900px;margin:0 auto">
+  <div class="sl">Choose Your Language</div>
+  <div class="lang-grid">
+    <button class="lang-btn" data-lang="japanese" onclick="pickLang(this)"><div class="lf">🇯🇵</div><div class="ln">Japanese</div></button>
+    <button class="lang-btn" data-lang="french" onclick="pickLang(this)"><div class="lf">🇫🇷</div><div class="ln">French</div></button>
+    <button class="lang-btn" data-lang="german" onclick="pickLang(this)"><div class="lf">🇩🇪</div><div class="ln">German</div></button>
+    <button class="lang-btn" data-lang="korean" onclick="pickLang(this)"><div class="lf">🇰🇷</div><div class="ln">Korean</div></button>
+    <button class="lang-btn" data-lang="spanish" onclick="pickLang(this)"><div class="lf">🇪🇸</div><div class="ln">Spanish</div></button>
+    <button class="lang-btn" data-lang="chinese" onclick="pickLang(this)"><div class="lf">🇨🇳</div><div class="ln">Mandarin</div></button>
+    <button class="lang-btn" data-lang="italian" onclick="pickLang(this)"><div class="lf">🇮🇹</div><div class="ln">Italian</div></button>
+    <button class="lang-btn" data-lang="arabic" onclick="pickLang(this)"><div class="lf">🇦🇪</div><div class="ln">Arabic</div></button>
+    <button class="lang-btn" data-lang="russian" onclick="pickLang(this)"><div class="lf">🇷🇺</div><div class="ln">Russian</div></button>
+  </div>
+  <div class="sl" style="margin-top:36px">Select Your Current Level</div>
+  <div class="lvl-row">
+    <button class="lvl-btn" data-level="basic" onclick="pickLvl(this)">🌱 Basic</button>
+    <button class="lvl-btn" data-level="intermediate" onclick="pickLvl(this)">📗 Intermediate</button>
+    <button class="lvl-btn" data-level="advanced" onclick="pickLvl(this)">🎓 Advanced</button>
+  </div>
+  <button class="go-btn" id="goBtn" disabled onclick="startQuiz()">Start Quiz →</button>
+</div>
+<div id="quiz">
+  <div class="qm"><span class="qb" id="qBadge"></span><span id="qCtr"></span></div>
+  <div class="pb-wrap"><div class="pb" id="pBar" style="width:0%"></div></div>
+  <div class="qn" id="qNum"></div>
+  <div class="qt" id="qTxt"></div>
+  <div class="opts" id="optsEl"></div>
+  <div class="fb" id="fbEl"></div>
+  <button class="nxt" id="nxtBtn" onclick="nextQ()">Next →</button>
+</div>
+<div id="result">
+  <div class="sr" id="sRing"><div class="si"><div class="sp" id="sPct">0%</div><div style="font-size:11px;color:var(--gm);letter-spacing:1px;margin-top:2px">SCORE</div></div></div>
+  <div class="rg" id="rGrade"></div>
+  <div class="rs" id="rSub"></div>
+  <div class="rc" id="rCard"></div>
+  <div class="wr" id="wReview"></div>
+  <div class="rb">
+    <a href="https://wa.me/919929515151" target="_blank" class="bgold">Book Free Counselling</a>
+    <button class="bgh" onclick="retry()">🔄 Try Again</button>
+    <button class="bgh" onclick="resetQ()">↩ New Quiz</button>
+  </div>
+</div>
+<div class="qf">
+  <h3>Ready to Start Learning?</h3>
+  <p>55 years · 25,000+ alumni · 12 languages · Flexible batches morning 5am to evening 9pm</p>
+  <a href="https://wa.me/919929515151" target="_blank" class="bgold">Book Free Counselling at DIFL →</a>
+</div>
+<script src="questions.js"></script>
+<script>
+var sL=null,sV=null,qs=[],cQ=0,sc=0,wrongs=[],ans=false;
+function pickLang(b){document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sL=b.dataset.lang;ck()}
+function pickLvl(b){document.querySelectorAll('.lvl-btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sV=b.dataset.level;ck()}
+function ck(){document.getElementById('goBtn').disabled=!(sL&&sV)}
+function shuf(a){a=[].concat(a);for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function startQuiz(){var pool=QB[sL]&&QB[sL][sV];if(!pool||!pool.length){alert('Questions coming soon!');return}qs=shuf(pool).slice(0,10);cQ=0;sc=0;wrongs=[];document.getElementById('setup').style.display='none';document.getElementById('quiz').style.display='block';var ln={japanese:'Japanese 🇯🇵',french:'French 🇫🇷',german:'German 🇩🇪',korean:'Korean 🇰🇷',spanish:'Spanish 🇪🇸',chinese:'Mandarin 🇨🇳',italian:'Italian 🇮🇹',arabic:'Arabic 🇦🇪',russian:'Russian 🇷🇺'};var lv={basic:'Basic',intermediate:'Intermediate',advanced:'Advanced'};document.getElementById('qBadge').textContent=(ln[sL]||sL)+' · '+(lv[sV]||sV);showQ()}
+function showQ(){var q=qs[cQ];ans=false;document.getElementById('qNum').textContent='Question '+(cQ+1)+' of 10';document.getElementById('qCtr').textContent=(cQ+1)+' / 10';document.getElementById('qTxt').textContent=q.q;document.getElementById('pBar').style.width=(cQ*10)+'%';var fb=document.getElementById('fbEl');fb.className='fb';fb.style.display='none';document.getElementById('nxtBtn').className='nxt';var L=['A','B','C','D'];document.getElementById('optsEl').innerHTML=q.o.map(function(o,i){return '<button class="opt" onclick="pick('+i+')"><span class="ol">'+L[i]+'</span><span>'+o+'</span></button>'}).join('')}
+function pick(i){if(ans)return;ans=true;var q=qs[cQ],opts=document.querySelectorAll('.opt'),fb=document.getElementById('fbEl');opts[i].classList.add('sel');if(i===q.a){sc++;opts[i].classList.add('ok');fb.className='fb fbok show';fb.innerHTML='✅ Correct! '+q.f}else{opts[i].classList.add('no');opts[q.a].classList.add('ok');fb.className='fb fbno show';fb.innerHTML='❌ Not quite. '+q.f;wrongs.push({q:q.q,c:q.o[q.a],u:q.o[i]})}fb.style.display='block';var nb=document.getElementById('nxtBtn');nb.className='nxt show';nb.textContent=cQ<9?'Next Question →':'See Results →'}
+function nextQ(){cQ++;if(cQ<10)showQ();else showRes()}
+function showRes(){document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='block';var pct=Math.round(sc/10*100);setTimeout(function(){document.getElementById('sPct').textContent=pct+'%';document.getElementById('sRing').style.background='conic-gradient(var(--gold) '+pct*3.6+'deg, rgba(201,168,76,.12) '+pct*3.6+'deg)'},200);var gs=[{m:90,g:'Outstanding!',s:'Operating at a very high level. Ready for the certification exam.'},{m:70,g:'Excellent!',s:'Strong grasp. A few weeks of practice and you can advance.'},{m:50,g:'Good Progress!',s:'Fundamentals are there. Focused coaching fills the gaps fast.'},{m:30,g:'Keep Going!',s:'Getting there. Structured coaching makes the difference.'},{m:0,g:'Just Starting!',s:'Everyone begins somewhere. DIFL foundation batches are perfect for this.'}];var gr=gs[gs.length-1];for(var i=0;i<gs.length;i++){if(pct>=gs[i].m){gr=gs[i];break}}document.getElementById('rGrade').textContent=gr.g;document.getElementById('rSub').textContent=sc+' out of 10 correct. '+gr.s;var ln={japanese:'Japanese',french:'French',german:'German',korean:'Korean',spanish:'Spanish',chinese:'Mandarin Chinese',italian:'Italian',arabic:'Arabic',russian:'Russian'};var cm={japanese:'JLPT N5-N1, NAT, TITP/SSW',french:'DELF A1-C2, TEF Canada, TCF Canada',german:'Goethe A1-C2, TestDaF',korean:'TOPIK I & II, EPS-TOPIK',spanish:'DELE A1-C2, SIELE',chinese:'HSK 1-6',italian:'CILS A1-C2, PLIDA',arabic:'Gulf proficiency tests',russian:'TORFL levels'};var nl=sV==='basic'?'Intermediate':sV==='intermediate'?'Advanced':'Certification Exam';document.getElementById('rCard').innerHTML='<h3>Your Path Forward</h3><p><strong>Language:</strong> '+(ln[sL]||sL)+' · <strong>Level:</strong> '+sV.charAt(0).toUpperCase()+sV.slice(1)+' · <strong>Score:</strong> '+pct+'%</p><p style="margin-top:10px"><strong>Next step:</strong> '+(pct>=70?'Ready to move to '+nl+'. ':'Focused coaching at current level recommended. ')+'Book a counselling session.</p><p style="margin-top:10px"><strong>Certifications:</strong> '+(cm[sL]||'')+'</p><p style="margin-top:10px">DIFL, 2/11 Jawahar Nagar, Jaipur · +91-9929-51 51 51</p>';if(wrongs.length){document.getElementById('wReview').innerHTML='<h3 style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Review — Questions to Revisit</h3>'+wrongs.map(function(w){return '<div class="wi"><div class="wq">Q: '+w.q+'</div><div class="wu">Your answer: '+w.u+'</div><div class="wa">Correct: '+w.c+'</div></div>'}).join('')}else{document.getElementById('wReview').innerHTML=''}window.scrollTo({top:0,behavior:'smooth'})}
+function retry(){startQuiz();window.scrollTo({top:0,behavior:'smooth'})}
+function resetQ(){document.getElementById('result').style.display='none';document.getElementById('setup').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();Tawk_API.customStyle={visibility:{desktop:{position:'bl',xOffset:18,yOffset:18},mobile:{position:'bl',xOffset:10,yOffset:75}}};(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/6a158407e37d1e1c33dfbc7e/1jpi0ng61';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0)})();
+</script>
+</body>
+</html>

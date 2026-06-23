@@ -41,4 +41,9 @@
   <url><loc>https://mydifl.com/foreign-language-faqs/</loc><lastmod>2026-06-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://mydifl.com/study-abroad-programs/</loc><lastmod>2026-06-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
+  <url>
+    <loc>https://mydifl.com/language-quiz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
