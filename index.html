@@ -85,11 +85,16 @@
 :root{
   --ink:#0d0d0d;--cream:#faf8f3;--gold:#c9a84c;--gold-l:#e8d197;--gold-d:#8c6a1a;
   --teal:#0a5c6e;--teal-l:#0e7d96;--white:#fff;--gs:#f0ede6;--gm:#b8b0a0;--gt:#4a4540;
+  --w015:rgba(255,255,255,.015);--w02:rgba(255,255,255,.02);--w025:rgba(255,255,255,.025);--w03:rgba(255,255,255,.03);--w04:rgba(255,255,255,.04);--w05:rgba(255,255,255,.05);--w06:rgba(255,255,255,.06);--w07:rgba(255,255,255,.07);--w08:rgba(255,255,255,.08);--w1:rgba(255,255,255,.1);--w15:rgba(255,255,255,.15);--w3:rgba(255,255,255,.3);--w45:rgba(255,255,255,.45);--w55:rgba(255,255,255,.55);--w65:rgba(255,255,255,.65);--w75:rgba(255,255,255,.75);--k05:rgba(0,0,0,.05);--k06:rgba(0,0,0,.06);--k08:rgba(0,0,0,.08);--k1:rgba(0,0,0,.1);--k2:rgba(0,0,0,.2);--k3:rgba(0,0,0,.3);--k35:rgba(0,0,0,.35);--k4:rgba(0,0,0,.4);--k45:rgba(0,0,0,.45);--k5:rgba(0,0,0,.5);--k6:rgba(0,0,0,.6);--n18:rgba(13,13,13,.18);--n25:rgba(13,13,13,.25);--n5:rgba(13,13,13,.5);--n55:rgba(13,13,13,.55);--n6:rgba(13,13,13,.6);--n62:rgba(13,13,13,.62);--n7:rgba(13,13,13,.7);--n75:rgba(13,13,13,.75);--n8:rgba(13,13,13,.8);--n85:rgba(13,13,13,.85);--n88:rgba(13,13,13,.88);--n9:rgba(13,13,13,.9);--n97:rgba(13,13,13,.97);--n98:rgba(13,13,13,.98);--bg:#0d0d0d;--paper:#faf8f3;--c18:rgba(250,248,243,.18);--c25:rgba(250,248,243,.25);--c5:rgba(250,248,243,.5);--c55:rgba(250,248,243,.55);--c6:rgba(250,248,243,.6);--c62:rgba(250,248,243,.62);--c65:rgba(250,248,243,.65);--c7:rgba(250,248,243,.7);--c75:rgba(250,248,243,.75);--c8:rgba(250,248,243,.8);--c85:rgba(250,248,243,.85);--c88:rgba(250,248,243,.88);--c9:rgba(250,248,243,.9);--c97:rgba(250,248,243,.97);--c98:rgba(250,248,243,.98);
 }
+html[data-theme="light"]{
+  --w015:rgba(0,0,0,.03);--w02:rgba(0,0,0,.035);--w025:rgba(0,0,0,.04);--w03:rgba(0,0,0,.045);--w04:rgba(0,0,0,.05);--w05:rgba(0,0,0,.06);--w06:rgba(0,0,0,.07);--w07:rgba(0,0,0,.10);--w08:rgba(0,0,0,.12);--w1:rgba(0,0,0,.14);--w15:rgba(0,0,0,.20);--w3:rgba(0,0,0,.40);--w45:rgba(0,0,0,.52);--w55:rgba(0,0,0,.64);--w65:rgba(0,0,0,.72);--w75:rgba(0,0,0,.82);--k05:rgba(0,0,0,.05);--k06:rgba(0,0,0,.06);--k08:rgba(0,0,0,.07);--k1:rgba(0,0,0,.09);--k2:rgba(0,0,0,.06);--k3:rgba(0,0,0,.08);--k35:rgba(0,0,0,.09);--k4:rgba(0,0,0,.10);--k45:rgba(0,0,0,.10);--k5:rgba(0,0,0,.12);--k6:rgba(0,0,0,.14);--n18:rgba(250,248,243,.18);--n25:rgba(250,248,243,.25);--n5:rgba(250,248,243,.5);--n55:rgba(250,248,243,.55);--n6:rgba(250,248,243,.6);--n62:rgba(250,248,243,.62);--n7:rgba(250,248,243,.7);--n75:rgba(250,248,243,.75);--n8:rgba(250,248,243,.8);--n85:rgba(250,248,243,.85);--n88:rgba(250,248,243,.88);--n9:rgba(250,248,243,.9);--n97:rgba(250,248,243,.97);--n98:rgba(250,248,243,.98);--c18:rgba(38,34,25,.18);--c25:rgba(38,34,25,.25);--c5:rgba(38,34,25,.5);--c55:rgba(38,34,25,.55);--c6:rgba(38,34,25,.6);--c62:rgba(38,34,25,.62);--c65:rgba(38,34,25,.65);--c7:rgba(38,34,25,.7);--c75:rgba(38,34,25,.75);--c8:rgba(38,34,25,.8);--c85:rgba(38,34,25,.85);--c88:rgba(38,34,25,.88);--c9:rgba(38,34,25,.9);--c97:rgba(38,34,25,.97);--c98:rgba(38,34,25,.98);--bg:#f6f3ec;--paper:#ffffff;--ink:#0d0d0d;--cream:#262219;--gm:#6f675a;--gs:#2a2722;--gt:#8c8576;--gold:#9c7d2b;--gold-l:#b8923a;--white:#1c1916;
+}
+
 html,body{overflow-x:hidden;max-width:100vw}
 html{scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden;cursor:none}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;cursor:none}
 .cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .15s ease,opacity .15s ease;mix-blend-mode:difference}
 .cursor-f{position:fixed;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transition:all .3s ease;mix-blend-mode:difference}
 
@@ -116,30 +121,30 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);o
 
 
 /* ═══ Team Photo Avatars ═══ */
-.t-avatar-photo{width:120px;height:120px;border-radius:50%;position:relative;margin:0 auto 20px;overflow:hidden;border:3px solid rgba(201,168,76,.4);box-shadow:0 0 0 6px rgba(201,168,76,.07),0 8px 24px rgba(0,0,0,.4);flex-shrink:0}
+.t-avatar-photo{width:120px;height:120px;border-radius:50%;position:relative;margin:0 auto 20px;overflow:hidden;border:3px solid rgba(201,168,76,.4);box-shadow:0 0 0 6px rgba(201,168,76,.07),0 8px 24px var(--k4);flex-shrink:0}
 .t-avatar-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(1.05) contrast(1.05)}
-.t-avatar-photo::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at center,transparent 50%,rgba(13,13,13,.5) 100%);pointer-events:none}
+.t-avatar-photo::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at center,transparent 50%,var(--n5) 100%);pointer-events:none}
 .t-avatar-photo .t-badge{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--gd));color:var(--ink);font-size:8.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap;z-index:2}
 /* PAGE SYSTEM */
 .page{display:none}
 .page.active{display:block}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;background:rgba(13,13,13,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15);transition:all .4s ease}
-nav.scrolled{height:58px;background:rgba(13,13,13,.97);border-bottom-color:rgba(201,168,76,.3)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;background:var(--n88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15);transition:all .4s ease}
+nav.scrolled{height:58px;background:var(--n97);border-bottom-color:rgba(201,168,76,.3)}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer}
 .nav-lm{display:flex;align-items:center;flex-shrink:0}
 .nav-lt{display:flex;flex-direction:column;line-height:1.1}
 .nav-lt span:first-child{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);letter-spacing:2px}
 .nav-lt span:last-child{font-size:9px;color:var(--gm);letter-spacing:1.5px;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
-.nav-links a,.nav-links span{color:rgba(250,248,243,.75);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border-radius:6px;transition:all .25s;letter-spacing:.3px;cursor:pointer;display:block}
+.nav-links a,.nav-links span{color:var(--c75);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border-radius:6px;transition:all .25s;letter-spacing:.3px;cursor:pointer;display:block}
 .nav-links a:hover,.nav-links span:hover{color:var(--gold)}
 .nav-links .dd{position:relative}
 .nav-links .ddm{position:absolute;top:100%;left:0;background:rgba(18,16,12,.97);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.2);border-radius:12px;min-width:210px;padding:8px;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity .2s ease,transform .2s ease;list-style:none;margin-top:8px}
 .nav-links .ddm-wide{min-width:520px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.nav-links .ddm-wide .dd-head{grid-column:1/-1;padding:6px 10px 2px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,.6)}.nav-links .ddm::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent}
 .nav-links .dd:hover .ddm{opacity:1;pointer-events:all;transform:translateY(0)}
-.nav-links .ddm a{display:block;padding:10px 14px;border-radius:8px;font-size:12.5px;color:rgba(250,248,243,.8)}
+.nav-links .ddm a{display:block;padding:10px 14px;border-radius:8px;font-size:12.5px;color:var(--c8)}
 .nav-links .ddm a:hover{background:rgba(201,168,76,.1);color:var(--gold)}
 .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-d))!important;color:var(--ink)!important;border-radius:8px!important;font-weight:600!important;padding:9px 20px!important}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,168,76,.3)!important}
@@ -160,8 +165,8 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,56px);font-weig
 h2.dark{color:var(--ink)}
 h2.dark em{background:linear-gradient(135deg,var(--gold-d),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-weight:600;color:var(--cream)}
-.lead{font-size:16px;color:rgba(250,248,243,.62);line-height:1.78;font-weight:300}
-.lead.dark{color:rgba(13,13,13,.62)}
+.lead{font-size:16px;color:var(--c62);line-height:1.78;font-weight:300}
+.lead.dark{color:var(--n62)}
 .btn-g{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);font-weight:700;font-size:14px;padding:15px 30px;border-radius:10px;text-decoration:none;letter-spacing:.5px;transition:all .3s;border:none;cursor:pointer;position:relative;overflow:hidden}
 .btn-g:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(201,168,76,.35)}
 .btn-o{display:inline-flex;align-items:center;gap:10px;border:1.5px solid rgba(201,168,76,.4);color:var(--gold);font-weight:500;font-size:14px;padding:15px 30px;border-radius:10px;text-decoration:none;transition:all .3s;background:transparent;cursor:pointer}
@@ -182,10 +187,10 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .hero-grid{position:relative;z-index:2;padding:140px 8% 80px;max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .h-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
 .h-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
-.hero-sub{font-size:17px;color:rgba(250,248,243,.65);line-height:1.75;max-width:520px;margin-bottom:48px;font-weight:300}
+.hero-sub{font-size:17px;color:var(--c65);line-height:1.75;max-width:520px;margin-bottom:48px;font-weight:300}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.15);border-radius:16px;overflow:hidden;margin-top:60px}
-.hstat{background:rgba(13,13,13,.9);padding:26px 20px;text-align:center;position:relative}
+.hstat{background:var(--n9);padding:26px 20px;text-align:center;position:relative}
 .hstat:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(201,168,76,.2)}
 .snum{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
 .slbl{font-size:10.5px;color:var(--gm);letter-spacing:1.5px;text-transform:uppercase;margin-top:6px}
@@ -196,12 +201,12 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px dashed rgba(201,168,76,.1)}
 .orbit-g{position:absolute;inset:0;animation:spin linear infinite}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.o-label{position:absolute;background:rgba(13,13,13,.85);backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,.35);color:var(--cream);font-size:12px;font-weight:500;padding:5px 13px;border-radius:24px;white-space:nowrap;pointer-events:none;letter-spacing:.4px;box-shadow:0 4px 16px rgba(0,0,0,.4),0 0 0 1px rgba(201,168,76,.1);transition:all .3s}
+.o-label{position:absolute;background:var(--n85);backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,.35);color:var(--cream);font-size:12px;font-weight:500;padding:5px 13px;border-radius:24px;white-space:nowrap;pointer-events:none;letter-spacing:.4px;box-shadow:0 4px 16px var(--k4),0 0 0 1px rgba(201,168,76,.1);transition:all .3s}
 @keyframes cspin{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
 
 /* LANG CARDS */
-.langs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:2px;background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
-.lcard{background:rgba(13,13,13,.6);padding:34px 30px;position:relative;overflow:hidden;transition:all .4s ease;text-decoration:none;color:inherit;display:block;cursor:pointer}
+.langs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:2px;background:var(--w04);border-radius:20px;overflow:hidden;border:1px solid var(--w05)}
+.lcard{background:var(--n6);padding:34px 30px;position:relative;overflow:hidden;transition:all .4s ease;text-decoration:none;color:inherit;display:block;cursor:pointer}
 .lcard::before{content:'';position:absolute;inset:0;background:var(--cbg,linear-gradient(135deg,rgba(201,168,76,.06),transparent));opacity:0;transition:opacity .4s}
 .lcard:hover{background:rgba(20,18,14,.9)}
 .lcard:hover::before{opacity:1}
@@ -214,7 +219,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .lcard:hover .larrow{opacity:1;transform:translateX(0)}
 
 /* FEATURE CARDS */
-.fcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;transition:all .35s}
+.fcard{background:var(--w03);border:1px solid var(--w06);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;transition:all .35s}
 .fcard:hover{background:rgba(201,168,76,.05);border-color:rgba(201,168,76,.25);transform:translateX(5px)}
 .ficon{width:50px;height:50px;flex-shrink:0;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.03));border:1px solid rgba(201,168,76,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px}
 .fcard h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--cream);margin-bottom:5px}
@@ -225,18 +230,18 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .t-track{display:flex;gap:22px;animation:slide 22s linear infinite;width:max-content}
 .t-track:hover{animation-play-state:paused}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.tcard{background:var(--white);border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:30px;width:350px;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:box-shadow .3s}
-.tcard:hover{box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.tcard{background:var(--white);border:1px solid var(--k06);border-radius:20px;padding:30px;width:350px;flex-shrink:0;box-shadow:0 4px 20px var(--k05);transition:box-shadow .3s}
+.tcard:hover{box-shadow:0 12px 40px var(--k1)}
 .t-stars{color:var(--gold);font-size:14px;margin-bottom:14px}
-.t-text{font-size:13.5px;color:rgba(13,13,13,.7);line-height:1.75;margin-bottom:18px;font-style:italic}
+.t-text{font-size:13.5px;color:var(--n7);line-height:1.75;margin-bottom:18px;font-style:italic}
 .t-auth{display:flex;align-items:center;gap:12px}
 .t-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--teal));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;flex-shrink:0}
 .t-name{font-weight:600;font-size:13.5px;color:var(--ink)}
-.t-role{font-size:11.5px;color:rgba(13,13,13,.5);margin-top:2px}
+.t-role{font-size:11.5px;color:var(--n5);margin-top:2px}
 
 /* TEAM */
 .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:50px}
-.team-card{flex:0 1 300px;border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;transition:all .4s;background:rgba(255,255,255,.02)}
+.team-card{flex:0 1 300px;border:1px solid var(--w07);border-radius:20px;overflow:hidden;transition:all .4s;background:var(--w02)}
 .team-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px)}
 .t-avatar{height:200px;position:relative;display:flex;align-items:center;justify-content:center;font-size:80px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(10,92,110,.06))}
 .t-badge{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);font-size:10px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap}
@@ -247,8 +252,8 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 
 /* PROGRAMS */
 .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin-top:50px}
-.prog-card{border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.02);transition:all .4s}
-.prog-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.prog-card{border:1px solid var(--w07);border-radius:20px;overflow:hidden;background:var(--w02);transition:all .4s}
+.prog-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-5px);box-shadow:0 20px 50px var(--k35)}
 .prog-top{height:180px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative}
 .prog-flag{position:absolute;bottom:12px;right:16px;font-size:28px}
 .prog-body{padding:28px}
@@ -256,12 +261,12 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .prog-body .tag{display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-size:10.5px;font-weight:600;padding:4px 12px;border-radius:20px;letter-spacing:.5px;margin-bottom:12px}
 .prog-body p{font-size:13px;color:var(--gm);line-height:1.7;margin-bottom:18px}
 .prog-body ul{list-style:none;margin-bottom:18px}
-.prog-body ul li{font-size:12.5px;color:var(--gm);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:8px}
+.prog-body ul li{font-size:12.5px;color:var(--gm);padding:5px 0;border-bottom:1px solid var(--w04);display:flex;gap:8px}
 .prog-body ul li::before{content:'✓';color:var(--gold);flex-shrink:0}
 
 /* APPLY STEPS */
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;margin-top:60px}
-.step{background:rgba(13,13,13,.8);padding:38px 26px;position:relative;transition:background .3s}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--w04);border-radius:20px;overflow:hidden;margin-top:60px}
+.step{background:var(--n8);padding:38px 26px;position:relative;transition:background .3s}
 .step:hover{background:rgba(201,168,76,.04)}
 .step-n{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:700;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.03));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:14px}
 .step h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--cream);margin-bottom:9px}
@@ -270,9 +275,9 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:48px}
-.faq-item{border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;transition:all .3s}
+.faq-item{border:1px solid var(--w07);border-radius:14px;overflow:hidden;transition:all .3s}
 .faq-item:hover{border-color:rgba(201,168,76,.2)}
-.faq-q{padding:19px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:14px;background:rgba(255,255,255,.025);font-weight:500;font-size:13.5px;color:var(--cream);user-select:none}
+.faq-q{padding:19px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:14px;background:var(--w025);font-weight:500;font-size:13.5px;color:var(--cream);user-select:none}
 .faq-q .tog{width:26px;height:26px;border-radius:50%;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;transition:all .3s;font-size:15px}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:13px;color:var(--gm);line-height:1.7}
 .faq-ai{padding:0 22px 18px}
@@ -280,21 +285,21 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .faq-item.open .tog{background:rgba(201,168,76,.15);transform:rotate(45deg)}
 
 /* CONTACT */
-.contact-form{background:var(--white);border-radius:22px;padding:38px;box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.contact-form{background:var(--white);border-radius:22px;padding:38px;box-shadow:0 20px 60px var(--k06)}
 .fg{margin-bottom:18px}
-.fg label{display:block;font-size:11.5px;font-weight:600;color:rgba(13,13,13,.55);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.fg label{display:block;font-size:11.5px;font-weight:600;color:var(--n55);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
 .fg input,.fg select,.fg textarea{width:100%;padding:13px 17px;background:var(--gs);border:1.5px solid transparent;border-radius:10px;font-family:inherit;font-size:13.5px;color:var(--ink);transition:all .25s;outline:none;cursor:text}
 .fg textarea{resize:vertical;min-height:115px}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:var(--white);box-shadow:0 0 0 4px rgba(201,168,76,.1)}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .btn-submit{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);border:none;padding:15px;border-radius:10px;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit;letter-spacing:.5px}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,168,76,.35)}
-.ci-card{background:var(--white);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .3s;margin-bottom:18px}
+.ci-card{background:var(--white);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 4px 20px var(--k05);transition:all .3s;margin-bottom:18px}
 .ci-card:hover{transform:translateX(4px)}
 .ci-icon{width:48px;height:48px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:20px}
-.ci-lbl{font-size:11px;font-weight:600;color:rgba(13,13,13,.5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.ci-lbl{font-size:11px;font-weight:600;color:var(--n5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
 .ci-val{font-size:15px;font-weight:600;color:var(--ink)}
-.ci-sub{font-size:12.5px;color:rgba(13,13,13,.5);margin-top:3px}
+.ci-sub{font-size:12.5px;color:var(--n5);margin-top:3px}
 
 /* SOCIAL — real brand colors */
 .social-row{display:flex;gap:8px;margin-top:14px;flex-wrap:nowrap;align-items:center}
@@ -303,7 +308,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .soc.fb{background:#1877F2}.soc.fb:hover{background:#0d65d9;transform:translateY(-2px);box-shadow:0 6px 18px rgba(24,119,242,.4)}
 .soc.ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}.soc.ig:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 6px 18px rgba(220,39,67,.4)}
 .soc.yt{background:#FF0000}.soc.yt:hover{background:#cc0000;transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,0,0,.4)}
-.soc.tw{background:#000;border:1px solid rgba(255,255,255,.15)}.soc.tw:hover{background:#1d1d1d;transform:translateY(-2px)}
+.soc.tw{background:#000;border:1px solid var(--w15)}.soc.tw:hover{background:#1d1d1d;transform:translateY(-2px)}
 .soc.li{background:#0A66C2}.soc.li:hover{background:#084f98;transform:translateY(-2px);box-shadow:0 6px 18px rgba(10,102,194,.4)}
 .soc.wa{background:#25D366}.soc.wa:hover{background:#1da950;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.4)}
 /* SOCIAL with labels */
@@ -314,9 +319,9 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .schol-banner{margin:0 4%;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--teal) 0%,var(--teal-l) 50%,var(--teal) 100%);padding:clamp(24px,5vw,58px);position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .schol-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E")}
 .schol-banner h2{font-size:clamp(26px,3vw,42px);color:#fff;letter-spacing:-1px;margin-bottom:14px}
-.schol-banner p{font-size:15px;color:rgba(255,255,255,.75);max-width:540px;line-height:1.7}
+.schol-banner p{font-size:15px;color:var(--w75);max-width:540px;line-height:1.7}
 .btn-white{background:#fff;color:var(--teal);font-weight:700;padding:13px 26px;border-radius:10px;text-decoration:none;font-size:14px;transition:all .3s;display:inline-flex;align-items:center;gap:8px;margin-top:24px}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--k2)}
 
 /* WA FLOAT */
 .wa-float{will-change:transform;position:fixed;bottom:28px;right:28px;z-index:500;background:#25D366;border-radius:50%;width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,.4);transition:all .3s;animation:pwа 2s ease infinite}
@@ -324,7 +329,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .wa-float:hover{transform:scale(1.1)}
 
 /* FOOTER */
-footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78px 8% 38px}
+footer{background:#060606;border-top:1px solid var(--w05);padding:78px 8% 38px}
 .fg-grid{display:grid;grid-template-columns:1.8fr 1fr;gap:clamp(24px,4vw,60px);align-items:start}
 .fc h5{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
 .fc a{display:block;font-size:13px;color:var(--gm);text-decoration:none;margin-bottom:9px;transition:color .2s;cursor:pointer}
@@ -334,29 +339,29 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 /* Footer link columns group */
 .fc-group{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 24px;align-items:start}
 .fc-group .fc h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.fc-group .fc a{display:block;font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;padding:2px 0;cursor:pointer;transition:color .2s;line-height:1.5}
+.fc-group .fc a{display:block;font-size:12px;color:var(--w55);text-decoration:none;padding:2px 0;cursor:pointer;transition:color .2s;line-height:1.5}
 .fc-group .fc a:hover{color:var(--gold)}
 
-.f-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gm);max-width:1400px;margin:58px auto 0}
+.f-bottom{border-top:1px solid var(--w05);padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gm);max-width:1400px;margin:58px auto 0}
 
 /* LANG PAGE */
-.lang-hero{min-height:55vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden}
+.lang-hero{min-height:55vh;display:flex;align-items:center;background:var(--bg);padding-top:100px;position:relative;overflow:hidden}
 .lang-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 80% 50%,rgba(201,168,76,.07),transparent)}
 .lang-hero-inner{max-width:1400px;margin:0 auto;padding:clamp(40px,6vw,60px) clamp(16px,5%,8%);display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%}
 .lang-flag-big{font-size:120px;text-align:center;animation:bob 3s ease infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .level-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .pill{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--gold);font-size:11px;font-weight:600;padding:5px 13px;border-radius:20px;letter-spacing:.5px}
-.course-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:30px;margin-top:30px}
+.course-box{background:var(--w03);border:1px solid var(--w07);border-radius:20px;padding:30px;margin-top:30px}
 .course-box h3{font-size:20px;margin-bottom:18px;color:var(--gold)}
 .course-box table{width:100%;border-collapse:collapse}
 .course-box .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.course-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13.5px}
+.course-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--w05);font-size:13.5px}
 .course-row:last-child{border-bottom:none}
 .course-row span:first-child{color:var(--cream);font-weight:500}
 .course-row span:last-child{color:var(--gm)}
 .info-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:40px}
-.info-card{flex:0 1 260px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:26px;transition:all .35s}
+.info-card{flex:0 1 260px;background:var(--w03);border:1px solid var(--w06);border-radius:16px;padding:26px;transition:all .35s}
 .info-card:hover{border-color:rgba(201,168,76,.25);background:rgba(201,168,76,.04)}
 .info-card .ic-icon{font-size:28px;margin-bottom:12px}
 .info-card h4{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream);margin-bottom:8px}
@@ -365,14 +370,14 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 /* ABOUT PAGE */
 .about-hero{background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(10,92,110,.06)),var(--ink);padding:160px 8% 100px}
 .about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:60px 0}
-.astat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:30px;text-align:center;transition:all .3s}
+.astat{background:var(--w03);border:1px solid var(--w07);border-radius:16px;padding:30px;text-align:center;transition:all .3s}
 .astat:hover{border-color:rgba(201,168,76,.25)}
 .astat .num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold)}
 .astat .lbl{font-size:11px;color:var(--gm);letter-spacing:1px;margin-top:5px}
 
 /* BLOG PAGE */
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin-top:50px}
-.blog-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;transition:all .4s;cursor:pointer}
+.blog-card{background:var(--w03);border:1px solid var(--w07);border-radius:20px;overflow:hidden;transition:all .4s;cursor:pointer}
 .blog-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-5px)}
 .bc-top{height:180px;display:flex;align-items:center;justify-content:center;font-size:72px;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(10,92,110,.06))}
 .bc-body{padding:26px}
@@ -382,7 +387,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 
 /* SCHOLARSHIPS */
 .schol-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:50px}
-.sc-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:34px;transition:all .4s}
+.sc-card{background:var(--w03);border:1px solid var(--w07);border-radius:20px;padding:34px;transition:all .4s}
 .sc-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px)}
 .sc-card .scc-icon{font-size:40px;margin-bottom:16px}
 .sc-card h3{font-size:22px;margin-bottom:10px}
@@ -390,33 +395,33 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 
 /* HANDWRITING PAGE */
 .hw-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px}
-.hwc{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:all .4s}
-.hwc:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.hwc{border-radius:20px;overflow:hidden;border:1px solid var(--w07);transition:all .4s}
+.hwc:hover{transform:translateY(-4px);box-shadow:0 20px 50px var(--k3)}
 .hwc-top{height:200px;display:flex;align-items:center;justify-content:center;font-size:100px}
-.hwc-body{padding:28px;background:rgba(255,255,255,.03)}
+.hwc-body{padding:28px;background:var(--w03)}
 .hwc-body h3{font-size:24px;margin-bottom:12px}
 .hwc-body p{font-size:13.5px;color:var(--gm);line-height:1.7;margin-bottom:20px}
 .hw-features{list-style:none;margin:14px 0}
-.hw-features li{font-size:13px;color:var(--gm);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:8px}
+.hw-features li{font-size:13px;color:var(--gm);padding:6px 0;border-bottom:1px solid var(--w04);display:flex;gap:8px}
 .hw-features li::before{content:'✦';color:var(--gold);font-size:10px;margin-top:2px}
 
 /* TTP SECTION */
-.ttp-bg{background:var(--cream)}
+.ttp-bg{background:var(--paper)}
 .ttp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:58px}
-.ttp-c{background:var(--white);border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:34px;position:relative;overflow:hidden;transition:all .35s}
+.ttp-c{background:var(--white);border:1px solid var(--k06);border-radius:20px;padding:34px;position:relative;overflow:hidden;transition:all .35s}
 .ttp-c::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-d));transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-.ttp-c:hover{box-shadow:0 20px 60px rgba(0,0,0,.08);transform:translateY(-4px)}
+.ttp-c:hover{box-shadow:0 20px 60px var(--k08);transform:translateY(-4px)}
 .ttp-c:hover::before{transform:scaleX(1)}
 .ttp-n{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:700;color:rgba(201,168,76,.15);line-height:1;margin-bottom:14px}
 .ttp-c h4{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--ink);margin-bottom:11px}
-.ttp-c p{font-size:13.5px;color:rgba(13,13,13,.6);line-height:1.7}
+.ttp-c p{font-size:13.5px;color:var(--n6);line-height:1.7}
 
 /* BIG STAT */
 .big-stat-box{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.2);border-radius:20px;padding:40px;text-align:center}
 .big-stat-box .bnum{font-family:'Cormorant Garamond',serif;font-size:78px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold),var(--gold-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .big-stat-box .bdesc{font-size:13px;color:var(--gm);margin-top:7px;letter-spacing:1px}
 .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.mini-s{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;text-align:center;transition:all .3s}
+.mini-s{background:var(--w03);border:1px solid var(--w06);border-radius:14px;padding:22px;text-align:center;transition:all .3s}
 .mini-s:hover{border-color:rgba(201,168,76,.25)}
 .mini-s .mn{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--gold)}
 .mini-s .ml{font-size:11px;color:var(--gm);margin-top:4px;letter-spacing:.5px}
@@ -433,7 +438,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
   top:64px;
   left:0;
   right:0;
-  background:rgba(13,13,13,.98);
+  background:var(--n98);
   backdrop-filter:blur(20px);
   padding:20px 5% 30px;
   z-index:999;
@@ -443,8 +448,8 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
   animation:slideDown .25s ease;
 }
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.nav-links.mobile-open li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.nav-links.mobile-open .dd-menu{position:static;box-shadow:none;background:rgba(255,255,255,.04);margin:8px -8px 0;padding:8px}
+.nav-links.mobile-open li{padding:8px 0;border-bottom:1px solid var(--w05)}
+.nav-links.mobile-open .dd-menu{position:static;box-shadow:none;background:var(--w04);margin:8px -8px 0;padding:8px}
 .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
@@ -531,7 +536,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 /* Footer link columns group */
 .fc-group{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 24px;align-items:start}
 .fc-group .fc h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.fc-group .fc a{display:block;font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;padding:2px 0;cursor:pointer;transition:color .2s;line-height:1.5}
+.fc-group .fc a{display:block;font-size:12px;color:var(--w55);text-decoration:none;padding:2px 0;cursor:pointer;transition:color .2s;line-height:1.5}
 .fc-group .fc a:hover{color:var(--gold)}
 
 .f-bottom{flex-direction:column;gap:8px;text-align:center}
@@ -674,7 +679,7 @@ form[data-fs-state="success"] ~ *,
 /* ── Industry Section ── */
 .industry-section{padding:clamp(40px,6vw,70px) 0}
 .industry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:8px}
-.industry-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px 18px;transition:all .3s;cursor:default}
+.industry-card{background:var(--w03);border:1px solid var(--w07);border-radius:16px;padding:22px 18px;transition:all .3s;cursor:default}
 .industry-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-4px);background:rgba(201,168,76,.05)}
 .industry-icon{font-size:28px;margin-bottom:10px}
 .industry-title{font-size:13.5px;font-weight:700;color:var(--cream);margin-bottom:7px;line-height:1.35}
@@ -685,18 +690,18 @@ form[data-fs-state="success"] ~ *,
 
 /* ── Professionals Page ── */
 .lang-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
-.ltab{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:rgba(250,248,243,.6);padding:9px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;transition:all .25s;font-family:inherit}
+.ltab{background:var(--w04);border:1px solid var(--w1);color:var(--c6);padding:9px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;transition:all .25s;font-family:inherit}
 .ltab.active,.ltab:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.4);color:var(--gold)}
 .ptab{display:none}
 .ptab.active{display:block}
 .prof-matrix{border:1px solid rgba(201,168,76,.15);border-radius:16px;overflow:hidden}
-.prof-row{display:grid;grid-template-columns:2fr 1.2fr 2fr;gap:0;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13.5px;align-items:center}
+.prof-row{display:grid;grid-template-columns:2fr 1.2fr 2fr;gap:0;padding:14px 20px;border-bottom:1px solid var(--w05);font-size:13.5px;align-items:center}
 .prof-row:last-child{border-bottom:none}
 .prof-row.header-row{background:rgba(201,168,76,.08);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);padding:12px 20px}
-.prof-row:not(.header-row):nth-child(even){background:rgba(255,255,255,.02)}
+.prof-row:not(.header-row):nth-child(even){background:var(--w02)}
 .lang-tag{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:var(--gold);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
 .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.vocab-item{display:flex;flex-direction:column;padding:8px 10px;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+.vocab-item{display:flex;flex-direction:column;padding:8px 10px;background:var(--w03);border-radius:8px;border:1px solid var(--w06)}
 .vocab-native{font-size:15px;font-weight:700;color:var(--cream);line-height:1.2}
 .vocab-roman{font-size:10.5px;color:var(--gold);font-style:italic;margin:2px 0}
 .vocab-en{font-size:11px;color:var(--gm)}
@@ -744,6 +749,7 @@ form[data-fs-state="success"] ~ *,
   <link rel="shortcut icon" type="image/png" href="/assets/difl-logo.png">  <!-- Resource hints for mobile performance -->
     <link rel="dns-prefetch" href="//img.youtube.com">
     <meta name="theme-color" content="#0d0d0d">
+<script>(function(){try{var t=localStorage.getItem("difl-theme");if(t==="light"){document.documentElement.setAttribute("data-theme","light");}}catch(e){}})();</script>
 </head>
 <body>
 <!-- DIFL Wing Decorative Overlays -->
@@ -766,8 +772,8 @@ form[data-fs-state="success"] ~ *,
   <div class="nav-logo" onclick="navigate('home')" style="gap:14px">
     <img src="/assets/difl-logo.png" class="difl-logo-img" alt="DIFL" id="nav-logo-img" width="180" height="48" style="height:48px;width:auto;object-fit:contain;display:block;flex-shrink:0;">
     <div style="display:flex;flex-direction:column;justify-content:center;padding-left:8px;line-height:1.15">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:2px;text-shadow:0 1px 6px rgba(0,0,0,.6);line-height:1">DIFL</span>
-      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:400;color:rgba(250,248,243,.6);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Dante Institute of Foreign Languages</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:2px;text-shadow:0 1px 6px var(--k6);line-height:1;color:var(--cream)!important">DIFL</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:400;color:var(--c6);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Dante Institute of Foreign Languages</span>
     </div>
   </div>
   <ul class="nav-links" id="navLinks">
@@ -820,6 +826,7 @@ form[data-fs-state="success"] ~ *,
     <li><a onclick="navigate('blog')">Blog</a></li>
     <li><a onclick="navigate('contact')" class="nav-cta">Enroll Now</a></li>
   </ul>
+  <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme" title="Toggle theme" style="background:var(--w05);border:1px solid var(--w08);color:var(--gold);width:38px;height:38px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;margin-left:12px;flex-shrink:0;transition:all .25s">☀️</button>
   <div class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 
@@ -845,7 +852,7 @@ form[data-fs-state="success"] ~ *,
         <h1 id="primary-h1" data-lcp="true">You Already Have Wings.<br><em>We Teach You How to Fly.</em></h1>
         <p class="hero-sub">From Japanese to French, German to Korean — DIFL transforms hesitation into expression through practical, mother-tongue-based language training. Less books. More speaking. Real confidence.</p>
         <div style="margin-bottom:20px">
-          <div style="font-size:13px;color:rgba(250,248,243,.5);font-style:italic;line-height:1.6;max-width:460px">
+          <div style="font-size:13px;color:var(--c5);font-style:italic;line-height:1.6;max-width:460px">
             <span style="color:var(--gold);font-weight:600">"Your Passport Is a Document. Language Is the Real Visa."</span>
           </div>
         </div>
@@ -882,7 +889,7 @@ form[data-fs-state="success"] ~ *,
   </div>
 
   <!-- LANGUAGES -->
-  <section style="background:rgba(255,255,255,.015)">
+  <section style="background:var(--w015)">
     <div class="sc">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:55px" class="reveal">
         <div><div class="eyebrow">Explore All Languages</div><h2>Choose Your<br><em>Language Path</em></h2></div>
@@ -929,7 +936,7 @@ form[data-fs-state="success"] ~ *,
         <h2 class="dark">We Don't Translate Words.<br><em>We Train Thoughts.</em></h2>
         <p class="lead dark" style="text-align:center;margin:0 auto 24px">Most learners struggle because they translate word by word. At DIFL, our <strong>TTP — Thought Translation Process</strong> targets the way a student thinks in their mother tongue and gradually reshapes it into the structure of the new language. You don't just memorise a language. You begin to <em>think</em> in it.</p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:14px">
-          <div style="background:rgba(13,13,13,.18);border:1px solid rgba(13,13,13,.25);padding:10px 20px;border-radius:24px;font-size:13px;color:rgba(13,13,13,.75);font-style:italic">Less Books. More Speaking. Real Language. Real Confidence.</div>
+          <div style="background:var(--n18);border:1px solid var(--n25);padding:10px 20px;border-radius:24px;font-size:13px;color:var(--n75);font-style:italic">Less Books. More Speaking. Real Language. Real Confidence.</div>
         </div>
       </div>
       <div class="ttp-grid">
@@ -967,7 +974,7 @@ form[data-fs-state="success"] ~ *,
 
 
   <!-- TESTIMONIALS -->
-  <section style="background:var(--cream);color:var(--ink)">
+  <section style="background:var(--paper);color:var(--ink)">
     <div class="sc">
       <div style="text-align:center;max-width:640px;margin:0 auto" class="reveal">
         <div class="eyebrow center dark">Student Reviews</div>
@@ -982,7 +989,7 @@ form[data-fs-state="success"] ~ *,
   </section>
 
 <!-- ═══ VIDEO TESTIMONIALS (Home) ═══ -->
-<section style="background:var(--ink);padding:clamp(40px,6vw,60px) clamp(16px,5%,8%)">
+<section style="background:var(--bg);padding:clamp(40px,6vw,60px) clamp(16px,5%,8%)">
   <div class="sc">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px">
       <div>
@@ -992,9 +999,9 @@ form[data-fs-state="success"] ~ *,
       <a onclick="navigate('testimonials')" style="cursor:pointer;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:8px 18px;border-radius:8px;transition:all .25s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='none'">All Reviews →</a>
     </div>
     <div class="vid-grid g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
-      <a href="https://youtu.be/umX_4K7AIUA" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--ink);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,.3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/umX_4K7AIUA/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Anushruti Sanadhya — Japanese" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px rgba(0,0,0,.4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Anushruti Sanadhya</div><div class="vid-card-role" style="font-size:11px;color:rgba(250,248,243,.5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Japanese Student · DIFL</div></div></a>
-      <a href="https://youtube.com/shorts/9eomc54139w" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--ink);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,.3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/9eomc54139w/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Abhinav Banthia" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px rgba(0,0,0,.4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Abhinav Banthia</div><div class="vid-card-role" style="font-size:11px;color:rgba(250,248,243,.5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Chairman, CII Rajasthan · DIFL</div></div></a>
-      <a href="https://youtube.com/shorts/caH9AopCze0" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--ink);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,.3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/caH9AopCze0/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Arnav Gupta" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px rgba(0,0,0,.4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Arnav Gupta</div><div class="vid-card-role" style="font-size:11px;color:rgba(250,248,243,.5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Film Director · DIFL</div></div></a>
+      <a href="https://youtu.be/umX_4K7AIUA" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--bg);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px var(--k3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px var(--k5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px var(--k3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/umX_4K7AIUA/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Anushruti Sanadhya — Japanese" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,var(--k45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px var(--k4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Anushruti Sanadhya</div><div class="vid-card-role" style="font-size:11px;color:var(--c5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Japanese Student · DIFL</div></div></a>
+      <a href="https://youtube.com/shorts/9eomc54139w" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--bg);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px var(--k3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px var(--k5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px var(--k3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/9eomc54139w/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Abhinav Banthia" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,var(--k45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px var(--k4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Abhinav Banthia</div><div class="vid-card-role" style="font-size:11px;color:var(--c5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Chairman, CII Rajasthan · DIFL</div></div></a>
+      <a href="https://youtube.com/shorts/caH9AopCze0" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--bg);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px var(--k3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px var(--k5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px var(--k3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/caH9AopCze0/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Arnav Gupta" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,var(--k45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px var(--k4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Arnav Gupta</div><div class="vid-card-role" style="font-size:11px;color:var(--c5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Film Director · DIFL</div></div></a>
     </div>
   </div>
 </section>
@@ -1014,7 +1021,7 @@ form[data-fs-state="success"] ~ *,
   <!-- SCHOLARSHIP BANNER -->
   <div class="schol-banner reveal">
     <div style="position:relative;z-index:1">
-      <div style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:10px">V K Sharma Memorial</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--w65);margin-bottom:10px">V K Sharma Memorial</div>
       <h2 style="margin-bottom:14px">Scholarships for<br>Deserving Students</h2>
       <p>DIFL believes language education should be accessible to all. The V K Sharma Memorial Scholarship supports financially needy students. Apply today.</p>
       <button class="btn-white" onclick="navigate('scholarships')">Apply for Scholarship →</button>
@@ -1023,7 +1030,7 @@ form[data-fs-state="success"] ~ *,
   </div>
 
   <!-- HOW TO APPLY -->
-  <section style="background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(201,168,76,.06),transparent),rgba(255,255,255,.015)">
+  <section style="background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(201,168,76,.06),transparent),var(--w015)">
     <div class="sc">
       <div style="text-align:center;max-width:640px;margin:0 auto" class="reveal">
         <div class="eyebrow center">Simple Enrollment</div>
@@ -1071,7 +1078,7 @@ form[data-fs-state="success"] ~ *,
 <a href="https://wa.me/919929515151" class="soc wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp DIFL"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <a href="https://twitter.com/mybhasha" class="soc tw" target="_blank" rel="noopener noreferrer" aria-label="DIFL X/Twitter"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
 <a href="https://www.linkedin.com/in/priyanshusharma/" class="soc li" target="_blank" rel="noopener noreferrer" aria-label="DIFL LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div></div></div>
-          <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.1);margin-top:4px">
+          <div style="border-radius:16px;overflow:hidden;border:1px solid var(--k1);margin-top:4px">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600!2d75.83902861026826!3d26.89223686087428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f18!3m3!1m2!1s0x396db6ecdcb64155%3A0xbe7ffad93ff3aae1!2sDante%20Institute%20of%20Foreign%20Languages!5e1!3m2!1sen!2sin!4v1779330786047!5m2!1sen!2sin" width="100%" height="320" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <a href="https://maps.google.com/?q=Dante+Institute+of+Foreign+Languages,+Jawahar+Nagar,+Jaipur" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12.5px;color:var(--gold);text-decoration:none;font-weight:500">
             📍 Open in Google Maps ↗
@@ -1089,7 +1096,7 @@ form[data-fs-state="success"] ~ *,
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:16px;line-height:1.2">Think You Know a Foreign Language?<br><em style="font-style:italic;color:var(--gold)">Put It to the DIFL Test.</em></h2>
     <p style="font-size:15px;color:var(--gm);line-height:1.7;max-width:520px;margin:0 auto 32px">10 questions. Instant result. Know your exact level in Japanese, French, German, Korean, Spanish, Arabic, Italian, Chinese or Russian.</p>
     <a href="/language-quiz/" style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);padding:16px 40px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;letter-spacing:.3px">Take the Quiz — Free →</a>
-    <p style="font-size:12px;color:rgba(255,255,255,.3);margin-top:16px">🇯🇵 🇫🇷 🇩🇪 🇰🇷 🇪🇸 🇨🇳 🇮🇹 🇦🇪 🇷🇺 &nbsp;·&nbsp; No signup · 2 minutes · Free</p>
+    <p style="font-size:12px;color:var(--w3);margin-top:16px">🇯🇵 🇫🇷 🇩🇪 🇰🇷 🇪🇸 🇨🇳 🇮🇹 🇦🇪 🇷🇺 &nbsp;·&nbsp; No signup · 2 minutes · Free</p>
   </div>
 </section>
 </div><!-- end home -->
@@ -1109,7 +1116,7 @@ form[data-fs-state="success"] ~ *,
       </div>
     </div>
   </div>
-  <section style="background:rgba(255,255,255,.015)">
+  <section style="background:var(--w015)">
     <div class="sc">
       <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,70px);align-items:start">
         <div class="reveal">
@@ -1152,7 +1159,7 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== ALL COURSES PAGE ===================== -->
 <div id="page-all-courses" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <section style="padding-top:clamp(80px,15vw,140px);background:var(--bg)">
     <div class="sc">
       <div class="eyebrow">All Language Programs</div>
       <h2>12 Languages.<br><em>Infinite Possibilities.</em></h2>
@@ -1169,7 +1176,7 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== PROGRAMS PAGE ===================== -->
 <div id="page-programs" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <section style="padding-top:clamp(80px,15vw,140px);background:var(--bg)">
     <div class="sc">
       <div class="eyebrow">Study &amp; Work Abroad</div>
       <h2>International <em>Programs</em></h2>
@@ -1177,7 +1184,7 @@ form[data-fs-state="success"] ~ *,
       <div class="prog-grid">
         <!-- Ausbildung Germany -->
         <div class="prog-card reveal">
-          <div class="prog-top" style="background:linear-gradient(135deg,rgba(0,0,0,.3),rgba(255,206,0,.1))">🏭<div class="prog-flag">🇩🇪</div></div>
+          <div class="prog-top" style="background:linear-gradient(135deg,var(--k3),rgba(255,206,0,.1))">🏭<div class="prog-flag">🇩🇪</div></div>
           <div class="prog-body">
             <h3>Ausbildung — Germany</h3>
             <div class="tag">Vocational Training Program</div>
@@ -1195,7 +1202,7 @@ form[data-fs-state="success"] ~ *,
         </div>
         <!-- MEXT Japan -->
         <div class="prog-card reveal" style="transition-delay:.1s">
-          <div class="prog-top" style="background:linear-gradient(135deg,rgba(188,0,45,.15),rgba(0,0,0,.3))">⛩️<div class="prog-flag">🇯🇵</div></div>
+          <div class="prog-top" style="background:linear-gradient(135deg,rgba(188,0,45,.15),var(--k3))">⛩️<div class="prog-flag">🇯🇵</div></div>
           <div class="prog-body">
             <h3>MEXT Scholarship — Japan</h3>
             <div class="tag">Japanese Government Scholarship</div>
@@ -1249,7 +1256,7 @@ form[data-fs-state="success"] ~ *,
         </div>
         <!-- Canada FR -->
         <div class="prog-card reveal" style="transition-delay:.1s">
-          <div class="prog-top" style="background:linear-gradient(135deg,rgba(255,0,0,.1),rgba(255,255,255,.05))">🍁<div class="prog-flag">🇨🇦</div></div>
+          <div class="prog-top" style="background:linear-gradient(135deg,rgba(255,0,0,.1),var(--w05))">🍁<div class="prog-flag">🇨🇦</div></div>
           <div class="prog-body">
             <h3>Canada Immigration — French (TEF/TCF)</h3>
             <div class="tag">Immigration Language Program</div>
@@ -1290,7 +1297,7 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== HANDWRITING PAGE ===================== -->
 <div id="page-handwriting" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <section style="padding-top:clamp(80px,15vw,140px);background:var(--bg)">
     <div class="sc">
       <div class="eyebrow">Unique Specialization</div>
       <h2>Handwriting <em>Improvement</em></h2>
@@ -1322,7 +1329,7 @@ form[data-fs-state="success"] ~ *,
           </div>
         </div>
         <div class="hwc reveal" style="transition-delay:.15s">
-          <div class="hwc-top" style="background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(13,13,13,.5))">🖋️</div>
+          <div class="hwc-top" style="background:linear-gradient(135deg,rgba(201,168,76,.14),var(--n5))">🖋️</div>
           <div class="hwc-body">
             <h3>Learn Calligraphy</h3>
             <p>Master the ancient art of beautiful writing — from foundational strokes to ornate, professional scripts. Calligraphy as meditation, skill, and a sought-after professional art form for weddings, events, and brand identity.</p>
@@ -1352,18 +1359,18 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== TESTIMONIALS PAGE ===================== -->
 <div id="page-testimonials" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--cream);color:var(--ink)">
+  <section style="padding-top:clamp(80px,15vw,140px);background:var(--paper);color:var(--ink)">
     <div class="sc">
       <div class="eyebrow dark">Student Reviews</div>
       <h2 style="color:var(--ink)">What Our <em style="background:linear-gradient(135deg,var(--gold-d),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Students Say</em></h1>
       <p class="lead dark" style="max-width:650px;margin-bottom:60px">25,000+ alumni across every profession — from CII Chairmen and film directors to nurses in Germany and engineers in Japan. Real results, real stories.</p>
       <div class="g-auto" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:16px" id="allTestimonials"></div>
-      <div style="margin-top:50px;background:var(--white);border-radius:22px;padding:40px;box-shadow:0 8px 30px rgba(0,0,0,.06)">
-        <div style="text-align:center;margin-bottom:30px"><h3 style="color:var(--ink);font-size:26px">Watch Video Testimonials</h3><p style="color:rgba(13,13,13,.6);font-size:14px;margin-top:8px">Hear directly from our students in their own words.</p></div>
+      <div style="margin-top:50px;background:var(--white);border-radius:22px;padding:40px;box-shadow:0 8px 30px var(--k06)">
+        <div style="text-align:center;margin-bottom:30px"><h3 style="color:var(--ink);font-size:26px">Watch Video Testimonials</h3><p style="color:var(--n6);font-size:14px;margin-top:8px">Hear directly from our students in their own words.</p></div>
         <div class="vid-grid g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
-          <a href="https://youtu.be/umX_4K7AIUA" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--ink);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,.3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/umX_4K7AIUA/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Anushruti Sanadhya — Japanese" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px rgba(0,0,0,.4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Anushruti Sanadhya</div><div class="vid-card-role" style="font-size:11px;color:rgba(250,248,243,.5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Japanese Student · DIFL</div></div></a>
-          <a href="https://youtube.com/shorts/9eomc54139w" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--ink);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,.3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/9eomc54139w/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Abhinav Banthia" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px rgba(0,0,0,.4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Abhinav Banthia</div><div class="vid-card-role" style="font-size:11px;color:rgba(250,248,243,.5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Chairman, CII Rajasthan · DIFL</div></div></a>
-          <a href="https://youtube.com/shorts/caH9AopCze0" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--ink);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,.3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/caH9AopCze0/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Arnav Gupta" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px rgba(0,0,0,.4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Arnav Gupta</div><div class="vid-card-role" style="font-size:11px;color:rgba(250,248,243,.5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Film Director · DIFL</div></div></a>
+          <a href="https://youtu.be/umX_4K7AIUA" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--bg);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px var(--k3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px var(--k5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px var(--k3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/umX_4K7AIUA/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Anushruti Sanadhya — Japanese" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,var(--k45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px var(--k4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Anushruti Sanadhya</div><div class="vid-card-role" style="font-size:11px;color:var(--c5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Japanese Student · DIFL</div></div></a>
+          <a href="https://youtube.com/shorts/9eomc54139w" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--bg);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px var(--k3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px var(--k5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px var(--k3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/9eomc54139w/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Abhinav Banthia" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,var(--k45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px var(--k4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Abhinav Banthia</div><div class="vid-card-role" style="font-size:11px;color:var(--c5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Chairman, CII Rajasthan · DIFL</div></div></a>
+          <a href="https://youtube.com/shorts/caH9AopCze0" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:14px;overflow:hidden;text-decoration:none;background:var(--bg);border:1px solid rgba(201,168,76,.15);transition:all .3s;box-shadow:0 4px 20px var(--k3)" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px var(--k5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px var(--k3)'"><div style="position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden"><img src="https://img.youtube.com/vi/caH9AopCze0/hqdefault.jpg" width="480" height="360" alt="DIFL Student Testimonial — Arnav Gupta" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;inset:0;background:linear-gradient(to top,var(--k45) 0%,transparent 45%)"><div style="position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:5px;background:rgba(200,0,0,.88);border-radius:20px;padding:4px 10px 4px 7px;box-shadow:0 2px 8px var(--k4)"><svg viewBox="0 0 24 24" width="11" height="11" fill="white"><path d="M8 5v14l11-7z"/></svg><span style="font-size:10px;font-weight:600;color:#fff;letter-spacing:.3px">PLAY</span></div></div></div><div style="padding:12px 14px 14px"><div class="vid-card-name" style="font-weight:600;color:var(--cream);font-size:13px;font-family:'DM Sans',sans-serif">Arnav Gupta</div><div class="vid-card-role" style="font-size:11px;color:var(--c5);margin-top:3px"><span style="color:rgba(201,168,76,.8)">▶</span> Film Director · DIFL</div></div></a>
         </div>
       </div>
     </div>
@@ -1373,14 +1380,14 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== SCHOLARSHIPS PAGE ===================== -->
 <div id="page-scholarships" class="page">
   
-<section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+<section style="padding-top:clamp(80px,15vw,140px);background:var(--bg)">
     <div class="sc">
       <div class="eyebrow">Financial Support · By Application Only</div>
       <h2>V K Sharma Memorial <em>Scholarship</em></h2>
       <p class="lead" style="max-width:720px;margin-bottom:14px">Named in lifelong honour of DIFL's founder, Late Dr. V K Sharma — this scholarship provides meaningful financial support to deserving students who wish to learn a foreign language but face genuine hardship. Applications are reviewed personally and with utmost care by Director Priyanshu Sharma.</p>
       <div style="background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:18px 24px;margin-bottom:50px;display:inline-flex;gap:10px;align-items:flex-start;max-width:680px">
         <span style="font-size:20px;flex-shrink:0">⚠️</span>
-        <p style="font-size:13px;color:rgba(250,248,243,.75);margin:0;line-height:1.7">This scholarship carries <strong style="color:var(--cream)">strict prerequisites</strong>. Acceptance is not guaranteed and the review process may take from a few weeks to a few months. Terms &amp; conditions apply. All applications are handled with complete discretion.</p>
+        <p style="font-size:13px;color:var(--c75);margin:0;line-height:1.7">This scholarship carries <strong style="color:var(--cream)">strict prerequisites</strong>. Acceptance is not guaranteed and the review process may take from a few weeks to a few months. Terms &amp; conditions apply. All applications are handled with complete discretion.</p>
       </div>
 
       <!-- WHO IS ELIGIBLE -->
@@ -1391,7 +1398,7 @@ form[data-fs-state="success"] ~ *,
           <div class="scc-icon">🎖️</div>
           <h3>Retired Armed Forces / Retired Police Families</h3>
           <p>Children or self of <strong>Retired Armed Forces personnel</strong> (Army, Navy, Air Force, Paramilitary) or <strong>Retired Police officers</strong>. Documentary proof of service and retirement required. India's defenders and their families deserve every opportunity to grow.</p>
-          <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--gm)">
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--w06);font-size:12px;color:var(--gm)">
             📎 Required: Discharge / Retirement certificate, service record, relationship proof
           </div>
         </div>
@@ -1400,7 +1407,7 @@ form[data-fs-state="success"] ~ *,
           <div class="scc-icon">🤝</div>
           <h3>Below Poverty Line (BPL) Families</h3>
           <p>Students from families that can <strong>demonstrate genuine financial need</strong>. BPL card or equivalent government-issued documentation required. DIFL is committed to ensuring that economic circumstance is never a barrier to quality language education.</p>
-          <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--gm)">
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--w06);font-size:12px;color:var(--gm)">
             📎 Required: BPL ration card / income certificate issued by competent authority / supporting financial documentation
           </div>
         </div>
@@ -1409,7 +1416,7 @@ form[data-fs-state="success"] ~ *,
           <div class="scc-icon">♿</div>
           <h3>Persons with Disabilities</h3>
           <p>Students with a recognised physical or other disability. <strong>DIFL believes language opens the world for everyone</strong> — including those who face additional challenges in their daily lives. DIFL is proud to be an inclusive institution.</p>
-          <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--gm)">
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--w06);font-size:12px;color:var(--gm)">
             📎 Required: Disability certificate issued by a government medical authority
           </div>
         </div>
@@ -1479,7 +1486,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== BLOG PAGE ===================== -->
 <div 
 id="page-blog" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink);min-height:80vh">
+  <section style="padding-top:clamp(80px,15vw,140px);background:var(--bg);min-height:80vh">
     <div class="sc">
       <div class="eyebrow">Language Insights · DIFL Knowledge Hub</div>
       <h2>DIFL <em>Blog</em></h2>
@@ -1571,7 +1578,7 @@ id="page-blog" class="page">
 <title>Professional Language Courses Jaipur — Japanese French Chinese Italian Korean | DIFL</title>
 
 <!-- HERO -->
-<div style="min-height:60vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden">
+<div style="min-height:60vh;display:flex;align-items:center;background:var(--bg);padding-top:100px;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(201,168,76,.07),transparent)"></div>
   <div class="sc" style="position:relative;z-index:1;text-align:center;max-width:860px;margin:0 auto">
     <div class="eyebrow center reveal">Industry-Targeted Language Coaching · Jaipur</div>
@@ -1585,7 +1592,7 @@ id="page-blog" class="page">
 </div>
 
 <!-- SECTION 1: Why DIFL -->
-<section style="background:rgba(255,255,255,.015)">
+<section style="background:var(--w015)">
   <div class="sc">
     <div style="text-align:center;max-width:640px;margin:0 auto 44px" class="reveal">
       <div class="eyebrow center">The DIFL Edge</div>
@@ -1601,7 +1608,7 @@ id="page-blog" class="page">
 </section>
 
 <!-- SECTION 2: Industry Matrix -->
-<section style="background:var(--ink)">
+<section style="background:var(--bg)">
   <div class="sc">
     <div style="text-align:center;max-width:680px;margin:0 auto 44px" class="reveal">
       <div class="eyebrow center">Industry × Language</div>
@@ -1627,7 +1634,7 @@ id="page-blog" class="page">
 </section>
 
 <!-- SECTION 3: Language Breakdown Tabs -->
-<section style="background:rgba(255,255,255,.015)">
+<section style="background:var(--w015)">
   <div class="sc">
     <div style="text-align:center;max-width:680px;margin:0 auto 44px" class="reveal">
       <div class="eyebrow center">Language Deep-Dive</div>
@@ -1660,7 +1667,7 @@ id="page-blog" class="page">
           </div>
         </div>
         <div>
-          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+          <div style="background:var(--w03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
             <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
             <div class="vocab-grid">
               <div class="vocab-item"><span class="vocab-native">宝石</span><span class="vocab-roman">houseki</span><span class="vocab-en">gemstone</span></div>
@@ -1697,7 +1704,7 @@ id="page-blog" class="page">
           </div>
         </div>
         <div>
-          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+          <div style="background:var(--w03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
             <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
             <div class="vocab-grid">
               <div class="vocab-item"><span class="vocab-native">négociation</span><span class="vocab-roman">—</span><span class="vocab-en">negotiation</span></div>
@@ -1734,7 +1741,7 @@ id="page-blog" class="page">
           </div>
         </div>
         <div>
-          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+          <div style="background:var(--w03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
             <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
             <div class="vocab-grid">
               <div class="vocab-item"><span class="vocab-native">宝石</span><span class="vocab-roman">bǎoshí</span><span class="vocab-en">gemstone</span></div>
@@ -1771,7 +1778,7 @@ id="page-blog" class="page">
           </div>
         </div>
         <div>
-          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+          <div style="background:var(--w03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
             <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
             <div class="vocab-grid">
               <div class="vocab-item"><span class="vocab-native">marmo</span><span class="vocab-roman">—</span><span class="vocab-en">marble</span></div>
@@ -1808,7 +1815,7 @@ id="page-blog" class="page">
           </div>
         </div>
         <div>
-          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
+          <div style="background:var(--w03);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:22px">
             <div class="eyebrow" style="margin-bottom:16px">Key Industry Vocabulary</div>
             <div class="vocab-grid">
               <div class="vocab-item"><span class="vocab-native">제조업</span><span class="vocab-roman">jejoeo-eop</span><span class="vocab-en">manufacturing</span></div>
@@ -1830,7 +1837,7 @@ id="page-blog" class="page">
 </section>
 
 <!-- SECTION 4: Testimonials -->
-<section style="background:var(--ink)">
+<section style="background:var(--bg)">
   <div class="sc">
     <div style="text-align:center;max-width:640px;margin:0 auto 44px" class="reveal">
       <div class="eyebrow center">Social Proof</div>
@@ -1857,7 +1864,7 @@ id="page-blog" class="page">
 </section>
 
 <!-- SECTION 5: Final CTA -->
-<section style="background:rgba(255,255,255,.015)">
+<section style="background:var(--w015)">
   <div class="sc" style="text-align:center;max-width:680px;margin:0 auto">
     <div class="reveal">
       <div style="font-size:48px;margin-bottom:16px">🎯</div>
@@ -1892,7 +1899,7 @@ id="page-blog" class="page">
 <a href="https://wa.me/919929515151" class="soc wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp DIFL"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <a href="https://twitter.com/mybhasha" class="soc tw" target="_blank" rel="noopener noreferrer" aria-label="DIFL X/Twitter"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
 <a href="https://www.linkedin.com/in/priyanshusharma/" class="soc li" target="_blank" rel="noopener noreferrer" aria-label="DIFL LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div></div></div>
-          <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.1);margin-top:4px">
+          <div style="border-radius:16px;overflow:hidden;border:1px solid var(--k1);margin-top:4px">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3099.6605138337313!2d75.83902861026826!3d26.89223686087428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db6ecdcb64155%3A0xbe7ffad93ff3aae1!2sDante%20Institute%20of%20Foreign%20Languages!5e1!3m2!1sen!2sin!4v1779330786047!5m2!1sen!2sin" width="100%" height="260" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
@@ -1914,7 +1921,7 @@ id="page-blog" class="page">
     <h2 style="font-size:clamp(30px,4vw,52px);color:var(--cream);margin-bottom:18px;letter-spacing:-1px">
       Your parents trusted us.<br>You succeeded with us.<br><em>Now, give wings to your children with DIFL.</em>
     </h2>
-    <p style="font-size:17px;color:rgba(250,248,243,.6);max-width:600px;margin:0 auto 36px;line-height:1.75;font-weight:300">
+    <p style="font-size:17px;color:var(--c6);max-width:600px;margin:0 auto 36px;line-height:1.75;font-weight:300">
       55 years. Four generations. One trusted name in foreign languages — <strong style="color:var(--gold)">DIFL</strong>. The institute where Jaipur's finest families have built their language legacy since 1971.
     </p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:0 4%">
@@ -1932,7 +1939,7 @@ id="page-blog" class="page">
         <img src="/assets/difl-logo.png" class="difl-logo-img" alt="DIFL — Dante Institute of Foreign Languages" id="footer-logo-img" width="200" height="60" style="height:60px;width:auto;object-fit:contain;display:block;margin-bottom:12px;">
       </div>
       <p>55 years of language excellence. 25,000+ students. 12 languages. Based in Jaipur, teaching the world to speak, connect, and grow.</p>
-      <div style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:10px">
+      <div style="font-size:13px;color:var(--w45);line-height:1.8;margin-bottom:10px">
         📍 2/11, DIFL House, In front of Jawahar Enclave,<br>Near Mama ka Hotel, Jawahar Nagar, Jaipur – 302 004, India<br>
         📞 <strong>Priyanshu Sharma:</strong> <a href="tel:+919929515151" style="color:var(--gold);text-decoration:none">+91-9929-51 51 51</a> &nbsp;|&nbsp; <strong>Roopshikha Sharma:</strong> <a href="tel:+919314502814" style="color:var(--gold);text-decoration:none">+91-9314-50 28 14</a> &nbsp;·&nbsp;
         ✉️ <a href="mailto:priyanshushar@gmail.com" style="color:var(--gold);text-decoration:none">priyanshushar@gmail.com</a>
@@ -1977,7 +1984,7 @@ const LANGS = [
       {name:'Individual (1-on-1 with teacher)',dur:'11–12 months full · 7–8 months workable level'}
     ]},
 
-  {id:'japanese',flag:'🇯🇵',name:'Japanese',native:'日本語',cert:'JLPT N5–N1 · TITP · SSW · MEXT',bg:'linear-gradient(135deg,rgba(188,0,45,.06),rgba(255,255,255,.04))',color:'rgba(188,0,45,.08)',
+  {id:'japanese',flag:'🇯🇵',name:'Japanese',native:'日本語',cert:'JLPT N5–N1 · TITP · SSW · MEXT',bg:'linear-gradient(135deg,rgba(188,0,45,.06),var(--w04))',color:'rgba(188,0,45,.08)',
     desc:'DIFL\'s Japanese program targets advanced communication from Day 1 — not a slow crawl through N5 to N1. A key fact most institutes hide: if you pass JLPT N3, you do not need N4 or N5. DIFL prepares you for the level you need directly — whether for TITP, MEXT scholarship, or Japanese MNC employment.',
     features:['Conversation-first: speak Japanese from your very first class','Skip-level strategy: target JLPT N2 or N3 directly without mandatory N5/N4','JLPT N5 through N1 full preparation — all levels available','TITP/SSW Japan visa language support (JLPT N4–N3)','MEXT scholarship preparation — JLPT N2/N1 pathway','TTP method: Hindi-Japanese SOV grammar connection used for rapid acquisition'],
     exams:['JLPT N5','JLPT N4','JLPT N3','JLPT N2','JLPT N1','TITP Language Test','SSW Test','NAT — All Levels','Business Japanese'],
@@ -1988,7 +1995,7 @@ const LANGS = [
       {name:'Individual (1-on-1 with teacher)',dur:'11–12 months full · shorter customised options available'}
     ]},
 
-  {id:'german',flag:'🇩🇪',name:'German',native:'Deutsch',cert:'Goethe A1–C2 · TELC · TestDaF',bg:'linear-gradient(135deg,rgba(220,0,0,.06),rgba(255,204,0,.04))',color:'rgba(0,0,0,.06)',
+  {id:'german',flag:'🇩🇪',name:'German',native:'Deutsch',cert:'Goethe A1–C2 · TELC · TestDaF',bg:'linear-gradient(135deg,rgba(220,0,0,.06),rgba(255,204,0,.04))',color:'var(--k06)',
     desc:'DIFL\'s German program takes you to real professional communication — not slow level-by-level progression. Critical advantage: Goethe B2 automatically means you have passed A1/A2/B1. Target the level you need directly — Ausbildung, Blue Card, or Opportunity Card.',
     cert_note:'The full German program at DIFL covers A1, A2, B1 and B2 completely, with practically required elements from C1 and C2, plus a substantial body of conversational German — idioms, professional language and real-world usage — that Goethe exam preparation alone typically skips. You become genuinely proficient in German, not just examination-ready.',
     features:['Advanced-first approach: Goethe B2 covers all lower levels — no need to retake each','Ausbildung Germany preparation: German A2/B1/B2 for vocational programs','Germany Opportunity Card: German B1 adds bonus points to the points system','EU Blue Card language preparation (German B2 for most roles)','Modular exam advantage: B1–C2 Goethe exams allow retaking individual failed sections only','Online, offline, and hybrid classes from Jaipur'],
@@ -2023,7 +2030,7 @@ const LANGS = [
       {name:'Individual (1-on-1 with teacher)',dur:'10–11 months · shorter as per your requirement and target level'}
     ]},
 
-  {id:'arabic',flag:'🇸🇦',name:'Arabic',native:'العربية',cert:'Hamza Test · ACTFL · University Certifications',bg:'linear-gradient(135deg,rgba(0,100,0,.06),rgba(255,255,255,.04))',color:'rgba(0,100,0,.08)',
+  {id:'arabic',flag:'🇸🇦',name:'Arabic',native:'العربية',cert:'Hamza Test · ACTFL · University Certifications',bg:'linear-gradient(135deg,rgba(0,100,0,.06),var(--w04))',color:'rgba(0,100,0,.08)',
     desc:'DIFL offers Arabic through individual and self-formed groups only — ensuring maximum personalisation for this uniquely structured language. MSA (Modern Standard Arabic) with Gulf dialect communication is covered. Arabic calligraphy is taught alongside as a unique DIFL tradition.',
     features:['Individual 1-on-1 sessions for maximum personalisation','MSA (Modern Standard Arabic) with Gulf dialect communication focus','Arabic calligraphy alongside language — a unique DIFL specialty','500+ Arabic words already in Hindi/Urdu — your head start from Day 1','Gulf employment focus: healthcare, engineering, education, hospitality','Group classes formed only when students organise themselves'],
     exams:['Hamza Test (free, CEFR-aligned)','ACTFL Arabic OPI','ACTFL Arabic OPIc','University Arabic Tests'],
@@ -2168,7 +2175,7 @@ function renderFaq(el, count=null){
 // ===== LANG PAGE BUILDER =====
 function buildLangPage(lang){
   return `
-  <div style="min-height:55vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden">
+  <div style="min-height:55vh;display:flex;align-items:center;background:var(--bg);padding-top:100px;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 80% 50%,${lang.color},transparent)"></div>
     <div style="max-width:1400px;margin:0 auto;padding:clamp(40px,6vw,60px) clamp(16px,5%,8%);display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%;position:relative;z-index:1">
       <div>
@@ -2183,14 +2190,14 @@ function buildLangPage(lang){
         </div>
       </div>
       <div style="text-align:center"><div style="font-size:140px;animation:bob 3s ease infinite">${lang.flag}</div>
-        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px;margin-top:20px">
+        <div style="background:var(--w03);border:1px solid var(--w07);border-radius:16px;padding:22px;margin-top:20px">
           <div style="font-size:11px;color:var(--gm);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px">Certification Exams</div>
           <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center">${lang.exams.map(e=>`<span class="pill">${e}</span>`).join('')}</div>
         </div>
       </div>
     </div>
   </div>
-  <section style="background:rgba(255,255,255,.015)">
+  <section style="background:var(--w015)">
     <div class="sc">
       <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,60px)">
         <div class="reveal">
@@ -2202,9 +2209,9 @@ function buildLangPage(lang){
           <div class="course-box">
             <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:14px 18px;margin-bottom:18px">
               <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px">🎯 DIFL's Unique Approach</div>
-              <p style="font-size:13px;color:rgba(250,248,243,.8);line-height:1.7;margin:0">${lang.approach || 'Communication is built from Day 1 — not after months of theory. <strong>Higher certification levels cover lower levels<\/strong> in most exams (JLPT, DELF, Goethe, TOPIK, DELE) — you don\'t need to take each level in sequence. Target the level you need, directly.'}</p>
+              <p style="font-size:13px;color:var(--c8);line-height:1.7;margin:0">${lang.approach || 'Communication is built from Day 1 — not after months of theory. <strong>Higher certification levels cover lower levels<\/strong> in most exams (JLPT, DELF, Goethe, TOPIK, DELE) — you don\'t need to take each level in sequence. Target the level you need, directly.'}</p>
             </div>
-            ${lang.cert_note ? `<div style="font-size:13px;color:rgba(250,248,243,.8);line-height:1.75;margin-bottom:16px;padding:12px 16px;background:rgba(201,168,76,.05);border-left:3px solid rgba(201,168,76,.4);border-radius:0 8px 8px 0"><strong style="color:var(--gold);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:7px">📋 What the Full Program Covers</strong>${lang.cert_note}</div>` : ""}<h3>Batch Options &amp; Duration</h3>
+            ${lang.cert_note ? `<div style="font-size:13px;color:var(--c8);line-height:1.75;margin-bottom:16px;padding:12px 16px;background:rgba(201,168,76,.05);border-left:3px solid rgba(201,168,76,.4);border-radius:0 8px 8px 0"><strong style="color:var(--gold);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:7px">📋 What the Full Program Covers</strong>${lang.cert_note}</div>` : ""}<h3>Batch Options &amp; Duration</h3>
             <div class="tbl-wrap"><table style="width:100%;border-collapse:collapse;margin-bottom:4px">
               <thead>
                 <tr>
@@ -2213,15 +2220,15 @@ function buildLangPage(lang){
                 </tr>
               </thead>
               <tbody>
-                ${lang.levels.map((l,i)=>`<tr style="background:${i%2===0?'rgba(255,255,255,.02)':'transparent'}">
-                  <td style="padding:11px 14px 11px 0;font-size:13.5px;font-weight:600;color:var(--cream);border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top">${l.name}</td>
-                  <td style="padding:11px 14px;font-size:13px;color:var(--gold);border-bottom:1px solid rgba(255,255,255,.05);line-height:1.55">${l.dur}</td>
+                ${lang.levels.map((l,i)=>`<tr style="background:${i%2===0?'var(--w02)':'transparent'}">
+                  <td style="padding:11px 14px 11px 0;font-size:13.5px;font-weight:600;color:var(--cream);border-bottom:1px solid var(--w05);vertical-align:top">${l.name}</td>
+                  <td style="padding:11px 14px;font-size:13px;color:var(--gold);border-bottom:1px solid var(--w05);line-height:1.55">${l.dur}</td>
                 </tr>`).join('')}
               </tbody>
             </table></div>
-            <div style="margin-top:14px;padding:12px 14px;font-size:12.5px;border-top:1px solid rgba(255,255,255,.05);background:rgba(201,168,76,.06);border-radius:0 0 10px 10px;display:flex;align-items:flex-start;gap:8px">
+            <div style="margin-top:14px;padding:12px 14px;font-size:12.5px;border-top:1px solid var(--w05);background:rgba(201,168,76,.06);border-radius:0 0 10px 10px;display:flex;align-items:flex-start;gap:8px">
               <span style="font-size:16px;flex-shrink:0">⏳</span>
-              <span style="color:rgba(250,248,243,.75);line-height:1.75"><strong style="color:var(--gold)">Waiting Period:</strong> Due to the strict upper limit on batch sizes, at least 2–3 batches ahead are always full at any given time. A waiting period of <strong style="color:var(--cream)">at least 4–5 weeks</strong> after registration is typical before the next available batch commences. <strong>Early registration is strongly recommended.</strong><br><span style="font-size:12px;color:var(--gm);margin-top:4px;display:block">Duration customisable · <a href="tel:+919929515151" style="color:var(--gold);font-weight:600">+91-9929-51 51 51</a> · <a onclick="navigate(\\'contact\\')" style="color:var(--gold);cursor:pointer;text-decoration:underline">Enquire directly</a></span></span>
+              <span style="color:var(--c75);line-height:1.75"><strong style="color:var(--gold)">Waiting Period:</strong> Due to the strict upper limit on batch sizes, at least 2–3 batches ahead are always full at any given time. A waiting period of <strong style="color:var(--cream)">at least 4–5 weeks</strong> after registration is typical before the next available batch commences. <strong>Early registration is strongly recommended.</strong><br><span style="font-size:12px;color:var(--gm);margin-top:4px;display:block">Duration customisable · <a href="tel:+919929515151" style="color:var(--gold);font-weight:600">+91-9929-51 51 51</a> · <a onclick="navigate(\\'contact\\')" style="color:var(--gold);cursor:pointer;text-decoration:underline">Enquire directly</a></span></span>
             </div>
           </div>
         </div>
@@ -2298,11 +2305,11 @@ function buildLangPage(lang){
     posts = posts.slice(0,4);
     if(!posts.length) return '';
     var cards = posts.map(function(p){
-      return '<a href="/blog.html?p='+p.id+'" style="flex:0 1 280px;max-width:320px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:20px 22px;text-decoration:none;display:flex;flex-direction:column;gap:9px;transition:all .3s" onmouseover="this.style.borderColor=\'rgba(201,168,76,.35)\';this.style.transform=\'translateY(-3px)\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,.07)\';this.style.transform=\'none\'"><div style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px">'+p.cat+'</div><div style="font-size:14px;font-weight:600;color:var(--cream);line-height:1.45">'+p.title+'</div><div style="font-size:12px;color:var(--gm);margin-top:auto">⏱ '+p.rd+' read</div></a>';
+      return '<a href="/blog.html?p='+p.id+'" style="flex:0 1 280px;max-width:320px;background:var(--w03);border:1px solid var(--w07);border-radius:14px;padding:20px 22px;text-decoration:none;display:flex;flex-direction:column;gap:9px;transition:all .3s" onmouseover="this.style.borderColor=\'rgba(201,168,76,.35)\';this.style.transform=\'translateY(-3px)\'" onmouseout="this.style.borderColor=\'var(--w07)\';this.style.transform=\'none\'"><div style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px">'+p.cat+'</div><div style="font-size:14px;font-weight:600;color:var(--cream);line-height:1.45">'+p.title+'</div><div style="font-size:12px;color:var(--gm);margin-top:auto">⏱ '+p.rd+' read</div></a>';
     }).join('');
-    return '<section style="background:rgba(255,255,255,.015)"><div class="sc"><div style="text-align:center;max-width:680px;margin:0 auto 36px" class="reveal"><div class="eyebrow center">From the DIFL Blog</div><h2>Latest <em>'+lang.name+'</em> Articles</h2></div><div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:18px">'+cards+'</div><div style="text-align:center;margin-top:32px" class="reveal"><a href="/blog.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;border:1px solid rgba(201,168,76,.3);padding:10px 22px;border-radius:8px;text-decoration:none;transition:all .25s" onmouseover="this.style.background=\'rgba(201,168,76,.08)\'" onmouseout="this.style.background=\'transparent\'">View all articles →</a></div></div></section>';
+    return '<section style="background:var(--w015)"><div class="sc"><div style="text-align:center;max-width:680px;margin:0 auto 36px" class="reveal"><div class="eyebrow center">From the DIFL Blog</div><h2>Latest <em>'+lang.name+'</em> Articles</h2></div><div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:18px">'+cards+'</div><div style="text-align:center;margin-top:32px" class="reveal"><a href="/blog.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;border:1px solid rgba(201,168,76,.3);padding:10px 22px;border-radius:8px;text-decoration:none;transition:all .25s" onmouseover="this.style.background=\'rgba(201,168,76,.08)\'" onmouseout="this.style.background=\'transparent\'">View all articles →</a></div></div></section>';
   })()}
-  <section style="background:var(--ink)">
+  <section style="background:var(--bg)">
     <div class="sc">
       <div style="text-align:center;max-width:640px;margin:0 auto 40px" class="reveal">
         <div class="eyebrow center">Why Learn ${lang.name} at DIFL</div>
@@ -2322,14 +2329,14 @@ function buildLangPage(lang){
           <p style="font-size:13px;color:var(--gm);margin-bottom:18px">10 questions · Instant result · Completely free</p>
           <a href="/language-quiz/" style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);padding:11px 28px;border-radius:10px;font-weight:700;font-size:13px;text-decoration:none">Take the ${lang.name} Quiz →</a>
         </div>
-        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px 28px;text-align:center;flex:1 1 300px;max-width:400px;display:flex;flex-direction:column;justify-content:center">
+        <div style="background:var(--w03);border:1px solid var(--w08);border-radius:16px;padding:24px 28px;text-align:center;flex:1 1 300px;max-width:400px;display:flex;flex-direction:column;justify-content:center">
           <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,.8);margin-bottom:10px">📅 Exam Dates 2025–26</div>
           <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:8px;line-height:1.3">${lang.name} Exam Dates, Fees & India Centers</h3>
           <p style="font-size:13px;color:var(--gm);margin-bottom:16px">Registration deadlines · Test centers · Fee structure · Official contacts — all in one place</p>
           <a href="/exam-calendar/" style="display:inline-block;border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:10px 24px;border-radius:10px;font-weight:600;font-size:13px;text-decoration:none">View Exam Calendar →</a>
         </div>
         </div>
-                <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.2);border-radius:20px;padding:40px;display:inline-block;max-width:560px">
+                <div style="background:var(--w03);border:1px solid rgba(201,168,76,.2);border-radius:20px;padding:40px;display:inline-block;max-width:560px">
           <div style="font-size:36px;margin-bottom:14px">📞</div>
           <h3 style="color:var(--gold);font-size:22px;margin-bottom:10px">Start Learning ${lang.name} Today</h3>
           <p style="font-size:14px;color:var(--gm);margin-bottom:22px">Call or WhatsApp for a free, unbiased counselling session. We'll tell you exactly how to get started based on your goals.</p>
@@ -2572,7 +2579,7 @@ window.addEventListener('scroll',()=>document.getElementById('navbar').classList
 document.getElementById('hamburger').addEventListener('click',()=>{
   const nl=document.getElementById('navLinks');
   const open=nl.style.display==='flex';
-  nl.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(13,13,13,.98);padding:20px;gap:6px;z-index:999;border-bottom:1px solid rgba(201,168,76,.2)';
+  nl.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--n98);padding:20px;gap:6px;z-index:999;border-bottom:1px solid rgba(201,168,76,.2)';
 });
 
 // ===== INIT =====
@@ -2786,6 +2793,24 @@ var TEAM_PHOTOS={
     if(TEAM_PHOTOS[name]) img.src = TEAM_PHOTOS[name];
   });
 })();
+</script>
+<script>
+function applyTheme(t){
+  if(t==='light'){document.documentElement.setAttribute('data-theme','light');}
+  else{document.documentElement.removeAttribute('data-theme');}
+  try{localStorage.setItem('difl-theme',t);}catch(e){}
+  var b=document.getElementById('themeToggle');
+  if(b){b.textContent=(t==='light'?'\uD83C\uDF19':'\u2600\uFE0F');b.title=(t==='light'?'Switch to dark':'Switch to light');}
+}
+function toggleTheme(){
+  var cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  var b=document.getElementById('themeToggle');
+  if(b){b.textContent=(cur==='light'?'\uD83C\uDF19':'\u2600\uFE0F');b.title=(cur==='light'?'Switch to dark':'Switch to light');}
+});
 </script>
 </body>
 </html>
