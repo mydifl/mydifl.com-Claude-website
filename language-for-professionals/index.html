@@ -22,8 +22,8 @@ body{background:#0d0d0d;color:#faf8f3;font-family:Georgia,serif;padding:40px 5%;
 h1{font-size:clamp(28px,4vw,42px);color:#c9a84c;margin:32px 0 16px;line-height:1.2}
 h2{font-size:clamp(18px,2.5vw,24px);color:#c9a84c;margin:32px 0 12px}
 p{color:rgba(250,248,243,.75);line-height:1.8;margin-bottom:16px;font-size:15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:20px 0}
-.card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:18px}
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:20px 0}
+.card{flex:0 1 260px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:18px}
 .card h3{font-size:14px;color:#c9a84c;margin-bottom:8px}
 .card p{font-size:13px;margin:0}
 table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;table-layout:fixed}
