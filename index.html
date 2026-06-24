@@ -2223,9 +2223,9 @@ function buildLangPage(lang){
               <span style="color:rgba(250,248,243,.75);line-height:1.75"><strong style="color:var(--gold)">Waiting Period:</strong> Due to the strict upper limit on batch sizes, at least 2–3 batches ahead are always full at any given time. A waiting period of <strong style="color:var(--cream)">at least 4–5 weeks</strong> after registration is typical before the next available batch commences. <strong>Early registration is strongly recommended.</strong><br><span style="font-size:12px;color:var(--gm);margin-top:4px;display:block">Duration customisable · <a href="tel:+919929515151" style="color:var(--gold);font-weight:600">+91-9929-51 51 51</a> · <a onclick="navigate(\\'contact\\')" style="color:var(--gold);cursor:pointer;text-decoration:underline">Enquire directly</a></span></span>
             </div>
           </div>
-          <div class="course-box" style="margin-top:18px"><h3>Career Opportunities</h3>${lang.career.map(c=>`<div class="course-row"><span style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>${c}</span></div>`).join('')}</div>
         </div>
       </div>
+      <div class="course-box" style="margin-top:18px"><h3 style="text-align:center">Career Opportunities</h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 32px">${lang.career.map(c=>`<div class="course-row"><span style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>${c}</span></div>`).join('')}</div></div>
     </div>
   </section>
 
