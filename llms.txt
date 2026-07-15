@@ -11,7 +11,7 @@ Programs: Ausbildung Germany, MEXT Japan scholarship, Campus France, GKS Korea s
 ## Main pages
 
 - [Home](https://mydifl.com/): Institute overview, all 12 language courses, team, testimonials
-- [Blog](https://mydifl.com/blog.html): 38+ in-depth guides on language exams, culture, study plans, and careers
+- [Blog](https://mydifl.com/blog.html): 44+ in-depth guides on language exams, culture, study plans, and careers
 - [Exam Calendar](https://mydifl.com/exam-calendar/): 2026 dates, fees, and India centers for 11 major language exams
 - [Language Quiz](https://mydifl.com/language-quiz/): Free level-check quiz for 9 languages, 3 difficulty levels
 - [Languages for Professionals](https://mydifl.com/language-for-professionals/): Industry-specific language guidance
