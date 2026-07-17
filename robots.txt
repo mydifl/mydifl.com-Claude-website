@@ -29,23 +29,13 @@ Allow: /language-for-professionals/
 Allow: /blog.html
 Allow: /whatsapp/
 
-# ── Block spam WordPress paths ─────────────────────────────────────
-Disallow: /products/
-Disallow: /shop/
-Disallow: /tag/
-Disallow: /items/
+# ── Old spam paths (from pre-2026 hacked site) are intentionally
+# ── crawlable: they now return 404 so Google can drop them fast.
+# ── Only WP admin endpoints stay blocked (bot-noise reduction).
 Disallow: /wp-admin/
 Disallow: /wp-login.php
 Disallow: /wp-content/
 Disallow: /wp-includes/
-Disallow: /cart/
-Disallow: /checkout/
-Disallow: /my-account/
-Disallow: /order/
-Disallow: /feed/
-Disallow: /author/
-Disallow: /category/
-Disallow: /home/
 
 # ── Block spam and junk query parameters ───────────────────────────
 Disallow: /*?m=
