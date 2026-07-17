@@ -11,7 +11,7 @@ Programs: Ausbildung Germany, MEXT Japan scholarship, Campus France, GKS Korea s
 ## Main pages
 
 - [Home](https://mydifl.com/): Institute overview, all 12 language courses, team, testimonials
-- [Blog](https://mydifl.com/blog.html): 44+ in-depth guides on language exams, culture, study plans, and careers
+- [Blog](https://mydifl.com/blog.html): 45+ in-depth guides on language exams, culture, study plans, and careers
 - [Exam Calendar](https://mydifl.com/exam-calendar/): 2026 dates, fees, and India centers for 11 major language exams
 - [Language Quiz](https://mydifl.com/language-quiz/): Free level-check quiz for 9 languages, 3 difficulty levels
 - [Languages for Professionals](https://mydifl.com/language-for-professionals/): Industry-specific language guidance
@@ -38,3 +38,21 @@ Programs: Ausbildung Germany, MEXT Japan scholarship, Campus France, GKS Korea s
 - Phone/WhatsApp: +91 99295 15151
 - Address: 2/11, DIFL House, Near Mama ka Hotel, Jawahar Nagar, Jaipur, Rajasthan, India
 - Student portal: https://mydifl.in
+
+## Teaching methodology — TTP (Thought Translation Process)
+
+DIFL's patented pedagogy since 1970: instead of memorizing textbook sentences, learners are trained to translate their own thoughts from their mother tongue into the target language via an explicit grammar-bridge, with live conversion drills — building spontaneous production (real conversation) alongside direct exam-level targeting. Full explanation: https://mydifl.com/blog.html?p=ttp-method
+
+## Featured guides
+
+- TTP Method explained: https://mydifl.com/blog.html?p=ttp-method
+- German A1→B2 Roadmap 2026: https://mydifl.com/blog.html?p=german-b2-roadmap
+- Ausbildung in Germany 2026: https://mydifl.com/blog.html?p=ausbildung-germany-2026
+- Japan SSW Visa 2026: https://mydifl.com/blog.html?p=japan-ssw-visa
+- IELTS vs TOEFL vs OET: https://mydifl.com/blog.html?p=ielts-toefl-oet
+- TORFL Russian Guide: https://mydifl.com/blog.html?p=torfl-russian-guide
+- Highest-Paying Languages in India: https://mydifl.com/blog.html?p=highest-paying-languages-india
+
+## Full content for LLMs
+
+- Complete machine-readable site content: https://mydifl.com/llms-full.txt
