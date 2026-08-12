@@ -75,7 +75,7 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
       <section id="dashboard" class="hidden">
         <div class="dashboard-head">
           <div><p class="eyebrow">Certificate registry</p><h1>Welcome, <span id="staff-name">DIFL staff</span></h1><p class="muted" id="staff-role"></p></div>
-          <div class="head-actions"><button class="btn btn-secondary" id="download-template" type="button">CSV template</button><button class="btn btn-secondary" id="import-csv" type="button">Import CSV</button><input id="csv-file" class="hidden" type="file" accept=".csv,text/csv" /><button class="btn btn-primary" id="new-certificate" type="button">Add certificate</button></div>
+          <div class="head-actions"><a class="btn btn-secondary" href="/assets/difl-certificate-bulk-import-template.xlsx" download>Excel template</a><button class="btn btn-secondary" id="bulk-upload" type="button">Bulk upload</button><button class="btn btn-secondary" id="import-csv" type="button">Import CSV</button><input id="csv-file" class="hidden" type="file" accept=".csv,text/csv" /><button class="btn btn-primary" id="new-certificate" type="button">Add certificate</button></div>
         </div>
 
         <div id="dashboard-message" class="notice hidden" role="status"></div>
@@ -126,11 +126,27 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
         <div class="field full"><label for="contact-address">Contact address (private)</label><textarea id="contact-address" rows="2" maxlength="600"></textarea></div>
         <div class="field"><label for="certificate-status">Status</label><select id="certificate-status"><option value="valid">Valid</option><option value="revoked">Revoked</option><option value="replaced">Replaced</option></select></div>
         <div class="field"><label for="status-note">Internal status note</label><input id="status-note" maxlength="300" /></div>
-        <div class="field full"><label for="certificate-file">Certificate scan (private PDF, JPG, or PNG; max 10 MB)</label><input id="certificate-file" type="file" accept="application/pdf,image/jpeg,image/png" /></div>
+        <div class="field"><label for="certificate-file">Certificate scan (private; max 10 MB)</label><input id="certificate-file" type="file" accept="application/pdf,image/jpeg,image/png" /></div>
+        <div class="field"><label for="student-photo">Student photograph (private; max 10 MB)</label><input id="student-photo" type="file" accept="image/jpeg,image/png" /></div>
       </div>
       <div id="form-message" class="notice hidden" role="status"></div>
       <div id="verification-link-wrap" class="verification-link hidden"><label for="verification-link">New verification link — copy it now</label><div><input id="verification-link" readonly /><button id="copy-link" class="btn btn-secondary" type="button">Copy</button></div><small>The random verification token is shown only when this record is created or regenerated.</small></div>
       <div class="dialog-actions"><button class="btn btn-secondary hidden" id="regenerate-link" type="button">Replace verification link</button><button class="btn btn-secondary" id="cancel-dialog" type="button">Cancel</button><button class="btn btn-primary" id="save-certificate" type="submit">Save certificate</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="bulk-dialog">
+    <form id="bulk-form" class="dialog-card">
+      <div class="dialog-head"><div><p class="eyebrow">Secure bulk import</p><h2>Upload Excel, certificates, and photographs</h2></div><button class="icon-btn" id="close-bulk" type="button" aria-label="Close">×</button></div>
+      <div class="bulk-help notice">
+        Download and complete the Excel template. In <strong>certificate_file</strong> and <strong>photo_file</strong>, enter the exact filenames you select below. Files may also be named like <strong>DIFL-2026-001-certificate.pdf</strong> and <strong>DIFL-2026-001-photo.jpg</strong> for automatic matching.
+      </div>
+      <div class="form-grid bulk-fields">
+        <div class="field full"><label for="excel-file">Completed Excel workbook (.xlsx; first sheet, max 5 MB)</label><input id="excel-file" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required /></div>
+        <div class="field full"><label for="bulk-files">Certificate scans and student photographs (PDF, JPG, or PNG; max 10 MB each)</label><input id="bulk-files" type="file" accept="application/pdf,image/jpeg,image/png" multiple /></div>
+      </div>
+      <div id="bulk-message" class="notice hidden" role="status"></div>
+      <div class="dialog-actions"><button class="btn btn-secondary" id="cancel-bulk" type="button">Cancel</button><button class="btn btn-primary" id="start-bulk" type="submit">Validate and upload</button></div>
     </form>
   </dialog>
 
@@ -184,6 +200,8 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
   .verification-link label { font-weight: 800; }
   .verification-link > div { display: flex; gap: .5rem; margin: .5rem 0; }
   .verification-link input { flex: 1; min-width: 0; border: 1px solid #9bcbb0; border-radius: 8px; padding: .65rem; }
+  .bulk-help { margin: 1rem 0; line-height: 1.55; }
+  .bulk-fields { margin-top: 1rem; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
   @media (max-width: 800px) { .login-grid, .staff-section { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr; } .invite-form { grid-template-columns: 1fr; } .dashboard-head, .records-tools { align-items: stretch; flex-direction: column; } }
   @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .full { grid-column: auto; } .search-row { flex-direction: column; } }
