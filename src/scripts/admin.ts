@@ -83,6 +83,7 @@ async function loadProfile() {
   $('staff-role').textContent = `${currentProfile.role[0].toUpperCase()}${currentProfile.role.slice(1)} · ${currentProfile.email}`;
   show('staff-section', currentProfile.role === 'owner' || currentProfile.role === 'admin');
   $<HTMLButtonElement>('new-certificate').disabled = currentProfile.role === 'viewer';
+  $<HTMLButtonElement>('download-template').disabled = currentProfile.role === 'viewer';
   $<HTMLButtonElement>('bulk-upload').disabled = currentProfile.role === 'viewer';
   $<HTMLButtonElement>('import-csv').disabled = currentProfile.role === 'viewer';
   setOnly('dashboard');
@@ -262,9 +263,21 @@ async function inviteStaff(event: SubmitEvent) {
   $<HTMLFormElement>('invite-form').reset(); setNotice('dashboard-message', 'Staff invitation sent. They must enable an authenticator app at first sign-in.', 'success');
 }
 
-function downloadTemplate() {
-  const csv = 'certificate_number,student_name,mobile,email,contact_address,course_name,language,level,issue_date,status\nDIFL-2026-001,Example Student,+91XXXXXXXXXX,student@example.com,Jaipur,French Language,French,A1,2026-08-12,valid\n';
-  const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); link.download = 'difl-certificate-import-template.csv'; link.click(); URL.revokeObjectURL(link.href);
+async function downloadTemplate() {
+  if (!supabase || currentProfile?.role === 'viewer') return;
+  setNotice('dashboard-message', 'Preparing the protected Excel template…');
+  const { data: { session } } = await supabase.auth.getSession();
+  const response = await fetch('/api/admin/template', { headers: { authorization: `Bearer ${session?.access_token || ''}` } });
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    return setNotice('dashboard-message', result.error || 'The Excel template could not be downloaded.', 'error');
+  }
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(await response.blob());
+  link.download = 'difl-certificate-bulk-import-template.xlsx';
+  link.click();
+  URL.revokeObjectURL(link.href);
+  setNotice('dashboard-message', 'Excel template downloaded.', 'success');
 }
 
 function parseCsv(text: string) {
@@ -547,6 +560,7 @@ $('status-filter').addEventListener('change', renderCertificates);
 $('copy-link').addEventListener('click', async () => { await navigator.clipboard.writeText(value('verification-link')); $('copy-link').textContent = 'Copied'; });
 $('regenerate-link').addEventListener('click', regenerateLink);
 $('bulk-upload').addEventListener('click', () => { setNotice('bulk-message'); $<HTMLFormElement>('bulk-form').reset(); $<HTMLDialogElement>('bulk-dialog').showModal(); });
+$('download-template').addEventListener('click', downloadTemplate);
 $('close-bulk').addEventListener('click', () => $<HTMLDialogElement>('bulk-dialog').close());
 $('cancel-bulk').addEventListener('click', () => $<HTMLDialogElement>('bulk-dialog').close());
 $<HTMLFormElement>('bulk-form').addEventListener('submit', importExcel);

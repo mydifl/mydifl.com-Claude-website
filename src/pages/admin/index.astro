@@ -75,7 +75,7 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
       <section id="dashboard" class="hidden">
         <div class="dashboard-head">
           <div><p class="eyebrow">Certificate registry</p><h1>Welcome, <span id="staff-name">DIFL staff</span></h1><p class="muted" id="staff-role"></p></div>
-          <div class="head-actions"><a class="btn btn-secondary" href="/assets/difl-certificate-bulk-import-template.xlsx" download>Excel template</a><button class="btn btn-secondary" id="bulk-upload" type="button">Bulk upload</button><button class="btn btn-secondary" id="import-csv" type="button">Import CSV</button><input id="csv-file" class="hidden" type="file" accept=".csv,text/csv" /><button class="btn btn-primary" id="new-certificate" type="button">Add certificate</button></div>
+          <div class="head-actions"><button class="btn btn-secondary" id="download-template" type="button">Excel template</button><button class="btn btn-secondary" id="bulk-upload" type="button">Bulk upload</button><button class="btn btn-secondary" id="import-csv" type="button">Import CSV</button><input id="csv-file" class="hidden" type="file" accept=".csv,text/csv" /><button class="btn btn-primary" id="new-certificate" type="button">Add certificate</button></div>
         </div>
 
         <div id="dashboard-message" class="notice hidden" role="status"></div>
