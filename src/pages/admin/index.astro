@@ -80,6 +80,32 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
 
         <div id="dashboard-message" class="notice hidden" role="status"></div>
 
+        <section class="card card-pad staff-guide" aria-labelledby="staff-guide-title">
+          <div class="guide-heading">
+            <div><p class="eyebrow">Staff instructions · स्टाफ निर्देश</p><h2 id="staff-guide-title">Certificate upload और online verification की प्रक्रिया</h2></div>
+            <p>नीचे दिए गए चरण क्रम से पूरे करें। Verification link केवल सही व्यक्ति को सुरक्षित रूप से भेजें।</p>
+          </div>
+          <ol class="guide-steps">
+            <li>
+              <strong>एक certificate upload करें</strong>
+              <span><b>Add certificate</b> पर क्लिक करें। Certificate number, विद्यार्थी का नाम, course, language, level और issue date भरें। उपलब्ध हो तो certificate scan और student photograph चुनें, फिर <b>Save certificate</b> दबाएँ।</span>
+            </li>
+            <li>
+              <strong>कई certificates एक साथ upload करें</strong>
+              <span><b>Excel template</b> डाउनलोड करके हर विद्यार्थी की जानकारी अलग row में भरें। <b>certificate_file</b> और <b>photo_file</b> में चुनी जाने वाली files के exact नाम लिखें। फिर <b>Bulk upload</b> खोलें, Excel file तथा सभी संबंधित PDF/JPG/PNG files चुनकर <b>Validate and upload</b> दबाएँ।</span>
+            </li>
+            <li>
+              <strong>Verification link जारी करें</strong>
+              <span>नया record save होने पर green box में verification link दिखाई देगा। <b>Copy</b> दबाकर link तुरंत सुरक्षित जगह पर रखें और विद्यार्थी, employer या authorised verifier को भेजें। Bulk upload के बाद सभी links की CSV file अपने-आप download होगी। Link खो जाने पर record खोलकर <b>Replace verification link</b> से नया link बनाएँ; पुराना link बंद हो जाएगा।</span>
+            </li>
+            <li>
+              <strong>Certificate online verify करें</strong>
+              <span>प्राप्त verification link खोलें, या <b>mydifl.com/verify/</b> पर जाकर 48-character verification code डालें और <b>Verify certificate</b> दबाएँ। सही record मिलने पर certificate number, course, language, issue date और status दिखेगा। विद्यार्थी का नाम privacy के लिए 20% masked रहेगा।</span>
+            </li>
+          </ol>
+          <div class="guide-warning"><strong>सुरक्षा:</strong> Mobile number, email, address, certificate scan और photograph public verification पर कभी नहीं दिखते। किसी अनजान व्यक्ति को staff password, authenticator code या admin access न दें।</div>
+        </section>
+
         <div class="stats-grid" aria-label="Certificate summary">
           <div class="card stat"><span>All records</span><strong id="stat-total">—</strong></div>
           <div class="card stat"><span>Valid</span><strong id="stat-valid">—</strong></div>
@@ -164,6 +190,16 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
   .dashboard-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
   .dashboard-head h1 { margin-bottom: .3rem; }
   .head-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+  .staff-guide { margin: 1.2rem 0; border-left: 5px solid var(--gold); }
+  .guide-heading { display: grid; grid-template-columns: 1fr .9fr; gap: 1.5rem; align-items: end; }
+  .guide-heading h2 { margin-bottom: 0; }
+  .guide-heading > p { color: var(--muted); line-height: 1.6; margin-bottom: 0; }
+  .guide-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: .85rem; padding: 0; margin: 1.25rem 0; list-style: none; counter-reset: guide; }
+  .guide-steps li { counter-increment: guide; display: grid; grid-template-columns: 38px 1fr; gap: .4rem .75rem; align-content: start; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; background: #f8faff; }
+  .guide-steps li::before { content: counter(guide); grid-row: 1 / 3; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; font-weight: 900; }
+  .guide-steps strong { color: var(--navy); }
+  .guide-steps span { color: #4e5d75; line-height: 1.58; }
+  .guide-warning { padding: .85rem 1rem; border-radius: 10px; color: #704f05; background: #fff8e6; border: 1px solid #efd898; line-height: 1.55; }
   .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.2rem 0; }
   .stat { padding: 1.2rem; }
   .stat span { color: var(--muted); font-size: .82rem; font-weight: 700; }
@@ -203,6 +239,6 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
   .bulk-help { margin: 1rem 0; line-height: 1.55; }
   .bulk-fields { margin-top: 1rem; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
-  @media (max-width: 800px) { .login-grid, .staff-section { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr; } .invite-form { grid-template-columns: 1fr; } .dashboard-head, .records-tools { align-items: stretch; flex-direction: column; } }
+  @media (max-width: 800px) { .login-grid, .staff-section, .guide-heading, .guide-steps { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr; } .invite-form { grid-template-columns: 1fr; } .dashboard-head, .records-tools { align-items: stretch; flex-direction: column; } }
   @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .full { grid-column: auto; } .search-row { flex-direction: column; } }
 </style>

@@ -13,11 +13,12 @@ import PortalLayout from '../../layouts/PortalLayout.astro';
         <p class="eyebrow">Official certificate registry</p>
         <h1>Verify a DIFL certificate</h1>
         <p>Use the private verification link supplied by the certificate holder or DIFL. Student names are partially masked to protect personal information.</p>
+        <p lang="hi"><strong>हिंदी:</strong> DIFL या विद्यार्थी द्वारा दिया गया verification link खोलें। यदि केवल code मिला है, तो नीचे पूरा 48-character code डालकर <strong>Verify certificate</strong> दबाएँ। सही certificate मिलने पर उसका number, course, language, issue date और status दिखाई देगा। Privacy के लिए विद्यार्थी का नाम 20% छिपाया जाता है।</p>
       </section>
       <section class="card card-pad verify-card">
         <form id="verify-form">
-          <div class="field"><label for="verification-code">Verification code</label><input id="verification-code" name="code" autocomplete="off" spellcheck="false" maxlength="48" pattern="[A-Fa-f0-9]{48}" required /></div>
-          <button id="verify-button" class="btn btn-primary" type="submit">Verify certificate</button>
+          <div class="field"><label for="verification-code">Verification code · सत्यापन कोड</label><input id="verification-code" name="code" autocomplete="off" spellcheck="false" maxlength="48" pattern="[A-Fa-f0-9]{48}" required /></div>
+          <button id="verify-button" class="btn btn-primary" type="submit">Verify certificate · सत्यापित करें</button>
         </form>
         <div id="verify-message" class="notice hidden" role="status"></div>
         <div id="result" class="result hidden" aria-live="polite">
