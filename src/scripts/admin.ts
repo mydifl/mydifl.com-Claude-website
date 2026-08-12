@@ -23,6 +23,7 @@ let currentProfile: StaffProfile | null = null;
 let certificates: Certificate[] = [];
 let mfaFactorId = '';
 let enrollingFactorId = '';
+let passwordSetupPending = new URLSearchParams(location.search).get('invited') === '1' || ['invite', 'recovery'].includes(new URLSearchParams(location.hash.slice(1)).get('type') || '');
 
 function setOnly(panel: 'configuration' | 'login-panel' | 'password-panel' | 'mfa-panel' | 'unauthorised' | 'dashboard') {
   ['configuration', 'login-panel', 'password-panel', 'mfa-panel', 'unauthorised', 'dashboard'].forEach((id) => show(id, id === panel));
@@ -34,7 +35,7 @@ async function routeSession() {
   const { data: { user } } = await supabase.auth.getUser();
   currentUser = user;
   if (!user) return setOnly('login-panel');
-  if (new URLSearchParams(location.search).get('invited') === '1') return setOnly('password-panel');
+  if (passwordSetupPending) return setOnly('password-panel');
 
   const factors = await supabase.auth.mfa.listFactors();
   if (factors.error) return failMfa(factors.error.message);
@@ -311,6 +312,7 @@ $<HTMLFormElement>('password-form').addEventListener('submit', async (event) => 
   setNotice('password-message', 'Securing your account…');
   const { error } = await supabase.auth.updateUser({ password });
   if (error) return setNotice('password-message', error.message, 'error');
+  passwordSetupPending = false;
   history.replaceState({}, '', '/admin/'); setNotice('password-message'); await routeSession();
 });
 
@@ -329,4 +331,10 @@ $<HTMLInputElement>('csv-file').addEventListener('change', async (event) => { co
 $<HTMLFormElement>('invite-form').addEventListener('submit', inviteStaff);
 
 window.addEventListener('beforeunload', () => { if (enrollingFactorId && supabase) void supabase.auth.mfa.unenroll({ factorId: enrollingFactorId }); });
+supabase?.auth.onAuthStateChange((event) => {
+  if (event === 'PASSWORD_RECOVERY') {
+    passwordSetupPending = true;
+    setOnly('password-panel');
+  }
+});
 void routeSession();
