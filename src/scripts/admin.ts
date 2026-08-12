@@ -120,8 +120,8 @@ function renderCertificates() {
     const attachments = item.certificate_attachments || [];
     const scanPath = attachments.find((file) => file.kind === 'certificate')?.file_path || item.file_path;
     const photoPath = attachments.find((file) => file.kind === 'photo')?.file_path;
-    if (scanPath) { const file = document.createElement('button'); file.type = 'button'; file.textContent = 'Scan'; file.addEventListener('click', () => openPrivateFile(scanPath)); actions.append(file); }
-    if (photoPath) { const photo = document.createElement('button'); photo.type = 'button'; photo.textContent = 'Photo'; photo.addEventListener('click', () => openPrivateFile(photoPath)); actions.append(photo); }
+    if (scanPath) { const file = document.createElement('button'); file.type = 'button'; file.textContent = 'Download scan'; file.addEventListener('click', () => downloadPrivateFile(scanPath)); actions.append(file); }
+    if (photoPath) { const photo = document.createElement('button'); photo.type = 'button'; photo.textContent = 'Download photo'; photo.addEventListener('click', () => downloadPrivateFile(photoPath)); actions.append(photo); }
     tr.append(actions); body.append(tr);
   }
   show('empty-state', rows.length === 0);
@@ -164,11 +164,15 @@ async function regenerateLink() {
   show('verification-link-wrap'); setNotice('form-message', 'The old link is disabled. Copy and securely store the new link now.', 'success');
 }
 
-async function openPrivateFile(path: string) {
+async function downloadPrivateFile(path: string) {
   if (!supabase) return;
-  const { data, error } = await supabase.storage.from('certificate-files').createSignedUrl(path, 60);
+  const { data, error } = await supabase.storage.from('certificate-files').createSignedUrl(path, 60, { download: true });
   if (error) return setNotice('dashboard-message', error.message, 'error');
-  window.open(data.signedUrl, '_blank', 'noopener,noreferrer');
+  const link = document.createElement('a');
+  link.href = data.signedUrl;
+  link.rel = 'noopener noreferrer';
+  link.download = '';
+  link.click();
 }
 
 async function validatePrivateFile(file: File, allowPdf = true) {

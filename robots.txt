@@ -1,5 +1,10 @@
 User-agent: *
 
+# Private staff surfaces are never intended for crawling. This is a crawl hint;
+# access control is enforced separately by authentication, MFA, and RLS.
+Disallow: /admin/
+Disallow: /api/admin/
+
 # ── Explicitly allow all valid DIFL pages ──────────────────────────
 Allow: /$
 Allow: /*?page=*
@@ -104,4 +109,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://mydifl.com/sitemap.xml
-
