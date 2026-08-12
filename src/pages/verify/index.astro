@@ -1,0 +1,89 @@
+---
+import PortalLayout from '../../layouts/PortalLayout.astro';
+---
+
+<PortalLayout title="Verify a DIFL Certificate" description="Verify a certificate issued by Dante Institute of Foreign Languages." robots="index, follow">
+  <div class="portal-shell verify-page">
+    <header class="portal-header">
+      <a class="brand" href="/" aria-label="DIFL home"><img src="/assets/difl-logo.png" alt="" /><div><strong>DIFL</strong><span>Dante Institute of Foreign Languages · Since 1971</span></div></a>
+      <a class="home-link" href="/">Visit mydifl.com</a>
+    </header>
+    <main class="verify-wrap">
+      <section class="verify-intro">
+        <p class="eyebrow">Official certificate registry</p>
+        <h1>Verify a DIFL certificate</h1>
+        <p>Use the private verification link supplied by the certificate holder or DIFL. Student names are partially masked to protect personal information.</p>
+      </section>
+      <section class="card card-pad verify-card">
+        <form id="verify-form">
+          <div class="field"><label for="verification-code">Verification code</label><input id="verification-code" name="code" autocomplete="off" spellcheck="false" maxlength="48" pattern="[A-Fa-f0-9]{48}" required /></div>
+          <button id="verify-button" class="btn btn-primary" type="submit">Verify certificate</button>
+        </form>
+        <div id="verify-message" class="notice hidden" role="status"></div>
+        <div id="result" class="result hidden" aria-live="polite">
+          <div class="result-head"><div id="result-mark" class="result-mark">✓</div><div><p id="result-label" class="result-label">Verified</p><h2 id="result-number"></h2></div></div>
+          <dl>
+            <div><dt>Student</dt><dd id="result-name"></dd></div>
+            <div><dt>Course</dt><dd id="result-course"></dd></div>
+            <div><dt>Language & level</dt><dd id="result-language"></dd></div>
+            <div><dt>Date of issue</dt><dd id="result-date"></dd></div>
+            <div><dt>Certificate status</dt><dd id="result-status"></dd></div>
+          </dl>
+          <p class="privacy-note">For privacy, the student’s name is 20% masked. Phone number, email, address, and certificate scan are never disclosed here.</p>
+        </div>
+      </section>
+      <p class="support">Need assistance? Contact DIFL through the details published on <a href="/">mydifl.com</a>. Never send confidential student data to an unverified contact.</p>
+    </main>
+  </div>
+  <script>
+    const form = document.querySelector('#verify-form');
+    const input = document.querySelector('#verification-code');
+    const button = document.querySelector('#verify-button');
+    const message = document.querySelector('#verify-message');
+    const result = document.querySelector('#result');
+    const setText = (id, text) => { document.querySelector(`#${id}`).textContent = text || '—'; };
+    const run = async () => {
+      const token = input.value.trim().toLowerCase();
+      result.classList.add('hidden'); message.className = 'notice'; message.textContent = 'Checking the secure DIFL registry…'; button.disabled = true;
+      try {
+        const response = await fetch('/api/verify', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ token }) });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Verification is temporarily unavailable.');
+        if (!data.found) { message.className = 'notice error'; message.textContent = 'No certificate matches this verification code. Check the complete link or contact DIFL directly.'; return; }
+        message.className = 'notice hidden';
+        const item = data.certificate; const active = item.status === 'valid';
+        setText('result-number', item.certificate_number); setText('result-name', item.student_name_masked); setText('result-course', item.course_name);
+        setText('result-language', [item.language, item.level].filter(Boolean).join(' · ')); setText('result-date', new Intl.DateTimeFormat('en-IN', { dateStyle: 'long' }).format(new Date(`${item.issue_date}T00:00:00`)));
+        setText('result-status', item.status[0].toUpperCase() + item.status.slice(1)); setText('result-label', active ? 'Authentic DIFL record' : 'Record found — certificate is not valid'); setText('result-mark', active ? '✓' : '!');
+        result.classList.toggle('invalid', !active); result.classList.remove('hidden');
+      } catch (error) { message.className = 'notice error'; message.textContent = error instanceof Error ? error.message : 'Verification is temporarily unavailable.'; }
+      finally { button.disabled = false; }
+    };
+    form.addEventListener('submit', (event) => { event.preventDefault(); void run(); });
+    const initial = new URLSearchParams(location.search).get('code'); if (initial) { input.value = initial; void run(); }
+  </script>
+</PortalLayout>
+
+<style>
+  .verify-page { background: radial-gradient(circle at 15% 10%, #e6edf9, transparent 34%), var(--wash); }
+  .home-link { color: white; font-weight: 700; font-size: .9rem; }
+  .verify-wrap { width: min(760px, calc(100% - 2rem)); margin: 0 auto; padding: clamp(2.5rem, 8vw, 6rem) 0 4rem; }
+  .verify-intro { text-align: center; max-width: 650px; margin: 0 auto 2rem; }
+  .verify-intro p:not(.eyebrow) { color: var(--muted); line-height: 1.65; }
+  #verify-form { display: grid; grid-template-columns: 1fr auto; gap: .7rem; align-items: end; }
+  .result { margin-top: 1.5rem; border: 1px solid #a9d7bd; background: #f2fbf6; border-radius: 14px; padding: 1.25rem; }
+  .result.invalid { border-color: #efb5af; background: #fff4f2; }
+  .result-head { display: flex; gap: 1rem; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(23,114,69,.2); }
+  .result-mark { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: white; font-size: 1.5rem; font-weight: 900; }
+  .invalid .result-mark { background: var(--red); }
+  .result-label { margin: 0 0 .2rem; color: var(--green); font-weight: 800; }
+  .invalid .result-label { color: var(--red); }
+  .result h2 { margin: 0; }
+  dl { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  dl div { padding: .8rem; background: rgba(255,255,255,.7); border-radius: 9px; }
+  dt { color: var(--muted); font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+  dd { margin: .25rem 0 0; font-weight: 750; }
+  .privacy-note, .support { color: var(--muted); line-height: 1.55; font-size: .86rem; }
+  .support { text-align: center; margin-top: 1.4rem; }
+  @media (max-width: 600px) { #verify-form, dl { grid-template-columns: 1fr; } .home-link { display: none; } }
+</style>

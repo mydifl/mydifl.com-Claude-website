@@ -1,0 +1,91 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  robots?: string;
+}
+
+const { title, description, robots = 'noindex, nofollow, noarchive' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="/assets/difl-logo.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --ink: #17233b;
+    --muted: #667085;
+    --line: #d9dfeb;
+    --paper: #fff;
+    --wash: #f3f6fb;
+    --navy: #10274f;
+    --blue: #2457a7;
+    --gold: #d8a739;
+    --red: #b42318;
+    --green: #177245;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: var(--wash);
+    font-synthesis: none;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; }
+  button, input, select, textarea { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  a { color: inherit; }
+  .portal-shell { min-height: 100vh; }
+  .portal-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1rem clamp(1rem, 4vw, 3rem); background: var(--navy); color: white;
+    border-bottom: 3px solid var(--gold);
+  }
+  .brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; }
+  .brand img { width: 46px; height: 46px; object-fit: contain; background: white; border-radius: 50%; padding: 3px; }
+  .brand strong { display: block; font-size: 1rem; letter-spacing: .02em; }
+  .brand span { display: block; color: #ced9ec; font-size: .78rem; margin-top: .15rem; }
+  .container { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 2rem 0 4rem; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 14px 35px rgba(23,35,59,.08); }
+  .card-pad { padding: clamp(1.1rem, 3vw, 2rem); }
+  h1, h2, h3, p { margin-top: 0; }
+  h1 { font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.08; letter-spacing: -.035em; }
+  h2 { font-size: 1.3rem; }
+  .eyebrow { color: var(--blue); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .muted { color: var(--muted); }
+  .field { display: grid; gap: .4rem; }
+  .field label { font-weight: 700; font-size: .86rem; }
+  .field input, .field select, .field textarea {
+    width: 100%; border: 1px solid #bcc6d8; border-radius: 10px; background: white; color: var(--ink);
+    padding: .76rem .82rem; outline: none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,87,167,.14); }
+  .btn { border: 0; border-radius: 10px; padding: .76rem 1rem; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; }
+  .btn-primary { color: white; background: var(--blue); }
+  .btn-secondary { color: var(--navy); background: #e8eef8; }
+  .btn-danger { color: #fff; background: var(--red); }
+  .btn:disabled { opacity: .55; cursor: not-allowed; }
+  .notice { padding: .8rem 1rem; border-radius: 10px; background: #eef4ff; color: #24446f; border: 1px solid #c9daf6; }
+  .notice.error { background: #fff0ee; color: #861e16; border-color: #f1beb8; }
+  .notice.success { background: #eaf8f0; color: #0d5b35; border-color: #bce4cd; }
+  .hidden { display: none !important; }
+  .spinner { width: 18px; height: 18px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin .75s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 640px) {
+    .portal-header { align-items: flex-start; }
+    .brand span { display: none; }
+    .container { width: min(100% - 1rem, 1180px); padding-top: 1rem; }
+    .card { border-radius: 14px; }
+  }
+</style>

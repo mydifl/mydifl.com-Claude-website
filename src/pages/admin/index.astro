@@ -1,0 +1,190 @@
+---
+import PortalLayout from '../../layouts/PortalLayout.astro';
+---
+
+<PortalLayout title="DIFL Staff Portal" description="Private certificate administration for authorised DIFL staff.">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <a class="brand" href="/" aria-label="DIFL home">
+        <img src="/assets/difl-logo.png" alt="" />
+        <div><strong>DIFL Staff Portal</strong><span>Certificate Registry · Authorised access only</span></div>
+      </a>
+      <button id="sign-out" class="btn btn-secondary hidden" type="button">Sign out</button>
+    </header>
+
+    <main class="container">
+      <section id="configuration" class="card card-pad hidden">
+        <p class="eyebrow">Setup required</p>
+        <h1>The secure registry is ready to connect.</h1>
+        <p class="muted">Add the protected database settings to the hosting environment before staff can sign in.</p>
+      </section>
+
+      <section id="login-panel" class="login-grid hidden">
+        <div class="login-copy">
+          <p class="eyebrow">Private workspace</p>
+          <h1>Certificates, protected for the long term.</h1>
+          <p>Every staff member has an individual account. An authenticator code is required before any certificate can be added or changed.</p>
+          <ul>
+            <li>Student contact details never appear on public verification.</li>
+            <li>Certificate scans remain in private storage.</li>
+            <li>Every change is attributed and retained in the audit trail.</li>
+          </ul>
+        </div>
+        <form id="login-form" class="card card-pad auth-card">
+          <p class="eyebrow">Staff sign in</p>
+          <h2>Use your DIFL account</h2>
+          <div class="field"><label for="login-email">Email</label><input id="login-email" name="email" type="email" autocomplete="username" required /></div>
+          <div class="field"><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" minlength="12" required /></div>
+          <button class="btn btn-primary" type="submit">Continue securely</button>
+          <div id="login-message" class="notice hidden" role="status"></div>
+        </form>
+      </section>
+
+      <section id="mfa-panel" class="card card-pad mfa-card hidden">
+        <p class="eyebrow">Second security check</p>
+        <h1 id="mfa-title">Enter your authenticator code</h1>
+        <p id="mfa-copy" class="muted">Open your authenticator app and enter the current six-digit code.</p>
+        <div id="mfa-qr-wrap" class="hidden">
+          <img id="mfa-qr" alt="Authenticator setup QR code" />
+          <p class="muted">Scan this QR code once. Store your recovery details safely and never share this screen.</p>
+        </div>
+        <form id="mfa-form">
+          <div class="field"><label for="mfa-code">Six-digit code</label><input id="mfa-code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required /></div>
+          <button class="btn btn-primary" type="submit">Verify and enter</button>
+        </form>
+        <div id="mfa-message" class="notice hidden" role="status"></div>
+      </section>
+
+      <section id="password-panel" class="card card-pad mfa-card hidden">
+        <p class="eyebrow">Complete your invitation</p>
+        <h1>Create your staff password</h1>
+        <p class="muted">Use at least 14 characters. A unique passphrase with several unrelated words is easiest to remember securely.</p>
+        <form id="password-form">
+          <div class="field"><label for="new-password">New password</label><input id="new-password" type="password" autocomplete="new-password" minlength="14" required /></div>
+          <div class="field"><label for="confirm-password">Confirm password</label><input id="confirm-password" type="password" autocomplete="new-password" minlength="14" required /></div>
+          <button class="btn btn-primary" type="submit">Set password and continue</button>
+        </form>
+        <div id="password-message" class="notice hidden" role="status"></div>
+      </section>
+
+      <section id="unauthorised" class="card card-pad hidden">
+        <p class="eyebrow">Access denied</p><h1>This account is not authorised.</h1>
+        <p class="muted">Ask a DIFL owner or administrator to activate your staff profile.</p>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <div class="dashboard-head">
+          <div><p class="eyebrow">Certificate registry</p><h1>Welcome, <span id="staff-name">DIFL staff</span></h1><p class="muted" id="staff-role"></p></div>
+          <div class="head-actions"><button class="btn btn-secondary" id="download-template" type="button">CSV template</button><button class="btn btn-secondary" id="import-csv" type="button">Import CSV</button><input id="csv-file" class="hidden" type="file" accept=".csv,text/csv" /><button class="btn btn-primary" id="new-certificate" type="button">Add certificate</button></div>
+        </div>
+
+        <div id="dashboard-message" class="notice hidden" role="status"></div>
+
+        <div class="stats-grid" aria-label="Certificate summary">
+          <div class="card stat"><span>All records</span><strong id="stat-total">—</strong></div>
+          <div class="card stat"><span>Valid</span><strong id="stat-valid">—</strong></div>
+          <div class="card stat"><span>Revoked / replaced</span><strong id="stat-inactive">—</strong></div>
+        </div>
+
+        <section class="card records-card">
+          <div class="records-tools">
+            <div><h2>Certificates</h2><p class="muted">Search by certificate number, student, course, or language.</p></div>
+            <div class="search-row"><input id="search" type="search" placeholder="Search records" aria-label="Search certificates" /><select id="status-filter" aria-label="Filter by status"><option value="">All statuses</option><option value="valid">Valid</option><option value="revoked">Revoked</option><option value="replaced">Replaced</option></select></div>
+          </div>
+          <div class="table-wrap">
+            <table><thead><tr><th>Certificate</th><th>Student</th><th>Course</th><th>Issued</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody id="certificate-rows"></tbody></table>
+            <div id="empty-state" class="empty hidden">No matching certificates found.</div>
+          </div>
+        </section>
+
+        <section id="staff-section" class="card card-pad staff-section hidden">
+          <div><p class="eyebrow">Team access</p><h2>Invite a staff member</h2><p class="muted">Each person receives an individual account and must enable an authenticator app.</p></div>
+          <form id="invite-form" class="invite-form">
+            <div class="field"><label for="invite-name">Name</label><input id="invite-name" required maxlength="100" /></div>
+            <div class="field"><label for="invite-email">Email</label><input id="invite-email" type="email" required /></div>
+            <div class="field"><label for="invite-role">Role</label><select id="invite-role"><option value="staff">Staff</option><option value="viewer">Viewer</option><option value="admin">Administrator</option></select></div>
+            <button class="btn btn-primary" type="submit">Send secure invitation</button>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="certificate-dialog">
+    <form id="certificate-form" class="dialog-card">
+      <div class="dialog-head"><div><p class="eyebrow">Registry record</p><h2 id="dialog-title">Add certificate</h2></div><button class="icon-btn" id="close-dialog" type="button" aria-label="Close">×</button></div>
+      <input id="certificate-id" type="hidden" />
+      <div class="form-grid">
+        <div class="field"><label for="certificate-number">Certificate number *</label><input id="certificate-number" required maxlength="80" /></div>
+        <div class="field"><label for="student-name">Student’s full name *</label><input id="student-name" required maxlength="160" /></div>
+        <div class="field"><label for="course-name">Course *</label><input id="course-name" required maxlength="160" /></div>
+        <div class="field"><label for="language">Language *</label><input id="language" required maxlength="80" list="languages" /></div>
+        <div class="field"><label for="level">Level</label><input id="level" maxlength="80" placeholder="e.g. A2, JLPT N4" /></div>
+        <div class="field"><label for="issue-date">Date of issue *</label><input id="issue-date" type="date" required /></div>
+        <div class="field"><label for="mobile">Mobile (private)</label><input id="mobile" type="tel" maxlength="40" /></div>
+        <div class="field"><label for="student-email">Email (private)</label><input id="student-email" type="email" maxlength="254" /></div>
+        <div class="field full"><label for="contact-address">Contact address (private)</label><textarea id="contact-address" rows="2" maxlength="600"></textarea></div>
+        <div class="field"><label for="certificate-status">Status</label><select id="certificate-status"><option value="valid">Valid</option><option value="revoked">Revoked</option><option value="replaced">Replaced</option></select></div>
+        <div class="field"><label for="status-note">Internal status note</label><input id="status-note" maxlength="300" /></div>
+        <div class="field full"><label for="certificate-file">Certificate scan (private PDF, JPG, or PNG; max 10 MB)</label><input id="certificate-file" type="file" accept="application/pdf,image/jpeg,image/png" /></div>
+      </div>
+      <div id="form-message" class="notice hidden" role="status"></div>
+      <div id="verification-link-wrap" class="verification-link hidden"><label for="verification-link">New verification link — copy it now</label><div><input id="verification-link" readonly /><button id="copy-link" class="btn btn-secondary" type="button">Copy</button></div><small>The random verification token is shown only when this record is created or regenerated.</small></div>
+      <div class="dialog-actions"><button class="btn btn-secondary hidden" id="regenerate-link" type="button">Replace verification link</button><button class="btn btn-secondary" id="cancel-dialog" type="button">Cancel</button><button class="btn btn-primary" id="save-certificate" type="submit">Save certificate</button></div>
+    </form>
+  </dialog>
+
+  <datalist id="languages"><option>French</option><option>German</option><option>Spanish</option><option>Italian</option><option>Russian</option><option>English</option><option>Japanese</option><option>Mandarin Chinese</option><option>Korean</option><option>Arabic</option><option>Thai</option><option>Hindi</option></datalist>
+  <script src="../../scripts/admin.ts"></script>
+</PortalLayout>
+
+<style>
+  .login-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(1.5rem,5vw,5rem); align-items: center; min-height: 68vh; }
+  .login-copy p, .login-copy li { color: #4e5d75; line-height: 1.65; }
+  .login-copy ul { padding-left: 1.2rem; }
+  .auth-card, #mfa-form, #password-form { display: grid; gap: 1rem; }
+  .mfa-card { max-width: 560px; margin: 5vh auto; }
+  #mfa-qr { width: 210px; height: 210px; display: block; margin: 1rem auto; }
+  .dashboard-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+  .dashboard-head h1 { margin-bottom: .3rem; }
+  .head-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.2rem 0; }
+  .stat { padding: 1.2rem; }
+  .stat span { color: var(--muted); font-size: .82rem; font-weight: 700; }
+  .stat strong { display: block; font-size: 2rem; margin-top: .25rem; }
+  .records-card { overflow: hidden; }
+  .records-tools { display: flex; justify-content: space-between; gap: 1rem; padding: 1.2rem; align-items: end; }
+  .records-tools h2, .records-tools p { margin-bottom: .2rem; }
+  .search-row { display: flex; gap: .5rem; }
+  .search-row input, .search-row select { border: 1px solid #bcc6d8; border-radius: 9px; padding: .65rem .75rem; }
+  .table-wrap { overflow-x: auto; border-top: 1px solid var(--line); }
+  table { width: 100%; border-collapse: collapse; min-width: 800px; }
+  th, td { padding: .9rem 1.15rem; text-align: left; border-bottom: 1px solid #e7ebf2; font-size: .88rem; }
+  th { font-size: .74rem; text-transform: uppercase; color: var(--muted); letter-spacing: .06em; background: #f8f9fc; }
+  td strong, td small { display: block; }
+  td small { color: var(--muted); margin-top: .2rem; }
+  .status { display: inline-block; border-radius: 999px; padding: .27rem .55rem; font-size: .72rem; font-weight: 800; text-transform: capitalize; }
+  .status.valid { color: var(--green); background: #e8f7ef; }
+  .status.revoked, .status.replaced { color: var(--red); background: #fff0ee; }
+  .row-actions { display: flex; gap: .4rem; justify-content: flex-end; }
+  .row-actions button { border: 1px solid var(--line); background: white; border-radius: 8px; padding: .4rem .6rem; cursor: pointer; }
+  .empty { padding: 2rem; text-align: center; color: var(--muted); }
+  .staff-section { display: grid; grid-template-columns: .7fr 1.3fr; gap: 2rem; margin-top: 1.2rem; }
+  .invite-form { display: grid; grid-template-columns: 1fr 1.25fr .8fr; gap: .8rem; align-items: end; }
+  .invite-form button { grid-column: 1 / -1; justify-self: end; }
+  dialog { border: 0; border-radius: 18px; padding: 0; width: min(900px, calc(100% - 1rem)); max-height: 92vh; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+  dialog::backdrop { background: rgba(8,18,38,.68); backdrop-filter: blur(3px); }
+  .dialog-card { padding: clamp(1rem, 3vw, 2rem); overflow-y: auto; max-height: 92vh; }
+  .dialog-head { display: flex; justify-content: space-between; gap: 1rem; }
+  .icon-btn { border: 0; background: #edf1f7; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+  .full { grid-column: 1 / -1; }
+  .dialog-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1.1rem; }
+  .verification-link { margin-top: 1rem; padding: 1rem; border: 1px solid #bce4cd; background: #eaf8f0; border-radius: 10px; }
+  .verification-link label { font-weight: 800; }
+  .verification-link > div { display: flex; gap: .5rem; margin: .5rem 0; }
+  .verification-link input { flex: 1; min-width: 0; border: 1px solid #9bcbb0; border-radius: 8px; padding: .65rem; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+  @media (max-width: 800px) { .login-grid, .staff-section { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr; } .invite-form { grid-template-columns: 1fr; } .dashboard-head, .records-tools { align-items: stretch; flex-direction: column; } }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .full { grid-column: auto; } .search-row { flex-direction: column; } }
+</style>

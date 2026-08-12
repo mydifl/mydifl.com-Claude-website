@@ -1,0 +1,24 @@
+{
+  "name": "difl-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/preserve-legacy-site.mjs",
+    "preview": "astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "extract:legacy": "node scripts/extract-legacy-content.mjs",
+    "audit": "node scripts/audit-build.mjs"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "8.2.8",
+    "@supabase/supabase-js": "^2.57.4",
+    "astro": "5.16.5",
+    "resend": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.6",
+    "typescript": "5.9.3"
+  }
+}
