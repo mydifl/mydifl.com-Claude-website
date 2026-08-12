@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ request }) => {
     const record = Array.isArray(data) ? data[0] : null;
     return new Response(JSON.stringify(record ? { found: true, certificate: record } : { found: false }), { status: 200, headers: jsonHeaders });
   } catch (error) {
-    console.error('Certificate verification failed', error instanceof Error ? error.message : 'Unknown server error');
+    console.error('Certificate verification failed', error instanceof Error ? error.message : JSON.stringify(error));
     return new Response(JSON.stringify({ error: 'Verification is temporarily unavailable.' }), { status: 503, headers: jsonHeaders });
   }
 };
