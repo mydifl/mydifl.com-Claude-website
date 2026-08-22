@@ -7,10 +7,11 @@
   },
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/preserve-legacy-site.mjs",
+    "build": "node scripts/generate-teaching-method.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/preserve-legacy-site.mjs",
     "preview": "astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "extract:legacy": "node scripts/extract-legacy-content.mjs",
+    "generate:method": "node scripts/generate-teaching-method.mjs",
     "audit": "node scripts/audit-build.mjs"
   },
   "dependencies": {

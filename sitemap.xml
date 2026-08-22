@@ -103,6 +103,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mydifl.com/about-us/difl-teaching-method/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://mydifl.com/about-us/reviews-of-difl/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
