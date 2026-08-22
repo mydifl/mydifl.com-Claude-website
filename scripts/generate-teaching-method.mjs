@@ -201,20 +201,50 @@ const page = `<!doctype html>
     @media(max-width:520px){.nav-inner{height:68px}.brand span{display:none}.hero{padding:65px 0 65px}.summary{grid-template-columns:1fr}.summary div{border-right:0;border-bottom:1px solid var(--line)}.article{padding:25px 20px}.language-switch{display:flex}.language-switch button{flex:1}.article p{font-size:14.5px}}
   </style>
   <style>
+    .main-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;background:rgba(13,13,13,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15);transition:all .4s ease}.main-nav.scrolled{height:58px;background:rgba(13,13,13,.97);border-bottom-color:rgba(201,168,76,.3)}.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}.difl-logo-img{height:48px;width:auto;object-fit:contain;display:block;flex-shrink:0}.nav-wordmark{display:flex;flex-direction:column;justify-content:center;padding-left:8px;line-height:1.15}.nav-wordmark strong{font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;letter-spacing:2px;line-height:1}.nav-wordmark small{font-size:8px;color:rgba(250,248,243,.6);letter-spacing:1px;text-transform:uppercase;margin-top:3px}.nav-links{display:flex;align-items:center;gap:2px;margin:0;padding:0;list-style:none}.nav-links a,.nav-links>li>span{display:block;padding:8px 14px;border-radius:6px;color:rgba(250,248,243,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;cursor:pointer;transition:all .25s}.nav-links a:hover,.nav-links>li>span:hover,.nav-links a[aria-current="page"]{color:var(--gold)}.nav-links .dd{position:relative}.nav-links .ddm{position:absolute;top:100%;left:0;min-width:210px;margin:8px 0 0;padding:8px;background:rgba(18,16,12,.97);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.2);border-radius:12px;list-style:none;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity .2s ease,transform .2s ease}.nav-links .ddm::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}.nav-links .dd:hover>.ddm,.nav-links .dd:focus-within>.ddm{opacity:1;pointer-events:auto;transform:translateY(0)}.nav-links .ddm a{padding:10px 14px;border-radius:8px;color:rgba(250,248,243,.8);font-size:12.5px;white-space:nowrap}.nav-links .ddm a:hover{background:rgba(201,168,76,.1);color:var(--gold)}.nav-links .ddm-wide{min-width:520px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.nav-links .dd-head{grid-column:1/-1;padding:6px 10px 2px;color:rgba(201,168,76,.6);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}.nav-links .nav-cta{padding:9px 20px!important;border:0!important;border-radius:8px!important;background:linear-gradient(135deg,var(--gold),var(--gold-dark))!important;color:var(--ink)!important;font-weight:600!important}.hamburger{display:none;flex-direction:column;gap:5px;padding:7px;border:0;background:transparent;cursor:pointer}.hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px;transition:transform .25s ease,opacity .25s ease}.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
     .term-mark{display:flex;align-items:center;gap:14px;margin:22px 0 30px!important;padding:16px 20px;border:1px solid rgba(201,168,76,.45);border-radius:13px;background:linear-gradient(115deg,#fffaf0,#f2f8f7);color:#23474b!important;font-family:'Cormorant Garamond',serif;font-size:20px!important;font-weight:600}
     .term-mark span{display:grid;place-items:center;flex:0 0 54px;height:54px;border-radius:50%;background:var(--teal);color:#fff;font:700 15px 'DM Sans',sans-serif;letter-spacing:1px;box-shadow:0 0 0 6px rgba(10,92,110,.1)}
     .table-scroll{overflow-x:hidden}.article table{min-width:0;table-layout:fixed}.article th,.article td{overflow-wrap:anywhere;word-break:normal}.article th:first-child,.article td:first-child{width:22%}.article th:nth-child(2),.article td:nth-child(2){width:36%}.article th:nth-child(3),.article td:nth-child(3){width:42%}
     @media(max-width:850px){.layout{grid-template-columns:minmax(0,1fr)}.layout>*{min-width:0}}
+    @media(max-width:900px){.main-nav{height:60px;padding:0 4%}.nav-wordmark{display:none}.nav-links{display:none}.hamburger{display:flex}.nav-links.mobile-open{display:flex;position:fixed;top:60px;left:0;right:0;max-height:calc(100vh - 60px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:0;padding:14px 5% 24px;background:rgba(13,13,13,.99);border-bottom:1px solid rgba(201,168,76,.2)}.nav-links.mobile-open>li{border-bottom:1px solid rgba(255,255,255,.06)}.nav-links.mobile-open>li>a,.nav-links.mobile-open>li>span{padding:12px 8px}.nav-links.mobile-open .ddm{position:static;display:none;min-width:0;margin:0 0 8px;padding:6px;opacity:1;pointer-events:auto;transform:none;background:rgba(255,255,255,.035);box-shadow:none}.nav-links.mobile-open .dd.open>.ddm{display:block}.nav-links.mobile-open .dd.open>.ddm-wide{display:grid;grid-template-columns:1fr}.nav-links.mobile-open .ddm a{white-space:normal}.nav-links.mobile-open .nav-cta{text-align:center;margin:8px 0}}
     @media(max-width:650px){.table-scroll{overflow:visible;border:0;border-radius:0}.article table,.article tbody,.article tr,.article td{display:block;width:100%!important}.article thead{display:none}.article tr{overflow:hidden;margin:0 0 16px;border:1px solid var(--line);border-radius:13px;background:#fff;box-shadow:0 6px 20px rgba(13,13,13,.05)}.article td{position:relative;padding:13px 15px;border:0;border-top:1px solid var(--line);background:#fff!important}.article td:first-child{padding:13px 15px;border:0;background:#15201f!important;color:#fff;font-weight:700}.article td:nth-child(2),.article td:nth-child(3){padding-top:35px}.article td:nth-child(2)::before,.article td:nth-child(3)::before{position:absolute;left:15px;top:10px;color:var(--gold-dark);font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}.article[lang="en"] td:nth-child(2)::before{content:'Traditional approach'}.article[lang="en"] td:nth-child(3)::before{content:'DIFL ATMA–TTP approach'}.article[lang="hi"] td:nth-child(2)::before{content:'पारंपरिक Approach'}.article[lang="hi"] td:nth-child(3)::before{content:'DIFL ATMA–TTP Approach'}}
     @media(max-width:520px){.scroll-note{display:none}.term-mark{align-items:flex-start}.method-map{padding:38px 24px}.map-heading{display:block}.map-heading p{margin-top:14px}.journey{grid-template-columns:1fr}.journey div{padding:2px 0 2px 68px;min-height:58px}.journey i{top:2px}.art-portrait{width:100%}}
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a class="brand" href="/"><img src="/assets/difl-logo.png" alt="DIFL"><div><strong>DIFL</strong><span>Dante Institute of Foreign Languages</span></div></a>
-      <div class="nav-actions"><a href="/about-us/">Why DIFL?</a><a href="/learn-foreign-languages/">Languages</a><a href="/contact/">Contact</a><a class="nav-cta" href="https://wa.me/919929515151">Enquire now</a></div>
-    </div>
+  <nav class="main-nav" id="navbar" aria-label="Main navigation">
+    <a class="nav-logo" href="/">
+      <img src="/assets/difl-logo.png" class="difl-logo-img" alt="DIFL" width="180" height="48">
+      <span class="nav-wordmark"><strong>DIFL</strong><small>Dante Institute of Foreign Languages</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li class="dd"><span tabindex="0">Why DIFL? ▾</span>
+        <ul class="ddm">
+          <li><a href="/about-us/">About DIFL</a></li>
+          <li><a href="/about-us/difl-teaching-method/" aria-current="page">DIFL Teaching Method</a></li>
+          <li><a href="/about-us/reviews-of-difl/">Testimonials</a></li>
+          <li><a href="/about-us/foreign-language-scholarships/">DIFL Scholarships</a></li>
+          <li><a href="/foreign-language-faqs/">FAQs</a></li>
+        </ul>
+      </li>
+      <li class="dd"><span tabindex="0">Languages ▾</span>
+        <ul class="ddm ddm-wide">
+          <li class="dd-head">European</li>
+          <li><a href="/learn-french/">🇫🇷 French</a></li><li><a href="/learn-german/">🇩🇪 German</a></li><li><a href="/learn-spanish/">🇪🇸 Spanish</a></li>
+          <li><a href="/learn-italian-language/">🇮🇹 Italian</a></li><li><a href="/learn-russian-language/">🇷🇺 Russian</a></li><li><a href="/learn-english/">🇬🇧 English</a></li>
+          <li class="dd-head">Asian</li>
+          <li><a href="/learn-japanese/">🇯🇵 Japanese</a></li><li><a href="/learn-mandarin-chinese/">🇨🇳 Mandarin</a></li><li><a href="/learn-korean-language/">🇰🇷 Korean</a></li>
+          <li><a href="/learn-arabic/">🇦🇪 Arabic</a></li><li><a href="/learn-thai-language/">🇹🇭 Thai</a></li><li><a href="/learn-hindi-language/">🇮🇳 Hindi</a></li>
+          <li class="dd-head">Explore</li>
+          <li><a href="/learn-foreign-languages/">📚 All Courses</a></li><li><a href="/language-for-professionals/">🏭 For Professionals</a></li><li><a href="/exam-calendar/">📅 Exam Calendar</a></li>
+        </ul>
+      </li>
+      <li class="dd"><span tabindex="0">Programs ▾</span><ul class="ddm"><li><a href="/study-abroad-programs/">All Programs</a></li><li><a href="/study-abroad-programs/">🇩🇪 Ausbildung Germany</a></li><li><a href="/study-abroad-programs/">🇯🇵 MEXT Japan</a></li><li><a href="/study-abroad-programs/">🇫🇷 Campus France</a></li><li><a href="/study-abroad-programs/">🇰🇷 GKS Korea</a></li></ul></li>
+      <li class="dd"><span tabindex="0">Handwriting ▾</span><ul class="ddm"><li><a href="/handwriting-improvement/">Handwriting Improvement</a></li><li><a href="/learn-calligraphy/">Learn Calligraphy</a></li></ul></li>
+      <li><a href="/blog-on-foreign-languages/">Blog</a></li>
+      <li><a href="/contact/" class="nav-cta">Enroll Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
   <header class="hero">
     <div class="hero-art" aria-hidden="true"><img src="/assets/teaching-method/atma-ttp-hero.jpg" alt="" width="1536" height="1024"></div>
@@ -254,6 +284,19 @@ const page = `<!doctype html>
   </main>
   <footer>© 1970–2026 DIFL — Dante Institute of Foreign Languages, Jaipur · <a href="/contact/">Contact DIFL</a></footer>
   <script>
+    const navbar=document.getElementById('navbar');
+    const hamburger=document.getElementById('hamburger');
+    const navLinks=document.getElementById('navLinks');
+    const closeMenu=()=>{navLinks.classList.remove('mobile-open');hamburger.classList.remove('active');hamburger.setAttribute('aria-expanded','false');document.querySelectorAll('.nav-links .dd.open').forEach(item=>item.classList.remove('open'));};
+    addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>60),{passive:true});
+    hamburger.addEventListener('click',()=>{const open=navLinks.classList.toggle('mobile-open');hamburger.classList.toggle('active',open);hamburger.setAttribute('aria-expanded',String(open));});
+    document.querySelectorAll('.nav-links .dd>span').forEach(trigger=>{
+      const toggle=()=>{if(innerWidth<=900){const item=trigger.parentElement;document.querySelectorAll('.nav-links .dd.open').forEach(other=>{if(other!==item)other.classList.remove('open');});item.classList.toggle('open');}};
+      trigger.addEventListener('click',toggle);
+      trigger.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle();}});
+    });
+    navLinks.addEventListener('click',event=>{if(event.target.closest('a'))closeMenu();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
     const buttons=[...document.querySelectorAll('[data-language]')];
     const articles=[...document.querySelectorAll('[data-article]')];
     const tocGroups=[...document.querySelectorAll('[data-toc]')];
