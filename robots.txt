@@ -42,24 +42,9 @@ Disallow: /wp-login.php
 Disallow: /wp-content/
 Disallow: /wp-includes/
 
-# ── Block spam and junk query parameters ───────────────────────────
-Disallow: /*?m=
-Disallow: /*?eudc/
-Disallow: /*?products/
-Disallow: /*?mall=
-Disallow: /*?shop=
-Disallow: /*?store=
-Disallow: /*?online=
-Disallow: /*?ff=
-Disallow: /*?dd=
-Disallow: /*?cc=
-Disallow: /*?my=
-Disallow: /*?y=
-Disallow: /*?gclid=
-Disallow: /*?fbclid=
-
-# ── Block double-slash and malformed URLs ──────────────────────────
-Disallow: /*//
+# Do not block historic spam URLs here. Google must be allowed to crawl their
+# 404 responses or canonical tags so the old WordPress URLs can leave its index.
+# robots.txt is a crawler hint, not a security control.
 
 # ── AI / LLM crawlers — explicitly welcome (GEO) ───────────────────
 User-agent: GPTBot

@@ -1,12 +1,12 @@
 import type { APIRoute } from 'astro';
 import { z } from 'zod';
-import { jsonHeaders, sameOrigin, verifiedStaff } from '../../../lib/supabase-server';
+import { jsonHeaders, readJsonBody, sameOrigin, verifiedStaff } from '../../../lib/supabase-server';
 
 export const prerender = false;
 
 const schema = z.object({
   name: z.string().trim().min(2).max(100),
-  email: z.string().trim().email().max(254).transform((email) => email.toLowerCase()),
+  email: z.email().trim().max(254).transform((email) => email.toLowerCase()),
   role: z.enum(['admin', 'staff', 'viewer']),
 });
 
@@ -15,7 +15,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const caller = await verifiedStaff(request, ['owner', 'admin']);
     if (!caller) return new Response(JSON.stringify({ error: 'Authorised administrator access with MFA is required.' }), { status: 403, headers: jsonHeaders });
-    const body = schema.safeParse(await request.json());
+    const body = schema.safeParse(await readJsonBody(request, 4096));
     if (!body.success) return new Response(JSON.stringify({ error: 'Enter a valid name, email, and role.' }), { status: 400, headers: jsonHeaders });
     const { data, error } = await caller.admin.auth.admin.inviteUserByEmail(body.data.email, {
       redirectTo: `${new URL(request.url).origin}/admin/?invited=1`, data: { display_name: body.data.name },

@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { z } from 'zod';
-import { getSupabaseAdmin, jsonHeaders, sameOrigin } from '../../lib/supabase-server';
+import { getSupabaseAdmin, jsonHeaders, readJsonBody, sameOrigin } from '../../lib/supabase-server';
 
 export const prerender = false;
 
@@ -9,7 +9,7 @@ const schema = z.object({ token: z.string().regex(/^[a-f0-9]{48}$/i) });
 export const POST: APIRoute = async ({ request }) => {
   if (!sameOrigin(request)) return new Response(JSON.stringify({ error: 'Request rejected.' }), { status: 403, headers: jsonHeaders });
   try {
-    const body = schema.safeParse(await request.json());
+    const body = schema.safeParse(await readJsonBody(request, 1024));
     if (!body.success) return new Response(JSON.stringify({ found: false }), { status: 200, headers: jsonHeaders });
     const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(body.data.token.toLowerCase()));
     const tokenHash = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');

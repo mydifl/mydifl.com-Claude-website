@@ -15,9 +15,35 @@ export const jsonHeaders = {
 };
 
 export function sameOrigin(request: Request) {
+  const expectedOrigin = new URL(request.url).origin;
   const origin = request.headers.get('origin');
-  if (!origin) return true;
-  return origin === new URL(request.url).origin;
+  if (origin) return origin === expectedOrigin;
+
+  const fetchSite = request.headers.get('sec-fetch-site');
+  if (fetchSite) return fetchSite === 'same-origin';
+
+  const referer = request.headers.get('referer');
+  if (referer) {
+    try {
+      return new URL(referer).origin === expectedOrigin;
+    } catch {
+      return false;
+    }
+  }
+
+  return false;
+}
+
+export async function readJsonBody(request: Request, maxBytes = 4096) {
+  const mediaType = (request.headers.get('content-type') || '').split(';', 1)[0].trim().toLowerCase();
+  if (mediaType !== 'application/json') throw new Error('JSON content type required');
+
+  const declaredLength = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declaredLength) && declaredLength > maxBytes) throw new Error('Request body too large');
+
+  const body = await request.text();
+  if (new TextEncoder().encode(body).byteLength > maxBytes) throw new Error('Request body too large');
+  return JSON.parse(body) as unknown;
 }
 
 export async function verifiedStaff(request: Request, roles: string[]) {
