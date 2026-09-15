@@ -22,6 +22,8 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
+    "@emnapi/core": "1.11.3",
+    "@emnapi/wasi-threads": "1.2.3",
     "@astrojs/check": "0.9.10",
     "typescript": "5.9.3"
   },
