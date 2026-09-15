@@ -15,7 +15,7 @@
     "audit": "node scripts/audit-build.mjs"
   },
   "dependencies": {
-    "@astrojs/vercel": "^11.0.8",
+    "@astrojs/vercel": "^11.0.10",
     "@supabase/supabase-js": "^2.112.4",
     "astro": "^7.3.2",
     "resend": "^6.24.0",
