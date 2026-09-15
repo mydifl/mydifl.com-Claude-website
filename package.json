@@ -18,7 +18,7 @@
     "@astrojs/vercel": "^11.0.8",
     "@supabase/supabase-js": "^2.112.4",
     "astro": "^7.3.2",
-    "resend": "^6.24.0",
+    "resend": "^6.28.0",
     "zod": "4.4.3"
   },
   "devDependencies": {
