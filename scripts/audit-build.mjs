@@ -41,7 +41,7 @@ for (const language of ['french','japanese','german','spanish','chinese','arabic
   if (!existsSync(resolve(root, `assets/language-banners/${language}-premium.webp`))) failures.push(`Premium cultural artwork is missing for ${language}.`);
 }
 
-const tawkLoader = resolve(root, 'assets/tawk-safe-v3.js');
+const tawkLoader = resolve(root, 'assets/tawk-safe-v4.js');
 if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');
 else {
   const tawkSource = readFileSync(tawkLoader, 'utf8');
@@ -49,6 +49,10 @@ else {
   if (!tawkSource.includes("'#min-widget,#message-preview,#chat-bubble{display:none!important}'")) failures.push('Tawk loader does not suppress unstable preview frames.');
   if (!tawkSource.includes('function loadTawk()')) failures.push('Tawk loader is not using deliberate lazy loading.');
   if (!tawkSource.includes('function positionTawkFrames()')) failures.push('Tawk loader is missing the left-side panel layout guard.');
+  if (!tawkSource.includes('function requestClose()')) failures.push('Tawk loader is missing its independent close control.');
+  if (!tawkSource.includes('body.difl-tawk-open #difl-chat-launcher{opacity:1!important')) failures.push('Tawk close control is hidden while the panel is open.');
+  if (!tawkSource.includes('Math.min(310') || !tawkSource.includes('Math.min(300')) failures.push('Tawk panel is missing its compact responsive width caps.');
+  if (!tawkSource.includes("launcher.setAttribute('aria-expanded'")) failures.push('Tawk launcher is missing its expanded accessibility state.');
   if (tawkSource.includes('wa.me/')) failures.push('Tawk live chat must not redirect visitors to WhatsApp.');
 }
 
@@ -98,8 +102,8 @@ for (const path of [
   'language-quiz/index.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/tawk-safe-v3.js?csp=1')) failures.push(`${path} is missing the cache-busted guarded Tawk.to loader.`);
-  if (/\/assets\/tawk-safe(?:-v2)?\.js/.test(html)) failures.push(`${path} still references an indefinitely cached legacy Tawk loader.`);
+  if (!html.includes('/assets/tawk-safe-v4.js?compact=1')) failures.push(`${path} is missing the compact guarded Tawk.to loader.`);
+  if (/\/assets\/tawk-safe(?:-v[23])?\.js/.test(html)) failures.push(`${path} still references a superseded Tawk loader.`);
   if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
 }
 
