@@ -1,5 +1,5 @@
-import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { dirname, extname, join, relative, resolve } from 'node:path';
 
 const root = process.cwd();
 const failures = [];
@@ -24,6 +24,53 @@ if (!vercel.includes('X-Permitted-Cross-Domain-Policies')) failures.push('Cross-
 const sourceBlog = readFileSync(resolve(root, 'blog.html'), 'utf8');
 const postCount = (sourceBlog.match(/\{id:"[^"]+"/g) || []).length;
 if (postCount !== 50) failures.push(`Expected 50 blog articles, found ${postCount}.`);
+
+const sourceHome = readFileSync(resolve(root, 'index.html'), 'utf8');
+const blankNavigation = sourceHome.match(/<a(?![^>]*\bhref=)[^>]*\bonclick=/gi) || [];
+if (blankNavigation.length) failures.push(`Homepage contains ${blankNavigation.length} clickable anchors without fallback href links.`);
+
+const tawkLoader = resolve(root, 'assets/tawk-safe.js');
+if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');
+for (const path of [
+  'index.html',
+  'blog.html',
+  'exam-calendar/index.html',
+  'language-for-professionals/index.html',
+  'language-quiz/index.html',
+]) {
+  const html = readFileSync(resolve(root, path), 'utf8');
+  if (!html.includes('/assets/tawk-safe.js')) failures.push(`${path} is missing the guarded Tawk.to loader.`);
+  if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
+}
+
+const builtRoot = resolve(root, 'dist/client');
+const builtHtml = [];
+const collectHtml = (directory) => {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) collectHtml(path);
+    else if (extname(entry.name) === '.html') builtHtml.push(path);
+  }
+};
+
+if (existsSync(builtRoot)) {
+  collectHtml(builtRoot);
+  const missingLinks = new Set();
+  for (const page of builtHtml) {
+    const html = readFileSync(page, 'utf8');
+    for (const match of html.matchAll(/(?:href|src)\s*=\s*["']([^"']+)["']/gi)) {
+      const raw = match[1].trim();
+      if (!raw || raw.startsWith('#') || /^(?:https?:|mailto:|tel:|data:|blob:|javascript:|\/\/)/i.test(raw)) continue;
+      const clean = raw.split(/[?#]/)[0];
+      if (!clean) continue;
+      const target = clean.startsWith('/') ? resolve(builtRoot, `.${clean}`) : resolve(dirname(page), clean);
+      if (!existsSync(target) && !existsSync(`${target}.html`) && !existsSync(join(target, 'index.html'))) {
+        missingLinks.add(`${relative(builtRoot, page)} -> ${raw}`);
+      }
+    }
+  }
+  for (const link of missingLinks) failures.push(`Missing local link or asset: ${link}`);
+}
 
 const sitemap = readFileSync(resolve(root, 'sitemap.xml'), 'utf8');
 for (const slug of [
