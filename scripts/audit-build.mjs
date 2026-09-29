@@ -29,7 +29,7 @@ const sourceHome = readFileSync(resolve(root, 'index.html'), 'utf8');
 const blankNavigation = sourceHome.match(/<a(?![^>]*\bhref=)[^>]*\bonclick=/gi) || [];
 if (blankNavigation.length) failures.push(`Homepage contains ${blankNavigation.length} clickable anchors without fallback href links.`);
 
-const tawkLoader = resolve(root, 'assets/tawk-safe.js');
+const tawkLoader = resolve(root, 'assets/tawk-safe-v2.js');
 if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');
 else {
   const tawkSource = readFileSync(tawkLoader, 'utf8');
@@ -45,7 +45,8 @@ for (const path of [
   'language-quiz/index.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/tawk-safe.js')) failures.push(`${path} is missing the guarded Tawk.to loader.`);
+  if (!html.includes('/assets/tawk-safe-v2.js')) failures.push(`${path} is missing the guarded Tawk.to loader.`);
+  if (html.includes('/assets/tawk-safe.js')) failures.push(`${path} still references the indefinitely cached legacy Tawk loader.`);
   if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
 }
 
