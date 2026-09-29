@@ -1,108 +1,147 @@
 (function (window, document) {
   'use strict';
 
+  var TAWK_SRC = 'https://embed.tawk.to/6a158407e37d1e1c33dfbc7e/1jpi0ng61';
+  var WHATSAPP_URL = 'https://wa.me/919929515151';
   var Tawk_API = window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_LoadStart = new Date();
-  var chatOpen = false;
   var widgetReady = false;
+  var chatRequested = false;
+  var loadFailed = false;
+  var loadStarted = false;
+  var launcher;
 
-  // tawk.to currently documents zIndex as the only supported customStyle
-  // option. Keep the chat below DIFL's navigation and WhatsApp controls.
+  // Keep the opened conversation below DIFL's navigation and WhatsApp button.
   Tawk_API.customStyle = { zIndex: '450 !important' };
 
-  function setImportant(frame, property, value) {
-    if (frame.style.getPropertyValue(property) !== value || frame.style.getPropertyPriority(property) !== 'important') {
-      frame.style.setProperty(property, value, 'important');
-    }
+  function addStyles() {
+    var style = document.createElement('style');
+    style.id = 'difl-chat-styles';
+    style.textContent = [
+      // Tawk's own launcher, attention grabber and message preview are the
+      // frames that have intermittently appeared as large, unstyled content.
+      // DIFL uses one stable local launcher instead.
+      '#min-widget,#message-preview,#chat-bubble{display:none!important}',
+      '#difl-chat-launcher{position:fixed;left:18px;bottom:18px;z-index:451;width:64px;height:60px;border:0;border-radius:20px;background:linear-gradient(145deg,#0e7490,#155e75);color:#fff;box-shadow:0 10px 28px rgba(8,47,73,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;font:700 10px/1.1 Inter,Arial,sans-serif;letter-spacing:.04em;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease}',
+      '#difl-chat-launcher:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(8,47,73,.35)}',
+      '#difl-chat-launcher:focus-visible{outline:3px solid #f4c95d;outline-offset:3px}',
+      '#difl-chat-launcher svg{width:25px;height:25px;display:block;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}',
+      '#difl-chat-launcher .difl-close-icon{display:none}',
+      '#difl-chat-launcher.is-open .difl-chat-icon{display:none}',
+      '#difl-chat-launcher.is-open .difl-close-icon{display:block}',
+      '#difl-chat-launcher.is-open{background:linear-gradient(145deg,#334155,#1e293b)}',
+      '#difl-chat-launcher[hidden]{display:none!important}',
+      '#difl-chat-launcher.is-loading{cursor:wait;opacity:.82}',
+      '#difl-chat-launcher.is-loading svg{animation:difl-chat-pulse 1s ease-in-out infinite}',
+      '@keyframes difl-chat-pulse{50%{transform:scale(.82);opacity:.55}}',
+      '@media(max-width:640px){#difl-chat-launcher{left:14px;bottom:14px;width:54px;height:52px;border-radius:17px;font-size:9px}#difl-chat-launcher svg{width:22px;height:22px}}',
+      '@media(prefers-reduced-motion:reduce){#difl-chat-launcher,#difl-chat-launcher svg{animation:none!important;transition:none!important}}'
+    ].join('');
+    document.head.appendChild(style);
   }
 
-  function normaliseWidgetFrames() {
-    document.querySelectorAll('iframe[title="Chat widget"]').forEach(function (frame) {
-      var rect = frame.getBoundingClientRect();
-      var width = rect.width || parseFloat(frame.style.getPropertyValue('width')) || 0;
-      var height = rect.height || parseFloat(frame.style.getPropertyValue('height')) || 0;
-      var isLauncher = width > 0 && width <= 90 && height > 0 && height <= 80;
-      var isBrokenAttentionGrabber = width >= 100 && width <= 240 && height >= 70 && height <= 180;
-      var isChatPanel = width >= 300 && width <= 420;
-      var isOversizedTeaser = isChatPanel && height > 0 && height < 400;
+  function setLauncherState(label, loading) {
+    if (!launcher) return;
+    launcher.classList.toggle('is-loading', Boolean(loading));
+    launcher.querySelector('span').textContent = label;
+    launcher.setAttribute('aria-label', loading ? 'Opening DIFL live chat' : 'Open DIFL live chat');
+  }
 
-      // Never restore a large panel from an earlier browsing session. The
-      // visitor must deliberately click the compact launcher on this page.
-      if (isChatPanel && !widgetReady) {
-        setImportant(frame, 'display', 'none');
-        frame.setAttribute('aria-hidden', 'true');
+  function setLauncherOpen(open) {
+    if (!launcher) return;
+    launcher.classList.toggle('is-open', open);
+    launcher.classList.remove('is-loading');
+    launcher.querySelector('span').textContent = open ? 'CLOSE' : 'CHAT';
+    launcher.setAttribute('aria-label', open ? 'Close DIFL live chat' : 'Open DIFL live chat');
+    launcher.title = open ? 'Close DIFL live chat' : 'Chat with DIFL';
+  }
+
+  function closeChat() {
+    document.body.classList.remove('difl-tawk-open');
+    setLauncherOpen(false);
+    if (loadFailed) setLauncherState('WhatsApp', false);
+    if (widgetReady && typeof Tawk_API.hideWidget === 'function') Tawk_API.hideWidget();
+  }
+
+  function openChat() {
+    if (!widgetReady) return;
+    document.body.classList.add('difl-tawk-open');
+    setLauncherOpen(true);
+    if (typeof Tawk_API.showWidget === 'function') Tawk_API.showWidget();
+    if (typeof Tawk_API.maximize === 'function') Tawk_API.maximize();
+  }
+
+  function handleLoadFailure() {
+    loadFailed = true;
+    chatRequested = false;
+    setLauncherState('WhatsApp', false);
+    launcher.title = 'Live chat is unavailable — open WhatsApp';
+  }
+
+  function loadTawk() {
+    if (loadStarted) return;
+    loadStarted = true;
+    window.Tawk_LoadStart = new Date();
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = TAWK_SRC;
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    script.onerror = handleLoadFailure;
+    document.head.appendChild(script);
+
+    window.setTimeout(function () {
+      if (!widgetReady) handleLoadFailure();
+    }, 12000);
+  }
+
+  function createLauncher() {
+    launcher = document.createElement('button');
+    launcher.id = 'difl-chat-launcher';
+    launcher.type = 'button';
+    launcher.title = 'Chat with DIFL';
+    launcher.setAttribute('aria-label', 'Open DIFL live chat');
+    launcher.innerHTML = '<svg class="difl-chat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.4 9.4 0 0 1-4-.9L3 21l1.7-4.5A8.2 8.2 0 0 1 3 11.5 8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><svg class="difl-close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span>CHAT</span>';
+    launcher.addEventListener('click', function () {
+      if (launcher.classList.contains('is-open')) {
+        if (typeof Tawk_API.minimize === 'function') Tawk_API.minimize();
+        closeChat();
         return;
       }
-
-      if (isChatPanel && chatOpen) {
-        setImportant(frame, 'display', 'block');
-        frame.removeAttribute('aria-hidden');
-        setImportant(frame, 'z-index', '450');
+      if (loadFailed) {
+        window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
         return;
       }
-
-      // The normal launcher is about 64x60 and the opened chat is 360x545.
-      // Recent attention/teaser variants render as a 124x95 grey X and a
-      // transparent 350px-wide click-blocking panel. Hide those frames only.
-      if (isBrokenAttentionGrabber || isOversizedTeaser) {
-        setImportant(frame, 'display', 'none');
-        frame.setAttribute('aria-hidden', 'true');
-        return;
-      }
-
-      // Keep the compact launcher separate from the right-side WhatsApp button.
-      if (isLauncher) {
-        setImportant(frame, 'left', '18px');
-        setImportant(frame, 'right', 'auto');
-        setImportant(frame, 'bottom', '18px');
-      }
-
-      setImportant(frame, 'z-index', '450');
+      chatRequested = true;
+      setLauncherState('OPENING', true);
+      if (widgetReady) openChat();
+      else loadTawk();
     });
+    document.body.appendChild(launcher);
   }
 
   Tawk_API.onLoad = function () {
-    Tawk_API.showWidget();
-    Tawk_API.minimize();
-    normaliseWidgetFrames();
-    window.setTimeout(function () {
-      chatOpen = false;
-      Tawk_API.minimize();
-      widgetReady = true;
-      normaliseWidgetFrames();
-    }, 800);
+    widgetReady = true;
+    loadFailed = false;
+
+    // The service is deliberately hidden until a visitor uses DIFL's button.
+    // This prevents saved sessions and attention-grabber campaigns from
+    // opening or painting malformed frames over the website.
+    if (chatRequested) openChat();
+    else closeChat();
   };
   Tawk_API.onChatMaximized = function () {
-    if (!widgetReady) {
-      chatOpen = false;
-      Tawk_API.minimize();
-      normaliseWidgetFrames();
-      return;
-    }
-    chatOpen = true;
-    normaliseWidgetFrames();
+    document.body.classList.add('difl-tawk-open');
+    setLauncherOpen(true);
   };
-  Tawk_API.onChatMinimized = function () {
-    chatOpen = false;
-    normaliseWidgetFrames();
-  };
-  Tawk_API.onChatHidden = function () {
-    chatOpen = false;
-    normaliseWidgetFrames();
-  };
+  Tawk_API.onChatMinimized = closeChat;
+  Tawk_API.onChatHidden = closeChat;
 
-  new MutationObserver(normaliseWidgetFrames).observe(document.documentElement, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ['style', 'title']
-  });
+  function initialise() {
+    addStyles();
+    createLauncher();
+  }
 
-  var script = document.createElement('script');
-  var firstScript = document.getElementsByTagName('script')[0];
-  script.async = true;
-  script.src = 'https://embed.tawk.to/6a158407e37d1e1c33dfbc7e/1jpi0ng61';
-  script.charset = 'UTF-8';
-  script.setAttribute('crossorigin', '*');
-  firstScript.parentNode.insertBefore(script, firstScript);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialise, { once: true });
+  else initialise();
 })(window, document);

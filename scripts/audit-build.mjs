@@ -31,6 +31,12 @@ if (blankNavigation.length) failures.push(`Homepage contains ${blankNavigation.l
 
 const tawkLoader = resolve(root, 'assets/tawk-safe.js');
 if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');
+else {
+  const tawkSource = readFileSync(tawkLoader, 'utf8');
+  if (!tawkSource.includes("launcher.id = 'difl-chat-launcher'")) failures.push('Tawk loader is missing the stable DIFL launcher.');
+  if (!tawkSource.includes("'#min-widget,#message-preview,#chat-bubble{display:none!important}'")) failures.push('Tawk loader does not suppress unstable preview frames.');
+  if (!tawkSource.includes('function loadTawk()')) failures.push('Tawk loader is not using deliberate lazy loading.');
+}
 for (const path of [
   'index.html',
   'blog.html',
