@@ -81,7 +81,7 @@ for (const path of [
   'language-quiz/index.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/tawk-safe-v3.js')) failures.push(`${path} is missing the guarded Tawk.to loader.`);
+  if (!html.includes('/assets/tawk-safe-v3.js?csp=1')) failures.push(`${path} is missing the cache-busted guarded Tawk.to loader.`);
   if (/\/assets\/tawk-safe(?:-v2)?\.js/.test(html)) failures.push(`${path} still references an indefinitely cached legacy Tawk loader.`);
   if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
 }
