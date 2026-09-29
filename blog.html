@@ -365,10 +365,9 @@ footer#siteFooter .fc-group .fc a:hover{color:var(--gold)}
 </a>
 <nav id="navbar">
   <div class="nav-logo" onclick="window.location.href='/'" style="gap:14px;cursor:pointer">
-    <img src="/assets/difl-logo.png" class="difl-logo-img" alt="DIFL" id="nav-logo-img" width="180" height="48" style="height:48px;width:auto;object-fit:contain;display:block;flex-shrink:0;">
-    <div style="display:flex;flex-direction:column;justify-content:center;padding-left:8px;line-height:1.15">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:2px;text-shadow:0 1px 6px rgba(0,0,0,.6);line-height:1">DIFL</span>
-      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:400;color:rgba(250,248,243,.6);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Dante Institute of Foreign Languages</span>
+    <img src="/assets/difl-logo-mark.png" class="difl-logo-img" alt="DIFL" id="nav-logo-img" width="128" height="48" style="height:48px;width:auto;object-fit:contain;display:block;flex-shrink:0;">
+    <div style="display:flex;align-items:center;justify-content:center;padding-left:8px;line-height:1.15">
+      <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;color:rgba(250,248,243,.72);letter-spacing:1.15px;text-transform:uppercase">Dante Institute of Foreign Languages</span>
     </div>
   </div>
   <ul class="nav-links" id="navLinks">
@@ -451,7 +450,7 @@ footer#siteFooter .fc-group .fc a:hover{color:var(--gold)}
   <div class="fg-grid">
     <div class="fb-brand">
       <div class="nav-logo" href="/?page=home">
-        <img src="/assets/difl-logo.png" class="difl-logo-img" alt="DIFL — Dante Institute of Foreign Languages" id="footer-logo-img" width="200" height="60" style="height:60px;width:auto;object-fit:contain;display:block;margin-bottom:12px;">
+        <img src="/assets/difl-logo-clean.png" class="difl-logo-img" alt="DIFL — Dante Institute of Foreign Languages" id="footer-logo-img" width="210" height="118" style="width:210px;height:auto;object-fit:contain;display:block;margin-bottom:12px;">
       </div>
       <p>55 years of language excellence. 25,000+ students. 12 languages. Based in Jaipur, teaching the world to speak, connect, and grow.</p>
       <div style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:10px">
@@ -2593,13 +2592,13 @@ window.addEventListener("DOMContentLoaded",()=>{renderCats();renderFeat();render
 
 <script>
 (function(){
-  var src='/assets/difl-logo.png';
+  var src='/assets/difl-logo-mark.png';
   function load(){
     document.querySelectorAll('.difl-logo-img').forEach(function(img){
-      img.src=src; img.style.visibility='visible';
+      img.src=img.id === 'footer-logo-img' ? '/assets/difl-logo-clean.png' : src; img.style.visibility='visible';
     });
     var fav=document.querySelector('link[rel="icon"]');
-    if(fav) fav.href=src;
+    if(fav) fav.href='/assets/difl-logo.png';
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load);
   else load();

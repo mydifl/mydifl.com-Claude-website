@@ -221,8 +221,8 @@ const page = `<!doctype html>
 <body>
   <nav class="main-nav" id="navbar" aria-label="Main navigation">
     <a class="nav-logo" href="/">
-      <img src="/assets/difl-logo.png" class="difl-logo-img" alt="DIFL" width="180" height="48">
-      <span class="nav-wordmark"><strong>DIFL</strong><small>Dante Institute of Foreign Languages</small></span>
+      <img src="/assets/difl-logo-mark.png" class="difl-logo-img" alt="DIFL" width="128" height="48">
+      <span class="nav-wordmark"><small>Dante Institute of Foreign Languages</small></span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li class="dd"><span tabindex="0">Why DIFL? ▾</span>

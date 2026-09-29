@@ -70,6 +70,25 @@ nav.scrolled,
 .nav-links .dd-head { color: var(--difl-gold) !important; }
 .hamburger span { background: var(--difl-teal) !important; }
 
+/* Transparent brand artwork prepared from the supplied DIFL vector master. */
+nav .difl-logo-img,
+.main-nav .difl-logo-img,
+#nav-logo-img {
+  height: 44px !important;
+  width: auto !important;
+  object-fit: contain;
+  background: transparent !important;
+  filter: drop-shadow(0 5px 9px rgba(7, 91, 104, .20));
+}
+#navbar .nav-logo > div { padding-left: 0 !important; }
+#navbar .nav-logo > div span { text-shadow: none !important; }
+#footer-logo-img {
+  width: 210px !important;
+  height: auto !important;
+  background: transparent !important;
+  filter: drop-shadow(0 7px 14px rgba(7, 91, 104, .18));
+}
+
 /* Main public site */
 #hero-section,
 .lang-hero,
@@ -395,6 +414,11 @@ footer p,
 footer .fb-brand > div[style*="color:rgba(255,255,255"] { color: #526168 !important; }
 
 @media (max-width: 768px) {
+  #navbar .nav-logo > div { display: none !important; }
+  nav .difl-logo-img,
+  .main-nav .difl-logo-img,
+  #nav-logo-img { height: 38px !important; }
+  #footer-logo-img { width: 185px !important; }
   .hero-grid {
     padding-left: 4% !important;
     padding-right: 4% !important;

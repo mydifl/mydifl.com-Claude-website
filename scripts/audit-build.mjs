@@ -42,6 +42,11 @@ else {
 
 const lightTheme = resolve(root, 'assets/light-theme-v2.css');
 if (!existsSync(lightTheme)) failures.push('Missing versioned public-site light theme.');
+for (const logo of ['assets/difl-logo-mark.png', 'assets/difl-logo-clean.png']) {
+  if (!existsSync(resolve(root, logo))) failures.push(`Missing transparent brand asset: ${logo}.`);
+}
+if (!sourceHome.includes('/assets/difl-logo-mark.png')) failures.push('Homepage header is not using the transparent DIFL mark.');
+if (!sourceHome.includes('/assets/difl-logo-clean.png')) failures.push('Homepage footer is not using the complete transparent DIFL logo.');
 for (const path of [
   'index.html',
   'blog.html',
