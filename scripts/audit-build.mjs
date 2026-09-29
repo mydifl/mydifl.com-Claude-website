@@ -36,6 +36,9 @@ if (blankNavigation.length) failures.push(`Homepage contains ${blankNavigation.l
 if (!sourceHome.includes('class="why-difl-section"')) failures.push('Homepage proof section is missing its light-theme contrast guard.');
 if (!sourceHome.includes('class="legacy-banner"')) failures.push('Homepage legacy banner is missing its dark-panel contrast guard.');
 if (!sourceHome.includes('cultureBannerHTML(lang)')) failures.push('Language pages are missing their cultural banner renderer.');
+if (sourceHome.includes("const open=nl.style.display==='flex'")) failures.push('Homepage still contains the conflicting inline-style mobile menu handler.');
+if (!sourceHome.includes("navLinks.querySelectorAll('.dd > span')")) failures.push('Homepage mobile navigation is missing accessible dropdown handling.');
+if (sourceHome.includes('div,section,article,aside,main{max-width:100vw;overflow-x:hidden}')) failures.push('Homepage still applies nested overflow containers to every mobile section.');
 for (const language of ['french','japanese','german','spanish','chinese','arabic','korean','italian','russian','english','thai','hindi']) {
   if (!sourceHome.includes(`  ${language}:{greeting:`)) failures.push(`Cultural banner metadata is missing for ${language}.`);
   if (!existsSync(resolve(root, `assets/language-banners/${language}-premium.webp`))) failures.push(`Premium cultural artwork is missing for ${language}.`);
@@ -64,6 +67,15 @@ else {
   if (!themeSource.includes('body.difl-tawk-open iframe[title="Chat widget"]')) failures.push('Coffee-and-gold theme is missing the open Tawk panel colour treatment.');
   if (/#0a5c6e|#0e7d96|rgba\(10,\s*92,\s*110/i.test(themeSource)) failures.push('Coffee-and-gold theme still contains a decorative teal colour.');
 }
+const mobilePolish = resolve(root, 'assets/mobile-polish-v1.css');
+if (!existsSync(mobilePolish)) failures.push('Missing versioned public-site mobile polish layer.');
+else {
+  const mobileSource = readFileSync(mobilePolish, 'utf8');
+  if (!mobileSource.includes('.dates-table td::before')) failures.push('Mobile polish is missing labelled exam-table records.');
+  if (!mobileSource.includes('.nav-links.mobile-open .dd.open > .ddm')) failures.push('Mobile polish is missing collapsible navigation dropdowns.');
+  if (!mobileSource.includes('.culture-banner')) failures.push('Mobile polish is missing language-banner header clearance.');
+}
+if (!existsSync(resolve(root, 'assets/mobile-table-labels-v1.js'))) failures.push('Missing mobile exam-table label helper.');
 for (const logo of ['assets/difl-logo-mark.png', 'assets/difl-logo-clean.png']) {
   if (!existsSync(resolve(root, logo))) failures.push(`Missing transparent brand asset: ${logo}.`);
 }
@@ -81,14 +93,22 @@ for (const path of [
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
   if (!html.includes('/assets/coffee-gold-theme-v1.css')) failures.push(`${path} is missing the versioned coffee-and-gold theme.`);
+  if (!html.includes('/assets/mobile-polish-v1.css')) failures.push(`${path} is missing the versioned mobile polish layer.`);
   if (/\/assets\/light-theme(?:-v[23])?\.css/.test(html)) failures.push(`${path} still references a superseded public theme.`);
 }
 for (const path of ['index.html', 'blog.html', 'exam-calendar/index.html', 'language-quiz/index.html']) {
   const html = readFileSync(resolve(root, path), 'utf8');
   const bannerIndex = html.indexOf('/assets/premium-page-banners.css');
   const themeIndex = html.indexOf('/assets/coffee-gold-theme-v1.css');
+  const mobileIndex = html.indexOf('/assets/mobile-polish-v1.css');
   if (bannerIndex !== -1 && bannerIndex > themeIndex) failures.push(`${path} loads its banner stylesheet after the coffee-and-gold theme.`);
+  if (mobileIndex !== -1 && mobileIndex < themeIndex) failures.push(`${path} loads mobile polish before the coffee-and-gold theme.`);
 }
+const sourceExamCalendar = readFileSync(resolve(root, 'exam-calendar/index.html'), 'utf8');
+if (!sourceExamCalendar.includes('/assets/mobile-table-labels-v1.js')) failures.push('Exam calendar is missing its mobile table label helper.');
+if (!sourceBlog.includes('class="blog-site"')) failures.push('Blog is missing the mobile navigation scope class.');
+const hiddenPriorityBanners = sourceHome.match(/premium-page-banner__media[^>]*fetchpriority="high"/g) || [];
+if (hiddenPriorityBanners.length) failures.push(`Homepage still eagerly prioritises ${hiddenPriorityBanners.length} hidden page banners.`);
 for (const path of ['contact-us/index.html', 'whatsapp/index.html']) {
   const html = readFileSync(resolve(root, path), 'utf8');
   if (/#25d366|#1ebe5d|#22c55e|#86efac/i.test(html)) failures.push(`${path} still contains a visible green interface colour.`);

@@ -1,0 +1,417 @@
+/*
+ * DIFL responsive polish, version 1.
+ *
+ * This layer is intentionally loaded after the public coffee-and-gold theme.
+ * It preserves the desktop artwork while making phone and tablet layouts more
+ * compact, touch-friendly and free of clipped content.
+ */
+
+/* Language artwork should begin below the fixed site header, just like the
+   illustrated banners used on the other public pages. */
+.culture-banner {
+  margin: 72px auto 0;
+}
+
+/* Keep banner lettering crisp over detailed artwork. */
+.premium-page-banner__copy,
+.culture-copy {
+  text-shadow: 0 2px 7px rgba(0, 0, 0, .96), 0 8px 30px rgba(0, 0, 0, .78);
+}
+.premium-page-banner__title,
+.culture-greeting {
+  color: #fffaf0 !important;
+}
+.premium-page-banner__eyebrow,
+.premium-page-banner__tags,
+.culture-kicker,
+.culture-countries {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, .9));
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .premium-page-banner,
+  .premium-page-banner--compact {
+    height: 236px;
+  }
+  .premium-page-banner__copy {
+    left: 32px;
+    width: 48%;
+    max-width: 390px;
+  }
+  .premium-page-banner__title {
+    font-size: clamp(34px, 4.5vw, 38px);
+  }
+  .premium-page-banner__tags {
+    gap: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+/* The blog footer did not inherit the main site's icon geometry. */
+footer#siteFooter .social-row .soc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  padding: 0;
+}
+footer#siteFooter .social-row .soc svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Hover is not the only way to reveal a desktop dropdown: the navigation
+   scripts also apply this state for keyboard and click users. */
+.nav-links .dd.open > .ddm {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  /* Match each fixed header rather than allowing it to cover the artwork. */
+  .page.active > .premium-page-banner,
+  .page.active .culture-banner {
+    margin-top: 60px;
+  }
+  body > .premium-page-banner {
+    margin-top: 68px;
+  }
+  #pg-list > .premium-page-banner {
+    margin-top: 72px;
+  }
+
+  .premium-page-banner {
+    height: clamp(210px, 38vw, 230px);
+  }
+  .culture-banner {
+    height: clamp(205px, 36vw, 225px);
+  }
+
+  /* One predictable, scrollable mobile navigation surface. */
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: inherit;
+  }
+  .nav-links.mobile-open {
+    top: 60px !important;
+    max-height: calc(100dvh - 60px) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    align-items: stretch !important;
+  }
+  .nav-links.mobile-open .ddm {
+    position: static !important;
+    display: none !important;
+    min-width: 0 !important;
+    margin: 0 0 8px !important;
+    padding: 6px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    background: rgba(255, 255, 255, .035) !important;
+    box-shadow: none !important;
+  }
+  .nav-links.mobile-open .dd.open > .ddm {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+  .nav-links.mobile-open .ddm a {
+    white-space: normal !important;
+  }
+  .blog-site .nav-links.mobile-open {
+    top: 72px !important;
+    max-height: calc(100dvh - 72px) !important;
+  }
+
+  /* Make the most-used controls comfortable to tap. */
+  .nav-back,
+  .ftab,
+  .lvl-btn,
+  .lang-btn,
+  .ct,
+  .go-btn,
+  .bgold,
+  .bgh {
+    min-height: 44px;
+  }
+
+  /* Keep the long blog category chooser compact without shrinking targets. */
+  .blog-site .cats {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+    margin-bottom: 30px;
+  }
+  .blog-site .cats::-webkit-scrollbar {
+    display: none;
+  }
+  .blog-site .ct {
+    flex: 0 0 auto;
+  }
+
+  /* Preserve the detailed banner design while giving artwork and copy a
+     phone-friendly portrait crop. */
+  .premium-page-banner__copy {
+    width: min(70%, 360px);
+  }
+  .premium-page-banner__title {
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+  .premium-page-banner__tags {
+    gap: 5px;
+    font-size: 9px;
+  }
+  .premium-page-banner__tags span,
+  .premium-page-banner__tags span:nth-child(n+3) {
+    display: inline-block;
+    padding: 2px 7px;
+    border: 1px solid rgba(225, 193, 107, .30);
+    border-radius: 999px;
+  }
+  .premium-page-banner__tags span:not(:last-child)::after {
+    display: none;
+  }
+  .culture-copy {
+    max-width: 68%;
+  }
+
+  /* Replace the very long single-column language catalogue with compact,
+     readable pairs of cards. */
+  .langs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  .lcard {
+    min-width: 0;
+    padding: 16px 13px !important;
+    border: 1px solid rgba(226, 189, 101, .16);
+    border-radius: 14px;
+  }
+  .lflag {
+    font-size: 30px;
+    margin-bottom: 9px;
+  }
+  .lname {
+    font-size: 18px;
+    line-height: 1.08;
+  }
+  .lnative {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+  .lcert {
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .hstat .slbl {
+    font-size: 9px !important;
+    line-height: 1.25;
+  }
+  .ci-val {
+    overflow-wrap: anywhere;
+  }
+
+  /* Slider cards keep their horizontal browsing behaviour without being
+     wider than the phone. Static testimonial cards remain fully fluid. */
+  .t-track .tcard {
+    flex: 0 0 min(320px, 84vw);
+    width: min(320px, 84vw) !important;
+    min-width: min(260px, 84vw) !important;
+    max-width: min(320px, 84vw) !important;
+  }
+  #allTestimonials .tcard {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Fixed support buttons remain useful without covering the final line of a
+     page or its legal/footer links. */
+  footer,
+  footer#siteFooter {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom)) !important;
+  }
+  .qf,
+  .disclaimer {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Exam-date tables become labelled record cards instead of being clipped. */
+  .dates-table,
+  .dates-table tbody {
+    display: block;
+    width: 100%;
+  }
+  .dates-table thead {
+    display: none;
+  }
+  .dates-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+  .dates-table tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(226, 189, 101, .20);
+    border-radius: 12px;
+    background: rgba(37, 22, 15, .74);
+  }
+  .dates-table td,
+  .dates-table td:first-child {
+    display: grid;
+    grid-template-columns: minmax(88px, 37%) minmax(0, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(226, 189, 101, .12) !important;
+    overflow-wrap: anywhere;
+    color: #d8c7b2 !important;
+  }
+  .dates-table td:last-child {
+    border-bottom: 0 !important;
+  }
+  .dates-table td::before {
+    content: attr(data-label);
+    color: #e8c978;
+    font: 700 9px/1.35 'DM Sans', sans-serif;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 480px) {
+  .page.active > .premium-page-banner,
+  .page.active .culture-banner {
+    margin-top: 56px;
+  }
+  .premium-page-banner {
+    height: clamp(214px, 58vw, 228px);
+    border-radius: 0 0 18px 18px;
+  }
+  .culture-banner {
+    height: clamp(205px, 56vw, 220px);
+    border-radius: 0 0 18px 18px;
+  }
+  .premium-page-banner__copy {
+    left: 16px;
+    width: min(72%, 330px);
+  }
+  .culture-copy {
+    left: 16px;
+    top: 25px;
+    max-width: 70%;
+  }
+
+  .nav-links.mobile-open {
+    top: 56px !important;
+    max-height: calc(100dvh - 56px) !important;
+  }
+  .blog-site .nav-links.mobile-open {
+    top: 72px !important;
+    max-height: calc(100dvh - 72px) !important;
+  }
+
+  .contact-form {
+    padding: 24px 18px !important;
+  }
+  .frow {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .fg {
+    margin-bottom: 15px;
+  }
+  .schol-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .schol-cards .sc-card {
+    min-width: 0;
+  }
+  body:not(.blog-site) .fc-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .page.active > .premium-page-banner,
+  .page.active .culture-banner {
+    margin-top: 52px;
+  }
+  .nav-links.mobile-open {
+    top: 52px !important;
+    max-height: calc(100dvh - 52px) !important;
+  }
+  .blog-site .nav-links.mobile-open {
+    top: 72px !important;
+    max-height: calc(100dvh - 72px) !important;
+  }
+  .premium-page-banner {
+    height: 214px;
+  }
+  .culture-banner {
+    height: 205px;
+  }
+  .lcard {
+    padding: 14px 11px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .filter-bar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding-top: 32px !important;
+    margin-bottom: 32px;
+  }
+  .ftab {
+    min-width: 0;
+    padding: 8px 4px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 340px) {
+  body:not(.blog-site) .fc-group {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-page-banner__media,
+  .premium-page-banner__copy {
+    animation: none !important;
+  }
+}
+
+/* The standalone teaching-method page keeps a 60px mobile header at every
+   phone breakpoint, unlike the progressively shorter SPA header. */
+@media (max-width: 768px) {
+  .method-site .nav-links.mobile-open {
+    top: 60px !important;
+    max-height: calc(100dvh - 60px) !important;
+  }
+  .method-site .main-nav.scrolled .nav-links.mobile-open {
+    top: 58px !important;
+    max-height: calc(100dvh - 58px) !important;
+  }
+}

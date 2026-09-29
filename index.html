@@ -698,8 +698,8 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
   [style*="max-width:520px"],[style*="max-width:540px"],[style*="max-width:560px"]{
     max-width:100% !important;width:100% !important
   }
-  /* Overflow guards */
-  div,section,article,aside,main{max-width:100vw;overflow-x:hidden}
+  /* Flexible children may shrink without creating nested scroll containers. */
+  div,section,article,aside,main{max-width:100%;min-width:0}
   /* Padding overrides for section-level divs */
   [style*="padding:70px"],[style*="padding:60px"]{padding-left:4% !important;padding-right:4% !important}
   /* schol-banner */
@@ -813,6 +813,7 @@ form[data-fs-state="success"] ~ *,
     <meta name="theme-color" content="#2a160f">
 <link rel="stylesheet" href="/assets/premium-page-banners.css">
 <link rel="stylesheet" href="/assets/coffee-gold-theme-v1.css">
+<link rel="stylesheet" href="/assets/mobile-polish-v1.css">
 </head>
 <body>
 <!-- DIFL Wing Decorative Overlays -->
@@ -889,7 +890,7 @@ form[data-fs-state="success"] ~ *,
     <li><a href="/blog.html" onclick="navigate('blog');return false">Blog</a></li>
     <li><a href="/contact-us/" onclick="navigate('contact');return false" class="nav-cta">Enroll Now</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ===================== HOME PAGE ===================== -->
@@ -1164,7 +1165,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== ABOUT PAGE ===================== -->
 <div id="page-about" class="page">
   <div class="premium-page-banner" role="img" aria-label="DIFL legacy across four generations of language education in Jaipur">
-    <img class="premium-page-banner__media" src="/assets/page-banners/about-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/about-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Since 1971 · Four Generations</div>
       <div class="premium-page-banner__title">A Legacy That Keeps <em>Moving Forward</em></div>
@@ -1226,7 +1227,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== ALL COURSES PAGE ===================== -->
 <div id="page-all-courses" class="page">
   <div class="premium-page-banner" role="img" aria-label="A world of foreign language courses opening from a global atlas">
-    <img class="premium-page-banner__media" src="/assets/page-banners/all-courses-premium.webp" alt="" width="2163" height="727" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/all-courses-premium.webp" alt="" width="2163" height="727" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Explore Every Language</div>
       <div class="premium-page-banner__title">A World of Languages <em>Awaits</em></div>
@@ -1251,7 +1252,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== PROGRAMS PAGE ===================== -->
 <div id="page-programs" class="page">
   <div class="premium-page-banner" role="img" aria-label="A scholarly journey from Jaipur to international universities and careers">
-    <img class="premium-page-banner__media" src="/assets/page-banners/study-abroad-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/study-abroad-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Study · Work · Grow Abroad</div>
       <div class="premium-page-banner__title">Your Future Has <em>No Borders</em></div>
@@ -1380,7 +1381,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== HANDWRITING PAGE ===================== -->
 <div id="page-handwriting" class="page">
   <div class="premium-page-banner" role="img" aria-label="Handwriting and calligraphy transformed through confident, graceful strokes">
-    <img class="premium-page-banner__media" src="/assets/page-banners/handwriting-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/handwriting-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Handwriting · Calligraphy</div>
       <div class="premium-page-banner__title">Where Every Stroke Finds <em>Confidence</em></div>
@@ -1450,7 +1451,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== TESTIMONIALS PAGE ===================== -->
 <div id="page-testimonials" class="page">
   <div class="premium-page-banner" role="img" aria-label="DIFL student journeys becoming success stories across the world">
-    <img class="premium-page-banner__media" src="/assets/page-banners/reviews-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/reviews-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Real Students · Real Outcomes</div>
       <div class="premium-page-banner__title">Thousands of Journeys. <em>One Trusted Beginning.</em></div>
@@ -1478,7 +1479,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== SCHOLARSHIPS PAGE ===================== -->
 <div id="page-scholarships" class="page">
   <div class="premium-page-banner" role="img" aria-label="A lamp of learning opening pathways to scholarships and global education">
-    <img class="premium-page-banner__media" src="/assets/page-banners/scholarships-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/scholarships-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Opportunity Through Education</div>
       <div class="premium-page-banner__title">Talent Deserves <em>Its Chance</em></div>
@@ -1591,7 +1592,7 @@ form[data-fs-state="success"] ~ *,
 <!-- ===================== FAQ PAGE ===================== -->
 <div id="page-faq" class="page">
   <div class="premium-page-banner" role="img" aria-label="Language learning questions becoming clear, helpful answers">
-    <img class="premium-page-banner__media" src="/assets/page-banners/faq-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/faq-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">DIFL Answers</div>
       <div class="premium-page-banner__title">From Questions <em>to Clarity</em></div>
@@ -1614,7 +1615,7 @@ form[data-fs-state="success"] ~ *,
 <div 
 id="page-blog" class="page">
   <div class="premium-page-banner" role="img" aria-label="A richly illustrated foreign-language knowledge journal and editorial desk">
-    <img class="premium-page-banner__media" src="/assets/page-banners/blog-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/blog-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">The DIFL Knowledge Journal</div>
       <div class="premium-page-banner__title">Ideas That Take You <em>Further</em></div>
@@ -1714,7 +1715,7 @@ id="page-blog" class="page">
 
 <!-- HERO -->
 <div class="premium-page-banner" role="img" aria-label="Jaipur industries and professionals connecting confidently with global markets">
-  <img class="premium-page-banner__media" src="/assets/page-banners/professionals-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+  <img class="premium-page-banner__media" src="/assets/page-banners/professionals-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
   <div class="premium-page-banner__copy">
     <div class="premium-page-banner__eyebrow">Language for Global Business</div>
     <div class="premium-page-banner__title">Speak the Language of <em>Opportunity</em></div>
@@ -2025,7 +2026,7 @@ id="page-blog" class="page">
 
 <div id="page-contact" class="page">
   <div class="premium-page-banner" role="img" aria-label="A welcoming private language counselling conversation at DIFL Jaipur">
-    <img class="premium-page-banner__media" src="/assets/page-banners/contact-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <img class="premium-page-banner__media" src="/assets/page-banners/contact-premium.webp" alt="" width="2172" height="724" loading="lazy" fetchpriority="low" decoding="async">
     <div class="premium-page-banner__copy">
       <div class="premium-page-banner__eyebrow">Personal Language Counselling</div>
       <div class="premium-page-banner__title">A Clearer Path Starts with <em>a Conversation</em></div>
@@ -2303,7 +2304,7 @@ function contactFormHTML(id) {
 
 // ===== RENDER HELPERS =====
 function renderLangsGrid(el, clickable=true){
-  el.innerHTML = LANGS.map(l=>`<div class="lcard" style="--cbg:${l.bg}" onclick="navigate('${l.id}')"><span class="lflag">${l.flag}</span><div class="lname">${l.name}</div><div class="lnative">${l.native}</div><div class="lcert">${l.cert}</div><div class="larrow">→</div></div>`).join('');
+  el.innerHTML = LANGS.map(l=>`<a class="lcard" href="/?page=${l.id}" style="--cbg:${l.bg}" onclick="navigate('${l.id}');return false"><span class="lflag">${l.flag}</span><div class="lname">${l.name}</div><div class="lnative">${l.native}</div><div class="lcert">${l.cert}</div><div class="larrow">→</div></a>`).join('');
 }
 function renderTeam(el){
   el.innerHTML=TEAM.map(function(t){
@@ -2781,13 +2782,6 @@ document.addEventListener('mouseout',()=>{const c=document.getElementById('curso
 // ===== NAVBAR SCROLL =====
 window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60));
 
-// ===== HAMBURGER =====
-document.getElementById('hamburger').addEventListener('click',()=>{
-  const nl=document.getElementById('navLinks');
-  const open=nl.style.display==='flex';
-  nl.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(13,13,13,.98);padding:20px;gap:6px;z-index:999;border-bottom:1px solid rgba(201,168,76,.2)';
-});
-
 // ===== INIT =====
 window.addEventListener('DOMContentLoaded',()=>{
   initCanvas();
@@ -2884,35 +2878,60 @@ document.head.appendChild(ld);
   const ham = document.getElementById('hamburger');
   const navLinks = document.querySelector('.nav-links');
   if(!ham || !navLinks) return;
+
+  function closeMenu(){
+    navLinks.classList.remove('mobile-open');
+    ham.classList.remove('active');
+    ham.setAttribute('aria-expanded', 'false');
+    navLinks.querySelectorAll('.dd.open').forEach(function(item){ item.classList.remove('open'); });
+    navLinks.querySelectorAll('.dd > span').forEach(function(trigger){ trigger.setAttribute('aria-expanded', 'false'); });
+  }
   
   ham.addEventListener('click', function(e){
     e.stopPropagation();
     const open = navLinks.classList.toggle('mobile-open');
-    ham.classList.toggle('active');
+    if(!open){
+      closeMenu();
+      return;
+    }
+    ham.classList.toggle('active', open);
     ham.setAttribute('aria-expanded', String(open));
   });
-  
-  // Close on link click
-  navLinks.addEventListener('click', function(){
-    navLinks.classList.remove('mobile-open');
-    ham.classList.remove('active');
-    ham.setAttribute('aria-expanded', 'false');
+
+  navLinks.querySelectorAll('.dd > span').forEach(function(trigger){
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('tabindex', '0');
+    trigger.setAttribute('aria-expanded', 'false');
+    function toggleDropdown(event){
+      event.preventDefault();
+      event.stopPropagation();
+      const item = trigger.parentElement;
+      navLinks.querySelectorAll('.dd.open').forEach(function(other){
+        if(other !== item){
+          other.classList.remove('open');
+          const otherTrigger = other.querySelector(':scope > span');
+          if(otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', String(item.classList.contains('open')));
+    }
+    trigger.addEventListener('click', toggleDropdown);
+    trigger.addEventListener('keydown', function(event){
+      if(event.key === 'Enter' || event.key === ' '){ toggleDropdown(event); }
+    });
   });
   
-  // Close on outside click
+  navLinks.addEventListener('click', function(event){
+    if(event.target.closest('a')) closeMenu();
+  });
+  
   document.addEventListener('click', function(e){
-    if(!ham.contains(e.target) && !navLinks.contains(e.target)){
-      navLinks.classList.remove('mobile-open');
-      ham.classList.remove('active');
-    }
+    if(!ham.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
   });
   
-  // Close on Escape key
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      navLinks.classList.remove('mobile-open');
-      ham.classList.remove('active');
-    }
+    if(e.key === 'Escape') closeMenu();
   });
 })();
 // ═══════════════════════════════════════════════════

@@ -217,8 +217,9 @@ const page = `<!doctype html>
     @media(max-width:520px){.scroll-note{display:none}.term-mark{align-items:flex-start}.method-map{padding:38px 24px}.map-heading{display:block}.map-heading p{margin-top:14px}.journey{grid-template-columns:1fr}.journey div{padding:2px 0 2px 68px;min-height:58px}.journey i{top:2px}.art-portrait{width:100%}}
   </style>
 <link rel="stylesheet" href="/assets/coffee-gold-theme-v1.css">
+<link rel="stylesheet" href="/assets/mobile-polish-v1.css">
 </head>
-<body>
+<body class="method-site">
   <nav class="main-nav" id="navbar" aria-label="Main navigation">
     <a class="nav-logo" href="/">
       <img src="/assets/difl-logo-mark.png" class="difl-logo-img" alt="DIFL" width="128" height="48">

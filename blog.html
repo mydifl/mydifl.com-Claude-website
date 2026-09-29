@@ -351,8 +351,9 @@ footer#siteFooter .fc-group .fc a:hover{color:var(--gold)}
 {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://mydifl.com/#local","name":"DIFL — Dante Institute of Foreign Languages","image":"https://mydifl.com/logo.png","url":"https://mydifl.com","telephone":"+91-9929-515151","address":{"@type":"PostalAddress","streetAddress":"2/11 DIFL House, In front of Jawahar Enclave, Near Mama ka Hotel, Jawahar Nagar","addressLocality":"Jaipur","addressRegion":"Rajasthan","postalCode":"302004","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":26.892237,"longitude":75.841529},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"sameAs":["https://mydifl.com","https://mybhasha.com","https://www.facebook.com/danteinstitute","https://www.instagram.com/mydifl/","https://www.youtube.com/@mydifl"]}</script>
 <link rel="stylesheet" href="/assets/premium-page-banners.css">
 <link rel="stylesheet" href="/assets/coffee-gold-theme-v1.css">
+<link rel="stylesheet" href="/assets/mobile-polish-v1.css">
 </head>
-<body>
+<body class="blog-site">
 <div class="difl-wing-bl-blog" aria-hidden="true"></div>
 <div class="difl-wing-tr-blog" aria-hidden="true"></div>
 <div class="cr" id="cr"></div>
@@ -416,7 +417,7 @@ footer#siteFooter .fc-group .fc a:hover{color:var(--gold)}
     <li><a onclick="showList();return false;" href="#" style="cursor:pointer">Blog</a></li>
     <li><a href="/?page=contact" class="nav-cta">Enroll Now</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- LIST PAGE -->
@@ -2431,7 +2432,7 @@ const CATS=["All","Exam Guide","Culture","Food & Culture","Study Plan","✨ Beau
 let activeCat="All";
 
 function renderCats(){
-  document.getElementById("catBar").innerHTML=CATS.map(c=>`<div class="ct${c===activeCat?" on":""}" onclick="filterCat('${c}')">${c}</div>`).join("");
+  document.getElementById("catBar").innerHTML=CATS.map(c=>`<button type="button" class="ct${c===activeCat?" on":""}" aria-pressed="${c===activeCat}" onclick="filterCat('${c}')">${c}</button>`).join("");
 }
 function filterCat(cat){
   activeCat=cat;
@@ -2619,11 +2620,49 @@ window.addEventListener("DOMContentLoaded",()=>{renderCats();renderFeat();render
   var ham = document.getElementById('hamburger');
   var nav = document.getElementById('navLinks');
   if(!ham||!nav) return;
-  ham.addEventListener('click', function(){
+  function closeMenu(){
+    nav.classList.remove('mobile-open');
+    ham.classList.remove('active');
+    ham.setAttribute('aria-expanded', 'false');
+    nav.querySelectorAll('.dd.open').forEach(function(item){ item.classList.remove('open'); });
+    nav.querySelectorAll('.dd > span').forEach(function(trigger){ trigger.setAttribute('aria-expanded', 'false'); });
+  }
+  ham.addEventListener('click', function(event){
+    event.stopPropagation();
     var open = nav.classList.toggle('mobile-open');
+    if(!open){
+      closeMenu();
+      return;
+    }
     ham.classList.toggle('active', open);
-    ham.setAttribute('aria-expanded', open);
+    ham.setAttribute('aria-expanded', String(open));
   });
+  nav.querySelectorAll('.dd > span').forEach(function(trigger){
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('tabindex', '0');
+    trigger.setAttribute('aria-expanded', 'false');
+    function toggleDropdown(event){
+      event.preventDefault();
+      event.stopPropagation();
+      var item = trigger.parentElement;
+      nav.querySelectorAll('.dd.open').forEach(function(other){
+        if(other !== item){
+          other.classList.remove('open');
+          var otherTrigger = other.querySelector(':scope > span');
+          if(otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', String(item.classList.contains('open')));
+    }
+    trigger.addEventListener('click', toggleDropdown);
+    trigger.addEventListener('keydown', function(event){
+      if(event.key === 'Enter' || event.key === ' '){ toggleDropdown(event); }
+    });
+  });
+  nav.addEventListener('click', function(event){ if(event.target.closest('a')) closeMenu(); });
+  document.addEventListener('click', function(event){ if(!ham.contains(event.target) && !nav.contains(event.target)) closeMenu(); });
+  document.addEventListener('keydown', function(event){ if(event.key === 'Escape') closeMenu(); });
 })();
 </script>
 
