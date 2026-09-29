@@ -217,6 +217,17 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .ficon{width:50px;height:50px;flex-shrink:0;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.03));border:1px solid rgba(201,168,76,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px}
 .fcard h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--cream);margin-bottom:5px}
 .fcard p{font-size:13px;color:var(--gm);line-height:1.65}
+.why-difl-layout{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:769px){
+  .why-difl-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(20px,5vw,78px);align-items:stretch}
+  .why-difl-intro{grid-column:1;grid-row:1}
+  .why-feature-method{grid-column:1;grid-row:2}
+  .why-feature-strategy{grid-column:1;grid-row:3}
+  .why-feature-jobs{grid-column:1;grid-row:4}
+  .why-feature-format{grid-column:1;grid-row:5}
+  .why-feature-study{grid-column:2;grid-row:5}
+  .why-difl-proof{grid-column:2;grid-row:1/5;align-self:center}
+}
 
 /* TESTIMONIALS */
 .t-slider{overflow:hidden;margin-top:50px}
@@ -490,6 +501,14 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
   .schol-grid{grid-template-columns:1fr 1fr}
 }
 
+@media(min-width:769px) and (max-width:1100px){
+  .ttp-grid>.ttp-c:last-child:nth-child(odd){
+    grid-column:1/-1;
+    justify-self:center;
+    width:calc(50% - 11px);
+  }
+}
+
 @media(max-width:768px){
   /* ── Global ─────────────────────────────────── */
   *{max-width:100%}
@@ -723,8 +742,21 @@ form[data-fs-state="success"] ~ *,
 .industry-icon{font-size:28px;margin-bottom:10px}
 .industry-title{font-size:13.5px;font-weight:700;color:var(--cream);margin-bottom:7px;line-height:1.35}
 .industry-desc{font-size:12.5px;color:var(--gm);line-height:1.65}
-@media(max-width:600px){.industry-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:380px){.industry-grid{grid-template-columns:1fr}}
+@media(min-width:601px) and (max-width:1100px){
+  .industry-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .industry-card{grid-column:span 2}
+  .industry-card:nth-child(4){grid-column:2/span 2}
+}
+@media(max-width:600px){
+  .about-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:38px 0}
+  .astat{padding:20px 12px}
+  .industry-grid{grid-template-columns:1fr 1fr}
+  .industry-card:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 8px)}
+}
+@media(max-width:380px){
+  .industry-grid{grid-template-columns:1fr}
+  .industry-card:last-child:nth-child(odd){grid-column:auto;width:auto}
+}
 
 
 /* ── Professionals Page ── */
@@ -932,20 +964,18 @@ form[data-fs-state="success"] ~ *,
   <!-- WHY DIFL -->
   <section class="why-difl-section" style="background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(10,92,110,.07),transparent),var(--ink)">
     <div class="sc">
-      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,5vw,78px);align-items:center">
-        <div class="reveal">
+      <div class="why-difl-layout">
+        <div class="why-difl-intro reveal">
           <div class="eyebrow">Why Choose DIFL</div>
           <h2>A Legacy Built on<br><em>Real Results</em></h2>
-          <p class="lead" style="margin-bottom:38px">For over five decades, DIFL has transformed learners into confident speakers, not just certificate holders.</p>
-          <div style="display:grid;gap:20px">
-            <div class="fcard"><div class="ficon">🧠</div><div><h4>TTP — Thought Translation Process</h4><p>DIFL's patented pedagogy: learn through your mother tongue for deeper comprehension and faster fluency — an innovation 55 years in the making.</p></div></div>
-            <div class="fcard"><div class="ficon">🎓</div><div><h4>Skip-Level Exam Strategy</h4><p>Higher certification levels cover lower ones in most exams (JLPT, DELF, Goethe, DELE, TOPIK). <strong>You don't need to start from the beginning.</strong> DIFL identifies your optimal entry point and targets the level you actually need — saving months of unnecessary study. Prepare for JLPT, DELF/DALF, HSK, TOPIK, Goethe, IELTS, DELE, TRKI and 15+ global proficiency exams with expert-trained faculty.</p></div></div>
-            <div class="fcard"><div class="ficon">💼</div><div><h4>Jobs & Placement Support</h4><p>Pan-India employer network actively hires DIFL graduates. Many employers are ex-DIFL students themselves — the strongest alumni advantage.</p></div></div>
-            <div class="fcard"><div class="ficon">🌐</div><div><h4>Online · Offline · Hybrid</h4><p>Flexible Mon–Fri schedules. Attend from Jaipur or anywhere in the world. Batch-based learning designed around your lifestyle and budget.</p></div></div>
-            <div class="fcard"><div class="ficon">✈️</div><div><h4>Study Abroad & Visa Counseling</h4><p>Germany Ausbildung, MEXT Japan, Campus France, Canada TEF/TCF — we guide the full journey from language to landing abroad.</p></div></div>
-          </div>
+          <p class="lead">For over five decades, DIFL has transformed learners into confident speakers, not just certificate holders.</p>
         </div>
-        <div class="reveal" style="display:flex;flex-direction:column;gap:16px">
+        <div class="fcard why-feature-method reveal"><div class="ficon">🧠</div><div><h4>TTP — Thought Translation Process</h4><p>DIFL's patented pedagogy: learn through your mother tongue for deeper comprehension and faster fluency — an innovation 55 years in the making.</p></div></div>
+        <div class="fcard why-feature-strategy reveal"><div class="ficon">🎓</div><div><h4>Skip-Level Exam Strategy</h4><p>Higher certification levels cover lower ones in most exams (JLPT, DELF, Goethe, DELE, TOPIK). <strong>You don't need to start from the beginning.</strong> DIFL identifies your optimal entry point and targets the level you actually need — saving months of unnecessary study. Prepare for JLPT, DELF/DALF, HSK, TOPIK, Goethe, IELTS, DELE, TRKI and 15+ global proficiency exams with expert-trained faculty.</p></div></div>
+        <div class="fcard why-feature-jobs reveal"><div class="ficon">💼</div><div><h4>Jobs & Placement Support</h4><p>Pan-India employer network actively hires DIFL graduates. Many employers are ex-DIFL students themselves — the strongest alumni advantage.</p></div></div>
+        <div class="fcard why-feature-format reveal"><div class="ficon">🌐</div><div><h4>Online · Offline · Hybrid</h4><p>Flexible Mon–Fri schedules. Attend from Jaipur or anywhere in the world. Batch-based learning designed around your lifestyle and budget.</p></div></div>
+        <div class="fcard why-feature-study reveal"><div class="ficon">✈️</div><div><h4>Study Abroad & Visa Counseling</h4><p>Germany Ausbildung, MEXT Japan, Campus France, Canada TEF/TCF — we guide the full journey from language to landing abroad.</p></div></div>
+        <div class="why-difl-proof reveal" style="display:flex;flex-direction:column;gap:16px">
           <div class="big-stat-box"><div class="bnum" id="cAlumni2">25,000+</div><div class="bdesc">Students Taught Over 55 Years</div></div>
           <div class="mini-grid">
             <div class="mini-s"><div class="mn">12</div><div class="ml">Languages</div></div>
