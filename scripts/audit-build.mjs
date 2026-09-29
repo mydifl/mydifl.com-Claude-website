@@ -16,10 +16,15 @@ for (const path of [
 }
 
 const vercel = readFileSync(resolve(root, 'vercel.json'), 'utf8');
+const vercelConfig = JSON.parse(vercel);
+const publicHeaderRule = vercelConfig.headers.find(({ source }) => source === '/(.*)');
+const publicCsp = publicHeaderRule?.headers.find(({ key }) => key === 'Content-Security-Policy')?.value || '';
 if (vercel.includes("'unsafe-eval'")) failures.push('Global CSP still permits unsafe-eval.');
 if (/script-src[^;]*\shttps:\s/.test(vercel)) failures.push('Global CSP permits scripts from every HTTPS origin.');
 if (!vercel.includes("object-src 'none'")) failures.push("CSP is missing object-src 'none'.");
 if (!vercel.includes('X-Permitted-Cross-Domain-Policies')) failures.push('Cross-domain policy header is missing.');
+if (!/style-src[^;]*https:\/\/\*\.tawk\.to/.test(publicCsp)) failures.push('Public CSP does not allow Tawk.to widget styles.');
+if (!/font-src[^;]*https:\/\/\*\.tawk\.to/.test(publicCsp)) failures.push('Public CSP does not allow Tawk.to widget fonts.');
 
 const sourceBlog = readFileSync(resolve(root, 'blog.html'), 'utf8');
 const postCount = (sourceBlog.match(/\{id:"[^"]+"/g) || []).length;
