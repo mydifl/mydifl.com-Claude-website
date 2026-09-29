@@ -107,6 +107,51 @@ for (const path of [
   if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
 }
 
+const forbiddenPortalDomain = /\b(?:www\.)?mydifl\.(?:in|inf)\b/i;
+const portalSourceExtensions = new Set(['.astro', '.css', '.html', '.js', '.json', '.md', '.mjs', '.ts', '.txt', '.xml', '.yaml', '.yml']);
+const portalScanIgnoredDirectories = new Set(['.git', '.vercel', 'dist', 'node_modules']);
+const scanPortalDomains = (directory) => {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    if (entry.isDirectory() && portalScanIgnoredDirectories.has(entry.name)) continue;
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      scanPortalDomains(path);
+      continue;
+    }
+    if (!portalSourceExtensions.has(extname(entry.name).toLowerCase())) continue;
+    if (forbiddenPortalDomain.test(readFileSync(path, 'utf8'))) {
+      failures.push(`Superseded Smart Portal domain remains in ${relative(root, path)}.`);
+    }
+  }
+};
+scanPortalDomains(root);
+for (const path of ['index.html', 'blog.html', 'llms.txt', 'llms-full.txt']) {
+  const source = readFileSync(resolve(root, path), 'utf8');
+  if (!source.includes('mybhasha.com')) failures.push(`${path} is missing the correct mybhasha.com Smart Portal reference.`);
+}
+const scanBuiltPortalDomains = (directory) => {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      scanBuiltPortalDomains(path);
+      continue;
+    }
+    if (!portalSourceExtensions.has(extname(entry.name).toLowerCase())) continue;
+    if (forbiddenPortalDomain.test(readFileSync(path, 'utf8'))) {
+      failures.push(`Superseded Smart Portal domain remains in built artifact ${relative(root, path)}.`);
+    }
+  }
+};
+for (const path of ['dist/client', '.vercel/output/static']) {
+  const directory = resolve(root, path);
+  if (existsSync(directory)) scanBuiltPortalDomains(directory);
+}
+for (const path of ['dist/client/index.html', 'dist/client/blog.html', 'dist/client/llms.txt', '.vercel/output/static/index.html', '.vercel/output/static/blog.html', '.vercel/output/static/llms.txt']) {
+  if (existsSync(resolve(root, path)) && !readFileSync(resolve(root, path), 'utf8').includes('mybhasha.com')) {
+    failures.push(`${path} is missing the correct built Smart Portal reference.`);
+  }
+}
+
 const builtRoot = resolve(root, 'dist/client');
 const builtHtml = [];
 const collectHtml = (directory) => {
