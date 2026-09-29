@@ -30,6 +30,10 @@ const blankNavigation = sourceHome.match(/<a(?![^>]*\bhref=)[^>]*\bonclick=/gi) 
 if (blankNavigation.length) failures.push(`Homepage contains ${blankNavigation.length} clickable anchors without fallback href links.`);
 if (!sourceHome.includes('class="why-difl-section"')) failures.push('Homepage proof section is missing its light-theme contrast guard.');
 if (!sourceHome.includes('class="legacy-banner"')) failures.push('Homepage legacy banner is missing its dark-panel contrast guard.');
+if (!sourceHome.includes('cultureBannerHTML(lang)')) failures.push('Language pages are missing their cultural banner renderer.');
+for (const language of ['french','japanese','german','spanish','chinese','arabic','korean','italian','russian','english','thai','hindi']) {
+  if (!sourceHome.includes(`  ${language}:{greeting:`)) failures.push(`Cultural banner metadata is missing for ${language}.`);
+}
 
 const tawkLoader = resolve(root, 'assets/tawk-safe-v2.js');
 if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');

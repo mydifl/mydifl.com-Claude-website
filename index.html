@@ -341,6 +341,25 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 .lang-hero{min-height:55vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden}
 .lang-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 80% 50%,rgba(201,168,76,.07),transparent)}
 .lang-hero-inner{max-width:1400px;margin:0 auto;padding:clamp(40px,6vw,60px) clamp(16px,5%,8%);display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%}
+.lang-page-hero{background:var(--ink);position:relative;overflow:hidden}
+.lang-page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 80% 46%,var(--lang-glow),transparent 72%);pointer-events:none}
+.culture-banner{--cb-a:#8e2430;--cb-b:#d5a33d;--cb-c:#153650;max-width:1400px;height:clamp(172px,17vw,228px);margin:0 auto;position:relative;overflow:hidden;border-radius:0 0 28px 28px;background:linear-gradient(115deg,color-mix(in srgb,var(--cb-a) 88%,#080f17),color-mix(in srgb,var(--cb-c) 84%,#080f17) 58%,color-mix(in srgb,var(--cb-b) 72%,#111821));isolation:isolate}
+.culture-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 76% 24%,color-mix(in srgb,var(--cb-b) 72%,transparent) 0 7%,transparent 7.4%),repeating-radial-gradient(circle at 83% 42%,transparent 0 13px,rgba(255,255,255,.075) 14px 15px,transparent 16px 29px),linear-gradient(105deg,rgba(255,255,255,.08),transparent 34%);opacity:.9}
+.culture-banner::after{content:'';position:absolute;z-index:5;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to bottom,transparent,var(--ink));pointer-events:none}
+.culture-pattern{position:absolute;inset:0;opacity:.14;background-image:linear-gradient(30deg,transparent 24%,rgba(255,255,255,.5) 25%,transparent 26%),linear-gradient(150deg,transparent 24%,rgba(255,255,255,.34) 25%,transparent 26%);background-size:42px 42px;transform:skewX(-7deg) scale(1.1)}
+.culture-copy{position:absolute;z-index:4;left:clamp(22px,5vw,72px);top:clamp(24px,4vw,48px);max-width:min(52%,640px);color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.36)}
+.culture-kicker{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.culture-kicker::before{content:'';width:30px;height:1px;background:var(--cb-b)}
+.culture-greeting{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.2vw,64px);font-weight:700;line-height:.96;margin:10px 0 12px;letter-spacing:-.02em}
+.culture-countries{display:flex;flex-wrap:wrap;gap:6px 15px;font-size:11px;letter-spacing:.7px;color:rgba(255,255,255,.82)}
+.culture-countries span{position:relative}.culture-countries span:not(:last-child)::after{content:'·';position:absolute;right:-10px;color:var(--cb-b)}
+.culture-art{position:absolute;z-index:3;right:clamp(18px,5vw,75px);bottom:31px;width:min(42%,500px);height:78%;display:flex;align-items:flex-end;justify-content:flex-end;gap:clamp(8px,1.7vw,25px);color:rgba(255,255,255,.91);filter:drop-shadow(0 10px 18px rgba(0,0,0,.22))}
+.culture-symbol{font-size:clamp(38px,5.2vw,76px);line-height:1;transform:translateY(var(--lift,0));font-family:'Noto Serif','Times New Roman',serif}
+.culture-symbol:nth-child(2){font-size:clamp(58px,8vw,118px);color:color-mix(in srgb,var(--cb-b) 76%,white)}
+.culture-symbol:nth-child(3){opacity:.82}
+.culture-line{position:absolute;z-index:2;right:-3%;bottom:35px;width:58%;height:44%;border-top:1px solid rgba(255,255,255,.35);border-radius:50% 0 0 0;transform:rotate(-4deg)}
+.culture-caption{position:absolute;z-index:4;right:clamp(22px,5vw,72px);top:21px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;letter-spacing:1.5px;color:rgba(255,255,255,.68)}
+.lang-course-grid{max-width:1400px;margin:0 auto;padding:clamp(18px,4vw,42px) clamp(16px,5%,8%) clamp(40px,6vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%;position:relative;z-index:6}
 .lang-flag-big{font-size:120px;text-align:center;animation:bob 3s ease infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .level-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
@@ -450,7 +469,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 
 @media(max-width:1100px){
   nav{padding:0 4%}
-  .hero-grid,.lang-hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-grid,.lang-hero-inner,.lang-course-grid{grid-template-columns:1fr;gap:40px}
   .lang-orb,.hero-right{display:none}
   .steps-grid{grid-template-columns:1fr 1fr}
   .step-arr{display:none}
@@ -492,6 +511,22 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
   .hero-ctas{flex-direction:column;gap:10px}
   .hero-ctas .btn-g,.hero-ctas .btn-o{width:100%;justify-content:center;padding:13px 16px;font-size:13px}
   .hero-sub{font-size:13.5px;line-height:1.7}
+  .culture-banner{height:176px;border-radius:0 0 20px 20px}
+  .culture-copy{left:20px;top:24px;max-width:64%}
+  .culture-greeting{font-size:clamp(30px,10vw,44px);margin:8px 0 10px}
+  .culture-kicker{font-size:8px;letter-spacing:1.7px}
+  .culture-countries{font-size:9px;gap:5px 13px;line-height:1.45}
+  .culture-art{right:12px;bottom:34px;width:38%;gap:5px}
+  .culture-symbol:first-child,.culture-symbol:nth-child(2){display:none}
+  .culture-symbol:nth-child(3){display:block;font-size:clamp(54px,18vw,82px);opacity:.9;color:color-mix(in srgb,var(--cb-b) 70%,white)}
+  .culture-caption{display:none}
+  .culture-line{width:48%;bottom:42px}
+  .lang-course-grid{padding:12px 4% 46px;gap:26px}
+  .lang-course-grid>div{min-width:0}
+  .lang-course-grid h2{overflow-wrap:anywhere}
+  .lang-course-grid .level-pills{min-width:0;max-width:100%}
+  .lang-course-grid .pill{white-space:normal;max-width:100%}
+  .lang-course-grid>div:last-child{display:none}
 
   /* ── All grids → single column ───────────────── */
   .steps-grid,.ttp-grid,.hw-grid,.fg-grid,.feat-grid,
@@ -2163,6 +2198,29 @@ function renderFaq(el, count=null){
 }
 
 // ===== LANG PAGE BUILDER =====
+const LANG_CULTURE = {
+  french:{greeting:'Bienvenue',countries:['France','Canada','Belgium','Switzerland'],symbols:['⚜','🗼','🍁'],a:'#173f72',b:'#e8c77b',c:'#8f2434',caption:'Language · culture · global opportunity'},
+  japanese:{greeting:'ようこそ',countries:['Japan'],symbols:['🌸','⛩','富士'],a:'#8f1630',b:'#f3d8c6',c:'#2d2538',caption:'Tradition · precision · modern Japan'},
+  german:{greeting:'Willkommen',countries:['Germany','Austria','Switzerland'],symbols:['♩','🏰','▲'],a:'#48232b',b:'#f0c955',c:'#1b2636',caption:'Ideas · engineering · European careers'},
+  spanish:{greeting:'Bienvenidos',countries:['Spain','Mexico','Latin America'],symbols:['❋','🏛','☀'],a:'#9f2937',b:'#f2bd4b',c:'#5e1f3d',caption:'Rhythm · connection · a global community'},
+  chinese:{greeting:'欢迎',countries:['China','Singapore','Taiwan'],symbols:['☁','🏮','山'],a:'#8c1f25',b:'#ecc557',c:'#381b2e',caption:'Conversation · commerce · living tradition'},
+  arabic:{greeting:'أهلاً وسهلاً',countries:['UAE','Saudi Arabia','Gulf & MENA'],symbols:['☾','🕌','✦'],a:'#145649',b:'#e4c477',c:'#172f3a',caption:'Heritage · calligraphy · Gulf communication'},
+  korean:{greeting:'환영합니다',countries:['South Korea'],symbols:['❀','☯','한'],a:'#244f86',b:'#e6c7a6',c:'#8d2f43',caption:'Hangul · culture · future-facing careers'},
+  italian:{greeting:'Benvenuti',countries:['Italy','San Marino','Switzerland'],symbols:['❦','🏛','♬'],a:'#1e5c4b',b:'#e3c285',c:'#8d313a',caption:'Art · design · a 55-year DIFL legacy'},
+  russian:{greeting:'Добро пожаловать',countries:['Russia','Eurasia'],symbols:['❄','♜','★'],a:'#264d7d',b:'#d9d7cf',c:'#712b43',caption:'Literature · science · Eurasian connection'},
+  english:{greeting:'Welcome',countries:['United Kingdom','USA','Canada','Australia'],symbols:['✦','🌐','♛'],a:'#233f73',b:'#e6c785',c:'#7b293b',caption:'Confidence · study · international careers'},
+  thai:{greeting:'ยินดีต้อนรับ',countries:['Thailand'],symbols:['❀','🛕','ช้าง'],a:'#593b76',b:'#e9bd66',c:'#244b55',caption:'Warmth · culture · Southeast Asia'},
+  hindi:{greeting:'स्वागत है',countries:['India'],symbols:['✺','🪷','ॐ'],a:'#9d4d25',b:'#efc36c',c:'#32594d',caption:'Expression · heritage · confident communication'}
+};
+
+function cultureBannerHTML(lang){
+  var c=LANG_CULTURE[lang.id]||LANG_CULTURE.english;
+  return '<div class="culture-banner" style="--cb-a:'+c.a+';--cb-b:'+c.b+';--cb-c:'+c.c+'" role="img" aria-label="'+lang.name+' cultural course banner featuring '+c.countries.join(', ')+'">'+
+    '<div class="culture-pattern" aria-hidden="true"></div><div class="culture-line" aria-hidden="true"></div>'+
+    '<div class="culture-copy"><div class="culture-kicker">Explore '+lang.name+'</div><div class="culture-greeting">'+c.greeting+'</div><div class="culture-countries">'+c.countries.map(function(country){return '<span>'+country+'</span>';}).join('')+'</div></div>'+
+    '<div class="culture-caption">'+c.caption+'</div><div class="culture-art" aria-hidden="true">'+c.symbols.map(function(symbol,i){return '<span class="culture-symbol" style="--lift:'+(i===1?'-5px':'0')+'">'+symbol+'</span>';}).join('')+'</div></div>';
+}
+
 const LANG_DUR={french:"13–17 months",japanese:"13–17 months",german:"13–17 months",korean:"13–17 months",spanish:"13–17 months",chinese:"12–16 months",arabic:"6–12 months",english:"4–6 months",italian:"12–16 months",russian:"12–16 months",thai:"8–14 months",hindi:"6–12 months"};
 function langFAQ(lang){
   var dur=LANG_DUR[lang.id]||"12–16 months";
@@ -2177,9 +2235,9 @@ function langFAQ(lang){
 }
 function buildLangPage(lang){
   return `
-  <div style="min-height:55vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 80% 50%,${lang.color},transparent)"></div>
-    <div style="max-width:1400px;margin:0 auto;padding:clamp(40px,6vw,60px) clamp(16px,5%,8%);display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%;position:relative;z-index:1">
+  <div class="lang-page-hero" style="--lang-glow:${lang.color}">
+    ${cultureBannerHTML(lang)}
+    <div class="lang-course-grid">
       <div>
         <div class="eyebrow">DIFL Language Course</div>
         <h2>${lang.flag} Learn <em>${lang.name}</em></h2>
@@ -2191,7 +2249,7 @@ function buildLangPage(lang){
           <a href="tel:+919929515151" class="btn-o">📞 Free Counselling</a>
         </div>
       </div>
-      <div style="text-align:center"><div style="font-size:140px;animation:bob 3s ease infinite">${lang.flag}</div>
+      <div style="text-align:center"><div class="lang-flag-big">${lang.flag}</div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px;margin-top:20px">
           <div style="font-size:11px;color:var(--gm);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px">Certification Exams</div>
           <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center">${lang.exams.map(e=>`<span class="pill">${e}</span>`).join('')}</div>
