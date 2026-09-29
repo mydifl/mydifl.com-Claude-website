@@ -236,6 +236,13 @@ h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,28px);font-
 .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:50px}
 .team-card{flex:0 1 300px;border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;transition:all .4s;background:rgba(255,255,255,.02)}
 .team-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px)}
+.team-card-media{text-align:center}
+.team-card.team-card--memorial{flex:1 1 100%;max-width:980px;min-height:230px;display:grid;grid-template-columns:220px minmax(0,1fr);align-items:center;gap:34px;margin-top:4px;padding:30px 44px;background:radial-gradient(circle at 12% 50%,rgba(154,114,31,.10),transparent 34%),linear-gradient(115deg,rgba(255,255,255,.97),rgba(237,246,243,.94))!important;border-color:rgba(154,114,31,.24)!important;box-shadow:0 14px 38px rgba(31,49,54,.08)}
+.team-card--memorial .t-avatar-photo{width:176px;height:176px;margin:0 auto}
+.team-card--memorial .t-info{padding:0;text-align:left}
+.team-card--memorial .t-info h3{font-size:28px;margin-bottom:7px}
+.team-card--memorial .t-info .role{font-size:12px;margin-bottom:14px}
+.team-card--memorial .t-info p{font-size:13.5px;line-height:1.75;max-width:650px}
 .t-avatar{height:200px;position:relative;display:flex;align-items:center;justify-content:center;font-size:80px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(10,92,110,.06))}
 .t-badge{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--ink);font-size:10px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap}
 .t-info{padding:22px}
@@ -534,6 +541,11 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 
   /* ── Two-col grids on tablet/large phone ─────── */
   .team-grid{grid-template-columns:1fr 1fr}
+  .team-card.team-card--memorial{display:flex;flex-direction:column;gap:18px;max-width:560px;min-height:0;margin-top:0;padding:26px 24px}
+  .team-card--memorial .t-avatar-photo{width:142px;height:142px}
+  .team-card--memorial .t-info{text-align:center}
+  .team-card--memorial .t-info h3{font-size:24px}
+  .team-card--memorial .t-info p{font-size:13px;line-height:1.7}
   .langs-grid{grid-template-columns:1fr 1fr;gap:12px}
 
   /* ── Course table ────────────────────────────── */
@@ -2273,7 +2285,7 @@ function renderTeam(el){
         +'<div class="t-badge">'+t.badge+'</div>'
         +'</div>'
       :'<div class="t-avatar">'+t.icon+'<div class="t-badge">'+t.badge+'</div></div>';
-    return '<div class="team-card"><div style="text-align:center">'+av+'</div>'
+    return '<div class="team-card'+(mem?' team-card--memorial':'')+'"><div class="team-card-media">'+av+'</div>'
       +'<div class="t-info"><h3>'+t.name+'</h3>'
       +'<div class="role">'+t.role+'</div>'
       +'<p>'+t.desc+'</p></div></div>';
