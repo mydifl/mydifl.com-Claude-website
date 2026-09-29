@@ -4,6 +4,7 @@
   var Tawk_API = window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
   var chatOpen = false;
+  var widgetReady = false;
 
   // tawk.to currently documents zIndex as the only supported customStyle
   // option. Keep the chat below DIFL's navigation and WhatsApp controls.
@@ -24,6 +25,14 @@
       var isBrokenAttentionGrabber = width >= 100 && width <= 240 && height >= 70 && height <= 180;
       var isChatPanel = width >= 300 && width <= 420;
       var isOversizedTeaser = isChatPanel && height > 0 && height < 400;
+
+      // Never restore a large panel from an earlier browsing session. The
+      // visitor must deliberately click the compact launcher on this page.
+      if (isChatPanel && !widgetReady) {
+        setImportant(frame, 'display', 'none');
+        frame.setAttribute('aria-hidden', 'true');
+        return;
+      }
 
       if (isChatPanel && chatOpen) {
         setImportant(frame, 'display', 'block');
@@ -53,11 +62,23 @@
   }
 
   Tawk_API.onLoad = function () {
-    Tawk_API.minimize();
     Tawk_API.showWidget();
+    Tawk_API.minimize();
     normaliseWidgetFrames();
+    window.setTimeout(function () {
+      chatOpen = false;
+      Tawk_API.minimize();
+      widgetReady = true;
+      normaliseWidgetFrames();
+    }, 800);
   };
   Tawk_API.onChatMaximized = function () {
+    if (!widgetReady) {
+      chatOpen = false;
+      Tawk_API.minimize();
+      normaliseWidgetFrames();
+      return;
+    }
     chatOpen = true;
     normaliseWidgetFrames();
   };
