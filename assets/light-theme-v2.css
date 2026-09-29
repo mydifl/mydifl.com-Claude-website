@@ -14,7 +14,7 @@
   --difl-line: #ded8ca;
   --difl-teal: #075b68;
   --difl-teal-strong: #064855;
-  --difl-gold: #9a721f;
+  --difl-gold: #76540f;
   --difl-gold-soft: #efe2bd;
   --difl-shadow: 0 16px 42px rgba(31, 49, 54, .09);
 }
@@ -146,6 +146,7 @@ h3,
   -webkit-text-fill-color: transparent !important;
 }
 .slbl { color: #59666c !important; }
+[style*="color:var(--gold)"] { color: var(--difl-gold) !important; }
 .btn-o { color: var(--difl-teal) !important; border-color: rgba(7, 91, 104, .34) !important; }
 .hstat,
 .lcard,
@@ -169,6 +170,34 @@ h3,
   border-color: rgba(7, 91, 104, .14) !important;
   box-shadow: 0 8px 26px rgba(31, 49, 54, .055);
 }
+
+/* Homepage proof/legacy section was the remaining dark-mode island. */
+.why-difl-section {
+  background-color: var(--difl-bg) !important;
+  background-image:
+    radial-gradient(ellipse 80% 65% at 18% 48%, rgba(7, 91, 104, .11), transparent 72%),
+    linear-gradient(180deg, #f6f2e8, #eef4ef) !important;
+}
+.big-stat-box {
+  background: rgba(255, 255, 255, .88) !important;
+  border-color: rgba(7, 91, 104, .18) !important;
+  box-shadow: var(--difl-shadow);
+}
+.big-stat-box .bnum {
+  background: none !important;
+  color: var(--difl-teal) !important;
+  -webkit-text-fill-color: var(--difl-teal) !important;
+}
+.big-stat-box .bdesc,
+.mini-s .ml { color: #536168 !important; }
+.mini-s .mn { color: var(--difl-teal) !important; }
+.t-stars { color: var(--difl-gold) !important; }
+.t-av { background: var(--difl-teal) !important; color: #fff !important; }
+.t-role { color: #536168 !important; }
+.t-info .role,
+.faq-q .tog,
+.fc h5,
+.fc-group .fc h5 { color: var(--difl-gold) !important; }
 .lcard:hover,
 .fcard:hover,
 .team-card:hover,
@@ -329,6 +358,30 @@ table td { border-bottom-color: #e2ddd1 !important; }
 .journey i { background: #fff !important; color: var(--difl-teal); box-shadow: 0 0 0 8px rgba(7, 91, 104, .10) !important; }
 .closing { background: linear-gradient(135deg, #e7f2ef, #fff8e8) !important; color: var(--difl-text) !important; }
 
+/* Deliberately dark feature panels need their own light-on-dark palette. */
+.legacy-banner {
+  background: linear-gradient(135deg, #07161a 0%, #10282e 55%, #1a3438 100%) !important;
+  border-color: rgba(225, 190, 92, .26) !important;
+}
+.legacy-banner .eyebrow { color: #e9c55e !important; }
+.legacy-banner h2 { color: #f8f4e8 !important; text-shadow: 0 2px 18px rgba(0, 0, 0, .18); }
+.legacy-banner h2 em {
+  color: #f1d27c !important;
+  -webkit-text-fill-color: #f1d27c !important;
+}
+.legacy-banner p { color: #d5e0e2 !important; }
+.legacy-banner [style*="color:var(--gold)"] { color: #f1d27c !important; }
+.legacy-banner .btn-o {
+  color: #e7f4f4 !important;
+  border-color: rgba(231, 244, 244, .55) !important;
+  background: rgba(255, 255, 255, .055) !important;
+}
+.legacy-banner .btn-o:hover { background: rgba(255, 255, 255, .12) !important; }
+
+/* Video testimonial captions remain on purposefully dark media cards. */
+a[style*="background:var(--ink)"] .vid-card-name { color: #ffffff !important; }
+a[style*="background:var(--ink)"] .vid-card-role { color: #cdd8db !important; }
+
 /* Footer remains clearly separated, but is light rather than black. */
 footer {
   background: #e8efea !important;
@@ -339,6 +392,23 @@ footer p,
 .fc a,
 .fc-group .fc a,
 .f-bottom { color: #58666c !important; }
+footer .fb-brand > div[style*="color:rgba(255,255,255"] { color: #526168 !important; }
+
+@media (max-width: 768px) {
+  .hero-grid {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    min-width: 0;
+  }
+  .hero-grid > div,
+  #primary-h1 {
+    min-width: 0;
+    max-width: 100%;
+  }
+  #primary-h1 {
+    overflow-wrap: anywhere;
+  }
+}
 .fc a:hover,
 .fc-group .fc a:hover { color: var(--difl-teal) !important; }
 .f-bottom { border-top-color: rgba(7, 91, 104, .14) !important; }

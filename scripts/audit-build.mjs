@@ -28,6 +28,8 @@ if (postCount !== 50) failures.push(`Expected 50 blog articles, found ${postCoun
 const sourceHome = readFileSync(resolve(root, 'index.html'), 'utf8');
 const blankNavigation = sourceHome.match(/<a(?![^>]*\bhref=)[^>]*\bonclick=/gi) || [];
 if (blankNavigation.length) failures.push(`Homepage contains ${blankNavigation.length} clickable anchors without fallback href links.`);
+if (!sourceHome.includes('class="why-difl-section"')) failures.push('Homepage proof section is missing its light-theme contrast guard.');
+if (!sourceHome.includes('class="legacy-banner"')) failures.push('Homepage legacy banner is missing its dark-panel contrast guard.');
 
 const tawkLoader = resolve(root, 'assets/tawk-safe-v2.js');
 if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');
@@ -36,6 +38,23 @@ else {
   if (!tawkSource.includes("launcher.id = 'difl-chat-launcher'")) failures.push('Tawk loader is missing the stable DIFL launcher.');
   if (!tawkSource.includes("'#min-widget,#message-preview,#chat-bubble{display:none!important}'")) failures.push('Tawk loader does not suppress unstable preview frames.');
   if (!tawkSource.includes('function loadTawk()')) failures.push('Tawk loader is not using deliberate lazy loading.');
+}
+
+const lightTheme = resolve(root, 'assets/light-theme-v2.css');
+if (!existsSync(lightTheme)) failures.push('Missing versioned public-site light theme.');
+for (const path of [
+  'index.html',
+  'blog.html',
+  'exam-calendar/index.html',
+  'language-for-professionals/index.html',
+  'language-quiz/index.html',
+  'about-us/difl-teaching-method/index.html',
+  '404.html',
+  '404-custom.html',
+]) {
+  const html = readFileSync(resolve(root, path), 'utf8');
+  if (!html.includes('/assets/light-theme-v2.css')) failures.push(`${path} is missing the versioned light theme.`);
+  if (html.includes('/assets/light-theme.css')) failures.push(`${path} still references the indefinitely cached legacy light theme.`);
 }
 for (const path of [
   'index.html',
