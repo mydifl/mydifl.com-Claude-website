@@ -406,7 +406,10 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 .hw-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px}
 .hwc{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:all .4s}
 .hwc:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.hwc-top{height:200px;display:flex;align-items:center;justify-content:center;font-size:100px}
+.hwc-top{height:clamp(240px,25vw,340px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#071015}
+.hwc-top::after{content:'';position:absolute;inset:0;box-shadow:inset 0 -36px 44px rgba(4,8,10,.28);pointer-events:none}
+.hwc-top img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .65s ease,filter .65s ease;filter:saturate(.96) contrast(1.03)}
+.hwc:hover .hwc-top img{transform:scale(1.025);filter:saturate(1.03) contrast(1.04)}
 .hwc-body{padding:28px;background:rgba(255,255,255,.03)}
 .hwc-body h3{font-size:24px;margin-bottom:12px}
 .hwc-body p{font-size:13.5px;color:var(--gm);line-height:1.7;margin-bottom:20px}
@@ -1356,7 +1359,7 @@ form[data-fs-state="success"] ~ *,
       <p class="lead" style="max-width:700px;margin-bottom:60px">DIFL is one of very few institutes in India offering certified handwriting improvement — taught by expert Mrs. Roopshikha Sharma (Cambridge CELTA, 28 years experience). Results that most people don't believe are possible in such a short time — until they see them with their own eyes.</p>
       <div class="hw-grid">
         <div class="hwc reveal">
-          <div class="hwc-top" style="background:linear-gradient(135deg,rgba(10,92,110,.15),rgba(201,168,76,.08))">✍️</div>
+          <div class="hwc-top"><img src="/assets/page-banners/handwriting-improvement-card.webp" alt="Artistic handwriting practice progressing from uncertain marks to confident flowing strokes" width="1536" height="1024" loading="lazy" decoding="async"></div>
           <div class="hwc-body">
             <h3>Handwriting Improvement</h3>
             <p>Transform messy, illegible handwriting into neat, confident, and professional script. Ideal for students preparing for board exams, professionals, and anyone wanting to make a lasting impression on paper.</p>
@@ -1374,7 +1377,7 @@ form[data-fs-state="success"] ~ *,
           </div>
         </div>
         <div class="hwc reveal" style="transition-delay:.15s">
-          <div class="hwc-top" style="background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(13,13,13,.5))">🖋️</div>
+          <div class="hwc-top"><img src="/assets/page-banners/calligraphy-card.webp" alt="Artistic calligraphy tools with an ornate nib, brush, ink and graceful flourishes" width="1536" height="1024" loading="lazy" decoding="async"></div>
           <div class="hwc-body">
             <h3>Learn Calligraphy</h3>
             <p>Master the ancient art of beautiful writing — from foundational strokes to ornate, professional scripts. Calligraphy as meditation, skill, and a sought-after professional art form for weddings, events, and brand identity.</p>
