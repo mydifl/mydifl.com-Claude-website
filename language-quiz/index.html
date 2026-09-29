@@ -89,18 +89,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;ali
 .qf p{font-size:13px;color:var(--gm);margin-bottom:20px}
 </style>
 <link rel="stylesheet" href="/assets/light-theme-v2.css">
+<link rel="stylesheet" href="/assets/premium-page-banners.css">
 </head>
 <body>
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/difl-logo-mark.png" alt="DIFL"></a>
   <a href="/" class="nav-back">← Back to DIFL</a>
 </nav>
-<div class="hero">
-  <div class="hero-ey">Free Proficiency Test</div>
-  <h1>How Good Is Your<br><em>Language?</em></h1>
-  <p>10 questions. Instant result. Know your exact level and what to work on next. Every attempt shows different questions.</p>
+<div class="premium-page-banner" role="img" aria-label="An elegant language puzzle revealing a learner's proficiency level">
+  <img class="premium-page-banner__media" src="/assets/page-banners/quiz-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+  <div class="premium-page-banner__copy">
+    <div class="premium-page-banner__eyebrow">Free Proficiency Test</div>
+    <div class="premium-page-banner__title">Discover What You <em>Already Know</em></div>
+    <div class="premium-page-banner__tags"><span>10 Questions</span><span>Instant Result</span><span>Fresh Questions Every Time</span></div>
+  </div>
 </div>
-<div id="setup" style="padding:0 5% 80px;max-width:900px;margin:0 auto">
+<div id="setup" style="padding:clamp(46px,7vw,72px) 5% 80px;max-width:900px;margin:0 auto">
   <div class="sl">Choose Your Language</div>
   <div class="lang-grid">
     <button class="lang-btn" data-lang="japanese" onclick="pickLang(this)"><div class="lf">🇯🇵</div><div class="ln">Japanese</div></button>

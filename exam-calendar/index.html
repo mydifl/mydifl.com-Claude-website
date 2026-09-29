@@ -110,6 +110,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;ali
 .blog-scroll::-webkit-scrollbar-thumb:hover{background:rgba(201,168,76,.5)}
 </style>
 <link rel="stylesheet" href="/assets/light-theme-v2.css">
+<link rel="stylesheet" href="/assets/premium-page-banners.css">
 </head>
 <body>
 
@@ -118,15 +119,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;ali
   <a href="/" class="nav-back">← Back to DIFL</a>
 </nav>
 
-<div class="hero">
-  <div class="eyebrow">India Exam Calendar</div>
-  <h1>Language Exam Dates<br><em>2025 – 2026</em></h1>
-  <p>JLPT · DELF/DALF · TEF Canada · HSK · TOPIK · EPS-TOPIK · Goethe · DELE · CILS · TORFL — All exam dates, registration deadlines, India centers, fees and official contacts in one place.</p>
-  <span class="updated">✓ Updated June 2026</span>
+<div class="premium-page-banner" role="img" aria-label="An international language examination calendar with organised dates and credentials">
+  <img class="premium-page-banner__media" src="/assets/page-banners/exam-calendar-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+  <div class="premium-page-banner__copy">
+    <div class="premium-page-banner__eyebrow">India Exam Calendar</div>
+    <div class="premium-page-banner__title">Every Goal Begins with <em>the Right Date</em></div>
+    <div class="premium-page-banner__tags"><span>Exam Dates</span><span>India Centres</span><span>Registration Guidance</span></div>
+  </div>
 </div>
 
 <!-- FILTER -->
-<div class="filter-bar">
+<div class="filter-bar" style="padding-top:clamp(46px,7vw,72px)">
   <button class="ftab on" onclick="filterExam('all',this)">All Exams</button>
   <button class="ftab" onclick="filterExam('japanese',this)">🇯🇵 Japanese</button>
   <button class="ftab" onclick="filterExam('french',this)">🇫🇷 French</button>

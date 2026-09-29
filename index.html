@@ -377,7 +377,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 .info-card p{font-size:12.5px;color:var(--gm);line-height:1.65}
 
 /* ABOUT PAGE */
-.about-hero{background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(10,92,110,.06)),var(--ink);padding:160px 8% 100px}
+.about-hero{background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(10,92,110,.06)),var(--ink);padding:clamp(50px,7vw,80px) 8% 100px}
 .about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:60px 0}
 .astat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:30px;text-align:center;transition:all .3s}
 .astat:hover{border-color:rgba(201,168,76,.25)}
@@ -765,6 +765,7 @@ form[data-fs-state="success"] ~ *,
     <link rel="dns-prefetch" href="//img.youtube.com">
     <meta name="theme-color" content="#0d0d0d">
 <link rel="stylesheet" href="/assets/light-theme-v2.css">
+<link rel="stylesheet" href="/assets/premium-page-banners.css">
 </head>
 <body>
 <!-- DIFL Wing Decorative Overlays -->
@@ -1117,6 +1118,14 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== ABOUT PAGE ===================== -->
 <div id="page-about" class="page">
+  <div class="premium-page-banner" role="img" aria-label="DIFL legacy across four generations of language education in Jaipur">
+    <img class="premium-page-banner__media" src="/assets/page-banners/about-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Since 1971 · Four Generations</div>
+      <div class="premium-page-banner__title">A Legacy That Keeps <em>Moving Forward</em></div>
+      <div class="premium-page-banner__tags"><span>Trust</span><span>Teaching</span><span>Transformation</span></div>
+    </div>
+  </div>
   <div class="about-hero">
     <div class="sc">
       <div class="eyebrow">55 Years · 12 Languages · One Revolutionary Way to Learn</div>
@@ -1159,9 +1168,6 @@ form[data-fs-state="success"] ~ *,
       <div class="team-grid" id="aboutTeam"></div>
     </div>
   </section>
-</div>
-
-
 <!-- ═══ TAGLINE STRIPE ═══ -->
 <div style="background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(10,92,110,.06));border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);padding:clamp(18px,4vw,28px) clamp(16px,5%,8%);text-align:center">
   <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);color:var(--cream);letter-spacing:-.3px;margin:0;line-height:1.5">
@@ -1170,10 +1176,19 @@ form[data-fs-state="success"] ~ *,
   </p>
 </div>
 <!-- ═══════════════════ -->
+</div>
 
 <!-- ===================== ALL COURSES PAGE ===================== -->
 <div id="page-all-courses" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <div class="premium-page-banner" role="img" aria-label="A world of foreign language courses opening from a global atlas">
+    <img class="premium-page-banner__media" src="/assets/page-banners/all-courses-premium.webp" alt="" width="2163" height="727" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Explore Every Language</div>
+      <div class="premium-page-banner__title">A World of Languages <em>Awaits</em></div>
+      <div class="premium-page-banner__tags"><span>12 Languages</span><span>One Institute</span><span>Endless Possibilities</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:var(--ink)">
     <div class="sc">
       <div class="eyebrow">All Language Programs</div>
       <h2>12 Languages.<br><em>Infinite Possibilities.</em></h2>
@@ -1190,7 +1205,15 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== PROGRAMS PAGE ===================== -->
 <div id="page-programs" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <div class="premium-page-banner" role="img" aria-label="A scholarly journey from Jaipur to international universities and careers">
+    <img class="premium-page-banner__media" src="/assets/page-banners/study-abroad-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Study · Work · Grow Abroad</div>
+      <div class="premium-page-banner__title">Your Future Has <em>No Borders</em></div>
+      <div class="premium-page-banner__tags"><span>Universities</span><span>Scholarships</span><span>Global Careers</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:var(--ink)">
     <div class="sc">
       <div class="eyebrow">Study &amp; Work Abroad</div>
       <h2>International <em>Programs</em></h2>
@@ -1311,7 +1334,15 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== HANDWRITING PAGE ===================== -->
 <div id="page-handwriting" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <div class="premium-page-banner" role="img" aria-label="Handwriting and calligraphy transformed through confident, graceful strokes">
+    <img class="premium-page-banner__media" src="/assets/page-banners/handwriting-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Handwriting · Calligraphy</div>
+      <div class="premium-page-banner__title">Where Every Stroke Finds <em>Confidence</em></div>
+      <div class="premium-page-banner__tags"><span>Precision</span><span>Expression</span><span>Visible Progress</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:var(--ink)">
     <div class="sc">
       <div class="eyebrow">Unique Specialization</div>
       <h2>Handwriting <em>Improvement</em></h2>
@@ -1373,7 +1404,15 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== TESTIMONIALS PAGE ===================== -->
 <div id="page-testimonials" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--cream);color:var(--ink)">
+  <div class="premium-page-banner" role="img" aria-label="DIFL student journeys becoming success stories across the world">
+    <img class="premium-page-banner__media" src="/assets/page-banners/reviews-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Real Students · Real Outcomes</div>
+      <div class="premium-page-banner__title">Thousands of Journeys. <em>One Trusted Beginning.</em></div>
+      <div class="premium-page-banner__tags"><span>25,000+ Alumni</span><span>Global Careers</span><span>Lasting Confidence</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:var(--cream);color:var(--ink)">
     <div class="sc">
       <div class="eyebrow dark">Student Reviews</div>
       <h2 style="color:var(--ink)">What Our <em style="background:linear-gradient(135deg,var(--gold-d),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Students Say</em></h1>
@@ -1393,8 +1432,15 @@ form[data-fs-state="success"] ~ *,
 
 <!-- ===================== SCHOLARSHIPS PAGE ===================== -->
 <div id="page-scholarships" class="page">
-  
-<section style="padding-top:clamp(80px,15vw,140px);background:var(--ink)">
+  <div class="premium-page-banner" role="img" aria-label="A lamp of learning opening pathways to scholarships and global education">
+    <img class="premium-page-banner__media" src="/assets/page-banners/scholarships-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Opportunity Through Education</div>
+      <div class="premium-page-banner__title">Talent Deserves <em>Its Chance</em></div>
+      <div class="premium-page-banner__tags"><span>Merit</span><span>Dignity</span><span>Possibility</span></div>
+    </div>
+  </div>
+<section style="padding-top:clamp(50px,7vw,80px);background:var(--ink)">
     <div class="sc">
       <div class="eyebrow">Financial Support · By Application Only</div>
       <h2>V K Sharma Memorial <em>Scholarship</em></h2>
@@ -1497,10 +1543,40 @@ form[data-fs-state="success"] ~ *,
     </div>
   </section></div>
 
+<!-- ===================== FAQ PAGE ===================== -->
+<div id="page-faq" class="page">
+  <div class="premium-page-banner" role="img" aria-label="Language learning questions becoming clear, helpful answers">
+    <img class="premium-page-banner__media" src="/assets/page-banners/faq-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">DIFL Answers</div>
+      <div class="premium-page-banner__title">From Questions <em>to Clarity</em></div>
+      <div class="premium-page-banner__tags"><span>Courses</span><span>Exams</span><span>Learning Guidance</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:var(--ink)">
+    <div class="sc">
+      <div style="text-align:center;max-width:700px;margin:0 auto 42px">
+        <div class="eyebrow center">Frequently Asked Questions</div>
+        <h2>Everything You Need to <em>Know</em></h2>
+        <p class="lead" style="margin:16px auto 0">Clear answers about DIFL courses, batches, learning formats, certifications and admissions.</p>
+      </div>
+      <div class="faq-grid" id="fullFaq"></div>
+    </div>
+  </section>
+</div>
+
 <!-- ===================== BLOG PAGE ===================== -->
 <div 
 id="page-blog" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:var(--ink);min-height:80vh">
+  <div class="premium-page-banner" role="img" aria-label="A richly illustrated foreign-language knowledge journal and editorial desk">
+    <img class="premium-page-banner__media" src="/assets/page-banners/blog-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">The DIFL Knowledge Journal</div>
+      <div class="premium-page-banner__title">Ideas That Take You <em>Further</em></div>
+      <div class="premium-page-banner__tags"><span>Exams</span><span>Culture</span><span>Visas &amp; Careers</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:var(--ink);min-height:80vh">
     <div class="sc">
       <div class="eyebrow">Language Insights · DIFL Knowledge Hub</div>
       <h2>DIFL <em>Blog</em></h2>
@@ -1592,7 +1668,15 @@ id="page-blog" class="page">
 <title>Professional Language Courses Jaipur — Japanese French Chinese Italian Korean | DIFL</title>
 
 <!-- HERO -->
-<div style="min-height:60vh;display:flex;align-items:center;background:var(--ink);padding-top:100px;position:relative;overflow:hidden">
+<div class="premium-page-banner" role="img" aria-label="Jaipur industries and professionals connecting confidently with global markets">
+  <img class="premium-page-banner__media" src="/assets/page-banners/professionals-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+  <div class="premium-page-banner__copy">
+    <div class="premium-page-banner__eyebrow">Language for Global Business</div>
+    <div class="premium-page-banner__title">Speak the Language of <em>Opportunity</em></div>
+    <div class="premium-page-banner__tags"><span>Industry Vocabulary</span><span>Trade</span><span>Career Growth</span></div>
+  </div>
+</div>
+<div style="min-height:52vh;display:flex;align-items:center;background:var(--ink);padding-top:clamp(45px,7vw,78px);position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(201,168,76,.07),transparent)"></div>
   <div class="sc" style="position:relative;z-index:1;text-align:center;max-width:860px;margin:0 auto">
     <div class="eyebrow center reveal">Industry-Targeted Language Coaching · Jaipur</div>
@@ -1895,7 +1979,15 @@ id="page-blog" class="page">
 </div>
 
 <div id="page-contact" class="page">
-  <section style="padding-top:clamp(80px,15vw,140px);background:linear-gradient(135deg,rgba(10,92,110,.1),rgba(201,168,76,.05)),var(--cream);color:var(--ink)">
+  <div class="premium-page-banner" role="img" aria-label="A welcoming private language counselling conversation at DIFL Jaipur">
+    <img class="premium-page-banner__media" src="/assets/page-banners/contact-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+    <div class="premium-page-banner__copy">
+      <div class="premium-page-banner__eyebrow">Personal Language Counselling</div>
+      <div class="premium-page-banner__title">A Clearer Path Starts with <em>a Conversation</em></div>
+      <div class="premium-page-banner__tags"><span>Call</span><span>WhatsApp</span><span>Visit DIFL Jaipur</span></div>
+    </div>
+  </div>
+  <section style="padding-top:clamp(50px,7vw,80px);background:linear-gradient(135deg,rgba(10,92,110,.1),rgba(201,168,76,.05)),var(--cream);color:var(--ink)">
     <div class="sc">
       <div class="eyebrow dark">Get in Touch</div>
       <h2 style="color:var(--ink)">Enroll at <em style="background:linear-gradient(135deg,var(--gold-d),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent">DIFL Today</em></h1>
@@ -2454,11 +2546,7 @@ function showProfTab(lang){
   if(btns[idx]) btns[idx].classList.add('active');
 }
 function navigateToFaq(){
-  navigate('home');
-  setTimeout(function(){
-    var el = document.getElementById('homeFaq');
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 350);
+  navigate('faq');
 }
 // ──────────────────────────────────────────────────────────────────
 
