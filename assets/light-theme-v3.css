@@ -1,0 +1,492 @@
+/*
+ * DIFL public-site light theme trial.
+ * This file changes colours only. Layout, content, navigation and behaviour stay
+ * in the existing page files, so removing the stylesheet link fully reverts it.
+ */
+:root {
+  color-scheme: light;
+  --difl-bg: #f6f2e8;
+  --difl-bg-soft: #fbf9f4;
+  --difl-surface: #ffffff;
+  --difl-surface-teal: #eaf4f3;
+  --difl-text: #17242d;
+  --difl-muted: #56636a;
+  --difl-line: #ded8ca;
+  --difl-teal: #075b68;
+  --difl-teal-strong: #064855;
+  --difl-gold: #76540f;
+  --difl-gold-soft: #efe2bd;
+  --difl-shadow: 0 16px 42px rgba(31, 49, 54, .09);
+  --difl-nav-deep: #06343e;
+  --difl-nav-mid: #07505a;
+  --difl-nav-text: #fbf8ef;
+  --difl-nav-muted: #d5e0de;
+  --difl-nav-gold: #e8cf86;
+}
+
+html { background: var(--difl-bg); }
+body {
+  background: var(--difl-bg) !important;
+  color: var(--difl-text) !important;
+}
+::selection { background: #d9c27e; color: #132129; }
+
+/* Shared navigation */
+nav,
+.main-nav,
+.site-nav {
+  background:
+    linear-gradient(112deg, rgba(5, 43, 52, .985) 0%, rgba(7, 74, 84, .98) 58%, rgba(19, 61, 65, .985) 100%) !important;
+  border-bottom-color: rgba(232, 207, 134, .32) !important;
+  box-shadow: 0 9px 30px rgba(10, 31, 36, .22);
+  backdrop-filter: blur(22px) saturate(135%) !important;
+}
+nav.scrolled,
+.main-nav.scrolled {
+  background:
+    linear-gradient(112deg, rgba(4, 38, 46, .995) 0%, rgba(6, 63, 73, .992) 58%, rgba(15, 51, 56, .995) 100%) !important;
+  border-bottom-color: rgba(232, 207, 134, .42) !important;
+  box-shadow: 0 11px 34px rgba(7, 27, 32, .28);
+}
+.nav-lt span:first-child,
+.nav-wordmark strong,
+.nt b,
+.nav-logo span,
+.brand strong {
+  color: var(--difl-nav-text) !important;
+  text-shadow: 0 1px 9px rgba(0, 0, 0, .18) !important;
+}
+.nav-lt span:last-child,
+.nav-wordmark small,
+.nt small,
+.brand span { color: var(--difl-nav-muted) !important; }
+.nav-links a,
+.nav-links span,
+.nav-links > li > span,
+.nav-back,
+.nb,
+.nav-actions > a { color: var(--difl-nav-text) !important; }
+.nav-links a:hover,
+.nav-links span:hover,
+.nav-links > li > span:hover,
+.nav-back:hover,
+.nb:hover,
+.nav-actions > a:hover {
+  color: var(--difl-nav-gold) !important;
+  background: rgba(255, 255, 255, .07) !important;
+}
+.nav-links .ddm {
+  background:
+    linear-gradient(145deg, rgba(5, 45, 54, .995), rgba(7, 62, 69, .995)) !important;
+  border-color: rgba(232, 207, 134, .28) !important;
+  box-shadow: 0 20px 46px rgba(4, 25, 30, .30);
+}
+.nav-links .ddm a { color: #f6f3e9 !important; }
+.nav-links .ddm a:hover {
+  background: rgba(232, 207, 134, .13) !important;
+  color: #f4d985 !important;
+}
+.nav-links .dd-head { color: var(--difl-nav-gold) !important; }
+.hamburger span { background: var(--difl-nav-gold) !important; }
+
+/* Keep the transparent vector artwork crisp against the darker navigation. */
+nav .nav-cta,
+.main-nav .nav-cta,
+.site-nav .nav-cta {
+  background: linear-gradient(135deg, #ecd78e, #bd8f29) !important;
+  color: #12343a !important;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, .14);
+}
+nav .nav-cta:hover,
+.main-nav .nav-cta:hover,
+.site-nav .nav-cta:hover {
+  color: #092d35 !important;
+  background: linear-gradient(135deg, #f4e3a7, #cca23f) !important;
+}
+
+/* Transparent brand artwork prepared from the supplied DIFL vector master. */
+nav .difl-logo-img,
+.main-nav .difl-logo-img,
+#nav-logo-img {
+  height: 44px !important;
+  width: auto !important;
+  object-fit: contain;
+  background: transparent !important;
+  filter: brightness(0) saturate(100%) invert(93%) sepia(26%) saturate(489%) hue-rotate(357deg) brightness(104%) contrast(94%) drop-shadow(0 5px 10px rgba(0, 0, 0, .22));
+}
+#navbar .nav-logo > div { padding-left: 0 !important; }
+#navbar .nav-logo > div span { text-shadow: none !important; }
+#footer-logo-img {
+  width: 210px !important;
+  height: auto !important;
+  background: transparent !important;
+  filter: drop-shadow(0 7px 14px rgba(7, 91, 104, .18));
+}
+
+/* Main public site */
+#hero-section,
+.lang-hero,
+.about-hero,
+.bh,
+[style*="background:var(--ink)"] {
+  background-color: var(--difl-bg) !important;
+  background-image:
+    radial-gradient(ellipse 70% 70% at 12% 0%, rgba(154, 114, 31, .10), transparent 68%),
+    radial-gradient(ellipse 55% 60% at 96% 45%, rgba(7, 91, 104, .11), transparent 65%) !important;
+}
+#hero-section::after { opacity: .4; }
+h1,
+h2,
+h3,
+.lname,
+.fcard h4,
+.team-card h3,
+.prog-body h3,
+.step h4,
+.faq-q,
+.info-card h4,
+.blog-card h3,
+.bc-body h3,
+.sc-card h3,
+.industry-title,
+.vocab-native,
+.art-heading,
+.related-title { color: var(--difl-text) !important; }
+.eyebrow,
+.h-eyebrow,
+.ey,
+.bc-cat,
+.fb-cat,
+.a-cat,
+.prog-body .tag,
+.lnative { color: var(--difl-gold) !important; }
+.lead,
+.hero-sub,
+.ld,
+.lcert,
+.fcard p,
+.t-info p,
+.prog-body p,
+.prog-body li,
+.step p,
+.faq-a,
+.info-card p,
+.bc-body p,
+.sc-card p,
+.hwc-body p,
+.hw-features li,
+.industry-desc,
+.vocab-en,
+.a-meta,
+.fb p,
+.bb p,
+.fb-foot,
+.bm,
+.bk,
+.related-summary { color: var(--difl-muted) !important; }
+.hero-sub,
+.lead,
+.ld,
+.hero p { color: #4c5b62 !important; }
+
+.hero-stats,
+.langs-grid,
+.steps-grid { background: rgba(7, 91, 104, .12) !important; }
+.snum,
+.step-n {
+  background: linear-gradient(135deg, #85621a, #b48725) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.slbl { color: #59666c !important; }
+[style*="color:var(--gold)"] { color: var(--difl-gold) !important; }
+.btn-o { color: var(--difl-teal) !important; border-color: rgba(7, 91, 104, .34) !important; }
+.hstat,
+.lcard,
+.fcard,
+.team-card,
+.prog-card,
+.step,
+.faq-item,
+.course-box,
+.info-card,
+.blog-card,
+.sc-card,
+.mini-s,
+.industry-card,
+.vocab-item,
+.wc,
+.related-card,
+.bc,
+#featRow .fc {
+  background: rgba(255, 255, 255, .82) !important;
+  border-color: rgba(7, 91, 104, .14) !important;
+  box-shadow: 0 8px 26px rgba(31, 49, 54, .055);
+}
+
+/* Homepage proof/legacy section was the remaining dark-mode island. */
+.why-difl-section {
+  background-color: var(--difl-bg) !important;
+  background-image:
+    radial-gradient(ellipse 80% 65% at 18% 48%, rgba(7, 91, 104, .11), transparent 72%),
+    linear-gradient(180deg, #f6f2e8, #eef4ef) !important;
+}
+.big-stat-box {
+  background: rgba(255, 255, 255, .88) !important;
+  border-color: rgba(7, 91, 104, .18) !important;
+  box-shadow: var(--difl-shadow);
+}
+.big-stat-box .bnum {
+  background: none !important;
+  color: var(--difl-teal) !important;
+  -webkit-text-fill-color: var(--difl-teal) !important;
+}
+.big-stat-box .bdesc,
+.mini-s .ml { color: #536168 !important; }
+.mini-s .mn { color: var(--difl-teal) !important; }
+.t-stars { color: var(--difl-gold) !important; }
+.t-av { background: var(--difl-teal) !important; color: #fff !important; }
+.t-role { color: #536168 !important; }
+.t-info .role,
+.faq-q .tog,
+.fc h5,
+.fc-group .fc h5 { color: var(--difl-gold) !important; }
+.lcard:hover,
+.fcard:hover,
+.team-card:hover,
+.prog-card:hover,
+.step:hover,
+.info-card:hover,
+.blog-card:hover,
+.sc-card:hover,
+.industry-card:hover,
+.bc:hover,
+#featRow .fc:hover {
+  background: #ffffff !important;
+  border-color: rgba(154, 114, 31, .38) !important;
+  box-shadow: var(--difl-shadow);
+}
+.o-label {
+  background: rgba(255, 255, 255, .95) !important;
+  border-color: rgba(7, 91, 104, .22) !important;
+  color: var(--difl-text) !important;
+  box-shadow: 0 5px 18px rgba(31, 49, 54, .12) !important;
+}
+.orb-center { background: radial-gradient(circle, #fff, #edf5f3) !important; color: var(--difl-teal) !important; }
+.faq-q { background: rgba(255, 255, 255, .72) !important; }
+.faq-item { border-bottom-color: rgba(7, 91, 104, .12) !important; }
+.prog-body ul li,
+.hw-features li { border-bottom-color: rgba(7, 91, 104, .10) !important; }
+.ltab {
+  background: #fff !important;
+  border-color: rgba(7, 91, 104, .18) !important;
+  color: #526168 !important;
+}
+.ltab.active,
+.ltab:hover { background: #eaf4f3 !important; border-color: var(--difl-teal) !important; color: var(--difl-teal) !important; }
+.prof-row:not(.header-row):nth-child(even) { background: rgba(7, 91, 104, .045) !important; }
+.prof-row { border-bottom-color: rgba(7, 91, 104, .10) !important; }
+
+/* Blog list and articles */
+.a-title,
+.ab h2,
+.ab strong,
+.fb h3,
+.bb h3,
+.wc-m,
+.related-post-title { color: var(--difl-text) !important; }
+.a-lead,
+.ab p,
+.ab li,
+.ibox p,
+.ibox li,
+.dt td { color: #45545c !important; }
+.ab h3,
+.tbox .tt { color: var(--difl-teal) !important; }
+.ibox,
+.cta { background: #fff9e9 !important; border-color: #dec98f !important; }
+.tbox { background: #eaf4f3 !important; border-color: #b8d5d3 !important; }
+.wbox { background: #fff4f1 !important; border-color: #efc1b8 !important; }
+.wbox .wt { color: #a23f32 !important; }
+.dt th { background: #eaf4f3 !important; color: var(--difl-teal) !important; }
+.dt td { border-bottom-color: #e4dfd4 !important; }
+.dt tr:hover td { background: #fff !important; }
+.kw span,
+.art-nav-bar a,
+.art-nav-bar button {
+  background: #fff !important;
+  border-color: #ddd7ca !important;
+  color: #556269 !important;
+}
+.br { background: rgba(255, 255, 255, .9) !important; color: var(--difl-teal) !important; }
+.ct,
+.btag {
+  color: #705516 !important;
+  border-color: #d8c58e !important;
+  background: rgba(255, 250, 235, .72) !important;
+}
+.ct:hover,
+.ct.on { color: var(--difl-teal) !important; border-color: var(--difl-teal) !important; background: #eaf4f3 !important; }
+
+/* Quiz */
+.lang-btn,
+.lvl-btn,
+.opt,
+.rc {
+  background: rgba(255, 255, 255, .88) !important;
+  border-color: rgba(7, 91, 104, .16) !important;
+  color: var(--difl-text) !important;
+  box-shadow: 0 6px 20px rgba(31, 49, 54, .045);
+}
+.lang-btn:hover,
+.lang-btn.on,
+.lvl-btn:hover,
+.lvl-btn.on,
+.opt:hover,
+.opt.sel { background: #fff8e7 !important; border-color: var(--difl-gold) !important; }
+.pb-wrap { background: #ddd8cc !important; }
+.si { background: #fff !important; }
+.rs,
+.rc p,
+.qf p { color: var(--difl-muted) !important; }
+.bgh { color: var(--difl-teal) !important; border-color: rgba(7, 91, 104, .28) !important; }
+.wi .wq { color: var(--difl-text) !important; }
+.opt.ok,
+.fb.fbok { background: #edf9f1 !important; color: #17643a !important; }
+.opt.no,
+.fb.fbno { background: #fff1ef !important; color: #9b3328 !important; }
+.qf { background: #edf5f3 !important; }
+
+/* Exam calendar */
+.ftab,
+.exam-card,
+.center-item {
+  background: rgba(255, 255, 255, .86) !important;
+  border-color: rgba(7, 91, 104, .15) !important;
+  color: var(--difl-text) !important;
+}
+.ftab:hover,
+.ftab.on { background: #fff8e7 !important; border-color: var(--difl-gold) !important; color: var(--difl-gold) !important; }
+.ec-header { border-bottom-color: rgba(7, 91, 104, .11) !important; }
+.ec-full,
+.info-block p,
+.info-block li,
+.dates-table td,
+.center-name,
+.ec-cta-text,
+.difl-banner p,
+.disclaimer { color: var(--difl-muted) !important; }
+.ec-name,
+.center-city,
+.dates-table td:first-child,
+.ec-cta-text strong { color: var(--difl-text) !important; }
+.ec-tag { color: #705516 !important; border-color: #d8c58e !important; background: #fff9e8 !important; }
+.dates-table td { border-bottom-color: #e3ded3 !important; }
+.updated { background: #edf9f1 !important; border-color: #b7dec4 !important; color: #17643a !important; }
+.badge-tba { color: #8a5900 !important; background: #fff7df !important; }
+.badge-open { color: #17643a !important; background: #edf9f1 !important; }
+.badge-closed { color: #9b3328 !important; background: #fff1ef !important; }
+.btn-ghost { color: var(--difl-teal) !important; border-color: rgba(7, 91, 104, .28) !important; }
+
+/* Search-engine fallback for the professional-courses page. */
+body > p,
+.card p,
+table td { color: #4c5b62; }
+.card { background: #fff !important; border-color: #ded3b4 !important; box-shadow: 0 7px 22px rgba(31, 49, 54, .06); }
+table td { border-bottom-color: #e2ddd1 !important; }
+
+/* Teaching-method page: keep its artwork, lighten its formerly dark panels. */
+.hero { background: #edf5f3 !important; color: var(--difl-text) !important; }
+.hero::after {
+  background: linear-gradient(90deg, rgba(246, 242, 232, .98) 0%, rgba(246, 242, 232, .92) 35%, rgba(246, 242, 232, .35) 68%, rgba(246, 242, 232, .08) 100%) !important;
+}
+.hero h1 { color: var(--difl-text) !important; }
+.hero-copy { color: #45555d !important; }
+.scroll-note { color: var(--difl-muted) !important; }
+.language-switch { background: rgba(255, 255, 255, .82) !important; border-color: rgba(7, 91, 104, .20) !important; }
+.language-switch button { color: var(--difl-text) !important; }
+.method-map { background: linear-gradient(135deg, #e7f2ef, #fbf7ec) !important; color: var(--difl-text) !important; border: 1px solid #d5ded8; }
+.map-heading p,
+.journey span { color: var(--difl-muted) !important; }
+.journey i { background: #fff !important; color: var(--difl-teal); box-shadow: 0 0 0 8px rgba(7, 91, 104, .10) !important; }
+.closing { background: linear-gradient(135deg, #e7f2ef, #fff8e8) !important; color: var(--difl-text) !important; }
+
+/* Deliberately dark feature panels need their own light-on-dark palette. */
+.legacy-banner {
+  background: linear-gradient(135deg, #07161a 0%, #10282e 55%, #1a3438 100%) !important;
+  border-color: rgba(225, 190, 92, .26) !important;
+}
+.legacy-banner .eyebrow { color: #e9c55e !important; }
+.legacy-banner h2 { color: #f8f4e8 !important; text-shadow: 0 2px 18px rgba(0, 0, 0, .18); }
+.legacy-banner h2 em {
+  color: #f1d27c !important;
+  -webkit-text-fill-color: #f1d27c !important;
+}
+.legacy-banner p { color: #d5e0e2 !important; }
+.legacy-banner [style*="color:var(--gold)"] { color: #f1d27c !important; }
+.legacy-banner .btn-o {
+  color: #e7f4f4 !important;
+  border-color: rgba(231, 244, 244, .55) !important;
+  background: rgba(255, 255, 255, .055) !important;
+}
+.legacy-banner .btn-o:hover { background: rgba(255, 255, 255, .12) !important; }
+
+/* Video testimonial captions remain on purposefully dark media cards. */
+a[style*="background:var(--ink)"] .vid-card-name { color: #ffffff !important; }
+a[style*="background:var(--ink)"] .vid-card-role { color: #cdd8db !important; }
+
+/* Footer remains clearly separated, but is light rather than black. */
+footer {
+  background: #e8efea !important;
+  border-top-color: rgba(7, 91, 104, .15) !important;
+}
+footer p,
+.fb-brand p,
+.fc a,
+.fc-group .fc a,
+.f-bottom { color: #58666c !important; }
+footer .fb-brand > div[style*="color:rgba(255,255,255"] { color: #526168 !important; }
+
+@media (max-width: 768px) {
+  #navbar .nav-logo > div { display: none !important; }
+  nav .difl-logo-img,
+  .main-nav .difl-logo-img,
+  #nav-logo-img { height: 38px !important; }
+  #footer-logo-img { width: 185px !important; }
+  .hero-grid {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    min-width: 0;
+  }
+  .hero-grid > div,
+  #primary-h1 {
+    min-width: 0;
+    max-width: 100%;
+  }
+  #primary-h1 {
+    overflow-wrap: anywhere;
+  }
+}
+.fc a:hover,
+.fc-group .fc a:hover { color: var(--difl-teal) !important; }
+.f-bottom { border-top-color: rgba(7, 91, 104, .14) !important; }
+
+/* A few legacy inline colour declarations need a final accessible override. */
+[style*="color:var(--cream)"] { color: var(--difl-text) !important; }
+[style*="color:var(--gm)"] { color: var(--difl-muted) !important; }
+[style*="color:rgba(250,248,243"] { color: var(--difl-muted) !important; }
+
+@media (max-width: 900px) {
+  .nav-links.mobile-open {
+    background:
+      linear-gradient(155deg, rgba(4, 41, 50, .998), rgba(7, 67, 75, .998)) !important;
+    border-bottom-color: rgba(232, 207, 134, .30) !important;
+    box-shadow: 0 18px 44px rgba(4, 25, 30, .30);
+  }
+  .nav-links.mobile-open > li { border-bottom-color: rgba(255, 255, 255, .10) !important; }
+  .nav-links.mobile-open .ddm { background: rgba(255, 255, 255, .055) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}

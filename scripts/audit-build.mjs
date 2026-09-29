@@ -36,16 +36,18 @@ for (const language of ['french','japanese','german','spanish','chinese','arabic
   if (!existsSync(resolve(root, `assets/language-banners/${language}-premium.webp`))) failures.push(`Premium cultural artwork is missing for ${language}.`);
 }
 
-const tawkLoader = resolve(root, 'assets/tawk-safe-v2.js');
+const tawkLoader = resolve(root, 'assets/tawk-safe-v3.js');
 if (!existsSync(tawkLoader)) failures.push('Missing guarded Tawk.to loader.');
 else {
   const tawkSource = readFileSync(tawkLoader, 'utf8');
   if (!tawkSource.includes("launcher.id = 'difl-chat-launcher'")) failures.push('Tawk loader is missing the stable DIFL launcher.');
   if (!tawkSource.includes("'#min-widget,#message-preview,#chat-bubble{display:none!important}'")) failures.push('Tawk loader does not suppress unstable preview frames.');
   if (!tawkSource.includes('function loadTawk()')) failures.push('Tawk loader is not using deliberate lazy loading.');
+  if (!tawkSource.includes('function positionTawkFrames()')) failures.push('Tawk loader is missing the left-side panel layout guard.');
+  if (tawkSource.includes('wa.me/')) failures.push('Tawk live chat must not redirect visitors to WhatsApp.');
 }
 
-const lightTheme = resolve(root, 'assets/light-theme-v2.css');
+const lightTheme = resolve(root, 'assets/light-theme-v3.css');
 if (!existsSync(lightTheme)) failures.push('Missing versioned public-site light theme.');
 for (const logo of ['assets/difl-logo-mark.png', 'assets/difl-logo-clean.png']) {
   if (!existsSync(resolve(root, logo))) failures.push(`Missing transparent brand asset: ${logo}.`);
@@ -63,8 +65,8 @@ for (const path of [
   '404-custom.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/light-theme-v2.css')) failures.push(`${path} is missing the versioned light theme.`);
-  if (html.includes('/assets/light-theme.css')) failures.push(`${path} still references the indefinitely cached legacy light theme.`);
+  if (!html.includes('/assets/light-theme-v3.css')) failures.push(`${path} is missing the versioned light theme.`);
+  if (/\/assets\/light-theme(?:-v2)?\.css/.test(html)) failures.push(`${path} still references an indefinitely cached legacy light theme.`);
 }
 for (const path of [
   'index.html',
@@ -74,8 +76,8 @@ for (const path of [
   'language-quiz/index.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/tawk-safe-v2.js')) failures.push(`${path} is missing the guarded Tawk.to loader.`);
-  if (html.includes('/assets/tawk-safe.js')) failures.push(`${path} still references the indefinitely cached legacy Tawk loader.`);
+  if (!html.includes('/assets/tawk-safe-v3.js')) failures.push(`${path} is missing the guarded Tawk.to loader.`);
+  if (/\/assets\/tawk-safe(?:-v2)?\.js/.test(html)) failures.push(`${path} still references an indefinitely cached legacy Tawk loader.`);
   if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
 }
 
