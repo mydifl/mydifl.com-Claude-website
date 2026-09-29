@@ -492,7 +492,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
   .steps-grid{grid-template-columns:1fr 1fr}
   .step-arr{display:none}
   .faq-grid{grid-template-columns:1fr}
-  .ttp-grid,.hw-grid{grid-template-columns:1fr 1fr}
+  .hw-grid{grid-template-columns:1fr 1fr}
   .fg-grid{grid-template-columns:1fr 1fr;gap:40px}
   .feat-grid{grid-template-columns:1fr 1fr}
   .prog-grid{grid-template-columns:1fr 1fr}
@@ -502,11 +502,11 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.05);padding:78p
 }
 
 @media(min-width:769px) and (max-width:1100px){
-  .ttp-grid>.ttp-c:last-child:nth-child(odd){
-    grid-column:1/-1;
-    justify-self:center;
-    width:calc(50% - 11px);
-  }
+  .ttp-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .ttp-c{padding:clamp(18px,2.4vw,28px)}
+  .ttp-n{font-size:clamp(42px,5vw,52px);margin-bottom:12px}
+  .ttp-c h4{font-size:clamp(18px,2vw,20px)}
+  .ttp-c p{font-size:13px;line-height:1.65}
 }
 
 @media(max-width:768px){
