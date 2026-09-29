@@ -1,10 +1,5 @@
 {
-  "rewrites": [
-    {
-      "source": "/blog.html",
-      "destination": "/blog.html"
-    }
-  ],
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -15,7 +10,7 @@
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://*.tawk.to; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com https://*.tawk.to; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://formspree.io https://*.tawk.to wss://*.tawk.to; frame-src https://www.google.com https://*.tawk.to; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'self'; upgrade-insecure-requests;" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://*.tawk.to; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com https://*.tawk.to; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://*.googleadservices.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://*.doubleclick.net https://formspree.io https://*.tawk.to wss://*.tawk.to; frame-src https://www.google.com https://*.doubleclick.net https://*.tawk.to; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'self'; upgrade-insecure-requests;" },
         { "key": "X-Permitted-Cross-Domain-Policies", "value": "none" }
       ]
     },
@@ -56,7 +51,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
     },
@@ -72,223 +67,172 @@
   ],
   "redirects": [
     {
-      "source": "/learn-mandarin-chinese",
-      "destination": "/?page=chinese",
+      "source": "/blog.html",
+      "has": [{ "type": "query", "key": "p", "value": "(?<post>[a-z0-9-]+)" }],
+      "destination": "/blog/:post/",
       "permanent": true
     },
     {
-      "source": "/learn-mandarin-chinese/",
-      "destination": "/?page=chinese",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "about" }],
+      "destination": "/about-us/",
       "permanent": true
     },
     {
-      "source": "/learn-french",
-      "destination": "/?page=french",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "all-courses" }],
+      "destination": "/learn-foreign-languages/",
       "permanent": true
     },
     {
-      "source": "/learn-french/",
-      "destination": "/?page=french",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "french" }],
+      "destination": "/learn-french/",
       "permanent": true
     },
     {
-      "source": "/learn-japanese",
-      "destination": "/?page=japanese",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "japanese" }],
+      "destination": "/learn-japanese/",
       "permanent": true
     },
     {
-      "source": "/learn-japanese/",
-      "destination": "/?page=japanese",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "german" }],
+      "destination": "/learn-german/",
       "permanent": true
     },
     {
-      "source": "/learn-german",
-      "destination": "/?page=german",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "spanish" }],
+      "destination": "/learn-spanish/",
       "permanent": true
     },
     {
-      "source": "/learn-german/",
-      "destination": "/?page=german",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "chinese" }],
+      "destination": "/learn-mandarin-chinese/",
       "permanent": true
     },
     {
-      "source": "/learn-spanish",
-      "destination": "/?page=spanish",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "arabic" }],
+      "destination": "/learn-arabic/",
       "permanent": true
     },
     {
-      "source": "/learn-spanish/",
-      "destination": "/?page=spanish",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "korean" }],
+      "destination": "/learn-korean-language/",
       "permanent": true
     },
     {
-      "source": "/learn-arabic",
-      "destination": "/?page=arabic",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "italian" }],
+      "destination": "/learn-italian-language/",
       "permanent": true
     },
     {
-      "source": "/learn-arabic/",
-      "destination": "/?page=arabic",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "russian" }],
+      "destination": "/learn-russian-language/",
       "permanent": true
     },
     {
-      "source": "/learn-korean-language",
-      "destination": "/?page=korean",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "english" }],
+      "destination": "/learn-english/",
       "permanent": true
     },
     {
-      "source": "/learn-korean-language/",
-      "destination": "/?page=korean",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "thai" }],
+      "destination": "/learn-thai-language/",
       "permanent": true
     },
     {
-      "source": "/learn-italian-language",
-      "destination": "/?page=italian",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "hindi" }],
+      "destination": "/learn-hindi-language/",
       "permanent": true
     },
     {
-      "source": "/learn-italian-language/",
-      "destination": "/?page=italian",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "handwriting" }],
+      "destination": "/handwriting-improvement/",
       "permanent": true
     },
     {
-      "source": "/learn-russian-language",
-      "destination": "/?page=russian",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "calligraphy" }],
+      "destination": "/learn-calligraphy/",
       "permanent": true
     },
     {
-      "source": "/learn-russian-language/",
-      "destination": "/?page=russian",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "testimonials" }],
+      "destination": "/about-us/reviews-of-difl/",
       "permanent": true
     },
     {
-      "source": "/learn-english",
-      "destination": "/?page=english",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "scholarships" }],
+      "destination": "/about-us/foreign-language-scholarships/",
       "permanent": true
     },
     {
-      "source": "/learn-english/",
-      "destination": "/?page=english",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "blog" }],
+      "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/learn-thai-language",
-      "destination": "/?page=thai",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "contact" }],
+      "destination": "/contact/",
       "permanent": true
     },
     {
-      "source": "/learn-thai-language/",
-      "destination": "/?page=thai",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "faq" }],
+      "destination": "/foreign-language-faqs/",
       "permanent": true
     },
     {
-      "source": "/learn-hindi-language",
-      "destination": "/?page=hindi",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "programs" }],
+      "destination": "/study-abroad-programs/",
       "permanent": true
     },
     {
-      "source": "/learn-hindi-language/",
-      "destination": "/?page=hindi",
+      "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "professionals" }],
+      "destination": "/language-for-professionals/",
       "permanent": true
     },
     {
-      "source": "/about-us",
-      "destination": "/?page=about",
-      "permanent": true
-    },
-    {
-      "source": "/about-us/",
-      "destination": "/?page=about",
-      "permanent": true
-    },
-    {
-      "source": "/learn-foreign-languages",
-      "destination": "/?page=all-courses",
-      "permanent": true
-    },
-    {
-      "source": "/learn-foreign-languages/",
-      "destination": "/?page=all-courses",
-      "permanent": true
-    },
-    {
-      "source": "/handwriting-improvement",
-      "destination": "/?page=handwriting",
-      "permanent": true
-    },
-    {
-      "source": "/handwriting-improvement/",
-      "destination": "/?page=handwriting",
-      "permanent": true
-    },
-    {
-      "source": "/learn-calligraphy",
-      "destination": "/?page=calligraphy",
-      "permanent": true
-    },
-    {
-      "source": "/learn-calligraphy/",
-      "destination": "/?page=calligraphy",
-      "permanent": true
-    },
-    {
-      "source": "/about-us/reviews-of-difl",
-      "destination": "/?page=testimonials",
-      "permanent": true
-    },
-    {
-      "source": "/about-us/reviews-of-difl/",
-      "destination": "/?page=testimonials",
-      "permanent": true
-    },
-    {
-      "source": "/about-us/foreign-language-scholarships",
-      "destination": "/?page=scholarships",
-      "permanent": true
-    },
-    {
-      "source": "/about-us/foreign-language-scholarships/",
-      "destination": "/?page=scholarships",
+      "source": "/blog.html",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/blog-on-foreign-languages",
-      "destination": "/?page=blog",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/blog-on-foreign-languages/",
-      "destination": "/?page=blog",
+      "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/contact",
-      "destination": "/?page=contact",
+      "source": "/contact-us",
+      "destination": "/contact/",
       "permanent": true
     },
     {
-      "source": "/contact/",
-      "destination": "/?page=contact",
-      "permanent": true
-    },
-    {
-      "source": "/foreign-language-faqs",
-      "destination": "/?page=faq",
-      "permanent": true
-    },
-    {
-      "source": "/foreign-language-faqs/",
-      "destination": "/?page=faq",
-      "permanent": true
-    },
-    {
-      "source": "/study-abroad-programs",
-      "destination": "/?page=programs",
-      "permanent": true
-    },
-    {
-      "source": "/study-abroad-programs/",
-      "destination": "/?page=programs",
+      "source": "/contact-us/",
+      "destination": "/contact/",
       "permanent": true
     }
   ]

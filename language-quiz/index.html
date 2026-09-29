@@ -3,9 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Language Proficiency Quiz — Test Your Level | DIFL Jaipur</title>
-<meta name="description" content="Free online language quiz — Japanese, French, German, Korean, Spanish, Chinese, Italian, Arabic, Russian. Test Basic, Intermediate or Advanced level. Instant result with coaching recommendation from DIFL Jaipur.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>Free Language Level Quiz | 9 Languages | DIFL Jaipur</title>
+<meta name="description" content="Take a free 10-question quiz in Japanese, French, German, Korean, Spanish, Mandarin, Italian, Arabic or Russian and get an instant result.">
 <link rel="canonical" href="https://mydifl.com/language-quiz/">
+<meta property="og:title" content="Free Language Level Quiz | DIFL Jaipur">
+<meta property="og:description" content="Choose a language and level, answer 10 questions and get an instant result.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mydifl.com/language-quiz/">
+<meta property="og:image" content="https://mydifl.com/assets/page-banners/quiz-premium.webp">
+<meta property="og:image:width" content="2172">
+<meta property="og:image:height" content="724">
+<meta property="og:image:alt" content="An illustrated language-level quiz from DIFL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Language Level Quiz | DIFL Jaipur">
+<meta name="twitter:description" content="Test your current level in one of nine languages with 10 questions and an instant result.">
+<meta name="twitter:image" content="https://mydifl.com/assets/page-banners/quiz-premium.webp">
 <link rel="icon" href="/assets/difl-logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -87,24 +100,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;ali
 .qf{background:rgba(201,168,76,.06);border-top:1px solid var(--border);padding:40px 5%;text-align:center;margin-top:60px}
 .qf h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:8px}
 .qf p{font-size:13px;color:var(--gm);margin-bottom:20px}
+.legal-footer{padding:26px 5%;border-top:1px solid rgba(201,168,76,.18);background:#080706;color:rgba(250,248,243,.62);text-align:center;font-size:12px}
+.legal-footer a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.legal-footer .legal-sep{padding:0 8px;color:rgba(250,248,243,.32)}
 </style>
 <link rel="stylesheet" href="/assets/premium-page-banners.css">
 <link rel="stylesheet" href="/assets/coffee-gold-theme-v1.css">
 <link rel="stylesheet" href="/assets/mobile-polish-v1.css">
+<script src="/assets/google-consent-v1.js"></script>
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo"><img src="/assets/difl-logo-mark.png" alt="DIFL"></a>
+  <a href="/" class="nav-logo"><img src="/assets/difl-logo-mark.png" alt="DIFL" width="700" height="263"></a>
   <a href="/" class="nav-back">← Back to DIFL</a>
 </nav>
-<div class="premium-page-banner" role="img" aria-label="An elegant language puzzle revealing a learner's proficiency level">
-  <img class="premium-page-banner__media" src="/assets/page-banners/quiz-premium.webp" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
+<section class="premium-page-banner" aria-labelledby="language-quiz-heading">
+  <img class="premium-page-banner__media" src="/assets/page-banners/quiz-premium.webp" srcset="/assets/page-banners/quiz-720.webp 720w, /assets/page-banners/quiz-1200.webp 1200w, /assets/page-banners/quiz-2160.webp 2160w" sizes="100vw" alt="" width="2172" height="724" fetchpriority="high" decoding="async">
   <div class="premium-page-banner__copy">
-    <div class="premium-page-banner__eyebrow">Free Proficiency Test</div>
-    <div class="premium-page-banner__title">Discover What You <em>Already Know</em></div>
+    <div class="premium-page-banner__eyebrow">Free Informal Level Check</div>
+    <h1 class="premium-page-banner__title" id="language-quiz-heading">Free Language <em>Level Quiz</em></h1>
     <div class="premium-page-banner__tags"><span>10 Questions</span><span>Instant Result</span><span>Fresh Questions Every Time</span></div>
   </div>
-</div>
+</section>
 <div id="setup" style="padding:clamp(46px,7vw,72px) 5% 80px;max-width:900px;margin:0 auto">
   <div class="sl">Choose Your Language</div>
   <div class="lang-grid">
@@ -149,21 +166,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;ali
 </div>
 <div class="qf">
   <h3>Ready to Start Learning?</h3>
-  <p>55 years · 25,000+ alumni · 12 languages · Flexible batches morning 5am to evening 9pm</p>
+  <p>Teaching since 1970 · 12 languages · Online, offline and hybrid class options</p>
   <a href="https://wa.me/919929515151" target="_blank" class="bgold">Book Free Counselling at DIFL →</a>
 </div>
+<footer class="legal-footer">
+  <span>© 1970–2026 DIFL — Dante Institute of Foreign Languages, Jaipur</span>
+  <span class="legal-sep" aria-hidden="true">·</span>
+  <a href="/privacy-policy/">Privacy Policy</a>
+  <span class="legal-sep" aria-hidden="true">·</span>
+  <a href="#" data-difl-consent-open>Cookie settings</a>
+</footer>
 <script src="questions.js"></script>
 <script>
-var sL=null,sV=null,qs=[],cQ=0,sc=0,wrongs=[],ans=false;
+var sL=null,sV=null,qs=[],cQ=0,sc=0,wrongs=[],ans=false,quizCompletionSent=false;
 function pickLang(b){document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sL=b.dataset.lang;ck()}
 function pickLvl(b){document.querySelectorAll('.lvl-btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sV=b.dataset.level;ck()}
 function ck(){document.getElementById('goBtn').disabled=!(sL&&sV)}
 function shuf(a){a=[].concat(a);for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
-function startQuiz(){var pool=QB[sL]&&QB[sL][sV];if(!pool||!pool.length){alert('Questions coming soon!');return}qs=shuf(pool).slice(0,10);cQ=0;sc=0;wrongs=[];document.getElementById('setup').style.display='none';document.getElementById('quiz').style.display='block';var ln={japanese:'Japanese 🇯🇵',french:'French 🇫🇷',german:'German 🇩🇪',korean:'Korean 🇰🇷',spanish:'Spanish 🇪🇸',chinese:'Mandarin 🇨🇳',italian:'Italian 🇮🇹',arabic:'Arabic 🇦🇪',russian:'Russian 🇷🇺'};var lv={basic:'Basic',intermediate:'Intermediate',advanced:'Advanced'};document.getElementById('qBadge').textContent=(ln[sL]||sL)+' · '+(lv[sV]||sV);showQ()}
+function startQuiz(){var pool=QB[sL]&&QB[sL][sV];if(!pool||!pool.length){alert('Questions coming soon!');return}qs=shuf(pool).slice(0,10);cQ=0;sc=0;wrongs=[];quizCompletionSent=false;document.getElementById('setup').style.display='none';document.getElementById('result').style.display='none';document.getElementById('quiz').style.display='block';var ln={japanese:'Japanese 🇯🇵',french:'French 🇫🇷',german:'German 🇩🇪',korean:'Korean 🇰🇷',spanish:'Spanish 🇪🇸',chinese:'Mandarin 🇨🇳',italian:'Italian 🇮🇹',arabic:'Arabic 🇦🇪',russian:'Russian 🇷🇺'};var lv={basic:'Basic',intermediate:'Intermediate',advanced:'Advanced'};document.getElementById('qBadge').textContent=(ln[sL]||sL)+' · '+(lv[sV]||sV);showQ()}
 function showQ(){var q=qs[cQ];ans=false;document.getElementById('qNum').textContent='Question '+(cQ+1)+' of 10';document.getElementById('qCtr').textContent=(cQ+1)+' / 10';document.getElementById('qTxt').textContent=q.q;document.getElementById('pBar').style.width=(cQ*10)+'%';var fb=document.getElementById('fbEl');fb.className='fb';fb.style.display='none';document.getElementById('nxtBtn').className='nxt';var L=['A','B','C','D'];document.getElementById('optsEl').innerHTML=q.o.map(function(o,i){return '<button class="opt" onclick="pick('+i+')"><span class="ol">'+L[i]+'</span><span>'+o+'</span></button>'}).join('')}
 function pick(i){if(ans)return;ans=true;var q=qs[cQ],opts=document.querySelectorAll('.opt'),fb=document.getElementById('fbEl');opts[i].classList.add('sel');if(i===q.a){sc++;opts[i].classList.add('ok');fb.className='fb fbok show';fb.innerHTML='✅ Correct! '+q.f}else{opts[i].classList.add('no');opts[q.a].classList.add('ok');fb.className='fb fbno show';fb.innerHTML='❌ Not quite. '+q.f;wrongs.push({q:q.q,c:q.o[q.a],u:q.o[i]})}fb.style.display='block';var nb=document.getElementById('nxtBtn');nb.className='nxt show';nb.textContent=cQ<9?'Next Question →':'See Results →'}
 function nextQ(){cQ++;if(cQ<10)showQ();else showRes()}
-function showRes(){document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='block';var pct=Math.round(sc/10*100);setTimeout(function(){document.getElementById('sPct').textContent=pct+'%';document.getElementById('sRing').style.background='conic-gradient(var(--gold) '+pct*3.6+'deg, rgba(201,168,76,.12) '+pct*3.6+'deg)'},200);var gs=[{m:90,g:'Outstanding!',s:'Operating at a very high level. Ready for the certification exam.'},{m:70,g:'Excellent!',s:'Strong grasp. A few weeks of practice and you can advance.'},{m:50,g:'Good Progress!',s:'Fundamentals are there. Focused coaching fills the gaps fast.'},{m:30,g:'Keep Going!',s:'Getting there. Structured coaching makes the difference.'},{m:0,g:'Just Starting!',s:'Everyone begins somewhere. DIFL foundation batches are perfect for this.'}];var gr=gs[gs.length-1];for(var i=0;i<gs.length;i++){if(pct>=gs[i].m){gr=gs[i];break}}document.getElementById('rGrade').textContent=gr.g;document.getElementById('rSub').textContent=sc+' out of 10 correct. '+gr.s;var ln={japanese:'Japanese',french:'French',german:'German',korean:'Korean',spanish:'Spanish',chinese:'Mandarin Chinese',italian:'Italian',arabic:'Arabic',russian:'Russian'};var cm={japanese:'JLPT N5-N1, NAT, TITP/SSW',french:'DELF A1-C2, TEF Canada, TCF Canada',german:'Goethe A1-C2, TestDaF',korean:'TOPIK I & II, EPS-TOPIK',spanish:'DELE A1-C2, SIELE',chinese:'HSK 1-6',italian:'CILS A1-C2, PLIDA',arabic:'Gulf proficiency tests',russian:'TORFL levels'};var nl=sV==='basic'?'Intermediate':sV==='intermediate'?'Advanced':'Certification Exam';document.getElementById('rCard').innerHTML='<h3>Your Path Forward</h3><p><strong>Language:</strong> '+(ln[sL]||sL)+' · <strong>Level:</strong> '+sV.charAt(0).toUpperCase()+sV.slice(1)+' · <strong>Score:</strong> '+pct+'%</p><p style="margin-top:10px"><strong>Next step:</strong> '+(pct>=70?'Ready to move to '+nl+'. ':'Focused coaching at current level recommended. ')+'Book a counselling session.</p><p style="margin-top:10px"><strong>Certifications:</strong> '+(cm[sL]||'')+'</p><p style="margin-top:10px">DIFL, 2/11 Jawahar Nagar, Jaipur · +91-9929-51 51 51</p>';if(wrongs.length){document.getElementById('wReview').innerHTML='<h3 style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Review — Questions to Revisit</h3>'+wrongs.map(function(w){return '<div class="wi"><div class="wq">Q: '+w.q+'</div><div class="wu">Your answer: '+w.u+'</div><div class="wa">Correct: '+w.c+'</div></div>'}).join('')}else{document.getElementById('wReview').innerHTML=''}window.scrollTo({top:0,behavior:'smooth'})}
+function showRes(){document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='block';var pct=Math.round(sc/10*100);setTimeout(function(){document.getElementById('sPct').textContent=pct+'%';document.getElementById('sRing').style.background='conic-gradient(var(--gold) '+pct*3.6+'deg, rgba(201,168,76,.12) '+pct*3.6+'deg)'},200);var gs=[{m:90,g:'Outstanding!',s:'A strong result on this informal quiz. An official exam is needed for certified proficiency.'},{m:70,g:'Excellent!',s:'A strong result. Review missed areas before moving to harder material.'},{m:50,g:'Good Progress!',s:'The fundamentals are developing. Focused practice can strengthen weaker areas.'},{m:30,g:'Keep Going!',s:'Keep practising with structured lessons and regular revision.'},{m:0,g:'Just Starting!',s:'Everyone begins somewhere. Start with foundational vocabulary and sentence patterns.'}];var gr=gs[gs.length-1];for(var i=0;i<gs.length;i++){if(pct>=gs[i].m){gr=gs[i];break}}document.getElementById('rGrade').textContent=gr.g;document.getElementById('rSub').textContent=sc+' out of 10 correct. '+gr.s;var ln={japanese:'Japanese',french:'French',german:'German',korean:'Korean',spanish:'Spanish',chinese:'Mandarin Chinese',italian:'Italian',arabic:'Arabic',russian:'Russian'};var cm={japanese:'JLPT N5-N1 and NAT',french:'DELF/DALF, TEF Canada and TCF Canada',german:'Goethe-Zertifikat and TestDaF',korean:'TOPIK I & II and EPS-TOPIK',spanish:'DELE and SIELE',chinese:'HSK',italian:'CILS and PLIDA',arabic:'Arabic proficiency assessments',russian:'TORFL'};document.getElementById('rCard').innerHTML='<h3>Your Path Forward</h3><p><strong>Language:</strong> '+(ln[sL]||sL)+' · <strong>Selected level:</strong> '+sV.charAt(0).toUpperCase()+sV.slice(1)+' · <strong>Score:</strong> '+pct+'%</p><p style="margin-top:10px"><strong>Next step:</strong> Review the questions below and use the result as informal guidance only. This quiz is not an official proficiency certificate.</p><p style="margin-top:10px"><strong>Related exams:</strong> '+(cm[sL]||'')+'</p><p style="margin-top:10px">DIFL, 2/11 Jawahar Nagar, Jaipur · +91-9929-51 51 51</p>';if(wrongs.length){document.getElementById('wReview').innerHTML='<h3 style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Review — Questions to Revisit</h3>'+wrongs.map(function(w){return '<div class="wi"><div class="wq">Q: '+w.q+'</div><div class="wu">Your answer: '+w.u+'</div><div class="wa">Correct: '+w.c+'</div></div>'}).join('')}else{document.getElementById('wReview').innerHTML=''}if(!quizCompletionSent){quizCompletionSent=true;document.dispatchEvent(new CustomEvent('difl:quiz-complete'))}window.scrollTo({top:0,behavior:'smooth'})}
 function retry(){startQuiz();window.scrollTo({top:0,behavior:'smooth'})}
 function resetQ(){document.getElementById('result').style.display='none';document.getElementById('setup').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
 </script>

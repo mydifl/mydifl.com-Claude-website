@@ -184,15 +184,23 @@ const page = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>DIFL Teaching Method — ATMA–TTP Pedagogy | English & Hindi</title>
-  <meta name="description" content="Discover DIFL's ATMA–TTP teaching method: topic mastery, natural Hinglish comprehension, thought translation and practical communication. Read in English or Hindi.">
-  <meta name="keywords" content="DIFL teaching method, ATMA TTP pedagogy, language teaching Jaipur, Thought Translation Process, foreign language learning method">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <title>DIFL Teaching Method | ATMA–TTP | English & Hindi</title>
+  <meta name="description" content="Explore DIFL's ATMA–TTP teaching method for topic mastery, thought translation, active recall and practical communication in English and Hindi.">
   <link rel="canonical" href="https://mydifl.com/about-us/difl-teaching-method/">
   <meta property="og:title" content="The DIFL Teaching Method — ATMA–TTP Pedagogy">
   <meta property="og:description" content="How DIFL develops understanding, memory, independent thought and practical communication—in English and Hindi.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://mydifl.com/about-us/difl-teaching-method/">
-  <meta property="og:image" content="https://mydifl.com/assets/difl-logo.png">
+  <meta property="og:image" content="https://mydifl.com/assets/teaching-method/atma-ttp-hero.jpg">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="An artistic illustration of the DIFL ATMA–TTP teaching method">
+  <meta property="og:site_name" content="DIFL — Dante Institute of Foreign Languages">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The DIFL Teaching Method — ATMA–TTP Pedagogy">
+  <meta name="twitter:description" content="How DIFL develops understanding, memory, independent thought and practical communication in English and Hindi.">
+  <meta name="twitter:image" content="https://mydifl.com/assets/teaching-method/atma-ttp-hero.jpg">
   <meta name="theme-color" content="#2a160f">
   <link rel="icon" href="/assets/difl-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,6 +226,7 @@ const page = `<!doctype html>
   </style>
 <link rel="stylesheet" href="/assets/coffee-gold-theme-v1.css">
 <link rel="stylesheet" href="/assets/mobile-polish-v1.css">
+<script src="/assets/google-consent-v1.js"></script>
 </head>
 <body class="method-site">
   <nav class="main-nav" id="navbar" aria-label="Main navigation">
@@ -249,13 +258,13 @@ const page = `<!doctype html>
       </li>
       <li class="dd"><span tabindex="0">Programs ▾</span><ul class="ddm"><li><a href="/study-abroad-programs/">All Programs</a></li><li><a href="/study-abroad-programs/">🇩🇪 Ausbildung Germany</a></li><li><a href="/study-abroad-programs/">🇯🇵 MEXT Japan</a></li><li><a href="/study-abroad-programs/">🇫🇷 Campus France</a></li><li><a href="/study-abroad-programs/">🇰🇷 GKS Korea</a></li></ul></li>
       <li class="dd"><span tabindex="0">Handwriting ▾</span><ul class="ddm"><li><a href="/handwriting-improvement/">Handwriting Improvement</a></li><li><a href="/learn-calligraphy/">Learn Calligraphy</a></li></ul></li>
-      <li><a href="/blog-on-foreign-languages/">Blog</a></li>
+      <li><a href="/blog/">Blog</a></li>
       <li><a href="/contact/" class="nav-cta">Enroll Now</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
   <header class="hero">
-    <div class="hero-art" aria-hidden="true"><img src="/assets/teaching-method/atma-ttp-hero.jpg" alt="" width="1536" height="1024"></div>
+    <div class="hero-art" aria-hidden="true"><img src="/assets/teaching-method/atma-ttp-hero.jpg" srcset="/assets/teaching-method/atma-ttp-hero-768.jpg 768w, /assets/teaching-method/atma-ttp-hero-1280.jpg 1280w, /assets/teaching-method/atma-ttp-hero.jpg 1536w" sizes="100vw" alt="" width="1536" height="1024" fetchpriority="high" decoding="async"></div>
     <div class="hero-inner">
       <div class="eyebrow" data-copy data-en="Why DIFL? · Our teaching philosophy" data-hi="Why DIFL? · हमारी teaching philosophy">Why DIFL? · Our teaching philosophy</div>
       <h1><span data-copy data-en="The DIFL " data-hi="DIFL ">The DIFL </span><em data-copy data-en="Teaching Method" data-hi="Teaching Method">Teaching Method</em></h1>
@@ -271,7 +280,7 @@ const page = `<!doctype html>
     <div><strong>ATMA <small>(Absolute Topic Mastery Approach)</small></strong><span data-copy data-en="Absolute Topic Mastery" data-hi="किसी topic पर पूर्ण practical command">Absolute Topic Mastery</span></div>
     <div><strong>TTP</strong><span data-copy data-en="Thought Translation Process" data-hi="विचार-अनुवाद प्रक्रिया">Thought Translation Process</span></div>
     <div><strong>55+ years</strong><span data-copy data-en="Teaching excellence" data-hi="Teaching excellence">Teaching excellence</span></div>
-    <div><strong>25,000+</strong><span data-copy data-en="Learners taught" data-hi="विद्यार्थियों को training">Learners taught</span></div>
+    <div><strong>1970</strong><span data-copy data-en="Year founded" data-hi="स्थापना का वर्ष">Year founded</span></div>
   </section>
   <section class="method-map" aria-labelledby="journey-title">
     <div class="map-heading"><h2 id="journey-title" data-copy data-en="From understanding to independent speech" data-hi="Understanding से independent speech तक">From understanding to independent speech</h2><p data-copy data-en="DIFL’s method is a progression: make the idea clear, connect it deeply, retrieve it actively, and use it confidently." data-hi="DIFL की method एक progression है: concept को स्पष्ट समझिए, उसे गहराई से जोड़िए, active memory से recall कीजिए और confidence से प्रयोग कीजिए।">DIFL’s method is a progression: make the idea clear, connect it deeply, retrieve it actively, and use it confidently.</p></div>
@@ -290,7 +299,7 @@ const page = `<!doctype html>
       <article class="article" data-article="hi" lang="hi" hidden>${hindi.html}<div class="closing"><strong>Topic पर अधिकार प्राप्त कीजिए। Memory को मजबूत बनाइए। Thought process को प्रशिक्षित कीजिए। भाषा बोलिए।</strong><br>हम आपको उड़ना सिखाते हैं—पंख आपके पास पहले से ही हैं!</div></article>
     </div>
   </main>
-  <footer>© 1970–2026 DIFL — Dante Institute of Foreign Languages, Jaipur · <a href="/contact/">Contact DIFL</a></footer>
+  <footer>© 1970–2026 DIFL — Dante Institute of Foreign Languages, Jaipur · <a href="/contact/">Contact DIFL</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="#" data-difl-consent-open>Cookie settings</a></footer>
   <script>
     const navbar=document.getElementById('navbar');
     const hamburger=document.getElementById('hamburger');
@@ -317,7 +326,7 @@ const page = `<!doctype html>
       buttons.forEach(button=>{const active=button.dataset.language===selected;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
       tocTitle.textContent=selected==='hi'?'इस पृष्ठ पर':'On this page';
       document.querySelectorAll('[data-copy]').forEach(element=>{element.textContent=element.dataset[selected]||element.dataset.en;});
-      document.title=selected==='hi'?'DIFL Teaching Method — ATMA–TTP Pedagogy | हिन्दी':'DIFL Teaching Method — ATMA–TTP Pedagogy | English & Hindi';
+      document.title=selected==='hi'?'DIFL Teaching Method | ATMA–TTP | हिन्दी':'DIFL Teaching Method | ATMA–TTP | English & Hindi';
       if(updateUrl){const url=new URL(location.href);selected==='hi'?url.searchParams.set('lang','hi'):url.searchParams.delete('lang');history.replaceState({},'',url);}
       try{localStorage.setItem('difl-method-language',selected)}catch{}
     }

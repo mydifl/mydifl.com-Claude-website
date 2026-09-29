@@ -1,96 +1,13 @@
 User-agent: *
 
-# Private staff surfaces are never intended for crawling. This is a crawl hint;
-# access control is enforced separately by authentication, MFA, and RLS.
+# Public pages and old WordPress/spam URLs remain crawlable so search engines
+# can discover the current canonical pages and remove URLs that now return 404.
+Allow: /
+
+# Private staff and administration surfaces are excluded from crawling.
+# Authentication, MFA, server-side authorization and database policies—not
+# robots.txt—provide the actual security controls for these paths.
 Disallow: /admin/
 Disallow: /api/admin/
 
-# ── Explicitly allow all valid DIFL pages ──────────────────────────
-Allow: /$
-Allow: /*?page=*
-Allow: /learn-mandarin-chinese/
-Allow: /learn-french/
-Allow: /learn-japanese/
-Allow: /learn-german/
-Allow: /learn-spanish/
-Allow: /learn-arabic/
-Allow: /learn-korean-language/
-Allow: /learn-italian-language/
-Allow: /learn-russian-language/
-Allow: /learn-english/
-Allow: /learn-thai-language/
-Allow: /learn-hindi-language/
-Allow: /about-us/
-Allow: /learn-foreign-languages/
-Allow: /handwriting-improvement/
-Allow: /learn-calligraphy/
-Allow: /about-us/reviews-of-difl/
-Allow: /about-us/foreign-language-scholarships/
-Allow: /blog-on-foreign-languages/
-Allow: /contact/
-Allow: /foreign-language-faqs/
-Allow: /study-abroad-programs/
-Allow: /language-for-professionals/
-Allow: /blog.html
-Allow: /whatsapp/
-
-# ── Old spam paths (from pre-2026 hacked site) are intentionally
-# ── crawlable: they now return 404 so Google can drop them fast.
-# ── Only WP admin endpoints stay blocked (bot-noise reduction).
-Disallow: /wp-admin/
-Disallow: /wp-login.php
-Disallow: /wp-content/
-Disallow: /wp-includes/
-
-# Do not block historic spam URLs here. Google must be allowed to crawl their
-# 404 responses or canonical tags so the old WordPress URLs can leave its index.
-# robots.txt is a crawler hint, not a security control.
-
-# ── AI / LLM crawlers — explicitly welcome (GEO) ───────────────────
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GoogleOther
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: DuckAssistBot
-Allow: /
-
-# Sitemap
 Sitemap: https://mydifl.com/sitemap.xml

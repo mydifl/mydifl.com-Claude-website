@@ -208,7 +208,7 @@
     // A slow load must never redirect or leave an uncancellable overlay.
     loadTimer = window.setTimeout(function () {
       if (!widgetReady) handleLoadFailure(script);
-    }, 30000);
+    }, 12000);
   }
 
   function createLauncher() {

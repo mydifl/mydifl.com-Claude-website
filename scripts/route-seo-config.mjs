@@ -1,0 +1,163 @@
+/**
+ * Public, indexable routes rendered from the main DIFL page shell.
+ *
+ * `page` is the internal SPA page key. The build script also exposes that key
+ * as `document.documentElement.dataset.initialPage` on the generated file so
+ * the browser can activate the correct content without a query-string redirect.
+ */
+export const routeSeoPages = Object.freeze([
+  {
+    path: '/about-us/',
+    page: 'about',
+    title: 'About DIFL Jaipur | Foreign Language Institute Since 1970',
+    description: 'Meet DIFL, Jaipur\'s foreign language institute since 1970. Explore our teaching legacy, faculty, learning approach and student support.',
+    image: '/assets/page-banners/about-premium.webp',
+  },
+  {
+    path: '/learn-foreign-languages/',
+    page: 'all-courses',
+    title: 'Foreign Language Courses in Jaipur & Online | DIFL',
+    description: 'Compare DIFL courses in French, German, Japanese, Korean, Spanish, Mandarin, Italian, Russian, Arabic, Thai, Hindi and English.',
+    image: '/assets/page-banners/all-courses-premium.webp',
+  },
+  {
+    path: '/learn-french/',
+    page: 'french',
+    title: 'French Language Course in Jaipur & Online | DIFL',
+    description: 'Learn French with structured classes for beginners through advanced learners, including DELF and DALF preparation in Jaipur and online.',
+    image: '/assets/language-banners/french-premium.webp',
+  },
+  {
+    path: '/learn-german/',
+    page: 'german',
+    title: 'German Language Course in Jaipur & Online | DIFL',
+    description: 'Study German from beginner to advanced levels with practical speaking and Goethe exam preparation at DIFL Jaipur or through online classes.',
+    image: '/assets/language-banners/german-premium.webp',
+  },
+  {
+    path: '/learn-japanese/',
+    page: 'japanese',
+    title: 'Japanese Language Course & JLPT Classes | DIFL Jaipur',
+    description: 'Learn Japanese script, conversation and grammar with structured JLPT preparation from N5 upward at DIFL Jaipur and through online classes.',
+    image: '/assets/language-banners/japanese-premium.webp',
+  },
+  {
+    path: '/learn-korean-language/',
+    page: 'korean',
+    title: 'Korean Language Course & TOPIK Classes | DIFL Jaipur',
+    description: 'Learn Hangul, Korean conversation and grammar with structured TOPIK preparation at DIFL Jaipur or through instructor-led online classes.',
+    image: '/assets/language-banners/korean-premium.webp',
+  },
+  {
+    path: '/learn-mandarin-chinese/',
+    page: 'chinese',
+    title: 'Mandarin Chinese Course & HSK Classes | DIFL Jaipur',
+    description: 'Learn Mandarin pronunciation, characters, conversation and grammar with structured HSK preparation at DIFL Jaipur and online.',
+    image: '/assets/language-banners/chinese-premium.webp',
+  },
+  {
+    path: '/learn-spanish/',
+    page: 'spanish',
+    title: 'Spanish Language Course in Jaipur & Online | DIFL',
+    description: 'Build practical Spanish speaking, listening, reading and writing skills through structured classes at DIFL Jaipur or online.',
+    image: '/assets/language-banners/spanish-premium.webp',
+  },
+  {
+    path: '/learn-italian-language/',
+    page: 'italian',
+    title: 'Italian Language Course in Jaipur & Online | DIFL',
+    description: 'Learn Italian conversation, grammar and culture with structured beginner to advanced classes at DIFL Jaipur and online.',
+    image: '/assets/language-banners/italian-premium.webp',
+  },
+  {
+    path: '/learn-russian-language/',
+    page: 'russian',
+    title: 'Russian Language Course in Jaipur & Online | DIFL',
+    description: 'Learn the Cyrillic alphabet, Russian conversation and grammar through structured classes at DIFL Jaipur or online.',
+    image: '/assets/language-banners/russian-premium.webp',
+  },
+  {
+    path: '/learn-arabic/',
+    page: 'arabic',
+    title: 'Arabic Language Course in Jaipur & Online | DIFL',
+    description: 'Learn Arabic script, pronunciation, conversation and grammar through structured classes at DIFL Jaipur or online.',
+    image: '/assets/language-banners/arabic-premium.webp',
+  },
+  {
+    path: '/learn-thai-language/',
+    page: 'thai',
+    title: 'Thai Language Course in Jaipur & Online | DIFL',
+    description: 'Learn Thai script, pronunciation and everyday conversation through structured classes at DIFL Jaipur or online.',
+    image: '/assets/language-banners/thai-premium.webp',
+  },
+  {
+    path: '/learn-hindi-language/',
+    page: 'hindi',
+    title: 'Hindi Language Course in Jaipur & Online | DIFL',
+    description: 'Learn spoken and written Hindi with practical, structured classes for Indian and international learners in Jaipur or online.',
+    image: '/assets/language-banners/hindi-premium.webp',
+  },
+  {
+    path: '/learn-english/',
+    page: 'english',
+    title: 'English Language & IELTS Classes in Jaipur | DIFL',
+    description: 'Improve English speaking, grammar and professional communication with structured classes and IELTS-focused support at DIFL Jaipur.',
+    image: '/assets/language-banners/english-premium.webp',
+  },
+  {
+    path: '/handwriting-improvement/',
+    page: 'handwriting',
+    title: 'Handwriting Improvement Classes in Jaipur | DIFL',
+    description: 'Develop clearer, more consistent handwriting with guided practice for children, students and adults at DIFL Jaipur.',
+    image: '/assets/page-banners/handwriting-premium.webp',
+  },
+  {
+    path: '/learn-calligraphy/',
+    page: 'calligraphy',
+    title: 'Calligraphy Classes in Jaipur | DIFL',
+    description: 'Learn creative lettering and calligraphy techniques through guided, hands-on classes for beginners and enthusiasts at DIFL Jaipur.',
+    image: '/assets/page-banners/calligraphy-card.webp',
+  },
+  {
+    path: '/about-us/reviews-of-difl/',
+    page: 'testimonials',
+    title: 'DIFL Learner Video Reviews & Testimonials | Jaipur',
+    description: 'Watch public video testimonials in which individual DIFL learners describe their own language-learning experiences.',
+    image: '/assets/page-banners/reviews-premium.webp',
+  },
+  {
+    path: '/about-us/foreign-language-scholarships/',
+    page: 'scholarships',
+    title: 'V K Sharma Memorial Language Scholarship | DIFL Jaipur',
+    description: 'Learn about DIFL’s internal fee-support scholarship and concessions, eligibility categories, documents and application process.',
+    image: '/assets/page-banners/scholarships-premium.webp',
+  },
+  {
+    path: '/contact/',
+    page: 'contact',
+    title: 'Contact DIFL Jaipur | Course Counselling & Admissions',
+    description: 'Contact DIFL Jaipur for foreign language course details, schedules, fees and admissions. Speak with the team or visit the institute.',
+    image: '/assets/page-banners/contact-premium.webp',
+  },
+  {
+    path: '/foreign-language-faqs/',
+    page: 'faq',
+    title: 'Foreign Language Course FAQs | DIFL Jaipur',
+    description: 'Find answers about DIFL language courses, levels, class formats, schedules, examinations, admissions and online learning options.',
+    image: '/assets/page-banners/faq-premium.webp',
+  },
+  {
+    path: '/study-abroad-programs/',
+    page: 'programs',
+    title: 'Study Abroad Language Programs & Guidance | DIFL Jaipur',
+    description: 'Explore language preparation and guidance for study-abroad pathways, including Germany, France, Japan, Korea and Canada.',
+    image: '/assets/page-banners/study-abroad-premium.webp',
+  },
+  {
+    path: '/language-for-professionals/',
+    page: 'professionals',
+    title: 'Foreign Language Courses for Professionals | DIFL Jaipur',
+    description: 'Build practical language skills for work, business and international communication with flexible professional courses at DIFL Jaipur.',
+    image: '/assets/page-banners/professionals-premium.webp',
+  },
+]);

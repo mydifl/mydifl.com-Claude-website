@@ -1,7 +1,7 @@
 Preface
 More Than 55 Years of Language-Teaching Excellence
 DIFL—Dante Institute of Foreign Languages—was established in Jaipur in 1970 by the late Dr V. K. Sharma, an eminent academician and Professor of Chemistry who also studied Italian in Rome. Named after the great Italian poet Dante Alighieri, DIFL has completed more than 55 years of dedicated service in foreign-language education.
-Over the decades, DIFL has taught more than 25,000 learners from diverse academic, professional and cultural backgrounds. Today, the institute offers training in 12 languages:
+Over the decades, DIFL has taught learners from diverse academic, professional and cultural backgrounds. Today, the institute offers training in 12 languages:
 Japanese, French, Chinese, English, German, Russian, Arabic, Korean, Italian, Spanish, Thai and Hindi for Foreigners.
 DIFL conducts online, offline and hybrid classes for school and university students, working professionals, corporate executives, business owners, tourist guides, jewelers, garment exporters, importers, travellers, study-abroad candidates and learners preparing for international language-proficiency examinations.
 However, the purpose of DIFL has never been restricted to helping students clear an examination. An examination certificate is certainly valuable, but a language must ultimately become a practical instrument of thought, expression and communication.
@@ -276,7 +276,7 @@ We teach you how to fly. You already have the wings!
 Hindi version- 
 भाषा-शिक्षण में उत्कृष्टता के 55 से अधिक वर्ष
 DIFL—Dante Institute of Foreign Languages—की स्थापना वर्ष 1970 में जयपुर में स्वर्गीय डॉ. वी. के. शर्मा ने की थी। वे एक प्रतिष्ठित शिक्षाविद् और Chemistry के Professor थे।  महान Italian कवि Dante Alighieri के नाम पर स्थापित DIFL ने विदेशी भाषा-शिक्षण के क्षेत्र में अपनी समर्पित सेवा के 55 से अधिक वर्ष पूरे कर लिए हैं।
-इन दशकों में DIFL ने विभिन्न शैक्षणिक, व्यावसायिक और सांस्कृतिक पृष्ठभूमियों से आए 25,000 से अधिक विद्यार्थियों को भाषा-प्रशिक्षण प्रदान किया है। वर्तमान में संस्थान निम्नलिखित 12 भाषाओं का प्रशिक्षण देता है:
+इन दशकों में DIFL ने विभिन्न शैक्षणिक, व्यावसायिक और सांस्कृतिक पृष्ठभूमियों से आए विद्यार्थियों को भाषा-प्रशिक्षण प्रदान किया है। वर्तमान में संस्थान निम्नलिखित 12 भाषाओं का प्रशिक्षण देता है:
 Japanese, French, Chinese, English, German, Russian, Arabic, Korean, Italian, Spanish, Thai तथा विदेशियों के लिए Hindi।
 DIFL में school और university के विद्यार्थियों, working professionals, corporate executives, business owners, tourist guides, jewellers, garment exporters, importers, travellers, विदेश में अध्ययन करने के इच्छुक विद्यार्थियों तथा international language-proficiency examinations की तैयारी करने वाले candidates के लिए online, offline और hybrid classes आयोजित की जाती हैं।
 लेकिन DIFL का उद्देश्य कभी भी केवल विद्यार्थियों को कोई परीक्षा पास करवाने तक सीमित नहीं रहा। परीक्षा का certificate निश्चित रूप से महत्त्वपूर्ण होता है, लेकिन किसी भाषा को अंततः विचार, अभिव्यक्ति और संवाद का एक व्यावहारिक माध्यम बनना चाहिए।
@@ -489,13 +489,13 @@ Progress का आधार	Chapters, syllabus और levels की completion�
 यह examinations की आलोचना नहीं है। परीक्षाओं की अपनी महत्त्वपूर्ण भूमिका है। वे learning को structure, measurable standards और internationally recognised certification प्रदान करती हैं।
 फिर भी:
 Qualifying score किसी विद्यार्थी के examination performance को प्रमाणित करता है; वह अपने आप spontaneous communication की guarantee नहीं देता।
-वास्तविक language communication के लिए recognition-based knowledge से कहीं अधिक की आवश्यकता होती है। इसके लिए आवश्यक हैं:
+वास्तविक language communication के लिए recognition-based knowledge से कहीं अधिक की आवश्यकता होती है। इनमें निम्न क्षमताएँ शामिल हैं:
 * Active vocabulary
 * शब्दों और structures को तेजी से याद करने की क्षमता
 * Listening comprehension
 * Sentence construction
 * Situation के अनुसार उचित response
-* स्पष्ट pronunciation और स्वाभाविक rhythm
+* स्पष्ट उच्चारण और स्वाभाविक rhythm
 * Situational confidence
 * Cultural understanding
 * Original thought व्यक्त करने की क्षमता
