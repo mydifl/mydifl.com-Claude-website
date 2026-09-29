@@ -33,6 +33,7 @@ if (!sourceHome.includes('class="legacy-banner"')) failures.push('Homepage legac
 if (!sourceHome.includes('cultureBannerHTML(lang)')) failures.push('Language pages are missing their cultural banner renderer.');
 for (const language of ['french','japanese','german','spanish','chinese','arabic','korean','italian','russian','english','thai','hindi']) {
   if (!sourceHome.includes(`  ${language}:{greeting:`)) failures.push(`Cultural banner metadata is missing for ${language}.`);
+  if (!existsSync(resolve(root, `assets/language-banners/${language}-premium.webp`))) failures.push(`Premium cultural artwork is missing for ${language}.`);
 }
 
 const tawkLoader = resolve(root, 'assets/tawk-safe-v2.js');
