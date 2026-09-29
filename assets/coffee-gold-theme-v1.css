@@ -1,0 +1,484 @@
+/*
+ * DIFL coffee-and-gold public theme, version 1.
+ *
+ * The previous light theme remains the structural/contrast baseline. This
+ * versioned layer replaces its cool teal accents with espresso, coffee,
+ * caramel and antique-gold tones while leaving layout and behaviour intact.
+ */
+@import url("/assets/light-theme-v3.css");
+
+:root {
+  color-scheme: dark;
+  --ink: #1b0f0a;
+  --cream: #f8efdf;
+  --gold: #e0b857;
+  --gold-l: #f0d98f;
+  --gold-d: #a87524;
+  --teal: #c58b48;
+  --teal-l: #d7a963;
+  --white: #2c1c15;
+  --gs: #38261d;
+  --gm: #cbb8a2;
+  --gt: #eadbc7;
+
+  --difl-bg: #1b0f0a;
+  --difl-bg-soft: #25160f;
+  --difl-surface: #302019;
+  --difl-surface-teal: #3b281e;
+  --difl-text: #f7ecdc;
+  --difl-muted: #ccb9a3;
+  --difl-line: #6c4933;
+  --difl-teal: #c58b48;
+  --difl-teal-strong: #e0b35d;
+  --difl-gold: #e2bd65;
+  --difl-gold-soft: #5c3f26;
+  --difl-shadow: 0 18px 46px rgba(7, 3, 2, .34);
+  --difl-nav-deep: #28150e;
+  --difl-nav-mid: #4b2a1c;
+  --difl-nav-text: #fff8ec;
+  --difl-nav-muted: #e5d4c1;
+  --difl-nav-gold: #e8c978;
+}
+
+html,
+body { background: var(--difl-bg) !important; }
+::selection { background: #d7b86b; color: #25130c; }
+
+/* Espresso navigation with restrained antique-gold highlights. */
+nav,
+.main-nav,
+.site-nav {
+  background:
+    linear-gradient(112deg, rgba(40, 21, 14, .992) 0%, rgba(73, 39, 25, .985) 58%, rgba(91, 53, 31, .988) 100%) !important;
+  border-bottom-color: rgba(232, 201, 120, .34) !important;
+  box-shadow: 0 9px 30px rgba(39, 19, 11, .28) !important;
+}
+nav.scrolled,
+.main-nav.scrolled {
+  background:
+    linear-gradient(112deg, rgba(34, 17, 11, .998) 0%, rgba(62, 31, 20, .995) 58%, rgba(78, 43, 26, .997) 100%) !important;
+  border-bottom-color: rgba(232, 201, 120, .44) !important;
+  box-shadow: 0 11px 34px rgba(35, 17, 10, .34) !important;
+}
+.nav-links .ddm {
+  background: linear-gradient(145deg, rgba(45, 23, 15, .998), rgba(74, 40, 25, .998)) !important;
+  border-color: rgba(232, 201, 120, .30) !important;
+  box-shadow: 0 20px 46px rgba(35, 17, 10, .36) !important;
+}
+.nav-links .ddm a:hover {
+  background: rgba(232, 201, 120, .14) !important;
+  color: #f3d989 !important;
+}
+nav .nav-cta,
+.main-nav .nav-cta,
+.site-nav .nav-cta {
+  background: linear-gradient(135deg, #f0db96, #b98727) !important;
+  color: #2b170f !important;
+  box-shadow: 0 7px 18px rgba(35, 17, 10, .22) !important;
+}
+nav .nav-cta:hover,
+.main-nav .nav-cta:hover,
+.site-nav .nav-cta:hover {
+  color: #211008 !important;
+  background: linear-gradient(135deg, #f8e7ad, #c99b3a) !important;
+}
+.nav-logo img[src*="difl-logo"] {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(37%) saturate(653%) hue-rotate(351deg) brightness(97%) contrast(92%) drop-shadow(0 5px 10px rgba(0, 0, 0, .24)) !important;
+}
+#footer-logo-img {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(39%) saturate(752%) hue-rotate(356deg) brightness(94%) contrast(90%) drop-shadow(0 7px 14px rgba(7, 3, 2, .30)) !important;
+}
+
+/* Parchment hero and warm latte section transitions. */
+#hero-section,
+.lang-hero,
+.about-hero,
+.bh,
+[style*="background:var(--ink)"] {
+  background-color: var(--difl-bg) !important;
+  background-image:
+    radial-gradient(ellipse 72% 72% at 12% 0%, rgba(191, 137, 54, .13), transparent 68%),
+    radial-gradient(ellipse 58% 62% at 96% 45%, rgba(119, 67, 37, .22), transparent 66%) !important;
+}
+.premium-page-banner { background-color: #170c08 !important; }
+[style*="background:var(--cream)"] {
+  background-color: var(--difl-bg-soft) !important;
+  background-image: linear-gradient(135deg, rgba(123, 73, 41, .12), rgba(218, 177, 86, .055)) !important;
+}
+.hero-sub,
+.lead,
+.ld,
+.hero p { color: #d7c4ae !important; }
+.hero-stats,
+.langs-grid,
+.steps-grid { background: rgba(226, 189, 101, .20) !important; }
+.slbl { color: #cbb8a2 !important; }
+.btn-o { border-color: rgba(226, 189, 101, .46) !important; }
+
+/* The homepage TTP block originally used the light "cream" token as a
+   background as well as a text colour. Keep the token light for copy, but
+   give this section its own espresso surface so both roles stay legible. */
+.ttp-bg {
+  background:
+    radial-gradient(ellipse 70% 70% at 12% 30%, rgba(147, 86, 44, .18), transparent 68%),
+    linear-gradient(180deg, #24140e, #1b0f0a) !important;
+}
+.ttp-c {
+  background: rgba(49, 32, 24, .94) !important;
+  border-color: rgba(226, 189, 101, .20) !important;
+  box-shadow: 0 8px 26px rgba(7, 3, 2, .22) !important;
+}
+.ttp-c h4 { color: #f7ecdc !important; }
+.ttp-c p { color: #ccb9a3 !important; }
+.ttp-n { color: rgba(226, 189, 101, .52) !important; }
+.ttp-bg [style*="background:rgba(13,13,13,.18)"] {
+  background: rgba(226, 189, 101, .10) !important;
+  border-color: rgba(226, 189, 101, .28) !important;
+  color: #e7d4ba !important;
+}
+
+.hstat,
+.lcard,
+.fcard,
+.team-card,
+.prog-card,
+.step,
+.faq-item,
+.course-box,
+.info-card,
+.blog-card,
+.sc-card,
+.mini-s,
+.industry-card,
+.vocab-item,
+.wc,
+.related-card,
+.bc,
+#featRow .fc {
+  background: rgba(49, 32, 24, .92) !important;
+  border-color: rgba(226, 189, 101, .18) !important;
+  box-shadow: 0 8px 26px rgba(7, 3, 2, .20) !important;
+}
+.lcard:hover,
+.fcard:hover,
+.team-card:hover,
+.prog-card:hover,
+.step:hover,
+.info-card:hover,
+.blog-card:hover,
+.sc-card:hover,
+.industry-card:hover,
+.bc:hover,
+#featRow .fc:hover {
+  background: #3a271d !important;
+  border-color: rgba(226, 189, 101, .50) !important;
+  box-shadow: var(--difl-shadow) !important;
+}
+
+.why-difl-section {
+  background-color: var(--difl-bg) !important;
+  background-image:
+    radial-gradient(ellipse 82% 68% at 18% 48%, rgba(154, 95, 50, .22), transparent 72%),
+    linear-gradient(180deg, #1b0f0a, #2a1912) !important;
+}
+.big-stat-box {
+  background: rgba(50, 32, 24, .94) !important;
+  border-color: rgba(226, 189, 101, .22) !important;
+  box-shadow: var(--difl-shadow) !important;
+}
+.big-stat-box .bnum,
+.mini-s .mn {
+  background: none !important;
+  color: #e2bd65 !important;
+  -webkit-text-fill-color: #e2bd65 !important;
+}
+.big-stat-box .bdesc,
+.mini-s .ml,
+.t-role { color: #cbb7a0 !important; }
+.t-av { background: linear-gradient(135deg, #c5953d, #70452b) !important; color: #fff8ec !important; }
+.o-label {
+  background: rgba(48, 31, 23, .97) !important;
+  border-color: rgba(226, 189, 101, .30) !important;
+  box-shadow: 0 5px 18px rgba(7, 3, 2, .30) !important;
+}
+.orb-center {
+  background: radial-gradient(circle, #422b20, #24150f) !important;
+  color: #e7c873 !important;
+}
+.faq-item,
+.prog-body ul li,
+.hw-features li,
+.prof-row { border-color: rgba(105, 61, 36, .12) !important; }
+.ltab {
+  background: #302019 !important;
+  border-color: rgba(226, 189, 101, .22) !important;
+  color: #cdb9a1 !important;
+}
+.ltab.active,
+.ltab:hover {
+  background: #513521 !important;
+  border-color: #d5aa5a !important;
+  color: #fff0cf !important;
+}
+.prof-row:not(.header-row):nth-child(even) { background: rgba(226, 189, 101, .055) !important; }
+.faq-q { background: rgba(48, 31, 23, .86) !important; }
+.tcard,
+.contact-form,
+.card {
+  background: #302019 !important;
+  border-color: rgba(226, 189, 101, .18) !important;
+  box-shadow: 0 10px 30px rgba(7, 3, 2, .24) !important;
+}
+.t-text,
+.fg label,
+body > p,
+.card p,
+table td { color: #cdb9a1 !important; }
+.t-info h4,
+.t-name { color: #f7ecdc !important; }
+.fg input,
+.fg select,
+.fg textarea {
+  background: #24150f !important;
+  border-color: #5f402d !important;
+  color: #f7ecdc !important;
+}
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus { background: #352219 !important; border-color: #e2bd65 !important; }
+.contact-preview {
+  background:
+    radial-gradient(ellipse 72% 76% at 12% 18%, rgba(151, 90, 46, .18), transparent 68%),
+    linear-gradient(150deg, #28170f, #1b0f0a) !important;
+  color: var(--difl-text) !important;
+}
+.contact-preview .ci-card {
+  background: rgba(49, 32, 24, .94) !important;
+  border: 1px solid rgba(226, 189, 101, .18) !important;
+  box-shadow: 0 8px 24px rgba(7, 3, 2, .22) !important;
+}
+.contact-preview .ci-lbl { color: #bda98f !important; }
+.contact-preview .ci-val,
+.contact-preview .ci-sub,
+.contact-preview [style*="color:var(--ink)"] { color: #f1e2ce !important; }
+.contact-preview iframe {
+  background: #302019;
+  filter: sepia(.42) saturate(.62) brightness(.82) contrast(1.05);
+}
+.soc {
+  background: linear-gradient(145deg, #624027, #3a2418) !important;
+  border: 1px solid rgba(226, 189, 101, .24) !important;
+  color: #f4d889 !important;
+  box-shadow: none !important;
+}
+.soc:hover {
+  background: linear-gradient(145deg, #d6aa50, #9a6c24) !important;
+  color: #25140d !important;
+}
+.why-difl-section [style*="color:rgba(13,13,13"] { color: #d2bea7 !important; }
+.difl-wing-deco svg { fill: #c5963e !important; }
+.difl-wing-fixed-tr,
+.difl-wing-fixed-bl { filter: sepia(1) saturate(1.35) hue-rotate(345deg) brightness(.88); }
+
+/* Editorial, quiz and exam surfaces use coffee for information and gold for success. */
+.a-lead,
+.ab p,
+.ab li,
+.ibox p,
+.ibox li,
+.dt td { color: #d4c2ae !important; }
+.tbox {
+  background: #3b281e !important;
+  border-color: #8b633d !important;
+}
+.ibox,
+.cta { background: #37251b !important; border-color: #806039 !important; }
+.dt th { background: #4b3020 !important; color: #f8e7c4 !important; }
+.dt td { border-bottom-color: #5d4130 !important; }
+.dt tr:hover td { background: #3b281e !important; }
+.ct:hover,
+.ct.on {
+  color: #fff0cf !important;
+  border-color: #d5aa5a !important;
+  background: #513521 !important;
+}
+.br { background: rgba(48, 31, 23, .94) !important; color: #e2bd65 !important; }
+.kw span,
+.art-nav-bar a,
+.art-nav-bar button {
+  background: #302019 !important;
+  border-color: #66462f !important;
+  color: #d0bda7 !important;
+}
+
+.lang-btn,
+.lvl-btn,
+.opt,
+.rc,
+.ftab,
+.exam-card,
+.center-item {
+  background: rgba(49, 32, 24, .92) !important;
+  border-color: rgba(226, 189, 101, .20) !important;
+  color: var(--difl-text) !important;
+  box-shadow: 0 6px 20px rgba(7, 3, 2, .20) !important;
+}
+.lang-btn:hover,
+.lang-btn.on,
+.lvl-btn:hover,
+.lvl-btn.on,
+.opt:hover,
+.opt.sel,
+.ftab:hover,
+.ftab.on {
+  background: #4a311f !important;
+  border-color: #e2bd65 !important;
+  color: #fff0cf !important;
+}
+.pb-wrap { background: #4a3326 !important; }
+.si { background: #38251b !important; }
+.qf { background: #3b281e !important; }
+.opt.ok,
+.fb.fbok,
+.updated,
+.badge-open {
+  background: #4b351e !important;
+  border-color: #d7b660 !important;
+  color: #f3d88a !important;
+}
+.opt.ok .ol {
+  background: #c7963d !important;
+  border-color: #e2bd65 !important;
+  color: #25140d !important;
+}
+.wi .wa { color: #e2bd65 !important; }
+[data-fs-success] {
+  background: #4b351e !important;
+  border: 1px solid #d7b660 !important;
+  color: #f3d88a !important;
+}
+.ec-header,
+.dates-table td { border-bottom-color: rgba(226, 189, 101, .15) !important; }
+.ec-full,
+.info-block p,
+.info-block li,
+.dates-table td,
+.center-name,
+.ec-cta-text,
+.difl-banner p,
+.disclaimer { color: #ccb9a3 !important; }
+
+/* Teaching-method panels retain the artwork but join the warm palette. */
+.hero { background: #1e110c !important; }
+.hero::after {
+  background: linear-gradient(90deg, rgba(27, 15, 10, .99) 0%, rgba(38, 22, 15, .94) 35%, rgba(38, 22, 15, .48) 68%, rgba(27, 15, 10, .14) 100%) !important;
+}
+.language-switch {
+  background: rgba(48, 31, 23, .88) !important;
+  border-color: rgba(226, 189, 101, .26) !important;
+}
+.method-map {
+  background: linear-gradient(135deg, #3a251b, #24150f) !important;
+  border-color: #67462f !important;
+}
+.journey i {
+  background: #4a3021 !important;
+  color: #edce7a !important;
+  box-shadow: 0 0 0 8px rgba(226, 189, 101, .10) !important;
+}
+.closing { background: linear-gradient(135deg, #3d281d, #24150f) !important; }
+.summary,
+.toc,
+.article {
+  background: #302019 !important;
+  border-color: #60422f !important;
+  color: var(--difl-text) !important;
+}
+.summary div { border-color: #60422f !important; }
+.toc a,
+.article p,
+.article li,
+.article figcaption { color: #ccb9a3 !important; }
+.toc a { border-color: #4d3528 !important; }
+.article blockquote {
+  background: #3b281e !important;
+  color: #f3e5d1 !important;
+}
+.article tr:nth-child(even) td,
+.article td { background: #35231a !important; border-color: #5c4030 !important; color: #d6c4b0 !important; }
+.article th,
+.article td:first-child { background: #472d1e !important; color: #fff1d2 !important; }
+.process,
+.term-mark {
+  background: linear-gradient(135deg, #3d291e, #513620) !important;
+  border-color: #997045 !important;
+  color: #f2dfc5 !important;
+}
+
+/* Purposefully dark feature panels use espresso rather than blue-black. */
+.legacy-banner {
+  background: linear-gradient(135deg, #21110b 0%, #382016 55%, #55331f 100%) !important;
+  border-color: rgba(231, 195, 96, .30) !important;
+}
+.legacy-banner p { color: #e5d8c8 !important; }
+.legacy-banner .btn-o {
+  color: #fff1d5 !important;
+  border-color: rgba(255, 233, 183, .58) !important;
+  background: rgba(255, 248, 232, .06) !important;
+}
+
+/* Both support launchers visually belong to the coffee-and-gold system. */
+#difl-chat-launcher {
+  background: linear-gradient(145deg, #704127, #432319) !important;
+  color: #fff8ec !important;
+  box-shadow: 0 10px 28px rgba(53, 27, 16, .34) !important;
+}
+#difl-chat-launcher:hover {
+  box-shadow: 0 14px 32px rgba(53, 27, 16, .42) !important;
+}
+#difl-chat-launcher.is-open { background: linear-gradient(145deg, #5e3a29, #2d1911) !important; }
+/* Tawk renders its conversation panel inside a cross-origin iframe, so its
+   dashboard green cannot be restyled from this page. A restrained monochrome
+   sepia treatment keeps that embedded UI inside the coffee-and-gold system
+   while preserving all text, controls and widget behaviour. */
+body.difl-tawk-open iframe[title="Chat widget"],
+body.difl-tawk-open iframe[title="Visit tawk.to"] {
+  filter: grayscale(1) sepia(.88) saturate(1.65) hue-rotate(342deg) brightness(.80) contrast(1.08) !important;
+}
+.wa-float,
+a.wa,
+.soc.wa {
+  background: linear-gradient(145deg, #c79a3a, #8a601c) !important;
+  box-shadow: 0 8px 28px rgba(98, 62, 16, .34) !important;
+}
+.wa-float path:nth-child(2),
+a.wa path:nth-child(2) { fill: #b98727 !important; }
+
+/* A dark espresso footer gives the warm pages a clear visual endpoint. */
+footer {
+  background: linear-gradient(145deg, #120906, #2a160f) !important;
+  border-top-color: rgba(232, 201, 120, .25) !important;
+}
+footer p,
+.fb-brand p,
+.fc a,
+.fc-group .fc a,
+.f-bottom,
+footer .fb-brand > div[style*="color:rgba(255,255,255"] {
+  color: #dfcfbd !important;
+}
+footer h4,
+footer h5,
+.fc h5,
+.fc-group .fc h5 { color: #e8c978 !important; }
+.fc a:hover,
+.fc-group .fc a:hover { color: #f1d98f !important; }
+.f-bottom { border-top-color: rgba(232, 201, 120, .18) !important; }
+
+@media (max-width: 900px) {
+  .nav-links.mobile-open {
+    background: linear-gradient(155deg, rgba(39, 20, 13, .998), rgba(75, 40, 25, .998)) !important;
+    border-bottom-color: rgba(232, 201, 120, .32) !important;
+    box-shadow: 0 18px 44px rgba(35, 17, 10, .36) !important;
+  }
+}

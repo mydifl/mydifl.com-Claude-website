@@ -52,8 +52,14 @@ else {
   if (tawkSource.includes('wa.me/')) failures.push('Tawk live chat must not redirect visitors to WhatsApp.');
 }
 
-const lightTheme = resolve(root, 'assets/light-theme-v3.css');
-if (!existsSync(lightTheme)) failures.push('Missing versioned public-site light theme.');
+const publicTheme = resolve(root, 'assets/coffee-gold-theme-v1.css');
+if (!existsSync(publicTheme)) failures.push('Missing versioned public-site coffee-and-gold theme.');
+else {
+  const themeSource = readFileSync(publicTheme, 'utf8');
+  if (!themeSource.includes('#difl-chat-launcher') || !themeSource.includes('.wa-float')) failures.push('Coffee-and-gold theme does not style both support launchers.');
+  if (!themeSource.includes('body.difl-tawk-open iframe[title="Chat widget"]')) failures.push('Coffee-and-gold theme is missing the open Tawk panel colour treatment.');
+  if (/#0a5c6e|#0e7d96|rgba\(10,\s*92,\s*110/i.test(themeSource)) failures.push('Coffee-and-gold theme still contains a decorative teal colour.');
+}
 for (const logo of ['assets/difl-logo-mark.png', 'assets/difl-logo-clean.png']) {
   if (!existsSync(resolve(root, logo))) failures.push(`Missing transparent brand asset: ${logo}.`);
 }
@@ -70,8 +76,19 @@ for (const path of [
   '404-custom.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/light-theme-v3.css')) failures.push(`${path} is missing the versioned light theme.`);
-  if (/\/assets\/light-theme(?:-v2)?\.css/.test(html)) failures.push(`${path} still references an indefinitely cached legacy light theme.`);
+  if (!html.includes('/assets/coffee-gold-theme-v1.css')) failures.push(`${path} is missing the versioned coffee-and-gold theme.`);
+  if (/\/assets\/light-theme(?:-v[23])?\.css/.test(html)) failures.push(`${path} still references a superseded public theme.`);
+}
+for (const path of ['index.html', 'blog.html', 'exam-calendar/index.html', 'language-quiz/index.html']) {
+  const html = readFileSync(resolve(root, path), 'utf8');
+  const bannerIndex = html.indexOf('/assets/premium-page-banners.css');
+  const themeIndex = html.indexOf('/assets/coffee-gold-theme-v1.css');
+  if (bannerIndex !== -1 && bannerIndex > themeIndex) failures.push(`${path} loads its banner stylesheet after the coffee-and-gold theme.`);
+}
+for (const path of ['contact-us/index.html', 'whatsapp/index.html']) {
+  const html = readFileSync(resolve(root, path), 'utf8');
+  if (/#25d366|#1ebe5d|#22c55e|#86efac/i.test(html)) failures.push(`${path} still contains a visible green interface colour.`);
+  if (!/#e2bd65|#efcf7a/i.test(html)) failures.push(`${path} is missing the coffee-and-gold standalone treatment.`);
 }
 for (const path of [
   'index.html',
