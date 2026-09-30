@@ -1,3 +1,12 @@
+/* Keep the newer compact chat controls in the restored teal palette. */
+#difl-chat-launcher,
+body.difl-tawk-open #difl-chat-launcher,
+body.difl-tawk-open #difl-chat-launcher:hover {
+  background: linear-gradient(145deg, #0e7490, #155e75) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 28px rgba(8,47,73,.28) !important;
+}
+
 /*
  * DIFL public-site light theme trial.
  * This file changes colours only. Layout, content, navigation and behaviour stay

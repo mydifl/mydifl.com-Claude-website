@@ -109,13 +109,12 @@ else {
   if (tawkSource.includes('wa.me/')) failures.push('Tawk live chat must not redirect visitors to WhatsApp.');
 }
 
-const publicTheme = resolve(root, 'assets/coffee-gold-theme-v1.css');
-if (!existsSync(publicTheme)) failures.push('Missing versioned public-site coffee-and-gold theme.');
+const publicTheme = resolve(root, 'assets/light-theme-v3.css');
+if (!existsSync(publicTheme)) failures.push('Missing versioned public-site light theme.');
 else {
   const themeSource = readFileSync(publicTheme, 'utf8');
-  if (!themeSource.includes('#difl-chat-launcher') || !themeSource.includes('.wa-float')) failures.push('Coffee-and-gold theme does not style both support launchers.');
-  if (!themeSource.includes('body.difl-tawk-open iframe[title="Chat widget"]')) failures.push('Coffee-and-gold theme is missing the open Tawk panel colour treatment.');
-  if (/#0a5c6e|#0e7d96|rgba\(10,\s*92,\s*110/i.test(themeSource)) failures.push('Coffee-and-gold theme still contains a decorative teal colour.');
+  if (!themeSource.includes('color-scheme: light')) failures.push('Public theme must use the restored light colour scheme.');
+  if (!themeSource.includes('--difl-bg: #f6f2e8')) failures.push('Public theme is missing its original ivory background.');
 }
 const mobilePolish = resolve(root, 'assets/mobile-polish-v1.css');
 if (!existsSync(mobilePolish)) failures.push('Missing versioned public-site mobile polish layer.');
@@ -142,9 +141,9 @@ for (const path of [
   '404-custom.html',
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
-  if (!html.includes('/assets/coffee-gold-theme-v1.css')) failures.push(`${path} is missing the versioned coffee-and-gold theme.`);
+  if (!html.includes('/assets/light-theme-v3.css')) failures.push(`${path} is missing the versioned light theme.`);
   if (!html.includes('/assets/mobile-polish-v1.css')) failures.push(`${path} is missing the versioned mobile polish layer.`);
-  if (/\/assets\/light-theme(?:-v[23])?\.css/.test(html)) failures.push(`${path} still references a superseded public theme.`);
+  if (html.includes('/assets/coffee-gold-theme-v1.css')) failures.push(`${path} still references the superseded coffee theme.`);
 }
 
 const consentScriptPath = resolve(root, 'assets/google-consent-v1.js');
@@ -200,10 +199,10 @@ if (/DELF A1[–-]C2|Morning 5\s*am/i.test(professionalsPage)) failures.push('Pr
 for (const path of ['index.html', 'blog.html', 'exam-calendar/index.html', 'language-quiz/index.html']) {
   const html = readFileSync(resolve(root, path), 'utf8');
   const bannerIndex = html.indexOf('/assets/premium-page-banners.css');
-  const themeIndex = html.indexOf('/assets/coffee-gold-theme-v1.css');
+  const themeIndex = html.indexOf('/assets/light-theme-v3.css');
   const mobileIndex = html.indexOf('/assets/mobile-polish-v1.css');
-  if (bannerIndex !== -1 && bannerIndex > themeIndex) failures.push(`${path} loads its banner stylesheet after the coffee-and-gold theme.`);
-  if (mobileIndex !== -1 && mobileIndex < themeIndex) failures.push(`${path} loads mobile polish before the coffee-and-gold theme.`);
+  if (bannerIndex !== -1 && bannerIndex > themeIndex) failures.push(`${path} loads its banner stylesheet after the light theme.`);
+  if (mobileIndex !== -1 && mobileIndex < themeIndex) failures.push(`${path} loads mobile polish before the light theme.`);
 }
 const sourceExamCalendar = readFileSync(resolve(root, 'exam-calendar/index.html'), 'utf8');
 if (!sourceExamCalendar.includes('/assets/mobile-table-labels-v1.js')) failures.push('Exam calendar is missing its mobile table label helper.');

@@ -271,7 +271,7 @@ footer#siteFooter .social-row .soc svg {
     overflow: hidden;
     border: 1px solid rgba(226, 189, 101, .20);
     border-radius: 12px;
-    background: rgba(37, 22, 15, .74);
+    background: var(--difl-surface, #fff);
   }
   .dates-table td,
   .dates-table td:first-child {
@@ -283,14 +283,14 @@ footer#siteFooter .social-row .soc svg {
     border: 0 !important;
     border-bottom: 1px solid rgba(226, 189, 101, .12) !important;
     overflow-wrap: anywhere;
-    color: #d8c7b2 !important;
+    color: var(--difl-text, #17242d) !important;
   }
   .dates-table td:last-child {
     border-bottom: 0 !important;
   }
   .dates-table td::before {
     content: attr(data-label);
-    color: #e8c978;
+    color: var(--difl-gold, #76540f);
     font: 700 9px/1.35 'DM Sans', sans-serif;
     letter-spacing: .7px;
     text-transform: uppercase;
