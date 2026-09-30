@@ -63,6 +63,7 @@ function findDivBounds(html, id) {
 
 function staticLanguageBody(route) {
   const cleanTitle = route.title.replace(/\s*\|\s*DIFL(?:\s+Jaipur)?$/i, '');
+  const displayHeading = route.heading || cleanTitle;
   const image720 = route.image.replace(/-premium\.webp$/i, '-720.webp');
   const image1200 = route.image.replace(/-premium\.webp$/i, '-1200.webp');
   const image2160 = route.image.replace(/-premium\.webp$/i, '-2160.webp');
@@ -71,7 +72,7 @@ function staticLanguageBody(route) {
       <img class="premium-page-banner__media" src="${escapeHtmlAttribute(route.image)}" srcset="${escapeHtmlAttribute(image720)} 720w, ${escapeHtmlAttribute(image1200)} 1200w, ${escapeHtmlAttribute(image2160)} 2160w" sizes="100vw" alt="${escapeHtmlAttribute(cleanTitle)}" width="2400" height="800" loading="eager" fetchpriority="high" decoding="async">
       <div class="premium-page-banner__copy">
         <div class="premium-page-banner__eyebrow">Language Course · Jaipur &amp; Online</div>
-        <h1 id="primary-h1" class="premium-page-banner__title">${escapeHtmlAttribute(cleanTitle)}</h1>
+        <h1 id="primary-h1" class="premium-page-banner__title">${escapeHtmlAttribute(displayHeading)}</h1>
         <div class="premium-page-banner__tags"><span>Speaking</span><span>Reading &amp; Writing</span><span>Exam Preparation</span></div>
       </div>
     </div>

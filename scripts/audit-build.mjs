@@ -361,6 +361,7 @@ for (const path of ['sitemap.xml', 'robots.txt', 'blog.html', 'llms-full.txt']) 
 const builtHome = readFileSync(resolve(builtRoot, 'index.html'), 'utf8');
 if (!builtHome.includes('dateModified":"2026-09-30"')) failures.push('Generated homepage structured data is stale.');
 if ((staticMarkup(builtHome).match(/<h1\b/gi) || []).length !== 1) failures.push('Generated homepage must contain exactly one H1.');
+if (!staticMarkup(builtHome).includes('You Already Have Wings.<br><em>We Teach You How to Fly.</em>')) failures.push('Generated homepage is missing the approved creative H1.');
 const searchTitles = new Map();
 const rememberSearchTitle = (path, html) => {
   const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.replace(/&amp;/g, '&').trim() || '';
@@ -387,10 +388,15 @@ for (const route of routeSeoPages) {
   if (!html.includes(`href="https://mydifl.com${route.path}"`)) failures.push(`${route.path} is missing its canonical URL.`);
   const routeMarkup = staticMarkup(html);
   if ((routeMarkup.match(/<h1\b/gi) || []).length !== 1) failures.push(`${route.path} must contain exactly one static H1.`);
+  if (route.heading && !routeMarkup.includes(`>${route.heading}</h1>`)) failures.push(`${route.path} is missing its approved creative language heading.`);
   if ((routeMarkup.match(/id=["']page-[^"']+["']/gi) || []).length !== 1) failures.push(`${route.path} still contains hidden SPA page bodies.`);
   if (!html.includes(`"url":"https://mydifl.com${route.path}"`)) failures.push(`${route.path} has contradictory WebPage structured data.`);
   if (html.includes('/blog.html') || html.includes('/?page=')) failures.push(`${route.path} still links through a legacy route.`);
 }
+const standaloneCreativeHeadings = new Map([
+  ['/language-quiz/', 'Discover What You <em>Already Know</em>'],
+  ['/exam-calendar/', 'Every Goal Begins with <em>a Clear Plan</em>'],
+]);
 for (const path of [
   '/privacy-policy/',
   '/language-quiz/',
@@ -405,7 +411,10 @@ for (const path of [
   const html = readFileSync(htmlPath, 'utf8');
   rememberSearchTitle(path, html);
   if (!html.includes(`href="https://mydifl.com${path}"`)) failures.push(`${path} is missing its canonical URL.`);
-  if ((staticMarkup(html).match(/<h1\b/gi) || []).length !== 1) failures.push(`${path} must contain exactly one static H1.`);
+  const standaloneMarkup = staticMarkup(html);
+  if ((standaloneMarkup.match(/<h1\b/gi) || []).length !== 1) failures.push(`${path} must contain exactly one static H1.`);
+  const creativeHeading = standaloneCreativeHeadings.get(path);
+  if (creativeHeading && !standaloneMarkup.includes(creativeHeading)) failures.push(`${path} is missing its approved creative H1.`);
 }
 for (const post of blogPosts) {
   const path = `/blog/${post.id}/`;

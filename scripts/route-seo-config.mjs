@@ -23,6 +23,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-french/',
     page: 'french',
+    heading: '🇫🇷 Learn French',
     title: 'French Language Course in Jaipur & Online | DIFL',
     description: 'Learn French with structured classes for beginners through advanced learners, including DELF and DALF preparation in Jaipur and online.',
     image: '/assets/language-banners/french-premium.webp',
@@ -30,6 +31,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-german/',
     page: 'german',
+    heading: '🇩🇪 Learn German',
     title: 'German Language Course in Jaipur & Online | DIFL',
     description: 'Study German from beginner to advanced levels with practical speaking and Goethe exam preparation at DIFL Jaipur or through online classes.',
     image: '/assets/language-banners/german-premium.webp',
@@ -37,6 +39,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-japanese/',
     page: 'japanese',
+    heading: '🇯🇵 Learn Japanese',
     title: 'Japanese Language Course & JLPT Classes | DIFL Jaipur',
     description: 'Learn Japanese script, conversation and grammar with structured JLPT preparation from N5 upward at DIFL Jaipur and through online classes.',
     image: '/assets/language-banners/japanese-premium.webp',
@@ -44,6 +47,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-korean-language/',
     page: 'korean',
+    heading: '🇰🇷 Learn Korean',
     title: 'Korean Language Course & TOPIK Classes | DIFL Jaipur',
     description: 'Learn Hangul, Korean conversation and grammar with structured TOPIK preparation at DIFL Jaipur or through instructor-led online classes.',
     image: '/assets/language-banners/korean-premium.webp',
@@ -51,6 +55,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-mandarin-chinese/',
     page: 'chinese',
+    heading: '🇨🇳 Learn Mandarin Chinese',
     title: 'Mandarin Chinese Course & HSK Classes | DIFL Jaipur',
     description: 'Learn Mandarin pronunciation, characters, conversation and grammar with structured HSK preparation at DIFL Jaipur and online.',
     image: '/assets/language-banners/chinese-premium.webp',
@@ -58,6 +63,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-spanish/',
     page: 'spanish',
+    heading: '🇪🇸 Learn Spanish',
     title: 'Spanish Language Course in Jaipur & Online | DIFL',
     description: 'Build practical Spanish speaking, listening, reading and writing skills through structured classes at DIFL Jaipur or online.',
     image: '/assets/language-banners/spanish-premium.webp',
@@ -65,6 +71,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-italian-language/',
     page: 'italian',
+    heading: '🇮🇹 Learn Italian',
     title: 'Italian Language Course in Jaipur & Online | DIFL',
     description: 'Learn Italian conversation, grammar and culture with structured beginner to advanced classes at DIFL Jaipur and online.',
     image: '/assets/language-banners/italian-premium.webp',
@@ -72,6 +79,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-russian-language/',
     page: 'russian',
+    heading: '🇷🇺 Learn Russian',
     title: 'Russian Language Course in Jaipur & Online | DIFL',
     description: 'Learn the Cyrillic alphabet, Russian conversation and grammar through structured classes at DIFL Jaipur or online.',
     image: '/assets/language-banners/russian-premium.webp',
@@ -79,6 +87,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-arabic/',
     page: 'arabic',
+    heading: '🇸🇦 Learn Arabic',
     title: 'Arabic Language Course in Jaipur & Online | DIFL',
     description: 'Learn Arabic script, pronunciation, conversation and grammar through structured classes at DIFL Jaipur or online.',
     image: '/assets/language-banners/arabic-premium.webp',
@@ -86,6 +95,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-thai-language/',
     page: 'thai',
+    heading: '🇹🇭 Learn Thai',
     title: 'Thai Language Course in Jaipur & Online | DIFL',
     description: 'Learn Thai script, pronunciation and everyday conversation through structured classes at DIFL Jaipur or online.',
     image: '/assets/language-banners/thai-premium.webp',
@@ -93,6 +103,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-hindi-language/',
     page: 'hindi',
+    heading: '🇮🇳 Learn Hindi',
     title: 'Hindi Language Course in Jaipur & Online | DIFL',
     description: 'Learn spoken and written Hindi with practical, structured classes for Indian and international learners in Jaipur or online.',
     image: '/assets/language-banners/hindi-premium.webp',
@@ -100,6 +111,7 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-english/',
     page: 'english',
+    heading: '🇬🇧 Learn English',
     title: 'English Language & IELTS Classes in Jaipur | DIFL',
     description: 'Improve English speaking, grammar and professional communication with structured classes and IELTS-focused support at DIFL Jaipur.',
     image: '/assets/language-banners/english-premium.webp',
