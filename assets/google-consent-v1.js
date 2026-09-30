@@ -152,7 +152,7 @@
     if (document.querySelector('link[data-difl-consent-style]')) return;
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/assets/privacy-consent-v1.css?v=20260930-light';
+    link.href = '/assets/privacy-consent-v1.css?v=20260930-light2';
     link.setAttribute('data-difl-consent-style', '1');
     (document.head || document.documentElement).appendChild(link);
   }

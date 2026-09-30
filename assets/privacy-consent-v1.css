@@ -8,8 +8,8 @@
   box-shadow: 0 16px 42px rgba(31,49,54,.18);
 }
 .difl-consent .difl-consent__title { color: #17242d; }
-.difl-consent .difl-consent__button--primary { color: #fff; background: #075b68; }
-.difl-consent .difl-consent__button--secondary { color: #075b68; background: #fff; border-color: #075b68; }
+.difl-consent .difl-consent__button--primary { color: #fff !important; background: #075b68 !important; }
+.difl-consent .difl-consent__button--secondary { color: #075b68 !important; background: #fff !important; border-color: #075b68; }
 .difl-consent .difl-consent__button:focus-visible,
 .difl-consent .difl-consent__link:focus-visible { outline-color: #075b68; }
 .difl-consent[hidden] { display: none !important; }
