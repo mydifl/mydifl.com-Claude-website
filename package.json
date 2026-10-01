@@ -19,7 +19,7 @@
     "@supabase/supabase-js": "^2.112.4",
     "astro": "^7.3.2",
     "resend": "^6.24.0",
-    "zod": "4.4.3"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@emnapi/core": "1.11.3",
