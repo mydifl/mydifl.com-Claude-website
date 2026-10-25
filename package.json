@@ -15,11 +15,11 @@
     "audit": "node scripts/audit-build.mjs"
   },
   "dependencies": {
-    "@astrojs/vercel": "^11.0.8",
-    "@supabase/supabase-js": "^2.112.4",
-    "astro": "^7.3.2",
+    "@astrojs/vercel": "^11.0.16",
+    "@supabase/supabase-js": "^2.118.0",
+    "astro": "^7.4.2",
     "resend": "^6.24.0",
-    "zod": "4.4.3"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@emnapi/core": "1.11.3",
@@ -28,9 +28,12 @@
     "typescript": "5.9.3"
   },
   "overrides": {
-    "devalue": "5.9.1",
-    "fast-uri": "3.1.8",
+    "devalue": "6.0.3",
+    "fast-uri": "3.1.9",
     "svgo": "4.1.0",
+    "@vercel/cli-config": {
+      "zod": "4.6.7"
+    },
     "@vercel/routing-utils": {
       "path-to-regexp": "npm:path-to-regexp@6.3.0"
     }
