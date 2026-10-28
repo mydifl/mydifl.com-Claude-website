@@ -263,6 +263,11 @@
     addStyles();
     createLauncher();
     watchTawkLayout();
+    // Load invisibly as soon as the page is ready. This lets Tawk.to register
+    // a visitor (and notify the staff dashboard) without showing its native
+    // launcher, attention grabber, or a chat panel until the visitor chooses
+    // the DIFL Chat button.
+    loadTawk();
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && document.body.classList.contains('difl-tawk-open')) requestClose();
     });

@@ -14,6 +14,7 @@
   window.__DIFL_CONSENT_V1__ = true;
 
   var STORAGE_KEY = 'difl_consent_v1';
+  var COOKIE_NAME = 'difl_cookie_choice';
   var CONSENT_VERSION = 1;
   var CONSENT_MAX_AGE_MS = 180 * 24 * 60 * 60 * 1000;
   var GA4_ID = 'G-WZ5KK1PD8R';
@@ -64,23 +65,33 @@
   }
 
   function readStoredChoice() {
+    var localChoice = 'unset';
     try {
       var raw = window.localStorage.getItem(STORAGE_KEY);
-      if (!raw) return 'unset';
-      var record = JSON.parse(raw);
-      var isCurrent = record && record.version === CONSENT_VERSION;
-      var updatedAt = Date.parse(record && record.updatedAt);
-      var isFresh = Number.isFinite(updatedAt) && Date.now() - updatedAt < CONSENT_MAX_AGE_MS;
-      var isValid = record.choice === 'accepted' || record.choice === 'rejected';
-      if (isCurrent && isFresh && isValid) return record.choice;
-      window.localStorage.removeItem(STORAGE_KEY);
+      if (raw) {
+        var record = JSON.parse(raw);
+        var isCurrent = record && record.version === CONSENT_VERSION;
+        var updatedAt = Date.parse(record && record.updatedAt);
+        var isFresh = Number.isFinite(updatedAt) && Date.now() - updatedAt < CONSENT_MAX_AGE_MS;
+        var isValid = record.choice === 'accepted' || record.choice === 'rejected';
+        if (isCurrent && isFresh && isValid) localChoice = record.choice;
+        else window.localStorage.removeItem(STORAGE_KEY);
+      }
     } catch (_error) {
       /* Storage can be unavailable in private or hardened browser modes. */
     }
-    return 'unset';
+    if (localChoice !== 'unset') return localChoice;
+    return readCookieChoice();
   }
 
   function storeChoice(choice) {
+    var expires = new Date(Date.now() + CONSENT_MAX_AGE_MS).toUTCString();
+    try {
+      document.cookie = COOKIE_NAME + '=' + encodeURIComponent(choice) +
+        '; expires=' + expires + '; path=/; SameSite=Lax; Secure';
+    } catch (_error) {
+      /* The browser may block all persistent storage. */
+    }
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
         choice: choice,
@@ -89,6 +100,17 @@
       }));
     } catch (_error) {
       /* The consent command still applies for the current page session. */
+    }
+  }
+
+  function readCookieChoice() {
+    try {
+      var escapedName = COOKIE_NAME.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var match = document.cookie.match(new RegExp('(?:^|;\\s*)' + escapedName + '=([^;]*)'));
+      var choice = match ? decodeURIComponent(match[1]) : '';
+      return choice === 'accepted' || choice === 'rejected' ? choice : 'unset';
+    } catch (_error) {
+      return 'unset';
     }
   }
 
@@ -170,13 +192,13 @@
     banner.hidden = true;
     banner.innerHTML =
       '<div class="difl-consent__copy">' +
-        '<strong class="difl-consent__title">Your privacy choices</strong>' +
-        '<p>Essential storage keeps your choice. With permission, Google Analytics and Google Ads use limited measurement storage to help DIFL understand visits and campaign results. This choice does not enable personalised advertising.</p>' +
+        '<strong class="difl-consent__title">Cookie preferences</strong>' +
+        '<p>We use essential cookies to remember this choice. If you allow analytics cookies, Google Analytics and Google Ads can measure visits and campaign results for DIFL. We do not use this choice for personalised advertising.</p>' +
         '<a class="difl-consent__link" href="/privacy-policy/">Read the privacy policy</a>' +
       '</div>' +
       '<div class="difl-consent__actions">' +
-        '<button class="difl-consent__button difl-consent__button--primary" type="button" data-difl-consent-accept>Accept measurement</button>' +
-        '<button class="difl-consent__button difl-consent__button--secondary" type="button" data-difl-consent-reject>Reject non-essential</button>' +
+        '<button class="difl-consent__button difl-consent__button--primary" type="button" data-difl-consent-accept>Allow analytics cookies</button>' +
+        '<button class="difl-consent__button difl-consent__button--secondary" type="button" data-difl-consent-reject>Essential cookies only</button>' +
       '</div>';
 
     banner.querySelector('[data-difl-consent-accept]').addEventListener('click', function () {
