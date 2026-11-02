@@ -199,7 +199,7 @@ function replaceRouteStructuredData(html, route) {
     name: route.title.replace(/\s*\|\s*DIFL$/, ''),
     description: route.description,
     url: canonical,
-    inLanguage: 'en-IN',
+    inLanguage: route.language === 'hi' ? 'hi-IN' : 'en-IN',
     availableLanguage: route.courseLanguage || route.heading?.replace(/^.*Learn\s+/, '') || route.page,
     courseMode: ['online', 'offline', 'hybrid'],
     provider: { '@id': 'https://mydifl.com/#organisation' },
