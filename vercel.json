@@ -134,6 +134,12 @@
     },
     {
       "source": "/",
+      "has": [{ "type": "query", "key": "page", "value": "italian-hindi" }],
+      "destination": "/italian-course-hindi/",
+      "permanent": true
+    },
+    {
+      "source": "/",
       "has": [{ "type": "query", "key": "page", "value": "russian" }],
       "destination": "/learn-russian-language/",
       "permanent": true

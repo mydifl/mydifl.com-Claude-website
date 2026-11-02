@@ -49,7 +49,7 @@ const escapeHtml = (value) => String(value)
   .replaceAll('<', '&lt;')
   .replaceAll('>', '&gt;');
 
-const targetLanguagePages = new Set(['french', 'german', 'japanese', 'spanish', 'italian']);
+const targetLanguagePages = new Set(['french', 'german', 'japanese', 'spanish', 'italian', 'italian-hindi']);
 
 function findDivBounds(html, id) {
   const openingPattern = new RegExp(`<div\\b[^>]*\\bid=["']${escapeRegExp(`page-${id}`)}["'][^>]*>`, 'i');
@@ -112,6 +112,40 @@ function staticLanguageBody(route) {
   </main>`;
 }
 
+function staticHindiItalianBody(route) {
+  const image720 = route.image.replace(/-premium\.webp$/i, '-720.webp');
+  const image1200 = route.image.replace(/-premium\.webp$/i, '-1200.webp');
+  const image2160 = route.image.replace(/-premium\.webp$/i, '-2160.webp');
+  const detail = route.seo;
+  return `<main id="langPageContent" lang="hi">
+    <div class="premium-page-banner" role="region" aria-label="${escapeHtmlAttribute(route.heading)}">
+      <img class="premium-page-banner__media" src="${escapeHtmlAttribute(route.image)}" srcset="${escapeHtmlAttribute(image720)} 720w, ${escapeHtmlAttribute(image1200)} 1200w, ${escapeHtmlAttribute(image2160)} 2160w" sizes="100vw" alt="DIFL इटालियन भाषा कोर्स" width="2400" height="800" loading="eager" fetchpriority="high" decoding="async">
+      <div class="premium-page-banner__copy">
+        <div class="premium-page-banner__eyebrow">इटालियन भाषा · जयपुर और ऑनलाइन</div>
+        <h1 id="primary-h1" class="premium-page-banner__title">${escapeHtml(route.heading)}</h1>
+        <div class="premium-page-banner__tags"><span>बोलना</span><span>पढ़ना और लिखना</span><span>परीक्षा तैयारी</span></div>
+      </div>
+    </div>
+    <section style="background:var(--ink)"><div class="sc">
+      <div class="eyebrow">DIFL इटालियन कोर्स</div>
+      <h2>इटालियन <em>सीखना शुरू करें</em></h2>
+      <p class="lead" style="max-width:820px">${escapeHtml(detail.intro)} ऑनलाइन, ऑफलाइन और हाइब्रिड विकल्प वर्तमान बैच उपलब्धता के अनुसार बताए जाते हैं।</p>
+      <div class="g3" style="margin-top:34px">
+        <div class="fcard"><div class="ficon">🗣️</div><div><h3>व्यावहारिक बातचीत</h3><p>शब्दावली और व्याकरण के साथ बोलने तथा सुनने की प्रैक्टिस।</p></div></div>
+        <div class="fcard"><div class="ficon">🧠</div><div><h3>ATMA–TTP तरीका</h3><p>Absolute Topic Mastery Approach और Thought Translation Process समझ से अपने वाक्य बनाने तक मार्गदर्शन देते हैं।</p></div></div>
+        <div class="fcard"><div class="ficon">🎯</div><div><h3>लक्ष्य के अनुसार योजना</h3><p>आपके स्तर और उद्देश्य के अनुसार पाठ्यक्रम तथा परीक्षा-तैयारी का सुझाव।</p></div></div>
+      </div>
+      <div class="g2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px">
+        <div class="course-box" style="margin-top:0"><h3>कोर्स में क्या सीखेंगे</h3><ul style="margin:0;padding-left:19px;color:var(--cream);line-height:1.9">${detail.syllabus.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
+        <div class="course-box" style="margin-top:0"><h3>परीक्षा तैयारी</h3><p style="color:var(--cream);line-height:1.75;margin:0">लक्ष्य के अनुसार ${detail.exams.map(escapeHtml).join(', ')} की तैयारी शामिल की जा सकती है। परीक्षा की तारीख, पंजीकरण, पात्रता और परिणाम संबंधित आधिकारिक संस्था तय करती है।</p></div>
+      </div>
+      <section aria-labelledby="italian-hindi-faq" style="margin-top:48px"><div class="eyebrow">सामान्य प्रश्न</div><h2 id="italian-hindi-faq">इटालियन कोर्स के बारे में</h2><div style="display:grid;gap:14px;max-width:900px">${detail.faq.map(([question, answer]) => `<article class="fcard" style="display:block"><h3 style="margin-bottom:8px">${escapeHtml(question)}</h3><p style="margin:0">${escapeHtml(answer)}</p></article>`).join('')}</div></section>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px"><a class="btn-g" href="/contact/" style="text-decoration:none">कोर्स के लिए संपर्क करें →</a><a class="btn-o" href="tel:+919929515151" style="text-decoration:none">📞 9929-51 51 51</a></div>
+      <p style="font-size:13px;color:var(--gm);line-height:1.65;margin-top:20px">DIFL भाषा सीखने और परीक्षा-तैयारी में सहायता करता है। नौकरी, वीज़ा, प्रवेश या परीक्षा परिणाम की कोई गारंटी नहीं दी जाती।</p>
+    </div></section>
+  </main>`;
+}
+
 function makeRouteSpecific(html, route) {
   const targetId = directPageIds.has(route.page) ? route.page : 'lang';
   const bounds = topLevelPageIds.map((id) => ({ id, ...findDivBounds(html, id) }));
@@ -125,7 +159,7 @@ function makeRouteSpecific(html, route) {
   );
 
   if (targetId === 'lang') {
-    html = html.replace(/<div id="langPageContent"><\/div>/i, staticLanguageBody(route));
+    html = html.replace(/<div id="langPageContent"><\/div>/i, route.page === 'italian-hindi' ? staticHindiItalianBody(route) : staticLanguageBody(route));
   }
 
   html = html.replace(
@@ -154,7 +188,7 @@ function replaceRouteStructuredData(html, route) {
     description: route.description,
     url: canonical,
     image,
-    inLanguage: 'en-IN',
+    inLanguage: route.language === 'hi' ? 'hi-IN' : 'en-IN',
     dateModified: targetLanguagePages.has(route.page) ? '2026-11-02' : '2026-09-30',
     isPartOf: { '@id': 'https://mydifl.com/#website' },
     about: { '@id': 'https://mydifl.com/#organisation' },
@@ -166,7 +200,7 @@ function replaceRouteStructuredData(html, route) {
     description: route.description,
     url: canonical,
     inLanguage: 'en-IN',
-    availableLanguage: route.heading?.replace(/^.*Learn\s+/, '') || route.page,
+    availableLanguage: route.courseLanguage || route.heading?.replace(/^.*Learn\s+/, '') || route.page,
     courseMode: ['online', 'offline', 'hybrid'],
     provider: { '@id': 'https://mydifl.com/#organisation' },
   } : null;
@@ -211,8 +245,11 @@ function renderRoutePage(template, route) {
   let html = template;
 
   html = html.replace(/<html\b([^>]*)>/i, (tag, attributes) => {
-    const cleanAttributes = attributes.replace(/\sdata-initial-page=(?:"[^"]*"|'[^']*')/i, '');
-    return `<html${cleanAttributes} data-initial-page="${escapeHtmlAttribute(route.page)}">`;
+    const cleanAttributes = attributes
+      .replace(/\sdata-initial-page=(?:"[^"]*"|'[^']*')/i, '')
+      .replace(/\slang=(?:"[^"]*"|'[^']*')/i, '');
+    const staticRoute = route.staticOnly ? ' data-static-route="true"' : '';
+    return `<html${cleanAttributes} lang="${escapeHtmlAttribute(route.language || 'en')}" data-initial-page="${escapeHtmlAttribute(route.page)}"${staticRoute}>`;
   });
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtmlAttribute(route.title)}</title>`);
   html = replaceMeta(html, 'name', 'description', route.description);

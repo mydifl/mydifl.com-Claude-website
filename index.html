@@ -2814,6 +2814,11 @@ window.addEventListener('DOMContentLoaded',()=>{
   initReveal();
   initCounter();
 
+  // Some paid-search landing pages are intentionally server-rendered in Hindi.
+  // Keep their verified initial HTML intact rather than replacing it with the
+  // general English SPA course view after JavaScript becomes available.
+  if(document.documentElement.dataset.staticRoute==='true') return;
+
   const params=new URLSearchParams(window.location.search);
   const queryPage=params.get('page');
   const cleanPath=window.location.pathname==='/' ? '/' : `${window.location.pathname.replace(/\/+$/,'')}/`;
