@@ -44,6 +44,13 @@ const topLevelPageIds = Object.freeze([
 const directPageIds = new Set(topLevelPageIds.filter((id) => id !== 'lang' && id !== 'blog'));
 const publicRoutesByPage = new Map([homeRoute, ...routeSeoPages].map((route) => [route.page, route.path]));
 
+const escapeHtml = (value) => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;');
+
+const targetLanguagePages = new Set(['french', 'german', 'japanese', 'spanish', 'italian']);
+
 function findDivBounds(html, id) {
   const openingPattern = new RegExp(`<div\\b[^>]*\\bid=["']${escapeRegExp(`page-${id}`)}["'][^>]*>`, 'i');
   const opening = openingPattern.exec(html);
@@ -67,6 +74,15 @@ function staticLanguageBody(route) {
   const image720 = route.image.replace(/-premium\.webp$/i, '-720.webp');
   const image1200 = route.image.replace(/-premium\.webp$/i, '-1200.webp');
   const image2160 = route.image.replace(/-premium\.webp$/i, '-2160.webp');
+  const detail = route.seo;
+  const examList = detail?.exams || ['International proficiency examinations'];
+  const syllabus = detail?.syllabus || [
+    'Practical speaking and listening',
+    'Structured reading and writing practice',
+    'A level plan matched to the learner’s goal',
+  ];
+  const faq = detail?.faq || [];
+  const related = detail?.links || [['Browse all language courses', '/learn-foreign-languages/']];
   return `<main id="langPageContent">
     <div class="premium-page-banner" role="region" aria-label="${escapeHtmlAttribute(cleanTitle)}">
       <img class="premium-page-banner__media" src="${escapeHtmlAttribute(route.image)}" srcset="${escapeHtmlAttribute(image720)} 720w, ${escapeHtmlAttribute(image1200)} 1200w, ${escapeHtmlAttribute(image2160)} 2160w" sizes="100vw" alt="${escapeHtmlAttribute(cleanTitle)}" width="2400" height="800" loading="eager" fetchpriority="high" decoding="async">
@@ -78,13 +94,19 @@ function staticLanguageBody(route) {
     </div>
     <section style="background:var(--ink)"><div class="sc">
       <div class="eyebrow">Structured Language Learning</div>
-      <h2>Learn with <em>DIFL Jaipur</em></h2>
-      <p class="lead" style="max-width:760px">${escapeHtmlAttribute(route.description)} Course plans are matched to the learner's current level, goals and preferred online, offline or hybrid format.</p>
+      <h2>${escapeHtml(displayHeading)} <em>Classes in Jaipur &amp; Online</em></h2>
+      <p class="lead" style="max-width:800px">${escapeHtml(detail?.intro || route.description)} Course plans are matched to the learner's current level, goals and preferred online, offline or hybrid format.</p>
       <div class="g3" style="margin-top:34px">
-        <div class="fcard"><div class="ficon">🗣️</div><div><h3>Practical Communication</h3><p>Build speaking and listening alongside vocabulary and grammar.</p></div></div>
-        <div class="fcard"><div class="ficon">📚</div><div><h3>Structured Progress</h3><p>Develop reading and writing through guided lessons and regular practice.</p></div></div>
-        <div class="fcard"><div class="ficon">🎯</div><div><h3>Goal-Based Planning</h3><p>Prepare for a suitable level or examination after an initial assessment.</p></div></div>
+        <div class="fcard"><div class="ficon">🗣️</div><div><h3>Practical Communication</h3><p>Speaking and listening are developed alongside vocabulary and grammar from the early stages.</p></div></div>
+        <div class="fcard"><div class="ficon">🧠</div><div><h3>ATMA–TTP Approach</h3><p>DIFL’s Absolute Topic Mastery Approach and Thought Translation Process use guided practice to move learners from understanding toward original expression.</p></div></div>
+        <div class="fcard"><div class="ficon">🎯</div><div><h3>Goal-Based Planning</h3><p>Prepare for a suitable level or examination after an initial assessment; outcomes depend on each learner’s practice and the official exam body.</p></div></div>
       </div>
+      <div class="g2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px">
+        <div class="course-box" style="margin-top:0"><h3>What You Will Practise</h3><ul style="margin:0;padding-left:19px;color:var(--cream);line-height:1.8">${syllabus.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
+        <div class="course-box" style="margin-top:0"><h3>Certification &amp; Exam Preparation</h3><p style="color:var(--cream);line-height:1.75;margin:0 0 12px">Preparation can be included for an exam that fits your goal:</p><p style="color:var(--gold);line-height:1.8;margin:0"><strong>${examList.map(escapeHtml).join(' · ')}</strong></p><p style="font-size:13px;color:var(--gm);line-height:1.65;margin:15px 0 0">Exam dates, eligibility, registration and results are controlled by the respective official body and should be verified before applying.</p></div>
+      </div>
+      ${faq.length ? `<section aria-labelledby="course-faq-heading" style="margin-top:48px"><div class="eyebrow">Course FAQs</div><h2 id="course-faq-heading">Questions About ${escapeHtml(displayHeading)}</h2><div style="display:grid;gap:14px;max-width:900px">${faq.map(([question, answer]) => `<article class="fcard" style="display:block"><h3 style="margin-bottom:8px">${escapeHtml(question)}</h3><p style="margin:0">${escapeHtml(answer)}</p></article>`).join('')}</div></section>` : ''}
+      <nav aria-label="Related DIFL pages" style="margin-top:34px;display:flex;gap:12px;flex-wrap:wrap">${related.map(([label, href]) => `<a href="${escapeHtmlAttribute(href)}" class="btn-o" style="text-decoration:none">${escapeHtml(label)} →</a>`).join('')}</nav>
       <p style="margin-top:34px"><a class="btn-g" href="/contact/" style="text-decoration:none">Ask About Current Batches →</a></p>
     </div></section>
   </main>`;
@@ -133,11 +155,29 @@ function replaceRouteStructuredData(html, route) {
     url: canonical,
     image,
     inLanguage: 'en-IN',
-    dateModified: '2026-09-30',
+    dateModified: targetLanguagePages.has(route.page) ? '2026-11-02' : '2026-09-30',
     isPartOf: { '@id': 'https://mydifl.com/#website' },
     about: { '@id': 'https://mydifl.com/#organisation' },
   };
-  const webPageScript = `<script type="application/ld+json">${JSON.stringify(webPage)}</script>`;
+  const courseSchema = targetLanguagePages.has(route.page) && route.seo ? {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: route.title.replace(/\s*\|\s*DIFL$/, ''),
+    description: route.description,
+    url: canonical,
+    inLanguage: 'en-IN',
+    availableLanguage: route.heading?.replace(/^.*Learn\s+/, '') || route.page,
+    courseMode: ['online', 'offline', 'hybrid'],
+    provider: { '@id': 'https://mydifl.com/#organisation' },
+  } : null;
+  const faqSchema = targetLanguagePages.has(route.page) && route.seo?.faq ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: route.seo.faq.map(([name, text]) => ({
+      '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text },
+    })),
+  } : null;
+  const webPageScript = `<script type="application/ld+json">${JSON.stringify(webPage)}</script>${courseSchema ? `<script type="application/ld+json">${JSON.stringify(courseSchema)}</script>` : ''}${faqSchema ? `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ''}`;
   let replaced = false;
   html = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, (block) => {
     if (block.includes('"@type":"WebPage"')) {

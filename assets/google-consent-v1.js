@@ -305,6 +305,12 @@
       send_to: MEASUREMENT_SEND_TO,
       channel: safeChannel
     });
+    // Keep the existing generic event, and also provide a stable, privacy-safe
+    // GA4 event name for the verified phone-click conversion import. No phone
+    // number or other visitor-provided data is sent with either event.
+    if (safeChannel === 'phone') {
+      window.gtag('event', 'tel', { send_to: MEASUREMENT_SEND_TO });
+    }
     return true;
   }
 
@@ -318,6 +324,11 @@
       send_to: MEASUREMENT_SEND_TO,
       method: safeMethod
     });
+    // `contact_us` is the established GA4 conversion name in the connected
+    // Google Ads account. It is emitted only after a completed enquiry form.
+    if (safeMethod === 'web_form') {
+      window.gtag('event', 'contact_us', { send_to: MEASUREMENT_SEND_TO });
+    }
     return true;
   }
 
