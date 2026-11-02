@@ -127,11 +127,11 @@ function staticHindiItalianBody(route) {
       </div>
     </div>
     <section style="background:var(--ink)"><div class="sc">
-      <div class="eyebrow">DIFL इटालियन कोर्स</div>
+      <div class="eyebrow">DIFL · 55 वर्षों की भाषा-शिक्षण परंपरा</div>
       <h2>इटालियन <em>सीखना शुरू करें</em></h2>
       <p class="lead" style="max-width:820px">${escapeHtml(detail.intro)} ऑनलाइन, ऑफलाइन और हाइब्रिड विकल्प वर्तमान बैच उपलब्धता के अनुसार बताए जाते हैं।</p>
       <div class="g3" style="margin-top:34px">
-        <div class="fcard"><div class="ficon">🗣️</div><div><h3>व्यावहारिक बातचीत</h3><p>शब्दावली और व्याकरण के साथ बोलने तथा सुनने की प्रैक्टिस।</p></div></div>
+        <div class="fcard"><div class="ficon">🗣️</div><div><h3>हिंदी में सरल समझ</h3><p>पहले से अंग्रेज़ी जानना आवश्यक नहीं है। विषयों को हिंदी में आसान तरीके से समझाया जाता है।</p></div></div>
         <div class="fcard"><div class="ficon">🧠</div><div><h3>ATMA–TTP तरीका</h3><p>Absolute Topic Mastery Approach और Thought Translation Process समझ से अपने वाक्य बनाने तक मार्गदर्शन देते हैं।</p></div></div>
         <div class="fcard"><div class="ficon">🎯</div><div><h3>लक्ष्य के अनुसार योजना</h3><p>आपके स्तर और उद्देश्य के अनुसार पाठ्यक्रम तथा परीक्षा-तैयारी का सुझाव।</p></div></div>
       </div>
