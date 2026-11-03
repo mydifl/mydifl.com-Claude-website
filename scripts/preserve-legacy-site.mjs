@@ -159,8 +159,8 @@ function staticHindiItalianBody(route) {
             <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">श्रीमती कमलेश शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">DIFL परिवार</span></figcaption>
           </figure>
           <figure class="fcard" style="display:block;margin:0;padding:12px;overflow:hidden">
-            <img src="/assets/team-priyanshu-sharma.jpg" alt="DIFL निदेशक, प्रियंशु शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
-            <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">प्रियंशु शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">निदेशक, DIFL</span></figcaption>
+            <img src="/assets/team-priyanshu-sharma.jpg" alt="DIFL निदेशक, प्रियांशु शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
+            <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">प्रियांशु शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">निदेशक, DIFL</span></figcaption>
           </figure>
           <figure class="fcard" style="display:block;margin:0;padding:12px;overflow:hidden">
             <img src="/assets/team-roopshikha-sharma.jpg" alt="रूपशिखा शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
