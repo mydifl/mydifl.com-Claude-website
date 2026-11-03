@@ -16,8 +16,8 @@ export const routeSeoPages = Object.freeze([
   {
     path: '/learn-foreign-languages/',
     page: 'all-courses',
-    title: 'Foreign Language Courses in Jaipur & Online | DIFL',
-    description: 'Compare DIFL courses in French, German, Japanese, Korean, Spanish, Mandarin, Italian, Russian, Arabic, Thai, Hindi and English.',
+    title: '12 Foreign Language Courses in Jaipur & Online | DIFL',
+    description: 'Explore DIFL’s 12 language courses in Jaipur and online: French, Japanese, German, Spanish, Italian, English, Mandarin, Korean, Arabic, Russian, Thai and Hindi.',
     image: '/assets/page-banners/all-courses-premium.webp',
   },
   {
