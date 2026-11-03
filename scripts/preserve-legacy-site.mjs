@@ -145,6 +145,29 @@ function staticHindiItalianBody(route) {
         </div>
         <p style="font-size:13px;color:var(--gm);line-height:1.65;margin:18px 0 0">सीखने की गति, स्तर और परिणाम हर विद्यार्थी की उपस्थिति, अभ्यास और लक्ष्य पर निर्भर करते हैं।</p>
       </section>
+      <section aria-labelledby="difl-hindi-team" style="margin-top:52px">
+        <div class="eyebrow">DIFL परिवार</div>
+        <h2 id="difl-hindi-team">55 वर्षों की परंपरा के <em>पीछे हमारी टीम</em></h2>
+        <p class="lead" style="max-width:820px">DIFL में सीखना केवल एक कोर्स नहीं है। यह एक ऐसी संस्थागत परंपरा का हिस्सा है जिसमें भाषा को सरल, व्यवस्थित और आत्मविश्वास के साथ सिखाने पर ध्यान दिया जाता है।</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:18px;margin-top:28px">
+          <figure class="fcard" style="display:block;margin:0;padding:12px;overflow:hidden">
+            <img src="/assets/team-late-dr-v-k-sharma.jpg" alt="DIFL के संस्थापक, स्वर्गीय डॉ. वी. के. शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
+            <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">स्वर्गीय डॉ. वी. के. शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">DIFL के संस्थापक</span></figcaption>
+          </figure>
+          <figure class="fcard" style="display:block;margin:0;padding:12px;overflow:hidden">
+            <img src="/assets/team-mrs-kamlesh-sharma.jpg" alt="श्रीमती कमलेश शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
+            <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">श्रीमती कमलेश शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">DIFL परिवार</span></figcaption>
+          </figure>
+          <figure class="fcard" style="display:block;margin:0;padding:12px;overflow:hidden">
+            <img src="/assets/team-priyanshu-sharma.jpg" alt="DIFL निदेशक, प्रियंशु शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
+            <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">प्रियंशु शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">निदेशक, DIFL</span></figcaption>
+          </figure>
+          <figure class="fcard" style="display:block;margin:0;padding:12px;overflow:hidden">
+            <img src="/assets/team-roopshikha-sharma.jpg" alt="रूपशिखा शर्मा" loading="lazy" decoding="async" width="600" height="600" style="display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px">
+            <figcaption style="padding:14px 4px 3px"><strong style="display:block;color:var(--cream);font-size:17px">रूपशिखा शर्मा</strong><span style="display:block;color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">DIFL शिक्षण टीम</span></figcaption>
+          </figure>
+        </div>
+      </section>
       <div class="g2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px">
         <div class="course-box" style="margin-top:0"><h3>कोर्स में क्या सीखेंगे</h3><ul style="margin:0;padding-left:19px;color:var(--cream);line-height:1.9">${detail.syllabus.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
         <div class="course-box" style="margin-top:0"><h3>परीक्षा तैयारी</h3><p style="color:var(--cream);line-height:1.75;margin:0">लक्ष्य के अनुसार ${detail.exams.map(escapeHtml).join(', ')} की तैयारी शामिल की जा सकती है। परीक्षा की तारीख, पंजीकरण, पात्रता और परिणाम संबंधित आधिकारिक संस्था तय करती है।</p></div>
