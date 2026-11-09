@@ -67,6 +67,66 @@
   ],
   "redirects": [
     {
+      "source": "/french/",
+      "destination": "/learn-french/",
+      "permanent": true
+    },
+    {
+      "source": "/german/",
+      "destination": "/learn-german/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese/",
+      "destination": "/learn-japanese/",
+      "permanent": true
+    },
+    {
+      "source": "/spanish/",
+      "destination": "/learn-spanish/",
+      "permanent": true
+    },
+    {
+      "source": "/chinese/",
+      "destination": "/learn-mandarin-chinese/",
+      "permanent": true
+    },
+    {
+      "source": "/korean/",
+      "destination": "/learn-korean-language/",
+      "permanent": true
+    },
+    {
+      "source": "/italian/",
+      "destination": "/learn-italian-language/",
+      "permanent": true
+    },
+    {
+      "source": "/russian/",
+      "destination": "/learn-russian-language/",
+      "permanent": true
+    },
+    {
+      "source": "/arabic/",
+      "destination": "/learn-arabic/",
+      "permanent": true
+    },
+    {
+      "source": "/thai/",
+      "destination": "/learn-thai-language/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/",
+      "destination": "/learn-hindi-language/",
+      "permanent": true
+    },
+    {
+      "source": "/english/",
+      "destination": "/learn-english/",
+      "permanent": true
+    },
+    {
       "source": "/blog.html",
       "has": [{ "type": "query", "key": "p", "value": "(?<post>[a-z0-9-]+)" }],
       "destination": "/blog/:post/",
