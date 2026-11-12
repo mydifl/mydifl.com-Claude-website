@@ -2298,6 +2298,37 @@ const FAQS = [
 ];
 
 // ===== FORM HTML =====
+const DIFL_RECAPTCHA_SITE_KEY = '6LflWxwuAAAAAAaNxF8iljy27QnuaHGafTLhN79d';
+
+function loadDiflRecaptcha() {
+  if (window.grecaptcha) return Promise.resolve(window.grecaptcha);
+  if (window.__diflRecaptchaLoading) return window.__diflRecaptchaLoading;
+
+  window.__diflRecaptchaLoading = new Promise(function (resolve, reject) {
+    var script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(DIFL_RECAPTCHA_SITE_KEY);
+    script.async = true;
+    script.defer = true;
+    script.onload = function () {
+      if (window.grecaptcha) resolve(window.grecaptcha);
+      else reject(new Error('Security verification could not start.'));
+    };
+    script.onerror = function () { reject(new Error('Security verification could not load.')); };
+    document.head.appendChild(script);
+  });
+
+  return window.__diflRecaptchaLoading;
+}
+
+async function getDiflRecaptchaToken() {
+  var recaptcha = await loadDiflRecaptcha();
+  return new Promise(function (resolve, reject) {
+    recaptcha.ready(function () {
+      recaptcha.execute(DIFL_RECAPTCHA_SITE_KEY, { action: 'enquiry_submit' }).then(resolve, reject);
+    });
+  });
+}
+
 function contactFormHTML(id) {
   return `<div class="contact-form"><div data-fs-success style="display:none;padding:18px 20px;background:#d1fae5;border-radius:10px;color:#065f46;font-weight:600;font-size:15px;margin-bottom:16px;text-align:center">✓ Enquiry sent! Priyanshu Sharma will call you shortly.</div><div data-fs-error style="display:none;padding:14px 16px;background:#fee2e2;border-radius:10px;color:#991b1b;font-size:13px;margin-bottom:16px"></div><h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:26px">Book Free Counselling</h3><form id="difl-contact-form-${id}" action="https://formspree.io/f/xvzybddz" method="POST"><div class="frow"><div class="fg"><label>First Name *</label><input type="text" name="first_name" autocomplete="given-name" placeholder="Your first name" required data-fs-field><span data-fs-error="first_name" style="color:#dc2626;font-size:11px"></span></div><div class="fg"><label>Last Name</label><input type="text" name="last_name" autocomplete="family-name" placeholder="Your last name" data-fs-field></div></div><div class="fg"><label>Phone / WhatsApp *</label><input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+91 XXXXX XXXXX" required data-fs-field><span data-fs-error="phone" style="color:#dc2626;font-size:11px"></span></div><div class="fg"><label>Language Interested In</label><select name="language" data-fs-field><option value="">Select a language...</option><option>French</option><option>Japanese</option><option>German</option><option>Spanish</option><option>Chinese (Mandarin)</option><option>Arabic</option><option>Korean</option><option>Italian</option><option>Russian</option><option>English (IELTS/TOEFL)</option><option>Thai</option><option>Hindi for Foreigners</option><option>Handwriting Improvement</option><option>Calligraphy</option><option>Ausbildung Germany</option><option>Not Sure — Need Guidance</option></select></div><div class="fg"><label>Course Type</label><select name="course_type" data-fs-field><option>Online</option><option>Offline (Jaipur)</option><option>Hybrid</option></select></div><div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Tell us your goals or questions..." data-fs-field></textarea></div><input type="hidden" name="_subject" value="New DIFL Enquiry from Website"><p style="font-size:11px;line-height:1.55;color:#65584f;margin:0 0 14px">We use these details to respond and for necessary delivery, security, administration and record-keeping as described in our <a href="/privacy-policy/" style="color:#70451f">Privacy Policy</a>.</p><button type="submit" class="btn-submit" data-fs-submit-btn>Send Enquiry →</button></form></div>`;
 }
@@ -2671,8 +2702,10 @@ function initFormspree(){
         if(error){error.style.display='none';error.textContent='';}
         if(button){button.disabled=true;button.textContent='Sending…';}
         try{
-          var response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-          if(!response.ok) throw new Error('Please check your details and try again.');
+          var formData=new FormData(form);
+          formData.set('g-recaptcha-response',await getDiflRecaptchaToken());
+          var response=await fetch(form.action,{method:'POST',body:formData,headers:{Accept:'application/json'}});
+          if(!response.ok) throw new Error('We could not verify your enquiry. Please try again or call DIFL.');
           form.reset();
           form.setAttribute('data-fs-state','success');
           if(success) success.style.display='block';
