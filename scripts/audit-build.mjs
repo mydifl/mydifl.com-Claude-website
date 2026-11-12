@@ -266,6 +266,7 @@ for (const path of [
 ]) {
   const html = readFileSync(resolve(root, path), 'utf8');
   if (!/\/assets\/tawk-safe-v4\.js\?compact=1(?:&(?:amp;)?v=\d+)?/.test(html)) failures.push(`${path} is missing the compact guarded Tawk.to loader.`);
+  if (!/\/assets\/difl-guide-v1\.js(?:\?v=\d+)?/.test(html)) failures.push(`${path} is missing the DIFL Guide admissions assistant loader.`);
   if (/\/assets\/tawk-safe(?:-v[23])?\.js/.test(html)) failures.push(`${path} still references a superseded Tawk loader.`);
   if (html.includes('embed.tawk.to/6a158407')) failures.push(`${path} still embeds Tawk.to directly.`);
 }
