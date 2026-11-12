@@ -15,7 +15,7 @@
     "audit": "node scripts/audit-build.mjs"
   },
   "dependencies": {
-    "@astrojs/vercel": "^11.0.16",
+    "@astrojs/vercel": "^11.0.21",
     "@supabase/supabase-js": "^2.118.0",
     "astro": "^7.4.2",
     "resend": "^6.24.0",
@@ -29,6 +29,8 @@
   },
   "overrides": {
     "devalue": "6.0.3",
+    "glob": "14.0.5",
+    "minimatch": "11.0.8",
     "fast-uri": "3.1.9",
     "svgo": "4.1.0",
     "@vercel/cli-config": {
