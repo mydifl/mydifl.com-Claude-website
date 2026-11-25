@@ -210,6 +210,11 @@ export function renderBlogIndexPage(template) {
   html = replaceMeta(html, 'property', 'og:image', image);
   html = replaceMeta(html, 'name', 'twitter:image', image);
   const listingPosts = extractBlogPosts(template).map(({ body, faq, ...post }) => post);
+  const cards = listingPosts.map(post => {
+    const path = '/blog/' + encodeURIComponent(post.id) + '/';
+    return `<a class="bc" href="${path}"><div class="bb"><h3>${escapeHtmlAttribute(post.title)}</h3><p>${escapeHtmlAttribute(post.desc || '')}</p></div></a>`;
+  }).join('\n');
+  html = html.replace('<div class="bg" id="postGrid"></div>', () => `<div class="bg" id="postGrid">${cards}</div>`);
   html = replacePostsDataset(html, listingPosts);
   return html;
 }
@@ -259,7 +264,7 @@ export function renderBlogPostPage(template, post) {
     '@type': 'BlogPosting',
     headline: title,
     description,
-    ...(legacy2025Content ? {} : { dateModified: '2026-09-30' }),
+    ...(legacy2025Content ? {} : { dateModified: post.dateModified || '2026-09-30' }),
     inLanguage: 'en-IN',
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     image,

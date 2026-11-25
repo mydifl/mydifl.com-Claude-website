@@ -41,9 +41,26 @@ export async function readJsonBody(request: Request, maxBytes = 4096) {
   const declaredLength = Number(request.headers.get('content-length'));
   if (Number.isFinite(declaredLength) && declaredLength > maxBytes) throw new Error('Request body too large');
 
-  const body = await request.text();
-  if (new TextEncoder().encode(body).byteLength > maxBytes) throw new Error('Request body too large');
-  return JSON.parse(body) as unknown;
+  const reader = request.body?.getReader();
+  if (!reader) throw new Error('JSON body required');
+  const decoder = new TextDecoder();
+  let size = 0;
+  let body = '';
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > maxBytes) {
+        await reader.cancel();
+        throw new Error('Request body too large');
+      }
+      body += decoder.decode(value, { stream: true });
+    }
+    return JSON.parse(body + decoder.decode()) as unknown;
+  } finally {
+    reader.releaseLock();
+  }
 }
 
 export async function verifiedStaff(request: Request, roles: string[]) {

@@ -56,7 +56,11 @@ const blogHeadingMismatch = findMismatchedHeading(sourceBlog);
 if (blogHeadingMismatch) failures.push(`Blog contains a mismatched H${blogHeadingMismatch[1]}/H${blogHeadingMismatch[2]} heading pair.`);
 const blogPosts = extractBlogPosts(sourceBlog);
 const postCount = blogPosts.length;
-if (postCount !== 50) failures.push(`Expected 50 blog articles, found ${postCount}.`);
+if (postCount !== 53) failures.push(`Expected 53 blog articles, found ${postCount}.`);
+const indexMarkup = staticMarkup(readFileSync(resolve(root, 'dist/client/blog/index.html'), 'utf8'));
+for (const post of blogPosts) {
+  if (!indexMarkup.includes(`href="/blog/${post.id}/"`)) failures.push(`No crawlable index link to ${post.id}.`);
+}
 
 const sourceHome = readFileSync(resolve(root, 'index.html'), 'utf8');
 const homeHeadingMismatch = findMismatchedHeading(sourceHome);
